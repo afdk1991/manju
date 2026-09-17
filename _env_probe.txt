@@ -1,0 +1,7 @@
+﻿PSVersion=5.1.26100.9444
+flutter=NOT_FOUND
+vswhere=False
+ANDROID_HOME=
+ANDROID_SDK_ROOT=
+IsWindows= IsMacOS= IsLinux=
+OS=

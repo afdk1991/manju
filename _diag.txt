@@ -1,0 +1,98 @@
+﻿---ERRORS---
+所在位置 D:\网站全栈项目\项目007\scripts\build_all.ps1:46 字符: 1
++ } catch { }
++ ~
+表达式或语句中包含意外的标记“}”。
+
+所在位置 D:\网站全栈项目\项目007\scripts\build_all.ps1:75 字符: 1
++ }
++ ~
+表达式或语句中包含意外的标记“}”。
+
+所在位置 D:\网站全栈项目\项目007\scripts\build_all.ps1:166 字符: 100
++ ... Write-Skip "Android" "缂哄皯 Flutter 宸ュ叿閾?; Add-Skip 'android'; return }
++                                                                         ~
+表达式或语句中包含意外的标记“}”。
+
+所在位置 D:\网站全栈项目\项目007\scripts\build_all.ps1:187 字符: 10
++         }
++          ~
+Try 语句缺少自己的 Catch 或 Finally 块。
+
+所在位置 D:\网站全栈项目\项目007\scripts\build_all.ps1:199 字符: 100
++ ... Write-Skip "Windows" "缂哄皯 Flutter 宸ュ叿閾?; Add-Skip 'windows'; return }
++                                                                         ~
+表达式或语句中包含意外的标记“}”。
+
+所在位置 D:\网站全栈项目\项目007\scripts\build_all.ps1:230 字符: 5
++     } catch {
++     ~
+表达式或语句中包含意外的标记“}”。
+
+所在位置 D:\网站全栈项目\项目007\scripts\build_all.ps1:232 字符: 7
++     } finally {
++       ~~~~~~~
+表达式或语句中包含意外的标记“finally”。
+
+所在位置 D:\网站全栈项目\项目007\scripts\build_all.ps1:235 字符: 1
++ }
++ ~
+表达式或语句中包含意外的标记“}”。
+
+所在位置 D:\网站全栈项目\项目007\scripts\build_all.ps1:307 字符: 67
++ ... f (-not (Test-Flutter)) { Write-Skip "iOS" "缂哄皯 Flutter 宸ュ叿閾?; Add-Sk ...
++                                                                  ~
+表达式中缺少右“)”。
+
+所在位置 D:\网站全栈项目\项目007\scripts\build_all.ps1:320 字符: 2
++ }
++  ~
+Try 语句缺少自己的 Catch 或 Finally 块。
+
+并未报告所有分析错误。请更正报告的错误并重试。
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : UnexpectedToken
+ 
+Set-Alias : 无法从别名“rmdir”中删除 AllScope 选项。
+所在位置 行:439 字符: 13
++             Set-Alias -Name $aliasName -Value Remove-Item -Scope Glob ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (rmdir:String) [Set-Alias], SessionStateUnauthorizedAccessException
+    + FullyQualifiedErrorId : AliasAllScopeOptionCannotBeRemoved,Microsoft.PowerShell.Commands.SetAliasCommand
+ 
+Set-Alias : 无法从别名“erase”中删除 AllScope 选项。
+所在位置 行:439 字符: 13
++             Set-Alias -Name $aliasName -Value Remove-Item -Scope Glob ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (erase:String) [Set-Alias], SessionStateUnauthorizedAccessException
+    + FullyQualifiedErrorId : AliasAllScopeOptionCannotBeRemoved,Microsoft.PowerShell.Commands.SetAliasCommand
+ 
+Set-Alias : 无法从别名“del”中删除 AllScope 选项。
+所在位置 行:439 字符: 13
++             Set-Alias -Name $aliasName -Value Remove-Item -Scope Glob ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (del:String) [Set-Alias], SessionStateUnauthorizedAccessException
+    + FullyQualifiedErrorId : AliasAllScopeOptionCannotBeRemoved,Microsoft.PowerShell.Commands.SetAliasCommand
+ 
+Set-Alias : 无法从别名“rm”中删除 AllScope 选项。
+所在位置 行:439 字符: 13
++             Set-Alias -Name $aliasName -Value Remove-Item -Scope Glob ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (rm:String) [Set-Alias], SessionStateUnauthorizedAccessException
+    + FullyQualifiedErrorId : AliasAllScopeOptionCannotBeRemoved,Microsoft.PowerShell.Commands.SetAliasCommand
+ 
+Set-Alias : 无法从别名“ri”中删除 AllScope 选项。
+所在位置 行:439 字符: 13
++             Set-Alias -Name $aliasName -Value Remove-Item -Scope Glob ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (ri:String) [Set-Alias], SessionStateUnauthorizedAccessException
+    + FullyQualifiedErrorId : AliasAllScopeOptionCannotBeRemoved,Microsoft.PowerShell.Commands.SetAliasCommand
+ 
+Get-Variable : 找不到名为“CODEBUDDY_SAFE_DELETE_PS_READY”的变量。
+所在位置 行:1 字符: 11
++ if (-not (Get-Variable -Name CODEBUDDY_SAFE_DELETE_PS_READY -Scope Gl ...
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CODEBUDDY_SAFE_DELETE_PS_READY:String) [Get-Variable], ItemNotFoundExce 
+   ption
+    + FullyQualifiedErrorId : VariableNotFound,Microsoft.PowerShell.Commands.GetVariableCommand
+ 
