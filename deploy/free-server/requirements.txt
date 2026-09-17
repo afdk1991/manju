@@ -1,0 +1,7 @@
+# 漫剧后端（FastAPI 内容中台 + OTA 服务）运行时依赖（独立部署副本）
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+sqlalchemy>=2.0.25
+pydantic-settings>=2.2.1
+cryptography>=42.0.0
+requests>=2.31.0

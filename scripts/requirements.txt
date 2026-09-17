@@ -1,0 +1,4 @@
+# OTA 发布工具链依赖
+# 安装：pip install -r scripts/requirements.txt
+cryptography>=42.0.0   # Ed25519 签名与验签
+requests>=2.31.0       # 调用 OTA 服务 API

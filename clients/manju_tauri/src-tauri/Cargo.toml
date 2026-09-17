@@ -1,0 +1,34 @@
+[package]
+name = "manju_tauri"
+version = "1.0.0"
+description = "漫剧 Manju 桌面客户端（Tauri 2）"
+authors = ["Manju Team"]
+edition = "2021"
+
+# 注意：本文件不在本机编译（无 Rust 工具链）。版本号需与 tauri.conf.json 一致。
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["protocol-asset"] }
+tauri-plugin-http = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-process = "2"
+tauri-plugin-os = "2"
+tauri-plugin-store = "2"
+tauri-plugin-shell = "2"
+tauri-plugin-updater = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[features]
+# 默认开启自定义下载+安装流程（见 src/updater/ 说明）。
+# 若改用官方 updater plugin，可去掉本 feature 并在 tauri.conf.json 配置 endpoints。
+custom-updater = []
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+strip = true

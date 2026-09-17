@@ -1,0 +1,430 @@
+{
+ "id": "s_10009",
+ "title": "重生之我是首富",
+ "original_title": null,
+ "cover": "https://example.com/cover/s_10009.jpg",
+ "poster": "https://example.com/poster/s_10009.jpg",
+ "banner": "https://example.com/banner/s_10009.jpg",
+ "synopsis": "回到二十年前，利用先知先觉缔造商业帝国。",
+ "tags": [
+  "重生",
+  "商战",
+  "爽文"
+ ],
+ "category_id": "cat_city",
+ "region": "CN",
+ "release_year": 2024,
+ "status": "completed",
+ "total_episodes": 15,
+ "score": 8.6,
+ "views": 5103448,
+ "is_vip": false,
+ "age_rating": "all",
+ "episodes": [
+  {
+   "id": "s_10009_e001",
+   "series_id": "s_10009",
+   "index": 1,
+   "title": "第1集",
+   "thumbnail": "https://example.com/cover/s_10009_1.jpg",
+   "duration_sec": 173,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10009/1.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10009_e002",
+   "series_id": "s_10009",
+   "index": 2,
+   "title": "第2集",
+   "thumbnail": "https://example.com/cover/s_10009_2.jpg",
+   "duration_sec": 198,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10009/2.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10009_e003",
+   "series_id": "s_10009",
+   "index": 3,
+   "title": "第3集",
+   "thumbnail": "https://example.com/cover/s_10009_3.jpg",
+   "duration_sec": 314,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10009/3.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10009_e004",
+   "series_id": "s_10009",
+   "index": 4,
+   "title": "第4集",
+   "thumbnail": "https://example.com/cover/s_10009_4.jpg",
+   "duration_sec": 237,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10009/4.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10009_e005",
+   "series_id": "s_10009",
+   "index": 5,
+   "title": "第5集",
+   "thumbnail": "https://example.com/cover/s_10009_5.jpg",
+   "duration_sec": 165,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10009/5.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10009_e006",
+   "series_id": "s_10009",
+   "index": 6,
+   "title": "第6集",
+   "thumbnail": "https://example.com/cover/s_10009_6.jpg",
+   "duration_sec": 215,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10009/6.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10009_e007",
+   "series_id": "s_10009",
+   "index": 7,
+   "title": "第7集",
+   "thumbnail": "https://example.com/cover/s_10009_7.jpg",
+   "duration_sec": 310,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10009/7.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10009_e008",
+   "series_id": "s_10009",
+   "index": 8,
+   "title": "第8集",
+   "thumbnail": "https://example.com/cover/s_10009_8.jpg",
+   "duration_sec": 218,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10009/8.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10009_e009",
+   "series_id": "s_10009",
+   "index": 9,
+   "title": "第9集",
+   "thumbnail": "https://example.com/cover/s_10009_9.jpg",
+   "duration_sec": 180,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10009/9.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10009_e010",
+   "series_id": "s_10009",
+   "index": 10,
+   "title": "第10集",
+   "thumbnail": "https://example.com/cover/s_10009_10.jpg",
+   "duration_sec": 206,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10009/10.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10009_e011",
+   "series_id": "s_10009",
+   "index": 11,
+   "title": "第11集",
+   "thumbnail": "https://example.com/cover/s_10009_11.jpg",
+   "duration_sec": 358,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10009/11.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10009_e012",
+   "series_id": "s_10009",
+   "index": 12,
+   "title": "第12集",
+   "thumbnail": "https://example.com/cover/s_10009_12.jpg",
+   "duration_sec": 120,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10009/12.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10009_e013",
+   "series_id": "s_10009",
+   "index": 13,
+   "title": "第13集",
+   "thumbnail": "https://example.com/cover/s_10009_13.jpg",
+   "duration_sec": 209,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10009/13.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10009_e014",
+   "series_id": "s_10009",
+   "index": 14,
+   "title": "第14集",
+   "thumbnail": "https://example.com/cover/s_10009_14.jpg",
+   "duration_sec": 175,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10009/14.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10009_e015",
+   "series_id": "s_10009",
+   "index": 15,
+   "title": "第15集",
+   "thumbnail": "https://example.com/cover/s_10009_15.jpg",
+   "duration_sec": 200,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10009/15.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  }
+ ]
+}

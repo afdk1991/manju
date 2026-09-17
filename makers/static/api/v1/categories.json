@@ -1,0 +1,44 @@
+{
+ "items": [
+  {
+   "id": "cat_hot",
+   "name": "热血",
+   "icon": "🔥"
+  },
+  {
+   "id": "cat_love",
+   "name": "恋爱",
+   "icon": "💗"
+  },
+  {
+   "id": "cat_mystery",
+   "name": "悬疑",
+   "icon": "🕵️"
+  },
+  {
+   "id": "cat_fun",
+   "name": "搞笑",
+   "icon": "😂"
+  },
+  {
+   "id": "cat_xuanhuan",
+   "name": "玄幻",
+   "icon": "✨"
+  },
+  {
+   "id": "cat_city",
+   "name": "都市",
+   "icon": "🌆"
+  },
+  {
+   "id": "cat_scifi",
+   "name": "科幻",
+   "icon": "🚀"
+  },
+  {
+   "id": "cat_history",
+   "name": "历史",
+   "icon": "📜"
+  }
+ ]
+}

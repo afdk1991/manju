@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>漫剧 Manju · EdgeOne Makers 演示部署</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    background: #0f1220; color: #e8eaf2; min-height: 100vh; padding: 48px 20px;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  .badge {
+    display: inline-block; font-size: 12px; letter-spacing: 1px; color: #9aa4ff;
+    border: 1px solid #3a3f66; border-radius: 999px; padding: 4px 12px; margin-bottom: 16px;
+  }
+  h1 { font-size: 34px; font-weight: 700; margin-bottom: 10px; }
+  h1 em { font-style: normal; background: linear-gradient(90deg,#7c8cff,#c86bff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { color: #9aa0b8; font-size: 15px; line-height: 1.7; margin-bottom: 28px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 28px; }
+  .card {
+    background: #171b2e; border: 1px solid #262b45; border-radius: 14px; padding: 18px;
+  }
+  .card h3 { font-size: 15px; margin-bottom: 8px; color: #c3c9ff; }
+  .card p { font-size: 13px; color: #8d93ab; line-height: 1.6; }
+  .card code { color: #7fe0a8; font-size: 12px; }
+  .panel { background: #171b2e; border: 1px solid #262b45; border-radius: 14px; padding: 18px; }
+  .panel h2 { font-size: 16px; margin-bottom: 14px; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+  button {
+    background: #4a55d8; color: #fff; border: none; border-radius: 8px;
+    padding: 9px 16px; font-size: 13px; cursor: pointer;
+  }
+  button:hover { background: #5a66ee; }
+  pre {
+    background: #0c0f1e; border: 1px solid #262b45; border-radius: 10px;
+    padding: 14px; font-size: 12px; overflow: auto; max-height: 300px;
+    color: #b9c0d9; white-space: pre-wrap; word-break: break-all;
+  }
+  a { color: #9aa4ff; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .foot { margin-top: 26px; font-size: 12px; color: #6a7088; line-height: 1.8; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="badge">EDGEONE MAKERS · SERVERLESS</span>
+  <h1>漫剧 <em>Manju</em></h1>
+  <p class="sub">
+    跨平台短剧内容中台 · 免费无服务器部署版。<br>
+    内容静态化到边缘 CDN，OTA 检查 / 搜索 / 用户数据由 Cloud Functions + Blob 提供。
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>📺 内容 API</h3>
+      <p>首页分区、分类、剧集详情、单集数据均由静态 JSON 提供，全球 CDN 边缘加速。</p>
+      <p><code>/api/v1/home</code> · <code>/api/v1/series/s_10001</code></p>
+    </div>
+    <div class="card">
+      <h3>🔄 OTA 更新</h3>
+      <p>版本比较、灰度分桶、降级拦截、策略矩阵与 Ed25519 验签数据，与客户端协议完全兼容。</p>
+      <p><code>/api/v1/ota/check</code> · <code>/api/v1/ota/report</code></p>
+    </div>
+    <div class="card">
+      <h3>🔎 搜索 & 用户数据</h3>
+      <p>内存索引搜索；收藏与播放历史持久化到 Blob 对象存储。</p>
+      <p><code>/api/v1/search?q=开局</code> · <code>/api/v1/user/favorites</code></p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>在线自检</h2>
+    <div class="row">
+      <button onclick="probe('/api/v1/home')">内容首页</button>
+      <button onclick="probe('/api/v1/search?q=%E5%BC%80%E5%B1%80')">搜索「开局」</button>
+      <button onclick="probe('/api/v1/ota/check?platform=windows&arch=x86_64&channel=stable&version=9.8.0&build=980&device_id=selftest')">OTA 检查</button>
+      <button onclick="probe('/api/v1/ota/public-key')">OTA 公钥</button>
+      <button onclick="probe('/admin')">运营后台</button>
+    </div>
+    <pre id="out">点击上方按钮，查看各端点实时返回。</pre>
+  </div>
+
+  <div class="foot">
+    ⚠️ 演示说明：本部署为静态只读内容中台；系列/集数增删改请在本机 FastAPI 版执行后重新运行
+    <code>makers/scripts/export_static.py</code> 并重新部署。OTA 发布可在后台进行（写入 Blob，含 Ed25519 签名）。<br>
+    <a href="/admin">运营后台</a> ·
+    <a href="/api/v1/home.json">home.json</a> ·
+    <a href="/api/v1/categories.json">categories.json</a>
+  </div>
+</div>
+<script>
+  const out = document.getElementById('out');
+  async function probe(path) {
+    out.textContent = '请求 ' + path + ' …';
+    try {
+      const r = await fetch(path);
+      const text = await r.text();
+      let body = text;
+      try { body = JSON.stringify(JSON.parse(text), null, 2); } catch (e) { /* 非 JSON */ }
+      out.textContent = 'HTTP ' + r.status + '  ' + path + '\n' + body;
+    } catch (e) {
+      out.textContent = '请求失败：' + e;
+    }
+  }
+</script>
+</body>
+</html>

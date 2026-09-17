@@ -1,0 +1,61 @@
+name: manju
+description: "漫剧 Manju —— 覆盖 Android / iOS / HarmonyOS / Windows / macOS / Linux 的漫剧视频客户端，内置 OTA 自动更新。"
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# version+build：build 必须单调递增，OTA 服务依赖它判断是否有更新。
+# 发布时通过 --build-name / --build-number 覆盖。
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ---- 状态管理 / 路由 ----
+  flutter_riverpod: ^2.6.1
+  go_router: ^14.8.1
+
+  # ---- 网络 ----
+  dio: ^5.7.0
+
+  # ---- 本地存储 ----
+  shared_preferences: ^2.3.3
+  path_provider: ^2.1.5
+
+  # ---- 媒体播放 ----
+  # 官方 video_player 对桌面端（Windows / Linux）支持有限。
+  # 生产环境若需要桌面端完整播放能力，建议替换为 media_kit 系列；
+  # 本项目已用 lib/presentation/player/player_adapter.dart 做抽象隔离，替换成本低。
+  video_player: ^2.10.0
+
+  # ---- 图片缓存 ----
+  cached_network_image: ^3.4.1
+
+  # ---- 更新相关 ----
+  package_info_plus: ^8.1.2 # 读取当前 version + build
+  url_launcher: ^6.3.1 # iOS / HarmonyOS 跳转商店
+  device_info_plus: ^11.3.0 # 识别 arch / 平台细节
+  crypto: ^3.0.5 # SHA256 校验
+  cryptography: ^2.7.0 # Ed25519 签名校验
+
+  # ---- 国际化（轻量，不引入代码生成）----
+  intl: ^0.20.2
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # 纯 Dart 测试包：用于不依赖 Flutter binding 的单元测试（模型解析、加密校验）。
+  # 这类测试可以直接用 `dart test` 跑，无需 flutter_tester，在 CI 上更快也更稳。
+  test: ^1.25.0
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/

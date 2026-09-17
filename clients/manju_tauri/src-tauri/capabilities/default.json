@@ -1,0 +1,41 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "漫剧 Manju 桌面端最小权限集合",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "dialog:default",
+    "fs:default",
+    "http:default",
+    "os:default",
+    "process:default",
+    "store:default",
+    "shell:default",
+    "updater:default",
+    {
+      "identifier": "http:allow-fetch",
+      "allow": [{ "url": "https://api.example.com/*" }, { "url": "https://cdn.example.com/*" }]
+    },
+    {
+      "identifier": "fs:allow-write-file",
+      "allow": [{ "path": "$APPCACHE/*" }, { "path": "$TEMP/*" }]
+    },
+    {
+      "identifier": "fs:allow-read-file",
+      "allow": [{ "path": "$APPCACHE/*" }, { "path": "$TEMP/*" }]
+    },
+    {
+      "identifier": "fs:allow-remove-file",
+      "allow": [{ "path": "$APPCACHE/*" }, { "path": "$TEMP/*" }]
+    },
+    {
+      "identifier": "fs:allow-mkdir",
+      "allow": [{ "path": "$APPCACHE/*" }, { "path": "$TEMP/*" }]
+    },
+    {
+      "identifier": "shell:allow-execute",
+      "allow": [{ "name": "powershell", "cmd": "powershell", "args": true }, { "name": "bash", "cmd": "bash", "args": true }]
+    }
+  ]
+}

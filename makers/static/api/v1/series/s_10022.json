@@ -1,0 +1,349 @@
+{
+ "id": "s_10022",
+ "title": "霸榜天后",
+ "original_title": null,
+ "cover": "https://example.com/cover/s_10022.jpg",
+ "poster": "https://example.com/poster/s_10022.jpg",
+ "banner": "https://example.com/banner/s_10022.jpg",
+ "synopsis": "选秀出道的女孩，从陪练走向万人舞台中心。",
+ "tags": [
+  "选秀",
+  "音乐",
+  "励志"
+ ],
+ "category_id": "cat_fun",
+ "region": "CN",
+ "release_year": 2023,
+ "status": "completed",
+ "total_episodes": 12,
+ "score": 6.6,
+ "views": 6374826,
+ "is_vip": false,
+ "age_rating": "all",
+ "episodes": [
+  {
+   "id": "s_10022_e001",
+   "series_id": "s_10022",
+   "index": 1,
+   "title": "第1集",
+   "thumbnail": "https://example.com/cover/s_10022_1.jpg",
+   "duration_sec": 281,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10022/1.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10022_e002",
+   "series_id": "s_10022",
+   "index": 2,
+   "title": "第2集",
+   "thumbnail": "https://example.com/cover/s_10022_2.jpg",
+   "duration_sec": 298,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10022/2.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10022_e003",
+   "series_id": "s_10022",
+   "index": 3,
+   "title": "第3集",
+   "thumbnail": "https://example.com/cover/s_10022_3.jpg",
+   "duration_sec": 319,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10022/3.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10022_e004",
+   "series_id": "s_10022",
+   "index": 4,
+   "title": "第4集",
+   "thumbnail": "https://example.com/cover/s_10022_4.jpg",
+   "duration_sec": 128,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10022/4.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10022_e005",
+   "series_id": "s_10022",
+   "index": 5,
+   "title": "第5集",
+   "thumbnail": "https://example.com/cover/s_10022_5.jpg",
+   "duration_sec": 300,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10022/5.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10022_e006",
+   "series_id": "s_10022",
+   "index": 6,
+   "title": "第6集",
+   "thumbnail": "https://example.com/cover/s_10022_6.jpg",
+   "duration_sec": 212,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10022/6.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10022_e007",
+   "series_id": "s_10022",
+   "index": 7,
+   "title": "第7集",
+   "thumbnail": "https://example.com/cover/s_10022_7.jpg",
+   "duration_sec": 216,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10022/7.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10022_e008",
+   "series_id": "s_10022",
+   "index": 8,
+   "title": "第8集",
+   "thumbnail": "https://example.com/cover/s_10022_8.jpg",
+   "duration_sec": 358,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10022/8.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10022_e009",
+   "series_id": "s_10022",
+   "index": 9,
+   "title": "第9集",
+   "thumbnail": "https://example.com/cover/s_10022_9.jpg",
+   "duration_sec": 340,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10022/9.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10022_e010",
+   "series_id": "s_10022",
+   "index": 10,
+   "title": "第10集",
+   "thumbnail": "https://example.com/cover/s_10022_10.jpg",
+   "duration_sec": 352,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10022/10.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10022_e011",
+   "series_id": "s_10022",
+   "index": 11,
+   "title": "第11集",
+   "thumbnail": "https://example.com/cover/s_10022_11.jpg",
+   "duration_sec": 211,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10022/11.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  },
+  {
+   "id": "s_10022_e012",
+   "series_id": "s_10022",
+   "index": 12,
+   "title": "第12集",
+   "thumbnail": "https://example.com/cover/s_10022_12.jpg",
+   "duration_sec": 194,
+   "is_free": false,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    }
+   ],
+   "subtitles": [
+    {
+     "lang": "zh-CN",
+     "label": "简体中文",
+     "url": "https://example.com/sub/s_10022/12.vtt",
+     "format": "vtt",
+     "is_default": true
+    }
+   ]
+  }
+ ]
+}

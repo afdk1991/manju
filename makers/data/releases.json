@@ -1,0 +1,68 @@
+{
+ "releases": [
+  {
+   "platform": "windows",
+   "arch": "x86_64",
+   "channel": "stable",
+   "version": "9.9.9",
+   "build": 999,
+   "released_at": "2026-09-16T17:00:48.278346",
+   "min_supported_version": "1.0.0",
+   "notes_i18n": {
+    "zh-CN": "- 全新播放引擎，首屏加载更快\n- 新增倍速记忆与跳过片头\n- 修复部分机型下载失败",
+    "en": "- New playback engine\n- Speed memory\n- Fix download issues"
+   },
+   "artifact": {
+    "type": "exe",
+    "url": "http://localhost:8000/files/Manju-Setup-9.9.9.exe",
+    "size": 37,
+    "sha256": "8a6571692b93461b63156f839e9d846118c711fbb79592d41360b622104757de",
+    "signature": "ed25519:yKLSmUXwtbS2S5r4qjG/EpyzWy/KnHq9k6qM4g/lg5k2ymJkaYZd2vgIuK469gywqvH/VtYPnZkm1e6V4leZBw==",
+    "install_args": [
+     "/VERYSILENT",
+     "/NORESTART"
+    ]
+   },
+   "store_url": null,
+   "rollout_percent": 100
+  },
+  {
+   "platform": "ios",
+   "arch": "arm64",
+   "channel": "stable",
+   "version": "9.9.9",
+   "build": 999,
+   "released_at": "2026-09-16T17:00:48.278533",
+   "min_supported_version": "1.0.0",
+   "notes_i18n": {
+    "zh-CN": "- 体验优化与稳定性修复\n- 前往 App Store 更新",
+    "en": "- Improvements and bug fixes\n- Update on the App Store"
+   },
+   "artifact": null,
+   "store_url": "https://apps.apple.com/app/id0000000000",
+   "rollout_percent": 100
+  },
+  {
+   "platform": "linux",
+   "arch": "x86_64",
+   "channel": "stable",
+   "version": "1.0.0",
+   "build": 100,
+   "released_at": "2026-09-16T17:03:57.196267",
+   "min_supported_version": "0.0.0",
+   "notes_i18n": {
+    "zh-CN": "t"
+   },
+   "artifact": {
+    "type": "appimage",
+    "url": "http://x/app.AppImage",
+    "size": 0,
+    "sha256": "deadbeef",
+    "signature": "ed25519:PbpVhWxNH24TkpQlemdr2uRCk+QV6CKwHcIgUUo/EY3Vlw4mAovhQhPPNHsknBTPmTUaB521thqLjUUneVBDCg==",
+    "install_args": []
+   },
+   "store_url": null,
+   "rollout_percent": 100
+  }
+ ]
+}
