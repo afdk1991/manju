@@ -230,7 +230,33 @@ python scripts/gen_icons.py --bg-top "#0d47a1" --bg-bottom "#7b1fa2"   # 换配�
 - [x] Android keystore 已生成并配置
 - [x] 签名物料已在 `.gitignore` 排除
 - [x] Tauri 图标已生成
+- [x] 四端图标 + 鸿蒙 element/media 资源已全量补齐
+- [x] OTA 密钥已轮换，旧私钥已从 git 历史清除
+- [ ] **把新私钥填进两处 Secret**（见下，需你操作）
 - [ ] Apple Developer ID 证书（需你操作）
 - [ ] macOS 公证流程跑通
 - [ ] Windows 代码签名证书（可选）
 - [ ] EdgeOne 绑定自定义域名
+
+---
+
+## 八、OTA 密钥轮换记录（2026-09-20）
+
+**事故**：初版 `keys/ota_private.pem` 被 `init: proj-07` 提交，并随 `origin/main`
+推送到了 GitHub。`.gitignore` 对**已跟踪文件无效**，所以加忽略规则并不能撤回已推送的内容。
+
+**已完成的处置**：
+1. `scripts/gen_keypair.py --force` 生成新密钥对
+2. 新公钥写入四端：`ota_public_key.dart` / `publicKey.ts`（RN、Tauri）/
+   `tauri.conf.json` 的 `plugins.updater.pubkey` / makers 的 `ota/public-key.json`
+3. `git rm --cached` 取消跟踪
+4. `git filter-repo --path keys/ota_private.pem --invert-paths` 重写全部历史
+5. `git push --force` 覆盖远端
+
+**⚠️ 你必须补的一步**：新私钥只在本地磁盘，两处 Secret 还是旧值，不同步会导致
+CI 与云端签出的包**被客户端拒绝**：
+- GitHub → Settings → Secrets：`ED25519_PRIVATE_KEY` ← `keys/ota_private.pem` 全文
+- EdgeOne Makers 控制台：`MANJU_OTA_PRIVATE_KEY` ← 同上
+
+**注意**：GitHub 对被强推覆盖的旧对象仍可能通过直接 commit SHA 短暂访问，
+所以旧密钥一律视为已泄露，不要再用于任何产物签名。
