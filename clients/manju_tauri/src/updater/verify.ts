@@ -27,6 +27,20 @@ export function sha256Hex(bytes: Uint8Array): string {
     .join("");
 }
 
+/**
+ * 规范化签名消息。
+ * 必须与服务端 `sign_release`、Flutter 端 `otaSignatureMessage` 的
+ * `{version}|{build}|{sha256 小写}|{url}` 逐字节一致，否则验签会失败。
+ */
+export function otaSignatureMessage(
+  version: string,
+  build: number,
+  sha256HexValue: string,
+  url: string,
+): string {
+  return `${version}|${build}|${sha256HexValue.toLowerCase()}|${url}`;
+}
+
 export type VerifyResult =
   | { ok: true }
   | { ok: false; reason: string; detail?: string };
@@ -35,11 +49,17 @@ export type VerifyResult =
  * 校验下载到的安装包。
  * @param fileBytes 本地临时文件内容
  * @param expectedSha256 服务端下发的 sha256（小写）
- * @param signature   服务端下发的签名（ed25519:<base64>），可能为空
+ * @param version  发布版本号（参与签名消息）
+ * @param build    构建号（参与签名消息）
+ * @param url      产物下载地址（参与签名消息，须与服务端签名时一致）
+ * @param signature  服务端下发的签名（ed25519:<base64>），可能为空
  */
 export function verifyArtifact(
   fileBytes: Uint8Array,
   expectedSha256: string,
+  version: string,
+  build: number,
+  url: string,
   signature?: string,
 ): VerifyResult {
   // ---- 第一道：SHA256 ----
@@ -69,8 +89,11 @@ export function verifyArtifact(
     const sigBytes = base64.decode(b64);
     const pubKey = base64.decode(PUBLIC_KEY_BASE64);
 
-    // 与服务端一致：签名对象为 sha256 的十六进制字符串本身。
-    const message = new TextEncoder().encode(actual.toLowerCase());
+    // 与服务端 sign_release 一致：签名对象为规范化消息
+    // {version}|{build}|{sha256 小写}|{url}，逐字节一致才能验签通过。
+    const message = new TextEncoder().encode(
+      otaSignatureMessage(version, build, actual, url),
+    );
     const valid = ed25519.verify(sigBytes, message, pubKey);
     if (!valid) {
       return {

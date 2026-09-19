@@ -133,7 +133,14 @@ export async function applyCustomUpdate(
 
     // 2. 校验（生命线）
     onProgress({ phase: "verifying", ratio: 1, release, message: "正在校验安装包" });
-    const v = verifyArtifact(bytes, artifact.sha256, artifact.signature);
+    const v = verifyArtifact(
+      bytes,
+      artifact.sha256,
+      release.version,
+      release.build,
+      artifact.url,
+      artifact.signature,
+    );
     if (!v.ok) {
       await otaApi.report({
         device_id: deviceId,

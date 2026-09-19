@@ -1,4 +1,79 @@
-﻿node_modules/
-.edgeone/
+﻿# ============================================================================
+#  项目007 — 漫剧 Manju 全栈项目（EdgeOne Makers 云函数版 + Flutter/Tauri 客户端）
+#
+#  ⚠️ makers/data/** 与 makers/static/** 必须入库！
+#     edgeone.json 的 cloudFunctions.nodejs.includeFiles 在构建时打包 data/**，
+#     静态托管直接读取仓库中的 static/（内容 API JSON、admin、安装包清单）。
+#     makers/.gitignore 与 server/.gitignore 已各自维护子规则，本文件不覆盖。
+#
+#  ⚠️ keys/ota_private.pem 是 OTA 更新签名私钥，严禁入库。
+#     公钥 keys/ota_public.pem 可以入库（客户端需要用它验签）。
+# ============================================================================
+
+# ===== 签名私钥（绝不入库；公钥除外）=====
+keys/ota_private.pem
+keys/*.key
+keys/*.pfx
+keys/*.p12
+!keys/ota_public.pem
+
+# ===== 环境与凭据 =====
 .env
 .env.local
+.env.*.local
+**/.env
+!**/.env.example
+
+# ===== 依赖 =====
+node_modules/
+**/node_modules/
+makers/node_modules/
+
+# ===== Flutter / Dart 构建产物 =====
+clients/manju_flutter/.dart_tool/
+clients/manju_flutter/build/
+clients/manju_flutter/.flutter-plugins
+clients/manju_flutter/.flutter-plugins-dependencies
+clients/manju_flutter/.idea/
+clients/manju_flutter/.packages
+clients/manju_flutter/**/GeneratedPluginRegistrant.*
+*.g.dart
+
+# ===== Tauri / Rust 构建产物 =====
+clients/manju_tauri/node_modules/
+clients/manju_tauri/dist/
+clients/manju_tauri/src-tauri/target/
+
+# ===== 打包产物（曾误入库 68 MB 的 msix）=====
+dist/
+*.msix
+*.msixbundle
+*.appx
+*.apk
+*.aab
+*.ipa
+*.dmg
+*.AppImage
+
+# ===== Python 服务端运行时（server/.gitignore 已含，此处兜底）=====
+__pycache__/
+*.pyc
+*.db
+*.db-journal
+server/data/manju.db*
+server/data/*.log
+server/data/artifacts/*
+!server/data/artifacts/.gitkeep
+
+# ===== 诊断临时文件与日志 =====
+_*.txt
+_*.log
+*.log
+
+# ===== 系统与编辑器临时文件 =====
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~

@@ -62,7 +62,7 @@ def sha256_of(path: Path) -> str:
 
 
 def sign(private_key_path: Path, message: str) -> str:
-    """用 Ed25519 私钥对 sha256 字符串签名，返回协议约定的 'ed25519:<base64>' 格式。"""
+    """用 Ed25519 私钥对规范化签名消息签名，返回协议约定的 'ed25519:<base64>' 格式。"""
     if not private_key_path.is_file():
         print(f"[错误] 私钥不存在：{private_key_path}", file=sys.stderr)
         print("       请先运行： python scripts/gen_keypair.py", file=sys.stderr)
@@ -122,15 +122,18 @@ def build_manifest(args: argparse.Namespace) -> dict:
             )
             sys.exit(2)
         digest = sha256_of(f)
+        artifact_url = args.artifact_url or f.name
         artifact = {
             "type": atype,
-            "url": args.artifact_url or f.name,
+            "url": artifact_url,
             "size": f.stat().st_size,
             "sha256": digest,
         }
         key = Path(args.private_key)
         if key.is_file():
-            artifact["signature"] = sign(key, digest)
+            # 签名消息必须与服务端 sign_release 的 "{version}|{build}|{sha256}|{url}" 一致
+            canonical = f"{args.version}|{args.build}|{digest}|{artifact_url}"
+            artifact["signature"] = sign(key, canonical)
         else:
             print(f"[警告] 未找到私钥 {key}，产物将缺少 signature 字段", file=sys.stderr)
             print("       请先运行： python scripts/gen_keypair.py", file=sys.stderr)

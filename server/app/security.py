@@ -72,6 +72,10 @@ def verify_payload(payload: bytes, signature_header: str) -> bool:
 
 
 def sign_release(version: str, build: int, sha256: str, url: str) -> str:
-    """对一次发布产物做规范化签名，作为 artifact.signature。"""
-    canonical = f"{version}|{build}|{sha256}|{url}".encode("utf-8")
+    """对一次发布产物做规范化签名，作为 artifact.signature。
+
+    规范化消息为 `{version}|{build}|{sha256_lower}|{url}`，
+    客户端与 scripts/ota_manifest.py 必须使用完全相同的消息。
+    """
+    canonical = f"{version}|{build}|{sha256.lower()}|{url}".encode("utf-8")
     return sign_payload(canonical)

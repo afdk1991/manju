@@ -96,7 +96,12 @@ void main() {
         size: 5,
         sha256: '0' * 64,
       );
-      final result = await verifier.verify(file, artifact);
+      final result = await verifier.verify(
+        file,
+        artifact,
+        version: '1.0.0',
+        build: 1,
+      );
       expect(result.ok, isFalse);
       expect(result.reason, VerifyFailureReason.sha256Mismatch);
 
@@ -117,11 +122,29 @@ void main() {
         sha256: sha,
         // 故意不带 signature
       );
-      final result = await verifier.verify(file, artifact, requireSignature: true);
+      final result = await verifier.verify(
+        file,
+        artifact,
+        version: '1.0.0',
+        build: 1,
+        requireSignature: true,
+      );
       expect(result.ok, isFalse);
       expect(result.reason, VerifyFailureReason.signatureMissing);
 
       await dir.delete(recursive: true);
+    });
+
+    test('签名规范化消息与服务端 sign_release 一致', () {
+      expect(
+        otaSignatureMessage(
+            '9.9.9', 999, 'ABCDEF', 'https://cdn.example.com/a.exe'),
+        '9.9.9|999|abcdef|https://cdn.example.com/a.exe',
+      );
+      expect(
+        otaSignatureMessage('1.3.0', 130, 'aa', 'x'),
+        '1.3.0|130|aa|x',
+      );
     });
 
     test('Ed25519 签名校验：正确签名通过、错误签名拒绝', () async {

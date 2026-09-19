@@ -83,7 +83,7 @@ Query 参数（全部必填，除注明外）：
 | `policy` | ✅ | `suggest` 提示用户 / `forced` 强制（低于 `min_supported_version` 时服务端置此值）/ `silent` 后台静默安装（仅桌面端具备能力） |
 | `min_supported_version` | ✅ | 低于此版本 → `policy` 必须为 `forced` |
 | `artifact.sha256` | ✅ | 客户端**必须**校验，不匹配立即中止 |
-| `artifact.signature` | ⚠️ | Ed25519 签名，格式 `ed25519:<base64>`。生产环境必填，客户端公钥内置 |
+| `artifact.signature` | ⚠️ | Ed25519 签名，格式 `ed25519:<base64>`。生产环境必填，客户端公钥内置。**签名对象为规范化消息 `{version}\|{build}\|{sha256小写}\|{url}`**（服务端 `sign_release`、`scripts/ota_manifest.py` 与客户端验签必须逐字节一致） |
 | `store_fallback` | ⚠️ | **iOS / HarmonyOS 必填**，见 §4 |
 
 ## 4. 平台能力与策略矩阵（关键 · 不可违背）

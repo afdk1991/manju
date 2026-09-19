@@ -223,7 +223,12 @@ class Updater {
       message: '正在校验安装包',
     ));
 
-    final verify = await _verifier.verify(file, artifact);
+    final verify = await _verifier.verify(
+      file,
+      artifact,
+      version: release.version,
+      build: release.build,
+    );
     if (!verify.ok) {
       // 校验失败必须删除文件，绝不能留下未验证的可执行文件
       if (await file.exists()) await file.delete();
