@@ -15,7 +15,11 @@
     "updater:default",
     {
       "identifier": "http:allow-fetch",
-      "allow": [{ "url": "https://api.example.com/*" }, { "url": "https://cdn.example.com/*" }]
+      "allow": [
+        { "url": "https://manju-drama-hub-tkwcxlaw.edgeone.cool/*" },
+        { "url": "http://localhost:8000/*" },
+        { "url": "http://127.0.0.1:8000/*" }
+      ]
     },
     {
       "identifier": "fs:allow-write-file",
