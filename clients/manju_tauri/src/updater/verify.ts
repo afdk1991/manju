@@ -11,13 +11,21 @@
 
 import { ed25519 } from "@noble/curves/ed25519";
 import { sha256 as nobleSha256 } from "@noble/hashes/sha256";
-import { base64 } from "@noble/hashes/utils";
+import { PUBLIC_KEY_BASE64, REQUIRE_SIGNATURE } from "./publicKey";
 
-/** 内置 Ed25519 公钥（32 字节，Base64）。不得提交私钥。 */
-export const PUBLIC_KEY_BASE64 = "DuW8zxjUYPNEnNY8RMIe4G670V5ZzX39rl1v9CEVQRU=";
+/** Base64 解码为字节数组。
+ *  @noble/hashes 的 utils 不导出 base64，这里用 WebView（浏览器环境）内置的
+ *  atob 实现，无需额外依赖。Tauri 前端运行在 WebView 中，atob 始终可用。 */
+function base64ToBytes(b64: string): Uint8Array {
+  const bin = atob(b64);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return bytes;
+}
 
-/** 是否强制校验签名。调试期可临时关闭，发版前必须置 true。 */
-export const REQUIRE_SIGNATURE = true;
+// 公钥与"是否强制签名校验"已由 publicKey.ts 统一定义，本模块直接复用，
+// 避免多份拷贝导致轮换时遗漏。
+export { PUBLIC_KEY_BASE64, REQUIRE_SIGNATURE };
 
 /** 计算字节数组的 SHA256（十六进制小写，与协议一致）。 */
 export function sha256Hex(bytes: Uint8Array): string {
@@ -86,8 +94,8 @@ export function verifyArtifact(
     const b64 = prefixed.startsWith(prefix)
       ? prefixed.slice(prefix.length)
       : prefixed;
-    const sigBytes = base64.decode(b64);
-    const pubKey = base64.decode(PUBLIC_KEY_BASE64);
+    const sigBytes = base64ToBytes(b64);
+    const pubKey = base64ToBytes(PUBLIC_KEY_BASE64);
 
     // 与服务端 sign_release 一致：签名对象为规范化消息
     // {version}|{build}|{sha256 小写}|{url}，逐字节一致才能验签通过。

@@ -1,0 +1,24 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "漫剧 Manju 鸿蒙端"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "漫剧 Manju 主入口"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "漫剧"
+    },
+    {
+      "name": "internet_permission_reason",
+      "value": "用于获取漫剧内容与检查版本更新"
+    },
+    {
+      "name": "network_permission_reason",
+      "value": "用于在移动网络下判断是否下载更新包"
+    }
+  ]
+}

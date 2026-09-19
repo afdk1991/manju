@@ -17,6 +17,26 @@ keys/*.pfx
 keys/*.p12
 !keys/ota_public.pem
 
+# ===== 各平台打包签名物料（泄露 = 应用可被冒名发布）=====
+*.keystore
+*.jks
+!*.jks.example
+keystore.properties
+**/android/keystore.properties
+**/android/*.keystore
+**/android/*.jks
+*.mobileprovision
+*.provisionprofile
+*.cer
+*.p7b
+*.p8
+*.pvk
+*.spc
+# 签名配置里含明文密码，同样不能入库
+**/android/key.properties
+**/android/upload-keystore.*
+signing/
+
 # ===== 环境与凭据 =====
 .env
 .env.local

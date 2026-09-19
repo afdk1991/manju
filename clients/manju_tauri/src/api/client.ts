@@ -16,8 +16,11 @@ import type {
   SeriesBase,
 } from "./types";
 
-/** 服务端地址，生产环境替换为正式域名。 */
-export const API_BASE = "http://localhost:8000";
+/**
+ * 服务端地址。默认指向线上内容中台（可直接调试）。
+ * 本地联调时可改回 "http://localhost:8000"（见 spec/openapi.yaml servers）。
+ */
+export const API_BASE = "https://manju-drama-hub-tkwcxlaw.edgeone.cool";
 
 class ApiError extends Error {
   constructor(public status: number, message: string, public code?: string) {

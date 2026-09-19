@@ -26,12 +26,23 @@
 // ============================================================================
 
 import { relaunch } from "@tauri-apps/plugin-process";
+import { getVersion } from "@tauri-apps/api/app";
 import { otaApi } from "../api/client";
-import type { OtaCheckResponse, OtaRelease } from "../api/types";
+import type { OtaCheckResponse, OtaRelease, Platform } from "../api/types";
 import { getDeviceInfo } from "./device";
 import { downloadArtifact } from "./download";
 import { installArtifact } from "./install";
 import { verifyArtifact } from "./verify";
+
+/**
+ * 构建号：服务端判断更新的主依据，发布新版时务必同步递增。
+ * 说明：`@tauri-apps/api/app` 仅导出 `getVersion()`，没有 `getBuildNumber()`，
+ * 而 `tauri.conf.json` 也只有 `version` 字段，因此 build 由本常量统一提供。
+ */
+export const APP_BUILD = 100;
+
+/** 兜底版本号：仅当脱离 Tauri 运行时（如纯前端预览）才使用，正常应来自清单。 */
+const FALLBACK_VERSION = "1.0.0";
 
 export type UpdatePhase =
   | "idle"
@@ -54,6 +65,11 @@ export interface UpdateState {
 
 let lastEtag: string | null = null;
 
+/** 判断平台是否为桌面三端之一（具备静默自安装能力）。类型谓词，便于后续收窄。 */
+function isDesktopPlatform(p: Platform): p is "windows" | "macos" | "linux" {
+  return p === "windows" || p === "macos" || p === "linux";
+}
+
 /** 语义化版本比较，判断 newV/newBuild 是否比 curV/curBuild 更新。 */
 function isNewer(
   newV: string,
@@ -74,9 +90,16 @@ function isNewer(
 /** 检查更新（按协议必填参数请求，含 304 协商）。 */
 export async function checkForUpdate(): Promise<OtaCheckResponse | null> {
   const { platform, arch, deviceId } = await getDeviceInfo();
-  // 当前版本/构建号从应用清单读取；演示用占位。
-  const appVersion = "1.0.0";
-  const appBuild = 100;
+  // 当前版本从应用清单读取（与 tauri.conf.json 的 version 一致）；
+  // 构建号取统一常量 APP_BUILD（@tauri-apps/api/app 不提供 getBuildNumber）。
+  // 脱离 Tauri 运行时（纯前端预览）时回退到兜底值，避免崩溃。
+  let appVersion = FALLBACK_VERSION;
+  let appBuild = APP_BUILD;
+  try {
+    appVersion = await getVersion();
+  } catch {
+    /* 非 Tauri 环境，使用兜底值 */
+  }
 
   // iOS/鸿蒙不在桌面端，无需 store_fallback 分支，但保留兜底逻辑。
   const res = await otaApi.check({
@@ -85,7 +108,7 @@ export async function checkForUpdate(): Promise<OtaCheckResponse | null> {
     channel: "stable",
     version: appVersion,
     build: appBuild,
-    deviceId,
+    device_id: deviceId,
     locale: "zh-CN",
     lastEtag,
   });
@@ -106,10 +129,30 @@ export async function applyCustomUpdate(
   release: OtaRelease,
   onProgress: (s: UpdateState) => void,
 ): Promise<boolean> {
-  const { platform } = await getDeviceInfo();
-  const { deviceId } = await getDeviceInfo();
+  const device = await getDeviceInfo();
+  const { platform, deviceId } = device;
   const artifact = release.artifact;
   const sw = performance.now();
+
+  // 红线：桌面三端（windows/macos/linux）才具备静默自安装能力；
+  // 其余平台（理论不会在桌面端出现）直接上报 unsupported 并拒绝，保持与 Flutter/RN 端一致。
+  if (!isDesktopPlatform(platform)) {
+    await otaApi.report({
+      device_id: deviceId,
+      platform,
+      version: release.version,
+      build: release.build,
+      event: "unsupported",
+      reason: "platform_not_self_installable",
+    });
+    onProgress({
+      phase: "failed",
+      ratio: 1,
+      release,
+      error: `当前平台 ${platform} 不支持自动安装`,
+    });
+    return false;
+  }
 
   try {
     // 1. 下载
@@ -209,7 +252,7 @@ export async function applyCustomUpdate(
 export async function runOfficialUpdater(
   onProgress: (s: UpdateState) => void,
 ): Promise<boolean> {
-  const { check, downloadAndInstall } = await import("@tauri-apps/plugin-updater");
+  const { check } = await import("@tauri-apps/plugin-updater");
   onProgress({ phase: "checking", ratio: 0, message: "正在检查更新" });
   const update = await check();
   if (!update) {
@@ -218,7 +261,8 @@ export async function runOfficialUpdater(
   }
   let downloaded = 0;
   let contentLength = 0;
-  await downloadAndInstall(update, (event) => {
+  // 注意：downloadAndInstall 是 Update 实例的方法，而非模块级导出。
+  await update.downloadAndInstall((event) => {
     switch (event.event) {
       case "Started":
         contentLength = event.data.contentLength ?? 0;

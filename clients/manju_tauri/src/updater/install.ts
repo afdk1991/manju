@@ -13,12 +13,13 @@
 // ============================================================================
 
 import { Command } from "@tauri-apps/plugin-shell";
-import { appCacheDir, tempDir } from "@tauri-apps/plugin-os";
+import { appCacheDir, tempDir } from "@tauri-apps/api/path";
 import type { Artifact } from "../api/types";
 
-/** 临时下载目录下的文件名（与 download.ts 对应）。 */
-function downloadedPath(artifact: Artifact): string {
-  return `${tempDir()}/ota/manju-update-${artifact.type}`;
+/** 临时下载目录下的文件名（与 download.ts 对应）。
+ *  tempDir() 来自 @tauri-apps/api/path，是异步函数（返回 Promise<string>）。 */
+async function downloadedPath(artifact: Artifact): Promise<string> {
+  return `${await tempDir()}/ota/manju-update-${artifact.type}`;
 }
 
 export interface InstallResult {
@@ -34,7 +35,7 @@ export async function installArtifact(
   artifact: Artifact,
   platform: "windows" | "macos" | "linux",
 ): Promise<InstallResult> {
-  const path = downloadedPath(artifact);
+  const path = await downloadedPath(artifact);
   const args = artifact.install_args ?? [];
 
   switch (platform) {
@@ -123,7 +124,7 @@ async function installLinux(
   try {
     if (artifact.type === "appimage") {
       // AppImage：自替换到缓存目录并赋予可执行权限。
-      const target = `${appCacheDir()}/manju.appimage`;
+      const target = `${await appCacheDir()}/manju.appimage`;
       await run("bash", ["-c", `cp '${path}' '${target}' && chmod +x '${target}'`]);
       return { ok: true };
     }
@@ -133,7 +134,7 @@ async function installLinux(
       return { ok: true };
     }
     if (artifact.type === "tar_gz" || artifact.type === "zip") {
-      const target = appCacheDir();
+      const target = await appCacheDir();
       const cmd =
         artifact.type === "tar_gz"
           ? `tar -xzf '${path}' -C '${target}'`
@@ -151,16 +152,13 @@ async function run(
   program: string,
   args: string[],
   opts: { capture?: boolean } = {},
-): Promise<{ stdout?: string; stderr?: string; code: number }> {
+): Promise<{ stdout?: string; stderr?: string; code: number | null }> {
+  // plugin-shell 的 Command 没有 child.wait()，正确方式是 execute()：
+  // 它会等待进程结束并返回 { code, stdout, stderr }。
   const cmd = Command.create(program, args);
-  const out: string[] = [];
-  const err: string[] = [];
-  cmd.stdout.on("data", (d: string) => out.push(d));
-  cmd.stderr.on("data", (d: string) => err.push(d));
-  const child = await cmd.spawn();
-  const status = await child.wait();
+  const output = await cmd.execute();
   if (opts.capture) {
-    return { stdout: out.join(""), stderr: err.join(""), code: status.code };
+    return { stdout: output.stdout, stderr: output.stderr, code: output.code };
   }
-  return { code: status.code };
+  return { code: output.code };
 }

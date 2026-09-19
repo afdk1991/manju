@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  供 FileProvider 使用的路径映射。
+  OTA 下载的 APK 存放在应用私有缓存目录（RNFS.CachesDirectoryPath），
+  这里把它以 content://${applicationId}.fileprovider/... 形式暴露给系统 PackageInstaller。
+-->
+<paths>
+    <cache-path name="ota_cache" path="." />
+    <external-cache-path name="ota_external_cache" path="." />
+</paths>

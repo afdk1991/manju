@@ -1,8 +1,6 @@
 // 更新弹窗：展示更新说明 + 下载进度 + 安装重启。
 // 桌面三端可静默安装，因此这里提供“立即更新”与“稍后”两种操作。
-import React from "react";
 import { useUpdater } from "./useUpdater";
-import type { OtaRelease } from "../api/types";
 
 function fmtSize(n: number): string {
   if (n >= 1024 * 1024 * 1024) return (n / 1024 / 1024 / 1024).toFixed(2) + " GB";
@@ -20,7 +18,7 @@ const phaseText: Record<string, string> = {
 };
 
 export function UpdaterModal() {
-  const { state, release, install, reset } = useUpdater();
+  const { state, release, policy, install, reset } = useUpdater();
   if (state.phase === "idle" || state.phase === "checking") return null;
 
   const notes =
@@ -30,6 +28,11 @@ export function UpdaterModal() {
     state.phase === "downloading" ||
     state.phase === "verifying" ||
     state.phase === "installing";
+
+  // forced / silent：不允许"稍后"（强制或静默后台安装，无交互按钮）。
+  const allowSkip = policy === "suggest";
+  const forceLabel =
+    policy === "forced" ? "立即更新（强制）" : policy === "silent" ? "后台更新中…" : "立即更新";
 
   return (
     <div className="updater-mask" role="dialog" aria-modal="true">
@@ -66,11 +69,13 @@ export function UpdaterModal() {
         {!busy && state.phase !== "waitingRestart" && state.phase !== "failed" && (
           <div className="updater-actions">
             <button className="btn-primary" onClick={install}>
-              立即更新
+              {forceLabel}
             </button>
-            <button className="btn-ghost" onClick={reset}>
-              稍后再说
-            </button>
+            {allowSkip && (
+              <button className="btn-ghost" onClick={reset}>
+                稍后再说
+              </button>
+            )}
           </div>
         )}
 

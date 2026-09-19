@@ -1,0 +1,39 @@
+# OSX / 通用
+.DS_Store
+*.log
+npm-debug.log*
+node_modules/
+.coverage/
+.build/
+
+# RN
+.expo/
+dist/
+web-build/
+*.keystore
+!debug.keystore
+
+# Android
+android/.gradle/
+android/app/build/
+android/build/
+android/gradlew
+android/gradlew.bat
+android/local.properties
+android/**/release/
+
+# iOS
+ios/Pods/
+ios/build/
+ios/*.xcworkspace
+ios/*.xcuserdata
+
+# 密钥（红线：私钥绝不进仓库）
+keys/
+*.pem
+*.key
+
+# 编辑器 / 工具
+.idea/
+.vscode/
+*.iml
