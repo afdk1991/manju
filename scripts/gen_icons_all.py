@@ -68,6 +68,26 @@ def write(path: Path, data: bytes) -> None:
 # 各端生成
 # ----------------------------------------------------------------------
 
+def wrap_icns_multi(entries: list[tuple[bytes, bytes]]) -> bytes:
+    """把多张 PNG 打包成 ICNS；entries 为 (四字节类型, png 字节)。
+
+    Tauri 自带的 icon.icns 只有 ic08(256) 单条目，高分屏下会放大模糊，
+    这里补 ic09(512) 让 macOS 有更合适的一档可选。
+    """
+    body = b""
+    for tag, png in entries:
+        body += tag + struct.pack(">I", len(png) + 8) + png
+    return b"icns" + struct.pack(">I", len(body) + 8) + body
+
+
+def gen_tauri_icons() -> None:
+    print("[Tauri / 桌面三端]")
+    icons = CLIENT_DIR / "manju_tauri" / "src-tauri" / "icons"
+    # Tauri 声明的 5 个图标里，icon.ico 原先只有 256 单档，这里补成多档。
+    write(icons / "icon.ico", wrap_ico_multi([(s, png_at(s)) for s in (16, 32, 48, 64, 128, 256)]))
+    write(icons / "icon.icns", wrap_icns_multi([(b"ic08", png_at(256)), (b"ic09", png_at(512))]))
+
+
 def gen_flutter_windows() -> None:
     print("[Flutter / Windows]")
     out = CLIENT_DIR / "manju_flutter" / "windows" / "runner" / "resources" / "app_icon.ico"
@@ -107,6 +127,7 @@ def gen_rn_android() -> None:
 
 
 def main() -> int:
+    gen_tauri_icons()
     gen_flutter_windows()
     gen_flutter_linux()
 
