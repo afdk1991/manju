@@ -1,0 +1,27 @@
+name: Deploy to EdgeOne Makers
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "makers/**"
+      - ".github/workflows/deploy.yml"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install EdgeOne CLI
+        run: npm install -g edgeone@1.6.40
+
+      - name: Deploy to EdgeOne Makers (production)
+        working-directory: makers
+        env:
+          EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}
+        run: edgeone makers deploy . -n manju -t "$EDGEONE_API_TOKEN" --skip-ai-gateway-sync
