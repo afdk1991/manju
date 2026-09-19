@@ -9,7 +9,7 @@
 library;
 
 /// Base64 形式的 Ed25519 原始公钥（32 字节）。
-const String kOtaPublicKeyBase64 = 'DuW8zxjUYPNEnNY8RMIe4G670V5ZzX39rl1v9CEVQRU=';
+const String kOtaPublicKeyBase64 = 'f2obZdLFwhWJtuA/u/VW/EB1jAZ/UiZF/eEbxFJ0a3c=';
 
 /// 字节数组形式，与上面等价，供 `SimplePublicKey` 直接使用。
 const List<int> kOtaPublicKeyBytes = <int>[

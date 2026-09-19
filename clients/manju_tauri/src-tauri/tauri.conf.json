@@ -62,7 +62,7 @@
       "endpoints": [
         "https://cdn.example.com/ota/tauri/{{target}}/{{arch}}/{{current_version}}"
       ],
-      "pubkey": "DuW8zxjUYPNEnNY8RMIe4G670V5ZzX39rl1v9CEVQRU=",
+      "pubkey": "f2obZdLFwhWJtuA/u/VW/EB1jAZ/UiZF/eEbxFJ0a3c=",
       "windows": {
         "installMode": "passive"
       },

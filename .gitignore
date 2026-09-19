@@ -100,3 +100,6 @@ Desktop.ini
 *.swp
 *.swo
 *~
+
+# OTA 签名私钥（绝不可提交）
+keys/*.pem

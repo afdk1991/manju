@@ -11,7 +11,7 @@
 
 /** Base64 形式的 Ed25519 原始公钥（32 字节），与服务端下发签名所用私钥配对。 */
 export const OTA_PUBLIC_KEY_BASE64 =
-  'DuW8zxjUYPNEnNY8RMIe4G670V5ZzX39rl1v9CEVQRU=';
+  'f2obZdLFwhWJtuA/u/VW/EB1jAZ/UiZF/eEbxFJ0a3c=';
 
 /** 是否启用签名校验。调试期可临时关闭（此时仅校验 SHA256），发版前必须置为 true。 */
 export const OTA_VERIFY_SIGNATURE = true;

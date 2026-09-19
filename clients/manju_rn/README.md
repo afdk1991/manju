@@ -10,7 +10,7 @@
 - 共用契约（四端一致，字段名/枚举不得改动）：
   - `spec/ota-protocol.v1.md` — OTA 更新协议
   - `spec/openapi.yaml` — 内容中台 API
-  - 内置 Ed25519 公钥：`DuW8zxjUYPNEnNY8RMIe4G670V5ZzX39rl1v9CEVQRU=`
+  - 内置 Ed25519 公钥：`f2obZdLFwhWJtuA/u/VW/EB1jAZ/UiZF/eEbxFJ0a3c=`（2026-09-20 轮换后的新密钥）
 
 ---
 

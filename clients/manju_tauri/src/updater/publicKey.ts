@@ -13,7 +13,7 @@
  * 内置 Ed25519 公钥（32 字节，Base64 编码）。
  * 真实值（与 spec/ota-protocol.v1.md 一致，四端共用）：
  */
-export const PUBLIC_KEY_BASE64 = "DuW8zxjUYPNEnNY8RMIe4G670V5ZzX39rl1v9CEVQRU=";
+export const PUBLIC_KEY_BASE64 = "f2obZdLFwhWJtuA/u/VW/EB1jAZ/UiZF/eEbxFJ0a3c=";
 
 /**
  * 是否强制要求签名校验通过才放行。
