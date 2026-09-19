@@ -40,7 +40,7 @@ from app.serializers import (  # noqa: E402
     episode_to_dict,
     series_to_dict,
 )
-from app.security import raw_public_key_bytes  # noqa: E402
+from app.security import raw_public_key_bytes, sign_release  # noqa: E402
 
 
 def w(path: Path, obj) -> None:
@@ -112,12 +112,16 @@ def export_ota(db, public_base: str) -> None:
         url = r.artifact_url
         if url and url.startswith("http://localhost:8000"):
             url = public_base.rstrip("/") + url[len("http://localhost:8000"):]
+        sha = (r.artifact_sha256 or "").lower()
+        # URL 替换为公网域名后规范化签名消息已变，必须用本地私钥重新签名，
+        # 不能复用数据库中对 localhost URL 的旧签名（否则客户端 Ed25519 验签失败）
+        signature = sign_release(r.version, r.build, sha, url) if (url and sha) else (r.artifact_signature or "")
         return {
             "type": r.artifact_type,
             "url": url,
             "size": r.artifact_size or 0,
-            "sha256": r.artifact_sha256 or "",
-            "signature": r.artifact_signature or "",
+            "sha256": sha,
+            "signature": signature,
             "install_args": json.loads(r.artifact_install_args or "[]"),
         }
 
