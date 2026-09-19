@@ -6,7 +6,8 @@
  *
  * 环境变量（Makers 控制台配置，勿写入代码仓库）：
  *   MANJU_ADMIN_KEY          管理员密钥（与 admin/index.html 输入框一致）
- *   MANJU_OTA_PRIVATE_KEY    Ed25519 私钥 PKCS8 PEM（对应 keys/ota_private.pem）
+ *   MANJU_OTA_PRIVATE_KEY    Ed25519 私钥 PKCS8 PEM（对应 keys/ota_private.pem）。
+ *                            也支持 base64 编码的 PEM（CLI env set 无法接收以 - 开头的值）。
  *
  * 签名规范（与本地 Python 版一致）：ed25519:<base64(sign(version|build|sha256|url))>
  */
@@ -50,7 +51,11 @@ export async function onRequestPost(context) {
 
   // 签名（仅当具备私钥且 artifact 提供 url/sha256）
   let signature = '';
-  const privPem = context.env.MANJU_OTA_PRIVATE_KEY || '';
+  const privRaw = context.env.MANJU_OTA_PRIVATE_KEY || '';
+  // 兼容两种环境变量形态：PKCS8 PEM 原文，或 base64(PEM)（CLI env set 传不了以 - 开头的值）
+  const privPem = privRaw.startsWith('-----BEGIN')
+    ? privRaw
+    : Buffer.from(privRaw, 'base64').toString('utf8');
   if (artifact && privPem && artifact.sha256) {
     try {
       const key = createPrivateKey(privPem);
