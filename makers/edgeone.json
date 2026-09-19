@@ -2,6 +2,7 @@
   "name": "manju-makers",
   "nodeVersion": "22.11.0",
   "installCommand": "npm install",
+  "outputDirectory": "static",
   "cloudFunctions": {
     "mainlandRegions": ["ap-guangzhou"],
     "nodejs": {

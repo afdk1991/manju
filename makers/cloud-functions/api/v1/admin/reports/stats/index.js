@@ -5,7 +5,7 @@
  *   by_event / by_platform / by_result(成功|失败) / total / latest
  */
 import { getStore } from '@edgeone/pages-blob';
-import { json } from '../../../../_lib/data.js';
+import { json } from '../../../../../_lib/data.js';
 
 export async function onRequestGet(context) {
   const adminKey = context.env.MANJU_ADMIN_KEY || '';

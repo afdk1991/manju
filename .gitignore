@@ -1,4 +1,4 @@
-﻿# ============================================================================
+# ============================================================================
 #  项目007 — 漫剧 Manju 全栈项目（EdgeOne Makers 云函数版 + Flutter/Tauri 客户端）
 #
 #  ⚠️ makers/data/** 与 makers/static/** 必须入库！
@@ -28,6 +28,9 @@ keys/*.p12
 node_modules/
 **/node_modules/
 makers/node_modules/
+
+# ===== EdgeOne Makers CLI 本地构建缓存 =====
+makers/.edgeone/
 
 # ===== Flutter / Dart 构建产物 =====
 clients/manju_flutter/.dart_tool/

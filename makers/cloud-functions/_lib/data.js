@@ -16,7 +16,9 @@ const LIB_DIR = dirname(fileURLToPath(import.meta.url));
 /** 在多种候选路径中定位 data 文件（构建产物目录结构差异兜底）。 */
 export function resolveDataFile(name) {
   const candidates = [
-    join(LIB_DIR, '../../data', name),        // cloud-functions/_lib -> 项目根/data
+    join(process.cwd(), 'included_files', 'data', name), // Maker 产物：/var/user/included_files/data
+    join(LIB_DIR, 'included_files', 'data', name),
+    join(LIB_DIR, '../../data', name),        // 本地源码布局：cloud-functions/_lib -> 项目根/data
     join(LIB_DIR, '../../../data', name),
     join(process.cwd(), 'data', name),
   ];
