@@ -1,6 +1,6 @@
 # 外部资源索引 · 红果短剧（hongguoduanju.com）
 
-本目录存放从互联网公开页面获取的**短剧元数据索引**，供漫剧 Manju 项目作为
+本目录存放从互联网公开页面获取的**短剧/漫剧元数据索引**，供漫剧 Manju 项目作为
 「第三方内容来源（external catalog）」引用。**不包含、也不分发任何视频或图片文件本身。**
 
 ## 1. 数据来源与获取范围
@@ -8,14 +8,12 @@
 | 项 | 内容 |
 |---|---|
 | 来源平台 | 红果短剧官网 `https://hongguoduanju.com`（字节系免费短剧平台） |
-| 采集入口 | 分类页 `https://hongguoduanju.com/category/real-drama`（真人剧） |
-| 翻页方式 | 站点自带分页 `/category/real-drama?page=N`（共 34 页），逐页抓取 |
-| 获取范围 | 仅分类**列表页**上公开可见的卡片元数据，共 **800 条**（2026-09-23 采集） |
+| 采集分类 | `real-drama`（真人剧）、`comic-drama`（漫剧/动态漫画）、`ai-drama`（AI 剧） |
+| 采集入口 | `https://hongguoduanju.com/category/<category>` |
+| 翻页方式 | 站点自带分页 `/category/<category>?page=N`（每分类 34 页），逐页抓取 |
+| 获取范围 | 仅分类**列表页**上公开可见的卡片元数据，每分类 **800 条**，合计 **2400 条**（2026-09-23 采集） |
 | 资源类型 | **元数据**（标题、详情页链接、封面图地址、集数）；无视频、无图片二进制 |
-| 唯一标识 | 详情页链接 `detail_url`（`/detail?series_id=...`），去重后 800 条全部唯一 |
-
-> 说明：用户指定的 `real-drama` 分类是**真人短剧**。红果另有 `comic-drama`（漫剧）、
-> `ai-drama`（AI 剧）分类，与「AI 生成动态漫画」更贴近；如需采集可用同一脚本改入口。
+| 唯一标识 | 详情页链接 `detail_url`（`/detail?series_id=...`）；三分类各自去重后 800 条均唯一，**跨分类零重叠** |
 
 ## 2. 合规与服务条款边界
 
@@ -33,33 +31,44 @@
 ```
 resources/external/hongguoduanju/
 ├── README.md                # 本说明（来源/范围/合规/引用方式）
-├── fetch_real_drama.py      # 可续跑、限速采集器（读列表页 → 元数据 JSON）
-├── build_catalog.py         # 转换为应用向静态索引
-└── real-drama.json          # 原始采集结果（带来源与采集元信息，800 条）
+├── fetch_category.py        # 可续跑、限速的通用分类采集器（--category 指定分类）
+├── build_catalog.py         # 扫描各分类 JSON，生成应用向静态索引与汇总
+├── real-drama.json          # 真人剧原始采集结果（800 条，带来源/采集元信息）
+├── comic-drama.json         # 漫剧原始采集结果（800 条）
+└── ai-drama.json            # AI 剧原始采集结果（800 条）
 ```
 
 应用向产物（构建生成，随 Makers 部署）：
 
 ```
-makers/static/external/real-drama.json
+makers/static/external/
+├── index.json          # 汇总：3 个片单入口，total=2400
+├── real-drama.json     # media_type=live-action-short-drama
+├── comic-drama.json    # media_type=motion-comic
+└── ai-drama.json       # media_type=ai-generated-drama
 ```
 
 ## 4. 项目内引用方式
 
 - **EdgeOne Makers 静态托管**：部署后以
-  `https://<部署域名>/external/real-drama.json` 访问，前端可作为「外部片单」分区拉取；
-  条目结构：`{id:"hg-<series_id>", title, cover_url, episodes, source, detail_url, ...}`。
+  `https://<部署域名>/external/index.json` 获取片单清单，
+  再按需拉取 `/external/<category>.json`；落地页「在线自检」面板提供
+  「外部片单(2400)」按钮可直接验证。
+- **条目结构**：`{id:"hg-<series_id>", title, cover_url, episodes, source,
+  category, category_label, media_type, detail_url, ...}`。
 - **ID 规范**：外部条目统一加 `hg-` 前缀，与自有内容 `s_100xx` 隔离。
 - **播放/详情**：`detail_url` 指向红果原站，应用内以「去原站观看」外链方式打开，
   不在本项目内代理或内嵌其受版权保护的播放内容。
 - **后端对接**：可由 `server/app/services/sources/third_party.py` 第三方源适配层读取
-  该 JSON 做统一聚合（当前为静态索引，未写入 SQLite）。
+  这些 JSON 做统一聚合（当前为静态索引，未写入 SQLite）。
 
 ## 5. 更新与续跑
 
 ```bash
-# 增量续抓（自动读取已有 JSON 去重，从第 1 页扫到末页，只加新条目）
-python resources/external/hongguoduanju/fetch_real_drama.py
-# 重新生成应用向索引
+# 采集某个分类（自动读取已有 JSON 去重，从第 1 页扫到末页，只加新条目，可中断续跑）
+python resources/external/hongguoduanju/fetch_category.py --category comic-drama
+python resources/external/hongguoduanju/fetch_category.py --category ai-drama
+python resources/external/hongguoduanju/fetch_category.py --category real-drama
+# 重新生成全部应用向索引（自动汇总到 index.json）
 python resources/external/hongguoduanju/build_catalog.py
 ```
