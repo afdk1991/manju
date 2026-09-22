@@ -28,16 +28,25 @@ assert.ok(home.sections.length >= 3, 'home.sections 至少 3 个分区');
 ok('home.json：sections 结构');
 
 const seriesList = json('static/api/v1/series.json');
-assert.strictEqual(seriesList.items.length, 22, 'series 全量应为 22 部');
-ok('series.json：22 部剧集');
+// 不要写死数量：内容库会随导入的真实内容变化（占位数据被替换后数量已不是 22）。
+// 这里只校验「有内容」，并额外校验封面不是占位域名——那正是曾经导致页面空白的根因。
+assert.ok(seriesList.items.length >= 1, 'series 至少 1 部');
+ok(`series.json：${seriesList.items.length} 部剧集`);
 
-const s1 = json('static/api/v1/series/s_10001.json');
-assert.ok(Array.isArray(s1.episodes) && s1.episodes.length >= 12, 's_10001 至少 12 集');
-ok('series/s_10001.json：详情含分集');
+const badCover = seriesList.items.filter((s) => !s.cover || /example\.(com|org)/.test(s.cover));
+assert.strictEqual(badCover.length, 0, `仍有占位封面：${badCover.map((s) => s.id).join(',')}`);
+ok('series.json：无 example.com 占位封面');
 
-const ep = json('static/api/v1/episodes/s_10001_e001.json');
-assert.ok(ep.id && ep.series_id && Array.isArray(ep.sources), '单集结构完整');
-ok('episodes/s_10001_e001.json：单集结构');
+// 取库里真实存在的第一部，而不是写死 s_10001（占位数据已被真实内容替换）
+const firstId = seriesList.items[0].id;
+const s1 = json(`static/api/v1/series/${firstId}.json`);
+assert.ok(Array.isArray(s1.episodes) && s1.episodes.length >= 1, `${firstId} 至少 1 集`);
+ok(`series/${firstId}.json：详情含分集`);
+
+const firstEp = json(`static/api/v1/episodes/${s1.episodes[0].id}.json`);
+assert.ok(firstEp.id && firstEp.series_id && Array.isArray(firstEp.sources), '单集结构完整');
+assert.ok(firstEp.sources.length >= 1, '单集至少 1 个播放源');
+ok(`episodes/${s1.episodes[0].id}.json：单集结构`);
 
 const pub = json('static/api/v1/ota/public-key.json');
 assert.match(pub.key, /^[A-Za-z0-9+/=]+$/, '公钥为 base64');
@@ -93,11 +102,13 @@ assert.strictEqual(r7.status, 400, '非法平台应为 400');
 ok('check：invalid_platform 400');
 
 // ---------- search ----------
-const s1r = await call(searchGet, 'http://x/api/v1/search?q=%E5%BC%80%E5%B1%80&size=5');
+// 关键词取自库里真实存在的剧名，不再写死「开局」（那是旧占位数据里的虚构剧名）
+const kw = seriesList.items[0].title.slice(0, 2);
+const s1r = await call(searchGet, `http://x/api/v1/search?q=${encodeURIComponent(kw)}&size=5`);
 const sd1 = await s1r.json();
-assert.ok(sd1.items.length > 0, '搜索「开局」应有结果');
+assert.ok(sd1.items.length > 0, `搜索「${kw}」应有结果`);
 assert.ok(sd1.items.every((i) => i.title && i.id), '结果字段完整');
-ok('search：关键词命中');
+ok(`search：关键词「${kw}」命中`);
 
 const s2r = await call(searchGet, 'http://x/api/v1/search?q=zzzzzznotfound');
 const sd2 = await s2r.json();

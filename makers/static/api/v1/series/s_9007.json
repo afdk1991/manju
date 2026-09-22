@@ -1,0 +1,51 @@
+{
+ "id": "s_9007",
+ "title": "钢铁之泪",
+ "original_title": "Tears of Steel in 4k - Official Blender Foundation release",
+ "cover": "files/covers/90e1de2dfefebb09.jpg",
+ "poster": "files/covers/90e1de2dfefebb09.jpg",
+ "banner": "files/covers/90e1de2dfefebb09.jpg",
+ "synopsis": "Blender 基金会 VFX 开放电影：在近未来的阿姆斯特丹，一支小队试图挽回被失控科技摧毁的世界。实拍与 CG 结合，特效水准极高。",
+ "tags": [
+  "科幻",
+  "特效",
+  "动作"
+ ],
+ "category_id": "cat_scifi",
+ "region": "NL",
+ "release_year": 2012,
+ "status": "completed",
+ "total_episodes": 1,
+ "score": 8.7,
+ "views": 0,
+ "is_vip": false,
+ "age_rating": "all",
+ "episodes": [
+  {
+   "id": "s_9007_e001",
+   "series_id": "s_9007",
+   "index": 1,
+   "title": "正片",
+   "thumbnail": "files/covers/90e1de2dfefebb09.jpg",
+   "duration_sec": 734,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/tos_ismc/main.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    },
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  }
+ ]
+}

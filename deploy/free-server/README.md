@@ -58,6 +58,10 @@ cd D:\网站全栈项目\项目007
 tar -czf deploy\free-server\manju-server.tar.gz --exclude="data/*" --exclude="__pycache__" --exclude="*.pyc" -C server .
 
 # 上传（把 <IP> 换成实例公网 IP）
+# 先建目标目录：全新实例上 /tmp/manju-deploy 不存在，直接 scp 会报
+# "No such file or directory"；同时确保属主为登录用户，否则后续 ssh 侧脚本读不到
+ssh -i C:\Users\addk1\.ssh\manju_oci ubuntu@<IP> "sudo mkdir -p /tmp/manju-deploy && sudo chown ubuntu:ubuntu /tmp/manju-deploy"
+
 scp -i C:\Users\addk1\.ssh\manju_oci deploy\free-server\manju-server.tar.gz `
     deploy\free-server\install_server.sh deploy\free-server\manju.service `
     deploy\free-server\fix_ota_url.py deploy\free-server\requirements.txt `

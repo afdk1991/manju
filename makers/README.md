@@ -29,48 +29,28 @@ EdgeOne Makers 的限制决定了适配方式：
 
 
 
-```
+```text
 makers/
-
 ├── edgeone.json                    # 平台配置：rewrites（无后缀→.json）、includeFiles、headers
-
 ├── package.json                    # 依赖 @edgeone/pages-blob（ESM）
-
 ├── scripts/
-
-│   ├── export\_static.py            # 从本地 manju.db 导出静态内容/OTA/索引（幂等）
-
+│   ├── export_static.py            # 从本地 manju.db 导出静态内容/OTA/索引（幂等）
 │   └── smoke.mjs                   # 本地冒烟测试（15 项断言）
-
 ├── data/                           # 构建时生成，随 Cloud Functions 打包（只读）
-
 │   ├── releases.json               #   OTA 发布记录（含 Ed25519 签名）
-
-│   └── series\_index.json           #   全量剧集索引（搜索用）
-
+│   └── series_index.json           #   全量剧集索引（搜索用）
 ├── static/                         # 静态托管（CDN 边缘加速）
-
 │   ├── index.html                  #   落地页（含在线自检）
-
 │   ├── api/v1/…                    #   内容 API 静态 JSON（home/categories/series/episodes…）
-
 │   ├── admin/index.html            #   运营后台（只读内容 + 可发布 OTA）
-
 │   └── files/                      #   OTA 安装包
-
 └── cloud-functions/                # 动态逻辑（Node.js，文件即路由）
-
-&#x20;   ├── \_lib/data.js                #   共享辅助（读 data、JSON 响应、semver、CRC32）
-
-&#x20;   ├── api/v1/ota/check/index.js   #   更新检查：灰度/降级/策略矩阵/ETag
-
-&#x20;   ├── api/v1/ota/report/index.js  #   事件上报 → Blob
-
-&#x20;   ├── api/v1/search/index.js      #   内存索引搜索
-
-&#x20;   ├── api/v1/user/favorites|history/index.js  # 用户数据 → Blob
-
-&#x20;   └── api/v1/admin/releases|reports/stats     # 发布（签名）+ 统计
+    ├── _lib/data.js                #   共享辅助（读 data、JSON 响应、semver、CRC32）
+    ├── api/v1/ota/check/index.js   #   更新检查：灰度/降级/策略矩阵/ETag
+    ├── api/v1/ota/report/index.js  #   事件上报 → Blob
+    ├── api/v1/search/index.js      #   内存索引搜索
+    ├── api/v1/user/favorites|history/index.js  # 用户数据 → Blob
+    └── api/v1/admin/releases|reports/stats     # 发布（签名）+ 统计
 ```
 
 ## 3. 本地生成与验证
@@ -79,17 +59,14 @@ makers/
 
 
 
-```
-\# 1) 生成静态资源（在项目根 D:\网站全栈项目\项目007 执行）
+```bash
+# 1) 生成静态资源（在项目根 D:\网站全栈项目\项目007 执行）
+python makers\scripts\export_static.py
 
-python makers\scripts\export\_static.py
+# 2) 部署后需用真实域名重新生成（OTA 产物 URL 替换 localhost）
+python makers\scripts\export_static.py --public-base https://你的域名.pages.dev
 
-\# 2) 部署后需用真实域名重新生成（OTA 产物 URL 替换 localhost）
-
-python makers\scripts\export\_static.py --public-base https://你的域名.pages.dev
-
-\# 3) 本地冒烟测试（Cloud Functions 逻辑 + 静态契约，15 项断言）
-
+# 3) 本地冒烟测试（Cloud Functions 逻辑 + 静态契约，15 项断言）
 cd makers && npm install && node scripts\smoke.mjs
 ```
 
@@ -115,7 +92,7 @@ cd makers && npm install && node scripts\smoke.mjs
 
 
 
-```
+```bash
 npm i -g edgeone
 
 edgeone login          # 扫码登录腾讯云
@@ -126,6 +103,13 @@ edgeone pages dev     # 本地调试（可选）
 
 edgeone deploy        # 部署
 ```
+
+> ⚠️ **待确认：`edgeone deploy` 与 `edgeone makers deploy` 是两种写法。**
+> 本文件 §4.2 用 `edgeone deploy`，而 `docs/build-release.md` 与
+> `.github/workflows/deploy.yml` 用的是
+> `edgeone makers deploy . -n manju -t "$EDGEONE_API_TOKEN" --skip-ai-gateway-sync`。
+> 二者随 CLI 版本不同都可能有效（CI 里锁的是 `edgeone@1.6.40`）。
+> 本机执行时请以 `edgeone --help` 的实际子命令为准，不要混合使用。
 
 ### 4.3 必须配置的环境变量（控制台 → 项目设置 → 环境变量）
 
@@ -140,17 +124,12 @@ edgeone deploy        # 部署
 
 
 
-```
+```http
 GET /                                 落地页（在线自检面板）
-
 GET /api/v1/home                      内容首页（静态）
-
-GET /api/v1/ota/check?platform=windows\&arch=x86\_64\&channel=stable\&version=9.8.0\&build=980\&device\_id=test
-
-&#x20;                                     → 200 has\_update=true（含 Ed25519 签名）
-
-GET /api/v1/search?q=开局              → 命中结果
-
+GET /api/v1/ota/check?platform=windows&arch=x86_64&channel=stable&version=9.8.0&build=980&device_id=test
+                                      → 200 has_update=true（含 Ed25519 签名）
+GET /api/v1/search?q=开局             → 命中结果
 GET /admin                            运营后台
 ```
 
@@ -183,12 +162,11 @@ GET /admin                            运营后台
 
 
 
-```
-\# 内容变更后重新部署
+```bash
+# 内容变更后重新部署
+python makers\scripts\export_static.py --public-base https://<project>.pages.dev
 
-python makers\scripts\export\_static.py --public-base https://\<project>.pages.dev
-
-\# 然后重新上传/推送 makers/ 目录触发构建
+# 然后重新上传/推送 makers/ 目录触发构建
 ```
 
 

@@ -25,6 +25,16 @@ KEY_ALIAS=manju
 KEY_PASSWORD=Manju#2026Keystore
 ```
 
+> ⚠️ **待确认：上面 `Manju#2026Keystore` 是不是真实口令？**
+> 仓库里的模板文件 `clients/manju_rn/android/keystore.properties.example` 是**空口令**的，
+> 而本段示例却带了具体字符串。若它与真实 keystore 口令一致，等同口令已经公开：
+> - **A) 若只是示例**：改成 `<从 CI Secret 注入>` 之类占位，避免误导；
+> - **B) 若是真实口令**：视为已泄露，需轮换 keystore 口令，并把真实值只放在
+>   CI Secrets（`ANDROID_KEYSTORE_PASSWORD` / `ANDROID_KEY_PASSWORD`）里。
+>
+> 注意 `keystore.properties` 已在 `.gitignore` 第 24-25 行排除，
+> **泄露面仅限本文档**，但本文档会随仓库分发。
+
 ### ⚠️ 两个必须记住的警告
 
 1. **更换 keystore = 更换应用**。一旦上架，后续所有版本必须用同一把密钥签名，
@@ -46,14 +56,20 @@ keytool -genkeypair -v \
 在 `android/app/build.gradle` 的 `android {}` 内加：
 
 ```groovy
-def keystoreProps = new Properties()
-def keystoreFile = rootProject.file("keystore.properties")
-if (keystoreFile.exists()) {
-    keystoreProps.load(new FileInputStream(keystoreFile))
-}
-
+// 只在 keystore.properties 存在时注册 release 配置，
+// 避免无密钥时静默回落到 debug 签名。
+def keystoreFile = rootProject.file('keystore.properties')
 signingConfigs {
     release {
+        if (!keystoreFile.exists()) {
+            // 显式失败优于静默产出 debug 签名的 release 包：
+            // debug 签名的包一旦安装，后续正式包无法覆盖升级。
+            throw new GradleException(
+                "缺少 ${keystoreFile}：release 构建需要发布签名配置。" +
+                "复制 keystore.properties.example 并填入真实密钥，或在 CI 中注入。")
+        }
+        def keystoreProps = new Properties()
+        keystoreFile.withInputStream { keystoreProps.load(it) }
         storeFile file(keystoreProps['STORE_FILE'])
         storePassword keystoreProps['STORE_PASSWORD']
         keyAlias keystoreProps['KEY_ALIAS']
@@ -63,26 +79,60 @@ signingConfigs {
 buildTypes {
     release {
         signingConfig signingConfigs.release
+        // RN 端另有 proguard 配置，视工程需要保留：
+        // minifyEnabled enableProguardInReleaseBuilds
+        // proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
     }
 }
 ```
+
+> 上面的写法与仓库现状一致，可直接对照
+> `clients/manju_rn/android/app/build.gradle` 第 30-64 行。
+> 早期版本只有 `if (exists) load` 而没有 `else`，缺文件时会在
+> `file(null)` 处抛出难以定位的错误——已经改为显式 `GradleException`。
 
 Flutter 端（`clients/manju_flutter/android/app/build.gradle.kts`）同理，Kotlin DSL 写法：
 
 ```kotlin
-val keystoreFile = rootProject.file("keystore.properties")
-val keystoreProps = java.util.Properties().apply {
-    if (keystoreFile.exists()) load(keystoreFile.inputStream())
+val keystorePropertiesFile = rootProject.file("keystore.properties")
+val keystoreProperties = Properties().apply {
+    if (keystorePropertiesFile.exists()) {
+        keystorePropertiesFile.inputStream().use { load(it) }
+    }
 }
-signingConfigs {
-    create("release") {
-        storeFile = file(keystoreProps["STORE_FILE"] as String)
-        storePassword = keystoreProps["STORE_PASSWORD"] as String
-        keyAlias = keystoreProps["KEY_ALIAS"] as String
-        keyPassword = keystoreProps["KEY_PASSWORD"] as String
+
+android {
+    signingConfigs {
+        // 仅当 keystore.properties 存在时才注册 release 配置，避免无密钥时静默用 debug 签名。
+        if (keystorePropertiesFile.exists()) {
+            create("release") {
+                storeFile = keystoreProperties["STORE_FILE"]?.let { file(it as String) }
+                storePassword = keystoreProperties["STORE_PASSWORD"] as String?
+                keyAlias = keystoreProperties["KEY_ALIAS"] as String?
+                keyPassword = keystoreProperties["KEY_PASSWORD"] as String?
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            // 缺失发布签名时显式失败：debug 签名的 release 包会导致后续无法平滑升级。
+            signingConfig = if (keystorePropertiesFile.exists()) {
+                signingConfigs.getByName("release")
+            } else {
+                throw GradleException(
+                    "缺少 ${keystorePropertiesFile}：release 构建需要发布签名配置。" +
+                    "请复制 keystore.properties.example 并填入真实密钥，或在 CI 中注入。"
+                )
+            }
+        }
     }
 }
 ```
+
+> 与仓库现状一致，可对照 `clients/manju_flutter/android/app/build.gradle.kts` 第 12-66 行。
+> Kotlin DSL 里 `as String` 是**非空强转**，若 properties 缺某个键会直接 NPE；
+> 上面写法用 `as String?` 交由 Gradle 侧校验并给出可读错误。
 
 > 生产环境建议改用环境变量或 CI Secrets 注入密码，不要把 `keystore.properties` 留在工作区。
 > 该文件已在 `.gitignore` 中排除。
@@ -120,7 +170,28 @@ xcrun notarytool submit Manju.zip \
 
 # 4. 把公证票据钉到应用上（离线也能通过 Gatekeeper）
 xcrun stapler staple Manju.app
+
+# 5. 验证——不做这一步，前面失败也可能"看起来成功"
+xcrun stapler validate Manju.app
+spctl -a -vvv --type install Manju.app
+# 期望看到：source=Notarized Developer ID
 ```
+
+> **CI 里不要用密码认证**：`--apple-id` / `--password` 这种组合在开启双重认证后会失败，
+> 且明文口令会进 CI 日志。改用 App Store Connect API Key + keychain-profile：
+>
+> ```bash
+> # 一次性：用 .p8 私钥建立凭据档案（对应 Secrets：APPLE_API_KEY / APPLE_API_KEY_ID / APPLE_API_ISSUER）
+> xcrun notarytool store-credentials "manju-notary" \
+>   --key "../keys/AuthKey_XXXX.p8" \
+>   --key-id "<APPLE_API_KEY_ID>" \
+>   --issuer "<APPLE_API_ISSUER>"
+>
+> # 之后提交公证只需：
+> xcrun notarytool submit Manju.zip --keychain-profile "manju-notary" --wait
+> ```
+>
+> 这与 [`ci-setup.md`](./ci-setup.md) 里 `APPLE_ID` / `APPLE_TEAM_ID` 两个 Secret 的用途一致。
 
 > **不做第 3、4 步会怎样**：用户在其他 Mac 上打开会看到
 > "无法打开，因为它来自身份不明的开发者"，必须右键 → 打开才能绕过。
@@ -148,18 +219,40 @@ signtool sign /f cert.pfx /p <密码> /tr http://timestamp.digicert.com /td SHA2
 ### 开发期自签名（仅供测试）
 
 ```powershell
+# 0) 导入到 LocalMachine\Root 需要管理员权限，先自检避免半途失败
+$isAdmin = ([Security.Principal.WindowsPrincipal] `
+  [Security.Principal.WindowsIdentity]::GetCurrent()
+).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+if (-not $isAdmin) { throw "请以管理员身份运行 PowerShell（导入受信任根证书需要提升的权限）" }
+
+# 1) 生成自签名代码签名证书（不指定 -NotAfter 时默认只有 1 年，这里显式给 3 年）
 $cert = New-SelfSignedCertificate `
   -Type CodeSigningCert `
   -Subject "CN=Manju Dev" `
   -KeyUsage DigitalSignature `
   -FriendlyName "Manju Dev Cert" `
   -CertStoreLocation "Cert:\CurrentUser\My" `
+  -NotAfter (Get-Date).AddYears(3) `
   -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3")
 
-# 把它加入本机受信任根证书（仅本机生效）
+# 2) 把它加入本机受信任根证书（仅本机生效）
 Export-Certificate -Cert $cert -FilePath manju-dev.cer
 Import-Certificate -FilePath manju-dev.cer -CertStoreLocation "Cert:\LocalMachine\Root"
+
+# 3) 签名（上面只准备了证书，这一步才是真正的签名；缺了它文件仍处于未签名状态）
+Set-AuthenticodeSignature -FilePath .\Manju.msix -Certificate $cert `
+  -TimestampServer http://timestamp.digicert.com -HashAlgorithm SHA256
+
+# 4) 校验签名状态：Status 必须为 Valid，否则 SmartScreen 仍会拦截
+Get-AuthenticodeSignature .\Manju.msix | Format-List Status, StatusMessage, SignerCertificate
 ```
+
+> ⚠️ **待确认**：第 3 步的目标文件写作 `.\Manju.msix`。
+> 仓库 `scripts/build_all.ps1` 实际会产出 **两个可选结果**——MSIX 打包成功时是
+> `dist\manju-<version>-win-x64.msix`，失败降级时是 `dist\manju-<version>-win-x64.zip`
+> （zip 不支持 Authenticode 签名）。可选方案：
+> **A)** 只对 MSIX 签名（保持上方写法，按实际文件名替换）；
+> **B)** 在 pubspec 补 `dev_dependencies: msix` 并接入 MSIX 专用证书，使 MSIX 成为稳定产物。
 
 > 自签名证书只在导入过的机器上有效，**不能用于分发**。
 

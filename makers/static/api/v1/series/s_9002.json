@@ -1,0 +1,44 @@
+{
+ "id": "s_9002",
+ "title": "羊驼大冒险",
+ "original_title": "Caminandes - Gran Dillama - Blender Foundation's new Open Movie",
+ "cover": "files/covers/6f41717d14c63005.jpg",
+ "poster": "files/covers/6f41717d14c63005.jpg",
+ "banner": "files/covers/6f41717d14c63005.jpg",
+ "synopsis": "一只执着的羊驼想尽办法越过一道围栏，却总在关键时刻出岔子。节奏轻快的搞笑短片，Caminandes 系列的经典一集。",
+ "tags": [
+  "动画",
+  "喜剧",
+  "短片"
+ ],
+ "category_id": "cat_animation",
+ "region": "NL",
+ "release_year": 2013,
+ "status": "completed",
+ "total_episodes": 1,
+ "score": 8.1,
+ "views": 0,
+ "is_vip": false,
+ "age_rating": "all",
+ "episodes": [
+  {
+   "id": "s_9002_e001",
+   "series_id": "s_9002",
+   "index": 1,
+   "title": "正片",
+   "thumbnail": "files/covers/6f41717d14c63005.jpg",
+   "duration_sec": 146,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Caminandes_-_Gran_Dillama_-_Blender_Foundation%27s_new_Open_Movie.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  }
+ ]
+}

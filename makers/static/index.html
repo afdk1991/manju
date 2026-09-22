@@ -3,108 +3,325 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>漫剧 Manju · EdgeOne Makers 演示部署</title>
+<title>漫剧 Manju · 在线观影</title>
+<script src="js/hls.min.js"></script>
 <style>
-  :root { color-scheme: dark; }
+  :root { color-scheme: dark; --bg:#0f1220; --card:#171b2e; --line:#262b45; --txt:#e8eaf2; --muted:#8d93ab; --acc:#9aa4ff; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-    background: #0f1220; color: #e8eaf2; min-height: 100vh; padding: 48px 20px;
+    background: var(--bg); color: var(--txt); min-height: 100vh; padding: 0 0 48px;
   }
-  .wrap { max-width: 860px; margin: 0 auto; }
-  .badge {
-    display: inline-block; font-size: 12px; letter-spacing: 1px; color: #9aa4ff;
-    border: 1px solid #3a3f66; border-radius: 999px; padding: 4px 12px; margin-bottom: 16px;
-  }
-  h1 { font-size: 34px; font-weight: 700; margin-bottom: 10px; }
-  h1 em { font-style: normal; background: linear-gradient(90deg,#7c8cff,#c86bff); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .sub { color: #9aa0b8; font-size: 15px; line-height: 1.7; margin-bottom: 28px; }
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 28px; }
-  .card {
-    background: #171b2e; border: 1px solid #262b45; border-radius: 14px; padding: 18px;
-  }
-  .card h3 { font-size: 15px; margin-bottom: 8px; color: #c3c9ff; }
-  .card p { font-size: 13px; color: #8d93ab; line-height: 1.6; }
-  .card code { color: #7fe0a8; font-size: 12px; }
-  .panel { background: #171b2e; border: 1px solid #262b45; border-radius: 14px; padding: 18px; }
-  .panel h2 { font-size: 16px; margin-bottom: 14px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  a { color: var(--acc); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header.top { border-bottom: 1px solid var(--line); background: rgba(15,18,32,.9); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 20; }
+  header.top .wrap { display: flex; align-items: center; gap: 14px; height: 62px; }
+  .brand { font-size: 20px; font-weight: 700; cursor: pointer; }
+  .brand em { font-style: normal; background: linear-gradient(90deg,#7c8cff,#c86bff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .badge { font-size: 11px; letter-spacing: 1px; color: var(--acc); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; }
+  .back { margin-left: auto; font-size: 13px; cursor: pointer; color: var(--muted); }
+  .back:hover { color: var(--txt); }
+
+  .hero { padding: 34px 0 8px; }
+  .hero h1 { font-size: 30px; margin-bottom: 8px; }
+  .hero p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+  h2.sec { font-size: 18px; margin: 30px 0 14px; display: flex; align-items: center; gap: 10px; }
+  h2.sec span.dot { width: 4px; height: 16px; background: linear-gradient(180deg,#7c8cff,#c86bff); border-radius: 2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform .16s, border-color .16s; }
+  .card:hover { transform: translateY(-3px); border-color: #3d4574; }
+  .cover { width: 100%; aspect-ratio: 16/10; object-fit: cover; background: #0c0f1e; display: block; }
+  .card .meta { padding: 10px 12px 12px; }
+  .card .t { font-size: 14px; font-weight: 600; margin-bottom: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .card .info { font-size: 12px; color: var(--muted); display: flex; gap: 8px; align-items: center; }
+  .score { color: #ffcc66; font-weight: 600; }
+  .tags { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag { font-size: 11px; color: #b9c0d9; background: #20253c; border-radius: 4px; padding: 2px 6px; }
+
+  /* 详情 */
+  .detail-banner { height: 260px; width: 100%; object-fit: cover; opacity: .55; }
+  .detail-body { margin-top: -110px; position: relative; display: flex; gap: 20px; }
+  .poster { width: 168px; border-radius: 12px; border: 1px solid var(--line); flex: none; }
+  .detail-txt h1 { font-size: 26px; margin-bottom: 6px; }
+  .sub2 { color: var(--muted); font-size: 13px; margin-bottom: 12px; }
+  .synopsis { font-size: 14px; line-height: 1.8; color: #c3c9e6; max-width: 620px; }
+  @media (max-width: 640px) { .detail-body { flex-direction: column; } .poster { width: 130px; } .detail-banner { height: 180px; } }
+
+  .eps { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+  .ep { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 9px 14px; font-size: 13px; cursor: pointer; }
+  .ep:hover { border-color: #4a55d8; }
+
+  /* 播放页 */
+  .player { width: 100%; aspect-ratio: 16/9; background: #000; border-radius: 12px; border: 1px solid var(--line); }
+  .now { margin-top: 16px; }
+  .now h1 { font-size: 19px; margin-bottom: 6px; }
+  .now p { color: var(--muted); font-size: 13px; }
+
+  .state { padding: 60px 0; text-align: center; color: var(--muted); font-size: 14px; }
+  .err { color: #ff9a9a; }
+
+  /* 自检面板 */
+  .panel { margin-top: 44px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .panel h2 { font-size: 15px; margin-bottom: 12px; }
   .row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
   button {
     background: #4a55d8; color: #fff; border: none; border-radius: 8px;
-    padding: 9px 16px; font-size: 13px; cursor: pointer;
+    padding: 8px 14px; font-size: 13px; cursor: pointer;
   }
   button:hover { background: #5a66ee; }
   pre {
-    background: #0c0f1e; border: 1px solid #262b45; border-radius: 10px;
-    padding: 14px; font-size: 12px; overflow: auto; max-height: 300px;
+    background: #0c0f1e; border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px; font-size: 12px; overflow: auto; max-height: 260px;
     color: #b9c0d9; white-space: pre-wrap; word-break: break-all;
   }
-  a { color: #9aa4ff; text-decoration: none; }
-  a:hover { text-decoration: underline; }
   .foot { margin-top: 26px; font-size: 12px; color: #6a7088; line-height: 1.8; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <span class="badge">EDGEONE MAKERS · SERVERLESS</span>
-  <h1>漫剧 <em>Manju</em></h1>
-  <p class="sub">
-    跨平台短剧内容中台 · 免费无服务器部署版。<br>
-    内容静态化到边缘 CDN，OTA 检查 / 搜索 / 用户数据由 Cloud Functions + Blob 提供。
-  </p>
-
-  <div class="cards">
-    <div class="card">
-      <h3>📺 内容 API</h3>
-      <p>首页分区、分类、剧集详情、单集数据均由静态 JSON 提供，全球 CDN 边缘加速。</p>
-      <p><code>/api/v1/home</code> · <code>/api/v1/series/s_10001</code></p>
-    </div>
-    <div class="card">
-      <h3>🔄 OTA 更新</h3>
-      <p>版本比较、灰度分桶、降级拦截、策略矩阵与 Ed25519 验签数据，与客户端协议完全兼容。</p>
-      <p><code>/api/v1/ota/check</code> · <code>/api/v1/ota/report</code></p>
-    </div>
-    <div class="card">
-      <h3>🔎 搜索 & 用户数据</h3>
-      <p>内存索引搜索；收藏与播放历史持久化到 Blob 对象存储。</p>
-      <p><code>/api/v1/search?q=开局</code> · <code>/api/v1/user/favorites</code></p>
-    </div>
+<header class="top">
+  <div class="wrap">
+    <span class="brand" onclick="location.hash='#/'">漫剧 <em>Manju</em></span>
+    <span class="badge">EDGEONE MAKERS · SERVERLESS</span>
+    <span class="back" id="back" style="display:none" onclick="history.back()">← 返回</span>
   </div>
+</header>
+<div class="wrap" id="app">
+  <div class="state">加载中…</div>
+</div>
 
-  <div class="panel">
+<script>
+const app = document.getElementById('app');
+const API = 'api/v1/';
+
+async function api(path) {
+  const r = await fetch(API + path);
+  if (!r.ok) throw new Error('HTTP ' + r.status + ' — ' + path);
+  return r.json();
+}
+const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, c =>
+  ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+async function render(fn) {
+  app.innerHTML = '<div class="state">加载中…</div>';
+  try {
+    await fn();
+  } catch (e) {
+    app.innerHTML = '<div class="state err">加载失败：' + esc(e.message) +
+      '<br><br><a href="#/" onclick="location.reload()">重试</a></div>';
+  }
+}
+
+/* ---------- 首页 ---------- */
+async function viewHome() {
+  const home = await api('home.json');
+  document.getElementById('back').style.display = 'none';
+  let html = `
+    <div class="hero">
+      <h1>在线观影</h1>
+      <p>内容静态化托管于边缘 CDN，剧集 Solid 数据由 Wikimedia 开放影片提供（CC 授权）。点击卡片即可播放。</p>
+    </div>`;
+  for (const sec of home.sections || []) {
+    if (!sec.items || !sec.items.length) continue;
+    html += `<h2 class="sec"><span class="dot"></span>${esc(sec.title)}</h2><div class="grid">`;
+    for (const it of sec.items) html += cardHtml(it);
+    html += `</div>`;
+  }
+  app.innerHTML = html + diagPanel();
+  bindCards();
+}
+
+function cardHtml(it) {
+  return `<div class="card" data-id="${esc(it.id)}">
+    <img class="cover" loading="lazy" src="${esc(it.cover)}" alt="${esc(it.title)}"
+         onerror="this.style.background='#20253c';this.removeAttribute('src')">
+    <div class="meta">
+      <div class="t">${esc(it.title)}</div>
+      <div class="info">
+        <span class="score">${esc(it.score ?? '—')}</span>
+        <span>${esc(it.release_year ?? '')}</span>
+        <span>${esc(it.total_episodes ?? 0)} 集</span>
+      </div>
+      <div class="tags">${(it.tags || []).slice(0, 3).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+    </div>
+  </div>`;
+}
+function bindCards() {
+  app.querySelectorAll('.card').forEach(el => {
+    el.onclick = () => { location.hash = '#/series/' + el.dataset.id; };
+  });
+}
+
+/* ---------- 详情 ---------- */
+async function viewSeries(id) {
+  const [s, eps] = await Promise.all([
+    api(`series/${encodeURIComponent(id)}.json`),
+    api(`series/${encodeURIComponent(id)}/episodes.json`).catch(() => ({ items: [] })),
+  ]);
+  document.getElementById('back').style.display = '';
+  const items = eps.items || eps.episodes || [];
+  app.innerHTML = `
+    <img class="detail-banner" src="${esc(s.banner || s.cover)}" alt="">
+    <div class="detail-body">
+      <img class="poster" src="${esc(s.poster || s.cover)}" alt="${esc(s.title)}">
+      <div class="detail-txt">
+        <h1>${esc(s.title)}</h1>
+        <div class="sub2">
+          ${esc(s.original_title || '')} · ${esc(s.release_year || '')} · ${esc(s.region || '')}
+          · ${esc(s.category_id || '')} · <span class="score">${esc(s.score ?? '—')}</span>
+        </div>
+        <div class="tags">${(s.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+        <p class="synopsis" style="margin-top:12px">${esc(s.synopsis || '暂无简介')}</p>
+        <div class="eps">
+          ${items.length
+            ? items.map((e, i) => `<div class="ep" data-eid="${esc(e.id)}">▶ 第 ${esc(e.index ?? i + 1)} 集 · ${esc(e.title || '正片')}</div>`).join('')
+            : '<div class="state">暂无可播放剧集</div>'}
+        </div>
+      </div>
+    </div>` + diagPanel();
+  app.querySelectorAll('.ep').forEach(el => {
+    el.onclick = () => { location.hash = '#/watch/' + el.dataset.eid; };
+  });
+}
+
+/* ---------- 播放 ---------- */
+async function viewWatch(epId) {
+  const ep = await api(`episodes/${encodeURIComponent(epId)}.json`);
+  document.getElementById('back').style.display = '';
+  app.innerHTML = `
+    <video class="player" id="player" controls autoplay playsinline poster="${esc(ep.thumbnail || '')}"></video>
+    <div class="now">
+      <h1>${esc(ep.title || '正片')} · 第 ${esc(ep.index ?? 1)} 集</h1>
+      <p id="srcline">
+        ${ep.duration_sec ? Math.round(ep.duration_sec / 60) + ' 分钟 · ' : ''}
+        <span id="srcinfo">正在选择可用片源…</span>
+      </p>
+      <p id="playhint" class="err" style="margin-top:8px;display:none"></p>
+      <p style="margin-top:10px"><a href="#/series/${esc(ep.series_id)}">← 返回剧集详情</a></p>
+    </div>
+    ${videoNote(ep)}
+    ` + diagPanel();
+
+  const video = document.getElementById('player');
+  const info = document.getElementById('srcinfo');
+  const hint = document.getElementById('playhint');
+  const chosen = startPlayback(video, ep.sources || []);
+
+  if (!chosen) {
+    info.textContent = '无可用片源';
+    hint.style.display = '';
+    hint.textContent = '该剧集没有浏览器可播放的片源。';
+    return;
+  }
+  info.textContent = '片源：' + chosen.label + (chosen.slow ? '（境外源，可能较慢）' : '');
+  video.onerror = () => {
+    hint.style.display = '';
+    hint.textContent = '播放失败：片源来自境外 CDN，可能出现连接超时。请稍后重试，或用本机 FastAPI 版观看。';
+  };
+}
+
+/* 片源选择：HLS 优先（CDN 为流媒体优化，实测最稳），其次浏览器原生可播的直链 */
+function startPlayback(video, sources) {
+  const has = (c) => sources.find(s => (s.container || '').toLowerCase() === c && s.url);
+  const hls = has('hls');
+
+  // 1) hls.js（本地自托管，覆盖 Chrome/Edge/Firefox）
+  if (hls && window.Hls && window.Hls.isSupported()) {
+    try {
+      const inst = new window.Hls();
+      inst.loadSource(hls.url);
+      inst.attachMedia(video);
+      inst.on(window.Hls.Events.ERROR, (_e, data) => {
+        if (data && data.fatal) {
+          inst.destroy();
+          fallback(video, sources);
+        }
+      });
+      return { label: `HLS · ${hls.quality || 'auto'}（hls.js）`, slow: false };
+    } catch (e) { /* 落到 fallback */ }
+  }
+  // 2) Safari 原生 HLS
+  if (hls && video.canPlayType('application/x-mpegURL')) {
+    video.src = hls.url;
+    return { label: `HLS · ${hls.quality || 'auto'}（原生）`, slow: false };
+  }
+  // 3) 直链
+  const direct = fallback(video, sources);
+  return direct;
+}
+
+function fallback(video, sources) {
+  const TYPE = { webm: 'video/webm', mp4: 'video/mp4', ogg: 'video/ogg' };
+  for (const c of ['webm', 'mp4', 'ogg']) {
+    const s = sources.find(x => (x.container || '').toLowerCase() === c && x.url);
+    if (!s) continue;
+    const can = video.canPlayType(TYPE[c]);
+    if (can === 'probably' || can === 'maybe') {
+      video.src = s.url;
+      return { label: `${c.toUpperCase()} 直链`, slow: true };
+    }
+  }
+  const first = sources.find(x => x.url);
+  if (first) {
+    video.src = first.url;
+    return { label: first.container || 'auto', slow: true };
+  }
+  return null;
+}
+function videoNote(ep) {
+  return `<div class="panel"><h2>片源清单</h2><pre>${esc(JSON.stringify(ep.sources || [], null, 2))}</pre></div>`;
+}
+
+/* ---------- 在线自检 ---------- */
+function diagPanel() {
+  return `<div class="panel">
     <h2>在线自检</h2>
     <div class="row">
-      <button onclick="probe('/api/v1/home')">内容首页</button>
-      <button onclick="probe('/api/v1/search?q=%E5%BC%80%E5%B1%80')">搜索「开局」</button>
-      <button onclick="probe('/api/v1/ota/check?platform=windows&arch=x86_64&channel=stable&version=9.8.0&build=980&device_id=selftest')">OTA 检查</button>
-      <button onclick="probe('/api/v1/ota/public-key')">OTA 公钥</button>
-      <button onclick="probe('/admin')">运营后台</button>
+      <button onclick="probe('home.json')">内容首页</button>
+      <button onclick="probe('series.json')">剧集列表</button>
+      <button onclick="probe('categories.json')">分类</button>
+      <button onclick="probe('ota/public-key.json')">OTA 公钥</button>
+      <button onclick="probe('/external/index.json')">外部片单(2400)</button>
+      <button onclick="probe('../admin/')">运营后台</button>
     </div>
     <pre id="out">点击上方按钮，查看各端点实时返回。</pre>
   </div>
-
   <div class="foot">
-    ⚠️ 演示说明：本部署为静态只读内容中台；系列/集数增删改请在本机 FastAPI 版执行后重新运行
-    <code>makers/scripts/export_static.py</code> 并重新部署。OTA 发布可在后台进行（写入 Blob，含 Ed25519 签名）。<br>
-    <a href="/admin">运营后台</a> ·
-    <a href="/api/v1/home.json">home.json</a> ·
-    <a href="/api/v1/categories.json">categories.json</a>
-  </div>
-</div>
-<script>
+    内容采用 Wikimedia Commons 上的 Blender 开放影片（CC 授权）；OTA 检查 / 搜索 / 用户数据由 Cloud Functions + Blob 提供。<br>
+    <a href="admin/">运营后台</a> · <a href="api/v1/home.json">home.json</a> · <a href="api/v1/categories.json">categories.json</a>
+  </div>`;
+}
+async function probe(path) {
   const out = document.getElementById('out');
-  async function probe(path) {
-    out.textContent = '请求 ' + path + ' …';
-    try {
-      const r = await fetch(path);
-      const text = await r.text();
-      let body = text;
-      try { body = JSON.stringify(JSON.parse(text), null, 2); } catch (e) { /* 非 JSON */ }
-      out.textContent = 'HTTP ' + r.status + '  ' + path + '\n' + body;
-    } catch (e) {
-      out.textContent = '请求失败：' + e;
-    }
+  out.textContent = '请求 ' + path + ' …';
+  try {
+    const clean = path.replace(/^\.\.\//, '');
+    const url = path.startsWith('../') ? clean
+      : path.startsWith('/external/') ? path.slice(1)
+      : API + path;
+    const r = await fetch(url);
+    const text = await r.text();
+    let body = text;
+    try { body = JSON.stringify(JSON.parse(text), null, 2); } catch (e) { /* 非 JSON */ }
+    if (body.length > 1200) body = body.slice(0, 1200) + '\n…（已截断）';
+    out.textContent = 'HTTP ' + r.status + '  ' + url + '\n' + body;
+  } catch (e) {
+    out.textContent = '请求失败：' + e;
   }
+}
+
+/* ---------- 路由 ---------- */
+function route() {
+  const h = (location.hash || '#/').replace(/^#/, '');
+  if (h.startsWith('/series/')) render(() => viewSeries(decodeURIComponent(h.slice('/series/'.length))));
+  else if (h.startsWith('/watch/')) render(() => viewWatch(decodeURIComponent(h.slice('/watch/'.length))));
+  else render(viewHome);
+}
+window.addEventListener('hashchange', route);
+route();
 </script>
 </body>
 </html>

@@ -1,0 +1,44 @@
+{
+ "id": "s_9005",
+ "title": "奇点",
+ "original_title": "SINGULARITY - Blender Open Movie-full movie",
+ "cover": "files/covers/d9cca644edc19c32.jpg",
+ "poster": "files/covers/d9cca644edc19c32.jpg",
+ "banner": "files/covers/d9cca644edc19c32.jpg",
+ "synopsis": "以机器人与人工智能为主题的开放动画短片，机械感与叙事并重。",
+ "tags": [
+  "科幻",
+  "机器人",
+  "短片"
+ ],
+ "category_id": "cat_scifi",
+ "region": "NL",
+ "release_year": 2019,
+ "status": "completed",
+ "total_episodes": 1,
+ "score": 7.6,
+ "views": 0,
+ "is_vip": false,
+ "age_rating": "all",
+ "episodes": [
+  {
+   "id": "s_9005_e001",
+   "series_id": "s_9005",
+   "index": 1,
+   "title": "正片",
+   "thumbnail": "files/covers/d9cca644edc19c32.jpg",
+   "duration_sec": 391,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/SINGULARITY_-_Blender_Open_Movie-full_movie.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+{
+  "flutter_bat": true,
+  "dart_sdk": true,
+  "pub_get": true,
+  "pubspec_lock": true
+}

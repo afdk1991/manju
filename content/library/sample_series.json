@@ -1,0 +1,78 @@
+{
+  "series_id": "demo_ai_rebirth",
+  "title": "重生：我成了漫画主角",
+  "original_title": null,
+  "synopsis": "示例剧集：AI 生成的动态漫画短剧样例。封面与分镜帧由本项目自有 AI 生成（无第三方版权），视频源为集成验证用的测试流占位，待 AI 动态片段生成后替换。",
+  "category_id": "cat_demo",
+  "tags": ["示例", "AI生成", "漫剧", "重生"],
+  "region": "CN",
+  "release_year": 2026,
+  "status": "ongoing",
+  "is_vip": false,
+  "age_rating": "all",
+  "cover": "manju/demo_ai_rebirth/cover.png",
+  "poster": "manju/demo_ai_rebirth/cover.png",
+  "banner": null,
+  "episodes": [
+    {
+      "index": 1,
+      "title": "第1集 · 觉醒",
+      "thumbnail": "manju/demo_ai_rebirth/ep01/thumb.png",
+      "duration_sec": 45,
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ],
+      "subtitles": [
+        { "lang": "zh-CN", "label": "中文", "url": "manju/demo_ai_rebirth/ep01/sub.zh-CN.vtt", "format": "vtt", "is_default": true }
+      ],
+      "frames": [
+        "manju/demo_ai_rebirth/ep01/frames/frame_0001.png",
+        "manju/demo_ai_rebirth/ep01/frames/frame_0002.png"
+      ]
+    },
+    {
+      "index": 2,
+      "title": "第2集 · 变强",
+      "thumbnail": "manju/demo_ai_rebirth/ep02/thumb.png",
+      "duration_sec": 45,
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ],
+      "subtitles": [
+        { "lang": "zh-CN", "label": "中文", "url": "manju/demo_ai_rebirth/ep02/sub.zh-CN.vtt", "format": "vtt", "is_default": true }
+      ],
+      "frames": []
+    },
+    {
+      "index": 3,
+      "title": "第3集 · 对决",
+      "thumbnail": "manju/demo_ai_rebirth/ep03/thumb.png",
+      "duration_sec": 45,
+      "is_free": false,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ],
+      "subtitles": [
+        { "lang": "zh-CN", "label": "中文", "url": "manju/demo_ai_rebirth/ep03/sub.zh-CN.vtt", "format": "vtt", "is_default": true }
+      ],
+      "frames": []
+    }
+  ]
+}

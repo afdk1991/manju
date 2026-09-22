@@ -122,10 +122,39 @@ Add-AppxPackage -Path ".\app.msix" -ForceApplicationShutdown
 ```dart
 // 只能跳转，不能下载安装
 if (result.mustGoToStore) {
-  await launchUrl(Uri.parse(result.storeFallback!.url),
-      mode: LaunchMode.externalApplication);
+  // 不要写 storeFallback!.url —— 服务端偶尔不下发 store_fallback 时会直接崩溃。
+  // 这里的判真理应与 store_updater.dart 的实现保持一致。
+  final storeFallback = result.storeFallback;
+  final url = storeFallback?.url ?? '';
+  if (url.isEmpty) {
+    // 服务端未下发商店地址：记录日志 + 上报 unsupported，静默结束而不是抛异常
+    await report(event: 'unsupported', reason: 'missing_store_url');
+    return;
+  }
+
+  final uri = Uri.tryParse(url);
+  if (uri == null) {
+    await report(event: 'unsupported', reason: 'invalid_store_url');
+    return;
+  }
+
+  try {
+    // externalApplication 确保跳到 App Store App，而不是在应用内 WebView 打开
+    if (!await canLaunchUrl(uri)) {
+      await report(event: 'unsupported', reason: 'cannot_launch_store');
+      return;
+    }
+    final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
+    if (!ok) await report(event: 'unsupported', reason: 'launch_store_failed');
+  } catch (e) {
+    await report(event: 'unsupported', reason: 'launch_store_error');
+  }
 }
 ```
+
+> 上方写法对齐 `clients/manju_flutter/lib/core/updater/platform/store_updater.dart`
+> 的真实实现（依次校验：平台是否 store-only → url 非空 → tryParse → canLaunchUrl → launch）。
+> 旧版片段里的 `!` 强解包会在 `storeFallback == null` 时崩溃，已移除。
 
 ### HarmonyOS
 
@@ -133,6 +162,12 @@ if (result.mustGoToStore) {
 // 拉起华为应用市场
 await context.startAbility({ uri: 'store://appgallery/detail?id=Cxxxx' });
 ```
+
+> ⚠️ **待确认（2 项）**
+> 1. 示例里的 `Cxxxx` 是**占位 App ID**，必须用真实的华为应用市场 App ID 替换。
+> 2. 该片段**没有异常处理**：`startAbility` 在未安装应用市场、或 uri scheme 不被识别时会抛错，
+>    客户端应 catch 后降级为 `https://appgallery.huawei.com/app/detail?id=<APP_ID>` 网页跳转。
+>    因本机无 DevEco 无法验证 ArkTS 的实际抛错类型，此处不臆造具体实现。
 
 ---
 
@@ -156,9 +191,33 @@ await context.startAbility({ uri: 'store://appgallery/detail?id=Cxxxx' });
 服务端按 `device_id` 哈希分桶：
 
 ```python
-bucket = zlib.crc32(device_id.encode()) % 100
-if bucket >= rollout_percent:
-    return 204  # 不分给这台设备
+def in_rollout(device_id: str, rollout_percent: int) -> bool:
+    """灰度判定。返回 False 表示本次不该给这台设备下发更新。"""
+    # 边界收敛：<=0 全量屏蔽，>=100 全量放行。
+    # 超过 100 的值会让灰度失去意义，静默截断比报错更合适（不影响主流程）。
+    rollout_percent = max(0, min(100, rollout_percent))
+    if rollout_percent <= 0:
+        return False
+    if rollout_percent >= 100:
+        return True
+
+    # 空 device_id 的 crc32 恒为 0，会被固定分到第 0 桶 —— 若不拦，
+    # 所有缺失 device_id 的客户端都会挤在第一批灰度里，导致放量比例失真。
+    # 服务端在 FastAPI 层已用 Query(min_length=1) 兜底，这里保留防御以便脚本层复用。
+    if not device_id:
+        return False
+
+    # & 0xFFFFFFFF：保证在把结果当无符号数处理的语言里口径一致
+    bucket = (zlib.crc32(device_id.encode("utf-8")) & 0xFFFFFFFF) % 100
+    return bucket < rollout_percent
+
+
+if not in_rollout(device_id, rollout_percent):
+    return Response(status_code=204)  # 不分给这台设备
 ```
+
+> 上方实现对齐 `server/app/routers/ota.py` 第 125-128 行与 `_crc32()`（第 185-187 行）：
+> 服务端已用 `Query(..., min_length=1, max_length=64)` 在入口完成 `device_id` 校验，
+> 所以这里的空值分支属于脚本层防御；`& 0xFFFFFFFF` 是原文档片段漏掉的掩码。
 
 发布时通过 `--rollout 10` 先放 10%，观察 `ota/report` 的失败率再逐步放开。

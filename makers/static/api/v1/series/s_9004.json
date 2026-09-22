@@ -1,0 +1,44 @@
+{
+ "id": "s_9004",
+ "title": "大象之梦",
+ "original_title": "Elephants Dream (2006) 1080p24",
+ "cover": "files/covers/e491a66caed7ce40.jpg",
+ "poster": "files/covers/e491a66caed7ce40.jpg",
+ "banner": "files/covers/e491a66caed7ce40.jpg",
+ "synopsis": "Blender 基金会的第一部开放电影（2006）。两个角色在一座不断自我重构的超现实机械世界中对话，探讨真实与虚构的边界。",
+ "tags": [
+  "科幻",
+  "实验",
+  "经典"
+ ],
+ "category_id": "cat_scifi",
+ "region": "NL",
+ "release_year": 2006,
+ "status": "completed",
+ "total_episodes": 1,
+ "score": 7.9,
+ "views": 0,
+ "is_vip": false,
+ "age_rating": "all",
+ "episodes": [
+  {
+   "id": "s_9004_e001",
+   "series_id": "s_9004",
+   "index": 1,
+   "title": "正片",
+   "thumbnail": "files/covers/e491a66caed7ce40.jpg",
+   "duration_sec": 658,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Elephants_Dream_%282006%29_1080p24.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  }
+ ]
+}

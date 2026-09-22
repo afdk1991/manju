@@ -1,0 +1,51 @@
+{
+ "id": "s_9001",
+ "title": "大兔子的反击",
+ "original_title": "Big Buck Bunny 4K",
+ "cover": "files/covers/2156aee291e78aa5.jpg",
+ "poster": "files/covers/2156aee291e78aa5.jpg",
+ "banner": "files/covers/2156aee291e78aa5.jpg",
+ "synopsis": "一只体型巨大的兔子被三只啮齿动物反复捉弄，最终展开一连串夸张的卡通式复仇。Blender 基金会第一部全彩开放动画短片，画面明亮、无对白，适合全年龄段。",
+ "tags": [
+  "动画",
+  "喜剧",
+  "无对白"
+ ],
+ "category_id": "cat_animation",
+ "region": "NL",
+ "release_year": 2008,
+ "status": "completed",
+ "total_episodes": 1,
+ "score": 8.6,
+ "views": 0,
+ "is_vip": false,
+ "age_rating": "all",
+ "episodes": [
+  {
+   "id": "s_9001_e001",
+   "series_id": "s_9001",
+   "index": 1,
+   "title": "正片",
+   "thumbnail": "files/covers/2156aee291e78aa5.jpg",
+   "duration_sec": 634,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    },
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Big_Buck_Bunny_4K.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  }
+ ]
+}

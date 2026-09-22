@@ -17,7 +17,7 @@
     "url": "https://manju-hagvu7ry.edgeone.cool/files/Manju-Setup-9.9.9.exe",
     "size": 37,
     "sha256": "8a6571692b93461b63156f839e9d846118c711fbb79592d41360b622104757de",
-    "signature": "ed25519:NjtH58z6UvEiepK1dRrT+Nx7egz/vLejKrric3Ua/ixSwWtOH6Y/q2MoAngylzzZYyF/a0qO+OGNxItkeeSWCg==",
+    "signature": "ed25519:ToQmf5OxFFBFyitidaQuoa2Lav+eE4t0u9eEHYnYc9314WMoPD7zT31AMl6+5VmGWTqnef8oboi/8fL5Jnb5AQ==",
     "install_args": [
      "/VERYSILENT",
      "/NORESTART"
@@ -58,7 +58,7 @@
     "url": "http://x/app.AppImage",
     "size": 0,
     "sha256": "deadbeef",
-    "signature": "ed25519:PbpVhWxNH24TkpQlemdr2uRCk+QV6CKwHcIgUUo/EY3Vlw4mAovhQhPPNHsknBTPmTUaB521thqLjUUneVBDCg==",
+    "signature": "ed25519:KwDQvqBE9XtTnZlwCEBpUjrArpBUTbqHsf3UCrOHNa+AheY3AtFCF9c3AuMgPc8nyvTEano4wsvgfjSPSnCoBQ==",
     "install_args": []
    },
    "store_url": null,

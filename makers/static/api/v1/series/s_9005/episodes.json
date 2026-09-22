@@ -1,0 +1,23 @@
+{
+ "items": [
+  {
+   "id": "s_9005_e001",
+   "series_id": "s_9005",
+   "index": 1,
+   "title": "正片",
+   "thumbnail": "files/covers/d9cca644edc19c32.jpg",
+   "duration_sec": 391,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/SINGULARITY_-_Blender_Open_Movie-full_movie.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  }
+ ]
+}

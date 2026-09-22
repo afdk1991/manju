@@ -110,9 +110,13 @@ python scripts/ota_manifest.py \
   --notes-zh "修复播放闪退" --notes-en "Fix crash" \
   --min-supported-version 1.0.0 \
   --rollout 10 \
-  --api https://manju-drama-hub-tkwcxlaw.edgeone.cool \
-  --admin-key $OTA_ADMIN_KEY
+  --api "${OTA_API:-http://localhost:8000}" \
+  --admin-key "$OTA_ADMIN_KEY"
 ```
+
+> ⚠️ `OTA_API` 原先硬编码为 EdgeOne **预览域名** `manju-drama-hub-tkwcxlaw.edgeone.cool`，
+> 该域名约 3 小时过期（实测已返回 401，见 [`blockers.md`](./blockers.md) §2.1）。
+> 现改为环境变量 + 本地联调兜底；正式域名绑定后只需 `export OTA_API=https://你的域名`。
 
 脚本会自动：计算 `size`/`sha256` → 用 Ed25519 私钥签名 → POST 到 `/api/v1/admin/releases`。
 
@@ -125,14 +129,20 @@ python scripts/ota_manifest.py \
 python scripts/ota_manifest.py \
   --platform ios --arch arm64 --channel stable \
   --version 1.1.0 --build 110 --no-artifact \
-  --store-url "https://apps.apple.com/app/id0000000000" ...
+  --store-url "https://apps.apple.com/app/id0000000000" \
+  --api "$OTA_API" --admin-key "$OTA_ADMIN_KEY"
 
 # 鸿蒙同理
 python scripts/ota_manifest.py \
   --platform harmonyos --arch arm64 --channel stable \
   --version 1.1.0 --build 110 --no-artifact \
-  --store-url "https://appgallery.huawei.com/app/C000000" ...
+  --store-url "https://appgallery.huawei.com/app/C000000" \
+  --api "$OTA_API" --admin-key "$OTA_ADMIN_KEY"
 ```
+
+> 这两条命令原先以 `...` 结尾，是**被截断的**——照抄会因为缺 `--api` / `--admin-key`
+> 而连不上服务端。现已补成与 4.1 节 Windows 示例一致的完整形式。
+> ⚠️ 其中的 `id0000000000` 与 `C000000` 是**占位 App ID**，上线前必须替换。
 
 不给 `--store-url` 时脚本直接报错退出，并说明这是平台限制而非工具限制。
 
