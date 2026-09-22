@@ -58,15 +58,20 @@ cd D:\网站全栈项目\项目007
 tar -czf deploy\free-server\manju-server.tar.gz --exclude="data/*" --exclude="__pycache__" --exclude="*.pyc" -C server .
 
 # 上传（把 <IP> 换成实例公网 IP）
-# 先建目标目录：全新实例上 /tmp/manju-deploy 不存在，直接 scp 会报
+# 先建目标目录与 keys 子目录：全新实例上 /tmp/manju-deploy 不存在，直接 scp 会报
 # "No such file or directory"；同时确保属主为登录用户，否则后续 ssh 侧脚本读不到
-ssh -i C:\Users\addk1\.ssh\manju_oci ubuntu@<IP> "sudo mkdir -p /tmp/manju-deploy && sudo chown ubuntu:ubuntu /tmp/manju-deploy"
+ssh -i C:\Users\addk1\.ssh\manju_oci ubuntu@<IP> "sudo mkdir -p /tmp/manju-deploy/keys && sudo chown -R ubuntu:ubuntu /tmp/manju-deploy"
 
+# 1) 代码包与部署脚本传到部署根目录
 scp -i C:\Users\addk1\.ssh\manju_oci deploy\free-server\manju-server.tar.gz `
     deploy\free-server\install_server.sh deploy\free-server\manju.service `
     deploy\free-server\fix_ota_url.py deploy\free-server\requirements.txt `
-    keys\ota_private.pem keys\ota_public.pem `
     ubuntu@<IP>:/tmp/manju-deploy/
+
+# 2) OTA 签名密钥必须放到 keys/ 子目录（install_server.sh 在此读取；
+#    私钥不上传仓库、仅在部署时直传服务器，且必须与客户端内置公钥同源）
+scp -i C:\Users\addk1\.ssh\manju_oci keys\ota_private.pem keys\ota_public.pem `
+    ubuntu@<IP>:/tmp/manju-deploy/keys/
 ```
 > 说明：`keys/` 随包上传是让服务器用**与本地客户端内置公钥一致**的密钥签名（必须一致，否则客户端验签失败）。
 

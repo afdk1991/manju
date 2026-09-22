@@ -78,6 +78,9 @@ dist/
 *.dmg
 *.AppImage
 
+# ===== 免费服务器部署打包产物（部署时本地生成，勿入库）=====
+deploy/free-server/manju-server.tar.gz
+
 # ===== Python 服务端运行时（server/.gitignore 已含，此处兜底）=====
 __pycache__/
 *.pyc

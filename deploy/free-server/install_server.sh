@@ -79,10 +79,18 @@ tar -xzf "$PKG_FILE" -C "$SERVER_DIR" --strip-components=1
 # ---------- 3. 签名密钥 ----------
 echo "[3/8] 检查 OTA 签名密钥..."
 mkdir -p "$KEYS_DIR"
+# 兼容两种上传布局：<deploy>/keys/*.pem（推荐）或直接平铺在 <deploy>/*.pem
+SRC_KEYS_DIR=""
 if [[ -f "$SCRIPT_DIR/keys/ota_private.pem" && -f "$SCRIPT_DIR/keys/ota_public.pem" ]]; then
-    cp -f "$SCRIPT_DIR/keys/ota_private.pem" "$KEYS_DIR/"
-    cp -f "$SCRIPT_DIR/keys/ota_public.pem" "$KEYS_DIR/"
-    echo "      已使用随包上传的密钥（与本地客户端公钥一致 ✓）"
+    SRC_KEYS_DIR="$SCRIPT_DIR/keys"
+elif [[ -f "$SCRIPT_DIR/ota_private.pem" && -f "$SCRIPT_DIR/ota_public.pem" ]]; then
+    SRC_KEYS_DIR="$SCRIPT_DIR"
+fi
+if [[ -n "$SRC_KEYS_DIR" ]]; then
+    cp -f "$SRC_KEYS_DIR/ota_private.pem" "$KEYS_DIR/"
+    cp -f "$SRC_KEYS_DIR/ota_public.pem" "$KEYS_DIR/"
+    chmod 600 "$KEYS_DIR/ota_private.pem"
+    echo "      已使用随包上传的密钥（$SRC_KEYS_DIR，与本地客户端公钥一致 ✓）"
 else
     echo "      警告：未随包上传 keys/，将生成新密钥。"
     echo "      新密钥会导致已内置旧公钥的客户端验签失败！"
