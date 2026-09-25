@@ -123,6 +123,7 @@ async function viewHome() {
     <div class="hero">
       <h1>在线观影</h1>
       <p>内容静态化托管于边缘 CDN，剧集 Solid 数据由 Wikimedia 开放影片提供（CC 授权）。点击卡片即可播放。</p>
+      <p style="margin-top:10px"><a href="#/external">▶ 浏览外部片单（漫剧 / AI 剧）</a></p>
     </div>`;
   for (const sec of home.sections || []) {
     if (!sec.items || !sec.items.length) continue;
@@ -313,11 +314,92 @@ async function probe(path) {
   }
 }
 
+/* ---------- 外部片单（红果漫剧/AI剧元数据，跳转原站） ---------- */
+let extCache = null;
+let extCat = '';
+let extShown = 0;
+const EXT_STEP = 60;
+
+async function viewExternalIndex() {
+  document.getElementById('back').style.display = '';
+  const idx = await (await fetch('external/index.json')).json();
+  const cards = (idx.catalogs || []).map(c => `
+    <div class="card" data-extcat="${esc(c.category)}">
+      <div class="meta">
+        <div class="t">${esc(c.category_label)}（${c.total} 条）</div>
+        <div class="info"><span>${esc(c.category)}</span><span>点击进入</span></div>
+      </div>
+    </div>`).join('');
+  app.innerHTML = `
+    <div class="hero">
+      <h1>外部片单</h1>
+      <p>来自红果短剧公开分类页的<b>漫剧 / AI 剧</b>元数据索引（标题、封面地址、集数、原站链接）。不包含视频与图片二进制；点击卡片前往原站详情页。</p>
+    </div>
+    <div class="grid">${cards}</div>` + diagPanel();
+  app.querySelectorAll('[data-extcat]').forEach(el => {
+    el.onclick = () => { location.hash = '#/external/' + el.dataset.extcat; };
+  });
+}
+
+async function viewExternalList(cat) {
+  document.getElementById('back').style.display = '';
+  const r = await fetch('external/' + encodeURIComponent(cat) + '.json');
+  if (!r.ok) throw new Error('HTTP ' + r.status + ' — external/' + cat + '.json');
+  extCache = await r.json();
+  extCat = cat;
+  extShown = 0;
+  const label = extCache.category_label || cat;
+  app.innerHTML = `
+    <div class="hero">
+      <h1>${esc(label)}</h1>
+      <p>共 ${extCache.total} 条 · 仅含公开元数据，点击卡片前往原站观看。</p>
+      <p style="margin-top:8px"><a href="#/external">← 返回分类</a></p>
+    </div>
+    <div class="grid" id="extgrid"></div>
+    <div style="text-align:center;margin-top:18px">
+      <button id="extmore" style="display:none">加载更多</button>
+    </div>` + diagPanel();
+  const btn = document.getElementById('extmore');
+  btn.onclick = renderExtMore;
+  renderExtMore();
+  const all = document.getElementById('extgrid');
+  if (extShown < (extCache.items || []).length) btn.style.display = '';
+}
+
+function extCardHtml(it) {
+  return `<div class="card" data-url="${esc(it.detail_url)}">
+    <img class="cover" loading="lazy" src="${esc(it.cover_url)}" alt="${esc(it.title)}"
+         onerror="this.style.background='#20253c';this.removeAttribute('src')">
+    <div class="meta">
+      <div class="t">${esc(it.title)}</div>
+      <div class="info"><span>${esc(it.episodes_text || '')}</span></div>
+    </div>
+  </div>`;
+}
+
+function renderExtMore() {
+  const grid = document.getElementById('extgrid');
+  if (!grid) return;
+  const items = extCache.items || [];
+  const chunk = items.slice(extShown, extShown + EXT_STEP);
+  grid.insertAdjacentHTML('beforeend', chunk.map(extCardHtml).join(''));
+  extShown += chunk.length;
+  const btn = document.getElementById('extmore');
+  if (btn) btn.style.display = extShown < items.length ? '' : 'none';
+  grid.querySelectorAll('[data-url]').forEach(el => {
+    if (el.dataset.bound) return;
+    el.dataset.bound = '1';
+    el.onclick = () => window.open(el.dataset.url, '_blank', 'noopener');
+  });
+}
+
 /* ---------- 路由 ---------- */
 function route() {
   const h = (location.hash || '#/').replace(/^#/, '');
   if (h.startsWith('/series/')) render(() => viewSeries(decodeURIComponent(h.slice('/series/'.length))));
   else if (h.startsWith('/watch/')) render(() => viewWatch(decodeURIComponent(h.slice('/watch/'.length))));
+  else if (h === '/external') render(viewExternalIndex);
+  else if (h.startsWith('/external/')) render(() => viewExternalList(decodeURIComponent(h.slice('/external/'.length))));
   else render(viewHome);
 }
 window.addEventListener('hashchange', route);
