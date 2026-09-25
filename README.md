@@ -160,3 +160,38 @@ python scripts/ota_manifest.py \
 3. `third_party` — 对接有授权的第三方开放平台 API，需自行配置凭证
 
 使用者需自行确保所分发内容已获得合法授权。
+
+---
+
+## 八、线上部署与更新（当前生效）
+
+项目当前有 **三个线上入口**，用途与时效各不相同：
+
+| 入口 | 地址形态 | 承载内容 | 时效 | 更新方式 |
+|---|---|---|---|---|
+| **GitHub Pages（主入口）** | `https://afdk1991.github.io/manju/` | 静态站点：落地页 SPA、`api/v1/*.json` 静态 API、`external/` 外部片单（2841 条） | **长期、免费、无需鉴权** | `git push origin main` → GitHub Actions 自动重建 |
+| **EdgeOne Makers（动态补充）** | `https://manju-hagvu7ry.edgeone.cool?eo_token=...` | 云函数接口：OTA 检查/上报、搜索、管理后台、Blob 增量 | 预览域名，带 token 访问，约 3 小时会话时效 | `cd makers && edgeone makers deploy --json` |
+| **Oracle Always Free（待实例）** | `http://<公网IP>:8000` | 完整 FastAPI：内容中台 + OTA + 运营后台 | 永久免费（实例创建后） | 按 `deploy/free-server/README.md` 一键部署 |
+
+### 日常更新流程
+
+```bash
+# 1) 修改代码或数据后，普通提交推送即可
+git add -A && git commit -m "feat: ..." && git push origin main
+#    → GitHub Pages 自动重新部署（约 1 分钟，见 Actions 状态）
+
+# 2) 更新外部片单（红果短剧三分类：真人剧/漫剧/AI剧，去重续跑）
+python resources/external/hongguoduanju/fetch_category.py --category real-drama   # 或 comic-drama / ai-drama
+python resources/external/hongguoduanju/build_catalog.py   # 重建 makers/static/external/*.json
+git add -A && git commit -m "data(catalog): 片单更新" && git push origin main
+
+# 3) 动态接口变更时，额外部署 EdgeOne Makers
+cd makers && $env:PAGES_SOURCE="skills"; edgeone makers deploy --json
+```
+
+### 注意事项
+
+- GitHub Pages 是**公开仓库**（免费版 Pages 仅对公开仓库生效）；仓库不含任何私钥 / `.env`（已 gitignore 并核查）。
+- EdgeOne 预览地址**必须完整复制（含 `?eo_token=...&eo_time=...`）**，截断会 401；首次打开自动种 cookie，会话约 3 小时。
+- 若需关闭 EdgeOne 的访问保护或获得永久域名，需在腾讯云控制台绑定自定义域名（大陆节点需 ICP 备案）。
+- 桌面端真实安装包与 OTA 自动更新的完整闭环仍待建（见 `docs/blockers.md`）；当前 OTA 协议链路与服务端接口已就绪。
