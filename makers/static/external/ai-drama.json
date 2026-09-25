@@ -4,7 +4,7 @@
  "category": "ai-drama",
  "category_label": "AI剧",
  "attribution": "封面与作品信息版权归红果短剧及相应权利人所有；本文件仅含公开元数据与来源链接，不提供播放。",
- "total": 950,
+ "total": 989,
  "items": [
   {
    "id": "hg-7682401409018383422",
@@ -173,6 +173,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7681203098714393662",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7688629448630881305",
+   "title": "满级老登之大东北1985第三季",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/536d09469f0f661ab3c1416196d98a8b~tplv-shrink:640:0.image",
+   "episodes_text": "全286集",
+   "episodes": 286,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7688629448630881305",
    "media_type": "ai-generated-drama"
   },
   {
@@ -1502,6 +1515,19 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7687612057104944152",
+   "title": "八零辣媳当家第二季",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/c422475757d8f62eaf1952f38c6f29bc~tplv-shrink:640:0.image",
+   "episodes_text": "全141集",
+   "episodes": 141,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687612057104944152",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7679056999132187672",
    "title": "烬九州：第十八季",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/0a9fd98909e17e7f01f878b369d5e641~tplv-shrink:640:0.image",
@@ -1668,6 +1694,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7686058145130482713",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7686446227298208792",
+   "title": "白四爷的偏爱",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/580c11f3f9c0b38cd32a1b756b44eff4~tplv-shrink:640:0.image",
+   "episodes_text": "全137集",
+   "episodes": 137,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686446227298208792",
    "media_type": "ai-generated-drama"
   },
   {
@@ -2711,6 +2750,19 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7683925937624190014",
+   "title": "负债千万，我把泡面卖给古代女帝",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/3107a98130d2e2419b7e083dfc6f868e~tplv-shrink:640:0.image",
+   "episodes_text": "全120集",
+   "episodes": 120,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7683925937624190014",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7685234017045597209",
    "title": "农村兽神第六季",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/d1586ec9a12e8c73a34d62e5e5483cf9~tplv-shrink:640:0.image",
@@ -2760,6 +2812,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7686334896410741785",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7687128089976917017",
+   "title": "重生60：被赶进山的娘仨活成了传说",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/d91fd86bd98272dd91421f00656fc2a2~tplv-shrink:640:0.image",
+   "episodes_text": "全120集",
+   "episodes": 120,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687128089976917017",
    "media_type": "ai-generated-drama"
   },
   {
@@ -3595,6 +3660,19 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7685346897568992280",
+   "title": "重生七零，进山打猎养亲人",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/e413b9b5e1310ab93f33c1391aaf63f2~tplv-shrink:640:0.image",
+   "episodes_text": "全111集",
+   "episodes": 111,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7685346897568992280",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7686470968717347864",
    "title": "站在外科之巅，我在急诊科疯狂摸鱼第二季",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/93bdbfe67daa3321b90baef0eed3bbef~tplv-shrink:640:0.image",
@@ -3683,6 +3761,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7686036482762492953",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7688620172956929086",
+   "title": "弃少出族即无敌，万界求吾回归4",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/3de29fdbdafb26aae95f7d1c1a59c634~tplv-shrink:640:0.image",
+   "episodes_text": "全110集",
+   "episodes": 110,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7688620172956929086",
    "media_type": "ai-generated-drama"
   },
   {
@@ -3839,6 +3930,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7684204261160258585",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7684275379661458457",
+   "title": "酆都直播间",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/394e81ffb9289a14f564a0b428fd3a85~tplv-shrink:640:0.image",
+   "episodes_text": "全108集",
+   "episodes": 108,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7684275379661458457",
    "media_type": "ai-generated-drama"
   },
   {
@@ -4245,6 +4349,19 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7686364272229633048",
+   "title": "赶海爆桶记：爸比这桶值十万",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/6aa21cfce88a2daa90f90a940fed6c34~tplv-shrink:640:0.image",
+   "episodes_text": "全104集",
+   "episodes": 104,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686364272229633048",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7680870698700524569",
    "title": "站在外科之巅，我在急诊科疯狂摸鱼",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/7bede264c499ad040c73bb10501408b8~tplv-shrink:640:0.image",
@@ -4307,6 +4424,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7684221278445636632",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7685626745155767320",
+   "title": "村里来了个厉害媳妇儿",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/55e27e3f0cd322ef63c661cf2499e9a1~tplv-shrink:640:0.image",
+   "episodes_text": "全103集",
+   "episodes": 103,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7685626745155767320",
    "media_type": "ai-generated-drama"
   },
   {
@@ -4749,6 +4879,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7681323725043534910",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7681583463182388249",
+   "title": "女儿吃西瓜皮的真相",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/335cab8adfa313078bf24abc7f2c7f04~tplv-shrink:640:0.image",
+   "episodes_text": "全100集",
+   "episodes": 100,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7681583463182388249",
    "media_type": "ai-generated-drama"
   },
   {
@@ -5467,6 +5610,32 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7685980821647264830",
+   "title": "六年十二秒",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/17f741c95e99f555b67c644d2a45ef90~tplv-shrink:640:0.image",
+   "episodes_text": "全94集",
+   "episodes": 94,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7685980821647264830",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7686441599852629017",
+   "title": "雪夜独行",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/8dd299a7a2e7226faba9c42ae6c78652~tplv-shrink:640:0.image",
+   "episodes_text": "全94集",
+   "episodes": 94,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686441599852629017",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7686464779958897688",
    "title": "两界生财记：两界倒爷！",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/dc0a2693aed5072dae97c3681583406e~tplv-shrink:640:0.image",
@@ -5698,6 +5867,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7683038425414388761",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7683128099503868990",
+   "title": "归凰惊旧梦",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/d241383d5d9acd8abce97b9bb7050e45~tplv-shrink:640:0.image",
+   "episodes_text": "全92集",
+   "episodes": 92,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7683128099503868990",
    "media_type": "ai-generated-drama"
   },
   {
@@ -6143,6 +6325,32 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7687264155744619544",
+   "title": "本想吃软饭，结果老婆会读心",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/0defa58016b4c3340e51f2bf82e0c18e~tplv-shrink:640:0.image",
+   "episodes_text": "全89集",
+   "episodes": 89,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687264155744619544",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7688177949387803710",
+   "title": "绝命大藏家之命局迷踪6",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/10f0c8631f8e2b1b86f23b839ac4fd97~tplv-shrink:640:0.image",
+   "episodes_text": "全89集",
+   "episodes": 89,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7688177949387803710",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7665937606860885016",
    "title": "弃少出族即无敌，诸天哭求我回归",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/27253b191c106df4debdaa08db1ce624~tplv-shrink:640:0.image",
@@ -6377,6 +6585,19 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7685694776884087833",
+   "title": "五个孤老人，河里捡到个女状元",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/ab5c29d7d5a10cbcf067d4aafcf2c211~tplv-shrink:640:0.image",
+   "episodes_text": "全87集",
+   "episodes": 87,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7685694776884087833",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7686521988076014616",
    "title": "婚后第三年，霍先生心动了",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/db0e4c384bd620b59ae33260b597d4a9~tplv-shrink:640:0.image",
@@ -6569,6 +6790,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7674481814840298520",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7676028039360154649",
+   "title": "分家后我闯雪岭",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/227084340b293e29ee5930f579030b4f~tplv-shrink:640:0.image",
+   "episodes_text": "全85集",
+   "episodes": 85,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7676028039360154649",
    "media_type": "ai-generated-drama"
   },
   {
@@ -7716,6 +7950,19 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7678317953791560729",
+   "title": "寒门终有锦绣来",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/5fe3a291956477dcfaacaa245914121f~tplv-shrink:640:0.image",
+   "episodes_text": "全80集",
+   "episodes": 80,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7678317953791560729",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7678616349588851737",
    "title": "我不做愚孝女儿",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/2d4460c77ebd0cbabe57e016272bdc70~tplv-shrink:640:0.image",
@@ -8028,6 +8275,19 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7683469812038650905",
+   "title": "职场步步前行，邂逅命中之人",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/d2818421ee89754ce69c99bc7cbe1e5d~tplv-shrink:640:0.image",
+   "episodes_text": "全80集",
+   "episodes": 80,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7683469812038650905",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7683471378367925272",
    "title": "扣我提成后公司崩盘了",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/f37641015b9f530da680a0d9986daf22~tplv-shrink:640:0.image",
@@ -8067,6 +8327,19 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7684232095220108350",
+   "title": "滴水恩换来涌泉报",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/ca804f85b8455dbcb0d4f14bde881523~tplv-shrink:640:0.image",
+   "episodes_text": "全80集",
+   "episodes": 80,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7684232095220108350",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7684235180579490878",
    "title": "重生1977，我主动下乡",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/9fa3bde5a5dc30de87d91cbcb0781d9f~tplv-shrink:640:0.image",
@@ -8077,6 +8350,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7684235180579490878",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7684623284456934425",
+   "title": "我不是龙爷",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/c44047d48425c2f822474ae64f2679f8~tplv-shrink:640:0.image",
+   "episodes_text": "全80集",
+   "episodes": 80,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7684623284456934425",
    "media_type": "ai-generated-drama"
   },
   {
@@ -8220,6 +8506,32 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7686506541624593433",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7686817305036065816",
+   "title": "不再愚孝，附身海兽赶海带妻女渔获满仓",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/b1aced4159b30362e6484b192fc8e4f2~tplv-shrink:640:0.image",
+   "episodes_text": "全80集",
+   "episodes": 80,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686817305036065816",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7687437344483314750",
+   "title": "逆流重生，从救赎全家开始赶海",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/304e6ba35eddcff7e40b0d2a71edecac~tplv-shrink:640:0.image",
+   "episodes_text": "全80集",
+   "episodes": 80,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687437344483314750",
    "media_type": "ai-generated-drama"
   },
   {
@@ -8808,6 +9120,19 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7686469416959085630",
+   "title": "中年落魄，我靠异能翻身",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/fd9cda38c7427bd59a1ca11e0488a445~tplv-shrink:640:0.image",
+   "episodes_text": "全75集",
+   "episodes": 75,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686469416959085630",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7658590108685175832",
    "title": "烬九州：第二季",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/465cdd62b6f4e8cb7fb610b64fd21a75~tplv-shrink:640:0.image",
@@ -9013,6 +9338,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7683459003585661976",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7687154377039023166",
+   "title": "深情成烬，绝不回头",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/9bdc92eb8601e232fa9438bdfd70dd99~tplv-shrink:640:0.image",
+   "episodes_text": "全73集",
+   "episodes": 73,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687154377039023166",
    "media_type": "ai-generated-drama"
   },
   {
@@ -9874,6 +10212,19 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7687162110614195225",
+   "title": "杀我狗",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/72ed65526ea18d5a06b122ba56ac5116~tplv-shrink:640:0.image",
+   "episodes_text": "全68集",
+   "episodes": 68,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687162110614195225",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7655313736701316120",
    "title": "县令哭穷五年，李世民进城懵了",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/e7ceef7b6ecca68042936494a6fe37d8~tplv-shrink:640:0.image",
@@ -10053,6 +10404,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7684199628459232280",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7684323315615271961",
+   "title": "岁月温粥待杏来",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/74c12d6c5dd8df76fe0b17ed09197ac8~tplv-shrink:640:0.image",
+   "episodes_text": "全66集",
+   "episodes": 66,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7684323315615271961",
    "media_type": "ai-generated-drama"
   },
   {
@@ -10300,6 +10664,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7683822345265351742",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7687445061256105022",
+   "title": "陛下，王妃她拒做皇后",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/d60ace8e524da6fc2c37b4de917f126e~tplv-shrink:640:0.image",
+   "episodes_text": "全64集",
+   "episodes": 64,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687445061256105022",
    "media_type": "ai-generated-drama"
   },
   {
@@ -11161,6 +11538,19 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7684525857221643289",
+   "title": "隐退两年，我回来整顿集团",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/1c761b80c133260916bbf6c73b97932f~tplv-shrink:640:0.image",
+   "episodes_text": "全59集",
+   "episodes": 59,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7684525857221643289",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7685229378594163736",
    "title": "五岁萌宝不好惹第三季",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/db0e2f121aa9cd20430a3b2ad8713866~tplv-shrink:640:0.image",
@@ -11171,6 +11561,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7685229378594163736",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7685979273017953304",
+   "title": "东北暖冬：捡了个南方小土豆",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/9f87f49ed73f1588dfd7f9accc7cee5d~tplv-shrink:640:0.image",
+   "episodes_text": "全59集",
+   "episodes": 59,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7685979273017953304",
    "media_type": "ai-generated-drama"
   },
   {
@@ -11434,6 +11837,32 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7686058136351804441",
+   "title": "铁面水闸",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/f2e9313acf1fb26dc8fb7d0ca3a3e9c2~tplv-shrink:640:0.image",
+   "episodes_text": "全55集",
+   "episodes": 55,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686058136351804441",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7686515811497823257",
+   "title": "棠花压尽枝头珠",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/6a7f9945ec88fd138b8886549ee930c6~tplv-shrink:640:0.image",
+   "episodes_text": "全55集",
+   "episodes": 55,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686515811497823257",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7686559101802777624",
    "title": "血缘枷锁",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/362cacc3f2023efd2f5a6dd261720a2a~tplv-shrink:640:0.image",
@@ -11496,6 +11925,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7686557557279689753",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7687862537345322046",
+   "title": "五岁萌宝不好惹第四季",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/4aafc51ebe2b805901e79b39f96c3ce1~tplv-shrink:640:0.image",
+   "episodes_text": "全54集",
+   "episodes": 54,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687862537345322046",
    "media_type": "ai-generated-drama"
   },
   {
@@ -11733,6 +12175,19 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7684579988372196376",
+   "title": "深海逆袭：从渔夫到渔王",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/a0b6cc567a446223ff1604fe4cb752af~tplv-shrink:640:0.image",
+   "episodes_text": "全51集",
+   "episodes": 51,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7684579988372196376",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7686096798603037720",
    "title": "败家女王",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/c18e83c0bae54c511a12f232d857eee6~tplv-shrink:640:0.image",
@@ -11808,6 +12263,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7681252574258809880",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7681645322602302489",
+   "title": "停灶三月，老公崩溃了",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/e2e2a6114277899522f1f62cf708b384~tplv-shrink:640:0.image",
+   "episodes_text": "全50集",
+   "episodes": 50,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7681645322602302489",
    "media_type": "ai-generated-drama"
   },
   {
@@ -12045,6 +12513,19 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7687888815561641022",
+   "title": "坠窗砸车索赔950万，可我家没窗户啊",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/31cfed5e5d85840967a0ec0b3566c3a2~tplv-shrink:640:0.image",
+   "episodes_text": "全45集",
+   "episodes": 45,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687888815561641022",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7677569567106812952",
    "title": "看完婚房，我收回了真心",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/605f89ce05c7245a69a6d1890c64cadc~tplv-shrink:640:0.image",
@@ -12136,6 +12617,19 @@
    "media_type": "ai-generated-drama"
   },
   {
+   "id": "hg-7688728448692407321",
+   "title": "婚礼上掀翻妻子的惊天秘密",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/0a8df85c87b3400ded8e5bbf13eaaa79~tplv-shrink:640:0.image",
+   "episodes_text": "全42集",
+   "episodes": 42,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7688728448692407321",
+   "media_type": "ai-generated-drama"
+  },
+  {
    "id": "hg-7683499200239127576",
    "title": "后来，他等不到晚晚",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/5ed22886f172b0eace9293c0bc81e04f~tplv-shrink:640:0.image",
@@ -12146,6 +12640,19 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7683499200239127576",
+   "media_type": "ai-generated-drama"
+  },
+  {
+   "id": "hg-7676872240943615001",
+   "title": "总裁的隐秘棋局",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/db635c36fa2c4ecbe1bc43608db72b8f~tplv-shrink:640:0.image",
+   "episodes_text": "全40集",
+   "episodes": 40,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "ai-drama",
+   "category_label": "AI剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7676872240943615001",
    "media_type": "ai-generated-drama"
   },
   {

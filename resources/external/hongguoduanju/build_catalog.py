@@ -5,10 +5,11 @@
 输出到 makers/static/external/<category>.json 与汇总 index.json。
 
 只搬运“元数据 + 原始来源链接”，不包含任何视频/图片二进制。
-运行：python resources/external/hongguoduanju/build_catalog.py
+运行：python resources/external/hongguoduanju/build_catalog.py [--only comic-drama,ai-drama]
 """
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 
@@ -61,11 +62,18 @@ def convert(src: Path) -> int:
 
 
 def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--only", default="", help="仅处理指定分类（逗号分隔，如 comic-drama,ai-drama）；留空处理全部")
+    args = ap.parse_args()
+    only = {c.strip() for c in args.only.split(",") if c.strip()} if args.only else None
+
     counts = {}
     for src in sorted(HERE.glob("*-drama.json")):
+        if only and src.stem not in only:
+            continue
         counts[src.stem] = convert(src)
     if not counts:
-        print("未发现分类 JSON，请先运行 fetch_category.py")
+        print("未发现分类 JSON 或 --only 指定的分类不存在，请先运行 fetch_category.py")
         return 1
 
     # 汇总索引：前端一次拉取即可获得全部外部片单入口

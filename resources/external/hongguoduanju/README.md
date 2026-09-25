@@ -11,12 +11,12 @@
 | 项    | 内容                                                                       |
 | ---- | ------------------------------------------------------------------------ |
 | 来源平台 | 红果短剧官网 `https://hongguoduanju.com`（字节系免费短剧平台）                            |
-| 采集分类 | `real-drama`（真人剧）、`comic-drama`（漫剧 / 动态漫画）、`ai-drama`（AI 剧）              |
+| 采集分类 | `comic-drama`（漫剧 / 动态漫画）、`ai-drama`（AI 剧）；~~`real-drama`（真人剧）~~ 已于 2026-09-25 从片单去除（原始文件删除，应用索引不再生成） |
 | 采集入口 | `https://hongguoduanju.com/category/<category>`                          |
-| 翻页方式 | 站点自带分页 `/category/<category>?page=N`（每分类 34 页），逐页抓取                      |
-| 获取范围 | 仅分类**列表页**上公开可见的卡片元数据，每分类 **800 条**，合计 **2400 条**（2026-09-23 采集）         |
+| 翻页方式 | 站点自带分页 `/category/<category>?page=N`，逐页抓取                      |
+| 获取范围 | 仅分类**列表页**上公开可见的卡片元数据，当前 **2010 条**（漫剧 1021 + AI 剧 989，2026-09-25 更新）         |
 | 资源类型 | **元数据**（标题、详情页链接、封面图地址、集数）；无视频、无图片二进制                                    |
-| 唯一标识 | 详情页链接 `detail_url`（`/detail?series_id=...`）；三分类各自去重后 800 条均唯一，**跨分类零重叠** |
+| 唯一标识 | 详情页链接 `detail_url`（`/detail?series_id=...`）；各分类去重后均唯一，**跨分类零重叠** |
 
 ## 2. 合规与服务条款边界
 
@@ -49,13 +49,11 @@ resources/external/hongguoduanju/
 
 ├── fetch\_category.py        # 可续跑、限速的通用分类采集器（--category 指定分类）
 
-├── build\_catalog.py         # 扫描各分类 JSON，生成应用向静态索引与汇总
+├── build\_catalog.py         # 扫描各分类 JSON，生成应用向静态索引与汇总（支持 --only 指定分类）
 
-├── real-drama.json          # 真人剧原始采集结果（800 条，带来源/采集元信息）
+├── comic-drama.json         # 漫剧原始采集结果（1021 条，带来源/采集元信息）
 
-├── comic-drama.json         # 漫剧原始采集结果（800 条）
-
-└── ai-drama.json            # AI 剧原始采集结果（800 条）
+└── ai-drama.json            # AI 剧原始采集结果（989 条）
 ```
 
 应用向产物（构建生成，随 Makers 部署）：
@@ -65,9 +63,7 @@ resources/external/hongguoduanju/
 ```
 makers/static/external/
 
-├── index.json          # 汇总：3 个片单入口，total=2400
-
-├── real-drama.json     # media\_type=live-action-short-drama
+├── index.json          # 汇总：2 个片单入口，total=2010
 
 ├── comic-drama.json    # media\_type=motion-comic
 
@@ -84,7 +80,7 @@ makers/static/external/
 
   再按需拉取 `/external/<category>.json`；落地页「在线自检」面板提供
 
-  「外部片单 (2400)」按钮可直接验证。
+  「外部片单 (2010)」按钮可直接验证。
 
 * **条目结构**：`{id:"hg-<series_id>", title, cover_url, episodes, source,`
 
@@ -111,9 +107,7 @@ python resources/external/hongguoduanju/fetch\_category.py --category comic-dram
 
 python resources/external/hongguoduanju/fetch\_category.py --category ai-drama
 
-python resources/external/hongguoduanju/fetch\_category.py --category real-drama
-
-\# 重新生成全部应用向索引（自动汇总到 index.json）
+\# 重新生成应用向索引（默认全部分类；--only 可限定，如 --only comic-drama,ai-drama）
 
 python resources/external/hongguoduanju/build\_catalog.py
 ```

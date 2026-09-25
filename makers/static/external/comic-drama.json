@@ -4,7 +4,7 @@
  "category": "comic-drama",
  "category_label": "漫剧",
  "attribution": "封面与作品信息版权归红果短剧及相应权利人所有；本文件仅含公开元数据与来源链接，不提供播放。",
- "total": 972,
+ "total": 1021,
  "items": [
   {
    "id": "hg-7682690565191765016",
@@ -30,6 +30,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7687961499481934910",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7687963033422810174",
+   "title": "创立反卷仙门，弟子越猛我越强：第1季",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/4ed18e4f0573151332b6fc0e6b403e76~tplv-shrink:640:0.image",
+   "episodes_text": "全1000集",
+   "episodes": 1000,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687963033422810174",
    "media_type": "motion-comic"
   },
   {
@@ -82,6 +95,32 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7686090613598456856",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7687904284695874622",
+   "title": "争霸：镇国驸马爷",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/42b4771d176e7bcf62b20ae8c0a78da9~tplv-shrink:640:0.image",
+   "episodes_text": "全999集",
+   "episodes": 999,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687904284695874622",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7687956896539495449",
+   "title": "绿龙冠冕第一季",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/ab812ab47648af539284d7206fef12ec~tplv-shrink:640:0.image",
+   "episodes_text": "全897集",
+   "episodes": 897,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687956896539495449",
    "media_type": "motion-comic"
   },
   {
@@ -472,6 +511,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7687946060769020952",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7687938296130833470",
+   "title": "作死系统，非要让我去闯祸第二季",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/b41255e5f12e6992e71729b1c47e4070~tplv-shrink:640:0.image",
+   "episodes_text": "全469集",
+   "episodes": 469,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687938296130833470",
    "media_type": "motion-comic"
   },
   {
@@ -1606,6 +1658,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7688340325336632344",
+   "title": "霁月如初第二季",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/3a3f49e84b92e8d10c6874948f08b2c4~tplv-shrink:640:0.image",
+   "episodes_text": "全237集",
+   "episodes": 237,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7688340325336632344",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7682611686221564953",
    "title": "乔影传奇：你说你惹她干嘛之乔影传第1季",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/f769db48144005ba96f6a29f3ee74e83~tplv-shrink:640:0.image",
@@ -1720,6 +1785,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7686791037544582206",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7686899256984079385",
+   "title": "赶我出侯府，我成绝世天骄",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/ced6b631daf04544a3e5f263ac12da09~tplv-shrink:640:0.image",
+   "episodes_text": "全228集",
+   "episodes": 228,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686899256984079385",
    "media_type": "motion-comic"
   },
   {
@@ -1866,6 +1944,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7684603181053004862",
+   "title": "身负废灵根，我借补天炉定乾坤",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/9aa518ddc42464487468436321557715~tplv-shrink:640:0.image",
+   "episodes_text": "全215集",
+   "episodes": 215,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7684603181053004862",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7687066248814808088",
    "title": "穿成垫底皇子，反倒成为千古一帝第三季",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/411a536bc271b8d7b15199aaea26c354~tplv-shrink:640:0.image",
@@ -1954,6 +2045,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7678602410972941337",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7687826966220639257",
+   "title": "都重生了，当然要抱紧老婆脑夫君第二季",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/ca941c241d3f74793d9f8af6bf043ca0~tplv-shrink:640:0.image",
+   "episodes_text": "全208集",
+   "episodes": 208,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687826966220639257",
    "media_type": "motion-comic"
   },
   {
@@ -2227,6 +2331,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7687248701831515198",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7687551756527471678",
+   "title": "剑仙归来第八季",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/a6c58c959ee4f8093b28baee53765c1d~tplv-shrink:640:0.image",
+   "episodes_text": "全200集",
+   "episodes": 200,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687551756527471678",
    "media_type": "motion-comic"
   },
   {
@@ -2698,6 +2815,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7687171389693905982",
+   "title": "大明军火库第一季续集四",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/54ee27665623b6964aa5fa63de0dfdba~tplv-shrink:640:0.image",
+   "episodes_text": "全180集",
+   "episodes": 180,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687171389693905982",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7685959184151481368",
    "title": "医女风华：流放北疆第九季",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/7849d910c203f9178549c3d556159a4c~tplv-shrink:640:0.image",
@@ -2958,6 +3088,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7688552131053227032",
+   "title": "桃源十年归，初恋变权臣",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/ad42e52567aa88b18f775c10d8f7044d~tplv-shrink:640:0.image",
+   "episodes_text": "全170集",
+   "episodes": 170,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7688552131053227032",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7666065934041222169",
    "title": "大佬，你该出手了第一季",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/798a810059e48d23ecae69e13ab224e0~tplv-shrink:640:0.image",
@@ -3059,6 +3202,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7681133524836961305",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7681291232076647448",
+   "title": "芽芽荷包里的烟火人间第四季",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/02b2c163f929d05d083d3ffa3fb82601~tplv-shrink:640:0.image",
+   "episodes_text": "全168集",
+   "episodes": 168,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7681291232076647448",
    "media_type": "motion-comic"
   },
   {
@@ -3319,6 +3475,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7687078613824326681",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7687568771052997657",
+   "title": "团宠糯糯第五季",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/7bc2581ae152fea38f478fc47e314324~tplv-shrink:640:0.image",
+   "episodes_text": "全161集",
+   "episodes": 161,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687568771052997657",
    "media_type": "motion-comic"
   },
   {
@@ -4570,6 +4739,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7679087913384021017",
+   "title": "她契约的都是星际大佬",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/815f9bc5e0db75e698bc4230df896a1a~tplv-shrink:640:0.image",
+   "episodes_text": "全141集",
+   "episodes": 141,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7679087913384021017",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7680810376165854233",
    "title": "第一狂徒2",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/6a4b7b2a838152574b001ab28fc194a2~tplv-shrink:640:0.image",
@@ -5103,6 +5285,32 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7687445057179241534",
+   "title": "八零留子的快乐你不懂",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/79d184cb3da887028828382dda9d84b7~tplv-shrink:640:0.image",
+   "episodes_text": "全136集",
+   "episodes": 136,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687445057179241534",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7687593504058379288",
+   "title": "半山桃僵传",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/60aec8c145b3bf13df243050f480beba~tplv-shrink:640:0.image",
+   "episodes_text": "全136集",
+   "episodes": 136,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687593504058379288",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7667887337333853246",
    "title": "山河独酌第二季",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/f1f5c7a692a9183162b67df331777fe8~tplv-shrink:640:0.image",
@@ -5373,6 +5581,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7686509632155569177",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7686804951531523097",
+   "title": "长姐养大四个弟妹，嫁的猎户竟是战神",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/5ae0c5b29ce9f786092d175644fb8362~tplv-shrink:640:0.image",
+   "episodes_text": "全133集",
+   "episodes": 133,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686804951531523097",
    "media_type": "motion-comic"
   },
   {
@@ -5766,6 +5987,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7686520447772396569",
+   "title": "穿成恶毒前妻，我靠卤肉爆赚",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/5545b339f3ee496a4895ae75de4b2bc1~tplv-shrink:640:0.image",
+   "episodes_text": "全129集",
+   "episodes": 129,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686520447772396569",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7686778661583735832",
    "title": "典狱长降临：我收容世间万兽",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/3695e92424f77c929699cbf5d658deb1~tplv-shrink:640:0.image",
@@ -5776,6 +6010,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7686778661583735832",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7687823880374733848",
+   "title": "杀手穿越满级农妇，专治不服第五季",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/9f23253b5d838e1f6d8f6d796d5b2949~tplv-shrink:640:0.image",
+   "episodes_text": "全129集",
+   "episodes": 129,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687823880374733848",
    "media_type": "motion-comic"
   },
   {
@@ -6130,6 +6377,32 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7687070887354321944",
+   "title": "我在秘境捡的垃圾都是宝第一季",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/840a5a0bf8a471450c150ad4a4ec73b3~tplv-shrink:640:0.image",
+   "episodes_text": "全126集",
+   "episodes": 126,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687070887354321944",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7687567213951192089",
+   "title": "全班穿越洪荒，你们天仙我圣人第一季",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/117d660c16076ba3e05ac6ebadf4b1d4~tplv-shrink:640:0.image",
+   "episodes_text": "全126集",
+   "episodes": 126,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687567213951192089",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7680845955058387993",
    "title": "烟火照新家",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/55f9ab0fafa46be4fc05aeae508be0ca~tplv-shrink:640:0.image",
@@ -6270,6 +6543,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7685226279297141785",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7687268797123677209",
+   "title": "大学换新娘完结版",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/b567651598aeea468b97f9313e72bb90~tplv-shrink:640:0.image",
+   "episodes_text": "全124集",
+   "episodes": 124,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687268797123677209",
    "media_type": "motion-comic"
   },
   {
@@ -6429,6 +6715,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7679823897696422936",
+   "title": "重生60，地堡养活三个小奶团",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/c79be812f6a5cac08e459a4b9e6c49cc~tplv-shrink:640:0.image",
+   "episodes_text": "全122集",
+   "episodes": 122,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7679823897696422936",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7683183766054898713",
    "title": "别人等末日，我先当王族第一季",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/401f24736ec3b356c8f8b684d41ec89e~tplv-shrink:640:0.image",
@@ -6572,6 +6871,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7686503436052876313",
+   "title": "相府嫡女不当了，带着空间去种田第一季",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/a0510990be58790f8246c987290b14a6~tplv-shrink:640:0.image",
+   "episodes_text": "全121集",
+   "episodes": 121,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686503436052876313",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7687211587022621758",
    "title": "嫡女归京，我家娇夫首辅被宠疯第五季",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/7fb92149f00efbf0a514d63fe023caa4~tplv-shrink:640:0.image",
@@ -6712,6 +7024,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7686121533223210008",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7686860622834715672",
+   "title": "锦衣醉春风",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/a38025406b0accd301767d148ca803f4~tplv-shrink:640:0.image",
+   "episodes_text": "全120集",
+   "episodes": 120,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686860622834715672",
    "media_type": "motion-comic"
   },
   {
@@ -7586,6 +7911,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7685702523180567576",
+   "title": "冰山小鱼之人在大学：我的上铺是校花学姐",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/3ca7b6f6b035a3b8c3f151f441828c81~tplv-shrink:640:0.image",
+   "episodes_text": "全111集",
+   "episodes": 111,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7685702523180567576",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7685722610415766553",
    "title": "绑定国运：我靠强化图鉴横扫全球",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/d7ea08b9e370daf114b87fa0febdd89a~tplv-shrink:640:0.image",
@@ -8106,6 +8444,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7683924392908180504",
+   "title": "全员大佬：非正常捉妖师",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/d635d230cfaf51074b3766fb1fc0288a~tplv-shrink:640:0.image",
+   "episodes_text": "全106集",
+   "episodes": 106,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7683924392908180504",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7685719526368889918",
    "title": "捧杀儿子就变强，一门父子三大帝",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/90a3c115264273eb01c53297f66bde9c~tplv-shrink:640:0.image",
@@ -8246,6 +8597,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7686775574844410942",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7686787940663774232",
+   "title": "大小姐不好惹，京都竹马为她保驾护航",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/d9f21467264cebc0e64572b603e6d587~tplv-shrink:640:0.image",
+   "episodes_text": "全105集",
+   "episodes": 105,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686787940663774232",
    "media_type": "motion-comic"
   },
   {
@@ -8860,6 +9224,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7685019113885797438",
+   "title": "荔月饕临",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/7d30b8996c779ad9cfbf2c006763cfc2~tplv-shrink:640:0.image",
+   "episodes_text": "全100集",
+   "episodes": 100,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7685019113885797438",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7685651479947922456",
    "title": "落魄老公别黑化，恶毒前妻来贴贴",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/1a7ae33181f33029bfe87f111a763b1a~tplv-shrink:640:0.image",
@@ -8922,6 +9299,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7660842901529693208",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7675590448932473881",
+   "title": "谁说没灵根不能修仙的？之无灵证道第十九季",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/1c9a6c90a140b19f31bd861084e333db~tplv-shrink:640:0.image",
+   "episodes_text": "全99集",
+   "episodes": 99,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7675590448932473881",
    "media_type": "motion-comic"
   },
   {
@@ -9458,6 +9848,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7685690139804175384",
+   "title": "逆天小师妹",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/aa38a6f1b43eff7b09bb8e8793f5c550~tplv-shrink:640:0.image",
+   "episodes_text": "全90集",
+   "episodes": 90,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7685690139804175384",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7683155939381218366",
    "title": "谁让这个悍匪修仙的！第三季",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/d10545a7b5305f6e659f2d7bfdf7a012~tplv-shrink:640:0.image",
@@ -9585,6 +9988,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7685592729367088152",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7687189939640880152",
+   "title": "人鱼赴归潮",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/c0171e4458945ddc03cbdbbcce6bd259~tplv-shrink:640:0.image",
+   "episodes_text": "全88集",
+   "episodes": 88,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687189939640880152",
    "media_type": "motion-comic"
   },
   {
@@ -9770,6 +10186,32 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7671604400095251480",
+   "title": "冰冷重遇第五季",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/c5bf53959886ecadaf0e9744669e64c9~tplv-shrink:640:0.image",
+   "episodes_text": "全84集",
+   "episodes": 84,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7671604400095251480",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7678585410657733656",
+   "title": "冰冷重遇第七季",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/a275d127b2254f50a467a0d4c41efeff~tplv-shrink:640:0.image",
+   "episodes_text": "全84集",
+   "episodes": 84,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7678585410657733656",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7683138957684526105",
    "title": "分手后重生武神，我无敌了",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/dfb9aa53ace4406d1fd4ed43800d24eb~tplv-shrink:640:0.image",
@@ -9874,6 +10316,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7686010197751368728",
+   "title": "听建议的校长，垫底高中变神校",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/dc6c74ad579428f32bade109dd6b50bf~tplv-shrink:640:0.image",
+   "episodes_text": "全82集",
+   "episodes": 82,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686010197751368728",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7621200213801176126",
    "title": "万妖图录传第一季",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/d276704b9a05ee371eb1a1c0e42ca581~tplv-shrink:640:0.image",
@@ -9897,6 +10352,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7666347335475006488",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7667514730021391384",
+   "title": "冰冷重遇第四季",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/b04017c434790a0b040a5fea8056bead~tplv-shrink:640:0.image",
+   "episodes_text": "全81集",
+   "episodes": 81,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7667514730021391384",
    "media_type": "motion-comic"
   },
   {
@@ -9962,6 +10430,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7682339554677754942",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7684935608447290392",
+   "title": "消失十五年，孩子妈飒爽归来",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/5e032b5c49161f5af9e8fabc29aae439~tplv-shrink:640:0.image",
+   "episodes_text": "全81集",
+   "episodes": 81,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7684935608447290392",
    "media_type": "motion-comic"
   },
   {
@@ -10472,6 +10953,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7664207403444866072",
+   "title": "冰冷重遇第三季",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/05930621e0cb49dc659af8bad747cc2d~tplv-shrink:640:0.image",
+   "episodes_text": "全72集",
+   "episodes": 72,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7664207403444866072",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7676382111808375832",
    "title": "天下无拐",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/4fe2ac45594633f83f9ab70fef03d4d6~tplv-shrink:640:0.image",
@@ -10563,6 +11057,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7687281163118840857",
+   "title": "同事的两百块生日宴",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/8e4d5e7083334af2fe90cfbe099451fc~tplv-shrink:640:0.image",
+   "episodes_text": "全72集",
+   "episodes": 72,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687281163118840857",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7687570310979128382",
    "title": "贵妃将我赎身钱送乞丐，重生后我夺回一切",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/846be16d48afe0805b1b77be4ad7566e~tplv-shrink:640:0.image",
@@ -10638,6 +11145,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7683734215854459928",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7683830140870069273",
+   "title": "姐姐的征途",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/547d772d496e907e09946487eb54067a~tplv-shrink:640:0.image",
+   "episodes_text": "全70集",
+   "episodes": 70,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7683830140870069273",
    "media_type": "motion-comic"
   },
   {
@@ -10742,6 +11262,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7684641822303325208",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7661625276232649753",
+   "title": "冰冷重遇第二季",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/d8478a63545f382f51e835b519c1d4d2~tplv-shrink:640:0.image",
+   "episodes_text": "全68集",
+   "episodes": 68,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7661625276232649753",
    "media_type": "motion-comic"
   },
   {
@@ -10898,6 +11431,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7686910088514128921",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7664997512964475929",
+   "title": "天才机甲师",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/008e42b7855349fb43ebb5b0aded49c4~tplv-shrink:640:0.image",
+   "episodes_text": "全65集",
+   "episodes": 65,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7664997512964475929",
    "media_type": "motion-comic"
   },
   {
@@ -11197,6 +11743,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7686039602930404376",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7687208500337855550",
+   "title": "青木渡寒关",
+   "cover_url": "https://p3-novel.byteimg.com/novel-pic/99488827f7b715eb297e30296b18da59~tplv-shrink:640:0.image",
+   "episodes_text": "全62集",
+   "episodes": 62,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687208500337855550",
    "media_type": "motion-comic"
   },
   {
@@ -11668,6 +12227,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7675305940014337048",
+   "title": "古今小货郎",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/c7fb7bff151f70455530d3a4606fc302~tplv-shrink:640:0.image",
+   "episodes_text": "全55集",
+   "episodes": 55,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7675305940014337048",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7678372029388573758",
    "title": "铺子空了，房东慌了",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/d1da944aa94d81db932190679ccc6282~tplv-shrink:640:0.image",
@@ -11889,6 +12461,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7686729192884407358",
+   "title": "一车堵人心",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/b4195cea6a5765b0d87e3058c6624c2b~tplv-shrink:640:0.image",
+   "episodes_text": "全52集",
+   "episodes": 52,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686729192884407358",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7683451287970515992",
    "title": "当初闹着算清账目，我答应后他退休金见了底",
    "cover_url": "https://p3-novel.byteimg.com/novel-pic/40855784b4415ef7a1496be28749f1b6~tplv-shrink:640:0.image",
@@ -11977,6 +12562,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7685673128298548249",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7686048859214056472",
+   "title": "错认保镖，竟是我哥死对头",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/aba9b756af26f3d52176cdf43b4a394a~tplv-shrink:640:0.image",
+   "episodes_text": "全50集",
+   "episodes": 50,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686048859214056472",
    "media_type": "motion-comic"
   },
   {
@@ -12279,6 +12877,19 @@
    "media_type": "motion-comic"
   },
   {
+   "id": "hg-7687570305899826238",
+   "title": "团宠诺诺找师兄",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/6f33a7453f669c0246e46c1246fa6c79~tplv-shrink:640:0.image",
+   "episodes_text": "全44集",
+   "episodes": 44,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7687570305899826238",
+   "media_type": "motion-comic"
+  },
+  {
    "id": "hg-7680269202090888216",
    "title": "我在古代当DJ",
    "cover_url": "https://p6-novel.byteimg.com/novel-pic/4a5723726d3ed7cd7355e5b17d6f1a8b~tplv-shrink:640:0.image",
@@ -12393,6 +13004,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7686014848315968536",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7686164817127689240",
+   "title": "同学一吹牛，我就变富豪",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/28fb798c55a3743058441782dc021f23~tplv-shrink:640:0.image",
+   "episodes_text": "全40集",
+   "episodes": 40,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7686164817127689240",
    "media_type": "motion-comic"
   },
   {
@@ -12523,6 +13147,19 @@
    "category": "comic-drama",
    "category_label": "漫剧",
    "detail_url": "https://hongguoduanju.com/detail?series_id=7685379375339932696",
+   "media_type": "motion-comic"
+  },
+  {
+   "id": "hg-7685727255871360024",
+   "title": "俺家闺女回来了",
+   "cover_url": "https://p6-novel.byteimg.com/novel-pic/f2bdbf00c0bbbfd8b0b44eb142b5f2e6~tplv-shrink:640:0.image",
+   "episodes_text": "全35集",
+   "episodes": 35,
+   "source": "hongguoduanju",
+   "source_label": "红果短剧",
+   "category": "comic-drama",
+   "category_label": "漫剧",
+   "detail_url": "https://hongguoduanju.com/detail?series_id=7685727255871360024",
    "media_type": "motion-comic"
   },
   {
