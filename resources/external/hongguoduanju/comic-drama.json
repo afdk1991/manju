@@ -6,11 +6,11 @@
     "category": "comic-drama",
     "scope": "仅分类列表页公开可见元数据；未抓取播放页/详情页；未下载任何视频或图片",
     "robots": "https://hongguoduanju.com/robots.txt",
-    "fetched_at": "2026-09-22T16:40:15+00:00",
+    "fetched_at": "2026-09-25T12:20:07+00:00",
     "last_page": 34,
     "note": "完成"
   },
-  "total": 800,
+  "total": 972,
   "items": [
     {
       "title": "聚宝仙盆之杂灵根才是真BOSS",
@@ -1231,6 +1231,13 @@
       "episodes": 133
     },
     {
+      "title": "那年山野遇良人",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7675706412617452606",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/cb812f4137657df9058aa5fd7f57dd03~tplv-shrink:640:0.image",
+      "episodes_text": "全150集",
+      "episodes": 150
+    },
+    {
       "title": "帅府福崽，卯卯驾到第六季",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7675712595063475262",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/d3c80257fd0cd19bcbdf9c149840ddc4~tplv-shrink:640:0.image",
@@ -1292,6 +1299,13 @@
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/a64c30bcf0dee184b96ebd7e2439ddd1~tplv-shrink:640:0.image",
       "episodes_text": "全60集",
       "episodes": 60
+    },
+    {
+      "title": "大乾毒士，千古第三阳谋！第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7676096047042546750",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/7f35ed3afa1b1efcd496bdd1f12cb0ba~tplv-shrink:640:0.image",
+      "episodes_text": "全130集",
+      "episodes": 130
     },
     {
       "title": "末世神店",
@@ -1411,6 +1425,13 @@
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/f60633a8d027ebc6777965a9b77b7eb2~tplv-shrink:640:0.image",
       "episodes_text": "全111集",
       "episodes": 111
+    },
+    {
+      "title": "灶下煤2之同行篇",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7676694428907490328",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/b71c2bac736d12e170c44b21b6bff001~tplv-shrink:640:0.image",
+      "episodes_text": "全66集",
+      "episodes": 66
     },
     {
       "title": "收租老汉第三季",
@@ -1553,6 +1574,13 @@
       "episodes": 130
     },
     {
+      "title": "谁说没灵根不能修仙的？之无灵证道第24季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7677592804603726873",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/95cf5ec67bccd5f971159f58dc977635~tplv-shrink:640:0.image",
+      "episodes_text": "全118集",
+      "episodes": 118
+    },
+    {
       "title": "不朽仙秦！第二季",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7677629861233429529",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/6799680a7be5715f32e102745346e6aa~tplv-shrink:640:0.image",
@@ -1586,6 +1614,13 @@
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/a217860ffec973f35e061b765c9eb5e7~tplv-shrink:640:0.image",
       "episodes_text": "全65集",
       "episodes": 65
+    },
+    {
+      "title": "开局拜仙尊为师杂灵根小师妹气运超强的",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7677869547365338174",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/51e7979cf65869924adef81de20c2dc6~tplv-shrink:640:0.image",
+      "episodes_text": "全150集",
+      "episodes": 150
     },
     {
       "title": "山河独酌第四季",
@@ -1819,6 +1854,13 @@
       "episodes": 210
     },
     {
+      "title": "蚀骨罪第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7678624072355286078",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/8aad3b7fdbc018ba46ed181f8c4658fd~tplv-shrink:640:0.image",
+      "episodes_text": "全200集",
+      "episodes": 200
+    },
+    {
       "title": "末日宿舍求生：从刷广告开始变强",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7678638019280112702",
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/693cbdd46072fb49a8cefe3f432b7280~tplv-shrink:640:0.image",
@@ -1978,6 +2020,13 @@
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/4821c02203c4e0d51d88b012ebb9ed79~tplv-shrink:640:0.image",
       "episodes_text": "全79集",
       "episodes": 79
+    },
+    {
+      "title": "花茶人偶苗疆少主他又争又抢第四季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7679338415501888536",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/b98bb4dab1e25c8347eefab9cf13cc90~tplv-shrink:640:0.image",
+      "episodes_text": "全90集",
+      "episodes": 90
     },
     {
       "title": "我当奸臣的那些年",
@@ -2330,6 +2379,13 @@
       "episodes": 116
     },
     {
+      "title": "主神临渊录第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7680753154853456920",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/efbc90c047a211490f5e859ba43dd261~tplv-shrink:640:0.image",
+      "episodes_text": "全199集",
+      "episodes": 199
+    },
+    {
       "title": "演瘾君子这么像因为他是强悍影帝",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7680770166044494910",
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/ae9a463c610877d5320cf1637b4d105a~tplv-shrink:640:0.image",
@@ -2657,6 +2713,13 @@
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/ca93b42083e3efb8dfc066a47521a77d~tplv-shrink:640:0.image",
       "episodes_text": "全54集",
       "episodes": 54
+    },
+    {
+      "title": "大佬，你该出手了第四季：我真不是大佬啊",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7681561833936800792",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/0fbff72f695c8c2ff3ac23a1575bca63~tplv-shrink:640:0.image",
+      "episodes_text": "全200集",
+      "episodes": 200
     },
     {
       "title": "你管这叫入赘",
@@ -3065,6 +3128,13 @@
       "episodes": 72
     },
     {
+      "title": "御兽异变：一条不存在的进化路线",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7682690540898356248",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/79490ee1d48a111f49bd6bb2e885abc8~tplv-shrink:640:0.image",
+      "episodes_text": "全242集",
+      "episodes": 242
+    },
+    {
       "title": "玄武门开局",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7682690565191765016",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/c4c2f04c69c7bfd9e4a514114958d9af~tplv-shrink:640:0.image",
@@ -3380,6 +3450,20 @@
       "episodes": 157
     },
     {
+      "title": "假千金下乡，我靠系统守护家人",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7683134314338339902",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/8ad549ad8583d1635b222cfb09dba862~tplv-shrink:640:0.image",
+      "episodes_text": "全101集",
+      "episodes": 101
+    },
+    {
+      "title": "点点的师父是元始天尊",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7683137380227746841",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/d0b82f6c6ae289e1c5a3049e70249771~tplv-shrink:640:0.image",
+      "episodes_text": "全45集",
+      "episodes": 45
+    },
+    {
       "title": "蛇宠心尖",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7683137398225505305",
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/bc0cf84cffabad420ca836c72899e49b~tplv-shrink:640:0.image",
@@ -3457,6 +3541,13 @@
       "episodes": 219
     },
     {
+      "title": "穿越之我是总裁联姻的未婚妻",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7683176069557406745",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/dd9ef11fe9a6e09132dc5d1101325aa0~tplv-shrink:640:0.image",
+      "episodes_text": "全120集",
+      "episodes": 120
+    },
+    {
       "title": "别人等末日，我先当王族第一季",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7683183766054898713",
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/401f24736ec3b356c8f8b684d41ec89e~tplv-shrink:640:0.image",
@@ -3469,6 +3560,13 @@
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/09c62becf8a1cdf6e530b02f25724af7~tplv-shrink:640:0.image",
       "episodes_text": "全126集",
       "episodes": 126
+    },
+    {
+      "title": "深宫惊梦：天赐良缘",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7683197683099520025",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/3b8e7c23fb14e938142a2a1572bfd5a3~tplv-shrink:640:0.image",
+      "episodes_text": "全44集",
+      "episodes": 44
     },
     {
       "title": "变成丧尸也要回家找妈妈",
@@ -3728,6 +3826,13 @@
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/9c235367ea5ebd2b7eb480488750669b~tplv-shrink:640:0.image",
       "episodes_text": "全118集",
       "episodes": 118
+    },
+    {
+      "title": "水库无限加速，钓鱼佬排队爆竿第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7683539393017039897",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/5f6101cf33280d3d57f2d7f074bbab39~tplv-shrink:640:0.image",
+      "episodes_text": "全75集",
+      "episodes": 75
     },
     {
       "title": "我在黄泉开快递站",
@@ -4297,6 +4402,13 @@
       "episodes": 166
     },
     {
+      "title": "龙爸凤妈，我却是只小乌鸦",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7684920147781372953",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/2005b545e86e72f4dc74e952fe44d791~tplv-shrink:640:0.image",
+      "episodes_text": "全98集",
+      "episodes": 98
+    },
+    {
       "title": "异世采集：废柴辅灵师好运连连第二季",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7684924774379703320",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/cf5b5cc11885abf968970b61fb2e6e99~tplv-shrink:640:0.image",
@@ -4400,6 +4512,13 @@
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/2f012cedbe0af11a3551b95b9d059049~tplv-shrink:640:0.image",
       "episodes_text": "全142集",
       "episodes": 142
+    },
+    {
+      "title": "他的玫瑰养成了妻子！玫瑰之约",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685207721531952190",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/d1bc79f2c99f34db9e3f9e9ca21e2647~tplv-shrink:640:0.image",
+      "episodes_text": "全148集",
+      "episodes": 148
     },
     {
       "title": "破碗问道",
@@ -4556,6 +4675,13 @@
       "episodes": 137
     },
     {
+      "title": "月染爱人",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685315974936923161",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/27aa747f630e319be6726d858b6bc4a3~tplv-shrink:640:0.image",
+      "episodes_text": "全144集",
+      "episodes": 144
+    },
+    {
       "title": "风定池台月",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7685332974253902872",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/f0e5f65cc497a0d9de9cef1d71288d25~tplv-shrink:640:0.image",
@@ -4631,6 +4757,13 @@
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/7405c815673fdfdc21803bdee28b6449~tplv-shrink:640:0.image",
       "episodes_text": "全174集",
       "episodes": 174
+    },
+    {
+      "title": "免费拼车的代价",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685377822457613336",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/bafc6c0dc06a9e15d4b23f58f939efa1~tplv-shrink:640:0.image",
+      "episodes_text": "全60集",
+      "episodes": 60
     },
     {
       "title": "养娃记：八零四合院生活日常",
@@ -4731,6 +4864,13 @@
       "episodes": 126
     },
     {
+      "title": "我家院子有棵通天树",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685581900563352601",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/afde7e81fab1c72a5c7f5386cf84b2ac~tplv-shrink:640:0.image",
+      "episodes_text": "全105集",
+      "episodes": 105
+    },
+    {
       "title": "天幕直播：古人每周来我家第二季",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7685581916803697689",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/e6d289ffef143801ea6b7fce0c9145ce~tplv-shrink:640:0.image",
@@ -4780,6 +4920,13 @@
       "episodes": 134
     },
     {
+      "title": "重回八零进厂打工",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685595829758856217",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/1129cef31c8a4422ffe657bbf1355f18~tplv-shrink:640:0.image",
+      "episodes_text": "全95集",
+      "episodes": 95
+    },
+    {
       "title": "被诬陷诊出喜脉，重活一世我逆转前尘",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7685600463554628633",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/aadadf64ef0cfc2a2a2a4ad644c420e2~tplv-shrink:640:0.image",
@@ -4792,6 +4939,13 @@
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/f07bef158c4b87a80eb0ea4bfa0958b1~tplv-shrink:640:0.image",
       "episodes_text": "全129集",
       "episodes": 129
+    },
+    {
+      "title": "恶毒女配觉醒后在末世封神",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685614379751984190",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/903f6a7298fe94a94171e32210acec62~tplv-shrink:640:0.image",
+      "episodes_text": "全122集",
+      "episodes": 122
     },
     {
       "title": "西游问道第四季",
@@ -4815,6 +4969,13 @@
       "episodes": 321
     },
     {
+      "title": "大力音音，十斤反骨",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685642218228435993",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/0d0880dc7015d3035f9c006b8b460ef2~tplv-shrink:640:0.image",
+      "episodes_text": "全128集",
+      "episodes": 128
+    },
+    {
       "title": "谁家穿越被迫继承少主之位啊第二季",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7685642226809981977",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/3afb2fa6c297e59898f866be38e2cca8~tplv-shrink:640:0.image",
@@ -4834,6 +4995,13 @@
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/36b8ee47bd04befa026da269a89ab4f9~tplv-shrink:640:0.image",
       "episodes_text": "全52集",
       "episodes": 52
+    },
+    {
+      "title": "落魄老公别黑化，恶毒前妻来贴贴",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685651479947922456",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/1a7ae33181f33029bfe87f111a763b1a~tplv-shrink:640:0.image",
+      "episodes_text": "全100集",
+      "episodes": 100
     },
     {
       "title": "侯爷临终扶庶子上位，隐忍25年后我不忍了",
@@ -4864,6 +5032,13 @@
       "episodes": 96
     },
     {
+      "title": "丞相嫡女她倒拔垂杨柳",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685680882044111897",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/a3db781182faba9f0fce946500adb600~tplv-shrink:640:0.image",
+      "episodes_text": "全122集",
+      "episodes": 122
+    },
+    {
       "title": "什么叫我都元婴期了还要哄着大小姐第四季",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7685682435299757081",
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/ae7ca2966f15d58985a912d18689b23b~tplv-shrink:640:0.image",
@@ -4871,11 +5046,32 @@
       "episodes": 126
     },
     {
+      "title": "帝后情谋",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685683966178757657",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/f7defcb01b9634b116f9c924cbcadefb~tplv-shrink:640:0.image",
+      "episodes_text": "全160集",
+      "episodes": 160
+    },
+    {
+      "title": "你听心声我吃瓜，换嫁夫妻笑哈哈新编版",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685683986034609177",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/317f5759fd570e8fe125f85d1cf4f869~tplv-shrink:640:0.image",
+      "episodes_text": "全136集",
+      "episodes": 136
+    },
+    {
       "title": "轮回：别惹这个外卖员他活了一万年第四季",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7685685499515653182",
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/9292520edf3b47ce7d4c4419c0d356cb~tplv-shrink:640:0.image",
       "episodes_text": "全132集",
       "episodes": 132
+    },
+    {
+      "title": "婚姻散场，亲爸登场",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685685503709940798",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/66c1d5a55498db50c8351c5f6300a426~tplv-shrink:640:0.image",
+      "episodes_text": "全553集",
+      "episodes": 553
     },
     {
       "title": "我自风雨来第二季",
@@ -4906,6 +5102,13 @@
       "episodes": 116
     },
     {
+      "title": "我堂堂元婴老祖，让我给大小姐当保镖",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685697871315749913",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/5aba8ea765e5f6aebb8d105d21f7039b~tplv-shrink:640:0.image",
+      "episodes_text": "全217集",
+      "episodes": 217
+    },
+    {
       "title": "太玄胎珠传第十季",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7685697895458147353",
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/cd6272347764626011c77977e4ef75b7~tplv-shrink:640:0.image",
@@ -4927,6 +5130,13 @@
       "episodes": 520
     },
     {
+      "title": "帐中香",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685699444766952473",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/dcff5f2ad83bb40ad86f8b4c8303282b~tplv-shrink:640:0.image",
+      "episodes_text": "全128集",
+      "episodes": 128
+    },
+    {
       "title": "国运异界求生：我用情报统治冰原",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7685699451599457305",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/77db8757e78e7443f178ff597a9f9725~tplv-shrink:640:0.image",
@@ -4946,6 +5156,13 @@
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/383b1b1ce7be46dc7d1ee05be6153655~tplv-shrink:640:0.image",
       "episodes_text": "全137集",
       "episodes": 137
+    },
+    {
+      "title": "谁让他个体修去画符的",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685705599803214873",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/95182918b7558d1e3728d63933455c71~tplv-shrink:640:0.image",
+      "episodes_text": "全57集",
+      "episodes": 57
     },
     {
       "title": "重生囤百亿物资，突击小队通关末世第四季",
@@ -5004,6 +5221,20 @@
       "episodes": 375
     },
     {
+      "title": "谁说攻略失败就会被抹杀",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685714879528848446",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/914fc219faea18b42799a88db770e455~tplv-shrink:640:0.image",
+      "episodes_text": "全44集",
+      "episodes": 44
+    },
+    {
+      "title": "赘婿归来身家千亿",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685714882477444158",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/707e4bb62074aade0c1d037986cf2cd2~tplv-shrink:640:0.image",
+      "episodes_text": "全182集",
+      "episodes": 182
+    },
+    {
       "title": "夜钓大乌龙",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7685714893013519422",
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/f2266c6808f6480b1dd131640036e51f~tplv-shrink:640:0.image",
@@ -5039,6 +5270,13 @@
       "episodes": 112
     },
     {
+      "title": "捧杀儿子就变强，一门父子三大帝",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685719526368889918",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/90a3c115264273eb01c53297f66bde9c~tplv-shrink:640:0.image",
+      "episodes_text": "全106集",
+      "episodes": 106
+    },
+    {
       "title": "锦绣芳华：乔兰书重生记第二季",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7685719530005335102",
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/65944289510fc07fc7dabc2916689a1b~tplv-shrink:640:0.image",
@@ -5072,6 +5310,13 @@
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/0aa6d76f552271c81afc8efee6d422fd~tplv-shrink:640:0.image",
       "episodes_text": "全106集",
       "episodes": 106
+    },
+    {
+      "title": "金蚕照冷暖",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685751994581011481",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/3e72ef1f82ff86b3ac41a8dc11bba614~tplv-shrink:640:0.image",
+      "episodes_text": "全127集",
+      "episodes": 127
     },
     {
       "title": "系统延迟一坤年，我成了全球股东！",
@@ -5114,6 +5359,13 @@
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/cccb2906d14adcf6f7b5908570e184fc~tplv-shrink:640:0.image",
       "episodes_text": "全110集",
       "episodes": 110
+    },
+    {
+      "title": "变身顶美，有颜真能为所欲为",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7685784451489467454",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/ffd072786a1c057cbbe7402600d31e03~tplv-shrink:640:0.image",
+      "episodes_text": "全308集",
+      "episodes": 308
     },
     {
       "title": "末世位面商执掌万界货\u0000\u0000仓第二季",
@@ -5207,11 +5459,46 @@
       "episodes": 106
     },
     {
+      "title": "回丈母娘家过节，老婆把鸡鸭鱼肉全搬走了",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686013294670269464",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/38f53cc9a530af243379462aa5d8f40d~tplv-shrink:640:0.image",
+      "episodes_text": "全32集",
+      "episodes": 32
+    },
+    {
+      "title": "你要本玉帝跟你讲理？",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686014848315968536",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/f4bcc71e1ca7e8d847336c510e593972~tplv-shrink:640:0.image",
+      "episodes_text": "全40集",
+      "episodes": 40
+    },
+    {
+      "title": "酒剑狂徒",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686017936254831678",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/1a891eedc50c63ed6d7f1df14c434f97~tplv-shrink:640:0.image",
+      "episodes_text": "全120集",
+      "episodes": 120
+    },
+    {
       "title": "我靠走亲戚通关SSS级副本",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7686019480756964414",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/3d35a0674eb9026ec91321f8f1a14dfd~tplv-shrink:640:0.image",
       "episodes_text": "全47集",
       "episodes": 47
+    },
+    {
+      "title": "直播间每人每天给我一百块",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686031848601816088",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/99f06612bae3ce0f2da2059d1ca8bdaa~tplv-shrink:640:0.image",
+      "episodes_text": "全163集",
+      "episodes": 163
+    },
+    {
+      "title": "谁说没灵\u0000根不能修仙的？之无灵证道第33季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686033393183624216",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/b8a46e7399f094f43bd95b0d21f4d087~tplv-shrink:640:0.image",
+      "episodes_text": "全107集",
+      "episodes": 107
     },
     {
       "title": "诡异降临：我的冥币花不完",
@@ -5240,6 +5527,13 @@
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/d76ca59269dd44efc500183b9937d57e~tplv-shrink:640:0.image",
       "episodes_text": "全145集",
       "episodes": 145
+    },
+    {
+      "title": "大周第一凶悍是文臣？",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686053505408175129",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/5bb84a780892d5afb0a201c20649eec9~tplv-shrink:640:0.image",
+      "episodes_text": "全126集",
+      "episodes": 126
     },
     {
       "title": "沙漠求生,我有天选木灵根第三季",
@@ -5291,6 +5585,20 @@
       "episodes": 421
     },
     {
+      "title": "以余生为诺，护你岁岁无忧",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686072059385875481",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/7f7c44de02151b7901897fb99577d078~tplv-shrink:640:0.image",
+      "episodes_text": "全93集",
+      "episodes": 93
+    },
+    {
+      "title": "重生70：黎姑娘的向阳人生",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686076691839454233",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/8eb4b137c998d1bf5777e54b7e0aa60e~tplv-shrink:640:0.image",
+      "episodes_text": "全80集",
+      "episodes": 80
+    },
+    {
       "title": "我靠妆造拿捏六宫",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7686076710495734809",
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/1e540a81af7e2d2d854bc6e3cd893213~tplv-shrink:640:0.image",
@@ -5310,6 +5618,13 @@
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/5d637398888e89aa63c9a7c745ef8b76~tplv-shrink:640:0.image",
       "episodes_text": "全53集",
       "episodes": 53
+    },
+    {
+      "title": "每天属性翻一倍我爆杀一切",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686087509805124632",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/f29aee400b94e9362fba1b4d5dc5b7f9~tplv-shrink:640:0.image",
+      "episodes_text": "全72集",
+      "episodes": 72
     },
     {
       "title": "温柔抱抱第4季",
@@ -5368,6 +5683,20 @@
       "episodes": 122
     },
     {
+      "title": "敦煌乱择，庶女落难嫁边关！",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686121533223210008",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/6ede5f656447399f657e2332009f7204~tplv-shrink:640:0.image",
+      "episodes_text": "全120集",
+      "episodes": 120
+    },
+    {
+      "title": "皇帝竟是我现代兄弟",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686121545260878872",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/2d511309aba37473a491ef91de82a67c~tplv-shrink:640:0.image",
+      "episodes_text": "全32集",
+      "episodes": 32
+    },
+    {
       "title": "萌宝蛋壳：我在星际当崽第四季",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7686123088177548313",
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/9c0853774b3dba5476469daae38bcb58~tplv-shrink:640:0.image",
@@ -5380,6 +5709,13 @@
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/e8fc8a4095289f799e2f7e61f0ef6c37~tplv-shrink:640:0.image",
       "episodes_text": "全163集",
       "episodes": 163
+    },
+    {
+      "title": "穿成反派他亲妈，靠系统逆袭",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686129254127373336",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/c4fa98f760797cd850fe60155b706359~tplv-shrink:640:0.image",
+      "episodes_text": "全64集",
+      "episodes": 64
     },
     {
       "title": "我来搅黄相亲，董事长却把我当人才",
@@ -5396,6 +5732,27 @@
       "episodes": 224
     },
     {
+      "title": "谁又惹她了！",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686147809023626264",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/a5e42913d51c8b77d4ab9edcd513313a~tplv-shrink:640:0.image",
+      "episodes_text": "全146集",
+      "episodes": 146
+    },
+    {
+      "title": "琅华自有春色",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686158632391543832",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/3f9e0505872481b440d7dee70fa7ad8c~tplv-shrink:640:0.image",
+      "episodes_text": "全39集",
+      "episodes": 39
+    },
+    {
+      "title": "前妻错失至高主宰",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686163272705264665",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/43b7ff5593c48a6db227b7d570b2d41d~tplv-shrink:640:0.image",
+      "episodes_text": "全113集",
+      "episodes": 113
+    },
+    {
       "title": "都市修仙，从练气境开始无敌",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7686325625065327678",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/e78dda68ef471e906ad3384dbe0166fc~tplv-shrink:640:0.image",
@@ -5410,6 +5767,20 @@
       "episodes": 231
     },
     {
+      "title": "算死仙第八季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686341083533413401",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/5fac5c74ca2a7a9be00f0a082f4d5c14~tplv-shrink:640:0.image",
+      "episodes_text": "全123集",
+      "episodes": 123
+    },
+    {
+      "title": "重生80，我主动退婚搞事业",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686351907878620185",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/6bd6093b695750bc37b7c2e4a56ccf8b~tplv-shrink:640:0.image",
+      "episodes_text": "全66集",
+      "episodes": 66
+    },
+    {
       "title": "天灾末世，她囤满物资后所向披靡第二季",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7686351913100512281",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/214a4a7ca3b2175455ba02e0a9df3dc5~tplv-shrink:640:0.image",
@@ -5422,6 +5793,13 @@
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/a90f2f55c5aef11158ee3a2c38a1360e~tplv-shrink:640:0.image",
       "episodes_text": "全373集",
       "episodes": 373
+    },
+    {
+      "title": "大将军扛楼养活百万大军第三季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686359650165345304",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/61475c22c97758ddc61c714b445cadfa~tplv-shrink:640:0.image",
+      "episodes_text": "全139集",
+      "episodes": 139
     },
     {
       "title": "泥沼误惹春娇第2季",
@@ -5452,11 +5830,25 @@
       "episodes": 150
     },
     {
+      "title": "全能玄医：我以功德通万法",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686413764811312190",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/7ca9ca04cb9c80a38bc885c6d3a12d38~tplv-shrink:640:0.image",
+      "episodes_text": "全109集",
+      "episodes": 109
+    },
+    {
       "title": "八岁鉴真心，寻得良母归",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7686416856768334872",
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/40fc77ed4883998f6d005c6385fab345~tplv-shrink:640:0.image",
       "episodes_text": "全83集",
       "episodes": 83
+    },
+    {
+      "title": "分家当天，我妈藏了二十年的家底曝光了",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686419949664881688",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/9a2229bdaadecd03097720ffb3785fb5~tplv-shrink:640:0.image",
+      "episodes_text": "全77集",
+      "episodes": 77
     },
     {
       "title": "烬九州第十七季",
@@ -5480,6 +5872,13 @@
       "episodes": 142
     },
     {
+      "title": "一张A4纸引发的崩塌",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686440057305041982",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/fdd28e56f7c61aca4dfa624219cab2ec~tplv-shrink:640:0.image",
+      "episodes_text": "全65集",
+      "episodes": 65
+    },
+    {
       "title": "斩鬼之城：鬼城黎明",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7686441591682124825",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/f5c12c66f9490fb7e65e373183e1b821~tplv-shrink:640:0.image",
@@ -5487,11 +5886,25 @@
       "episodes": 197
     },
     {
+      "title": "万物观：人间小满赴山河",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686443138776304702",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/2bc997bf0631a9cec9e9340bbbeed088~tplv-shrink:640:0.image",
+      "episodes_text": "全46集",
+      "episodes": 46
+    },
+    {
       "title": "谁说没灵根不能修仙的？之无灵证道第34季",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7686444695785835582",
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/1deebf2acd6c2d3ab288df8ad8017c68~tplv-shrink:640:0.image",
       "episodes_text": "全102集",
       "episodes": 102
+    },
+    {
+      "title": "绣球结",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686467867511901246",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/07e877840d2734936909302bd79dc765~tplv-shrink:640:0.image",
+      "episodes_text": "全71集",
+      "episodes": 71
     },
     {
       "title": "他偷偷和我离婚，却忘了他瘫痪的妈在我这",
@@ -5508,11 +5921,53 @@
       "episodes": 138
     },
     {
+      "title": "荒年小福星：四岁萌娃搬空现代粮仓",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686487990801009688",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/14b70408aa5f141ae95a95d2356d9978~tplv-shrink:640:0.image",
+      "episodes_text": "全163集",
+      "episodes": 163
+    },
+    {
+      "title": "魔道修仙，绝美宗主逼我守魔狱",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686505002705095704",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/617f6df7c5188276bae59585cf03389f~tplv-shrink:640:0.image",
+      "episodes_text": "全61集",
+      "episodes": 61
+    },
+    {
       "title": "冰冷重遇第八季",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7686506551271509017",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/1f8c6c0a07d0669a0b33f18f6cc09a93~tplv-shrink:640:0.image",
       "episodes_text": "全161集",
       "episodes": 161
+    },
+    {
+      "title": "变废为宝：大佬哥哥们抢着捡垃圾",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686509632155569177",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/1c67fcf2e9957983215eef2e125f55d9~tplv-shrink:640:0.image",
+      "episodes_text": "全133集",
+      "episodes": 133
+    },
+    {
+      "title": "游戏停服先尊",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686520449743719449",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/541d94a11658fbc99f800c83403803b2~tplv-shrink:640:0.image",
+      "episodes_text": "全135集",
+      "episodes": 135
+    },
+    {
+      "title": "穿成作精老太，别人逃荒我开荒第一季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686695156958907417",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/3abe77c24c4f8a3d90cd9efffe4c4e47~tplv-shrink:640:0.image",
+      "episodes_text": "全130集",
+      "episodes": 130
+    },
+    {
+      "title": "白活日记第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686695163585891353",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/d71299c7da205cf187c54ce98492b3e4~tplv-shrink:640:0.image",
+      "episodes_text": "全28集",
+      "episodes": 28
     },
     {
       "title": "惊悚游戏：七十正是奋斗的年纪第三季",
@@ -5543,11 +5998,74 @@
       "episodes": 103
     },
     {
+      "title": "雪落佛衣情花误",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686726085328768025",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/239ae44df433e6435140a85bff836ba8~tplv-shrink:640:0.image",
+      "episodes_text": "全49集",
+      "episodes": 49
+    },
+    {
+      "title": "天羽寿元第4季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686772498431495193",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/cf877cce195c3e395e129e10d5bddc4c~tplv-shrink:640:0.image",
+      "episodes_text": "全169集",
+      "episodes": 169
+    },
+    {
+      "title": "余生不长，只为自己而活",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686775574844410942",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/7b8e2126e60dc88fa4581541e143104e~tplv-shrink:640:0.image",
+      "episodes_text": "全105集",
+      "episodes": 105
+    },
+    {
+      "title": "典狱长降临：我收容世间万兽",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686778661583735832",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/3695e92424f77c929699cbf5d658deb1~tplv-shrink:640:0.image",
+      "episodes_text": "全129集",
+      "episodes": 129
+    },
+    {
       "title": "全员壮汉，打造正经公司第二季",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7686780202503916568",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/2ea5b10a22eda62e2880019740a3cc5b~tplv-shrink:640:0.image",
       "episodes_text": "全101集",
       "episodes": 101
+    },
+    {
+      "title": "逃生：决胜亚马逊第六季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686780208191392792",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/ea67cd22b2bb7b7bae8d9dec8145bfc0~tplv-shrink:640:0.image",
+      "episodes_text": "全81集",
+      "episodes": 81
+    },
+    {
+      "title": "女扮男装，农家子的科举青云路第六季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686784844784749630",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/845f722919dea05902d600e2c9eef9b3~tplv-shrink:640:0.image",
+      "episodes_text": "全140集",
+      "episodes": 140
+    },
+    {
+      "title": "规则降临：我靠妄想成仙",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686784855316646974",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/2a83af41bab148764ab62e973477f997~tplv-shrink:640:0.image",
+      "episodes_text": "全233集",
+      "episodes": 233
+    },
+    {
+      "title": "重生90之拒当干爹",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686786387927895102",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/114868351229096218b38866d13ea1f7~tplv-shrink:640:0.image",
+      "episodes_text": "全117集",
+      "episodes": 117
+    },
+    {
+      "title": "京师第一纨绔第六季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686791037544582206",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/1a0bc2fd95ea615bd6cc301f50f20e3b~tplv-shrink:640:0.image",
+      "episodes_text": "全228集",
+      "episodes": 228
     },
     {
       "title": "末日宿舍求生：从刷广告开始变强2",
@@ -5564,6 +6082,27 @@
       "episodes": 266
     },
     {
+      "title": "骗玩家西游是游戏，全世界玩嗨了第三季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686804938642426905",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/28de347915665bf954b918d3537b4d63~tplv-shrink:640:0.image",
+      "episodes_text": "全148集",
+      "episodes": 148
+    },
+    {
+      "title": "仙界女符师第十季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686806485061372952",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/cc2143ab791762afb0af8f5c9dd5f9cf~tplv-shrink:640:0.image",
+      "episodes_text": "全151集",
+      "episodes": 151
+    },
+    {
+      "title": "1977山猎重生，我以余生偿前错第五季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686851345105554456",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/a7f32e818827371a713cb47bfee84d26~tplv-shrink:640:0.image",
+      "episodes_text": "全287集",
+      "episodes": 287
+    },
+    {
       "title": "五个黄毛爹，养出精神小妹状元",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7686862150144379928",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/eb14ce5557eccecfdd2404e44e13872e~tplv-shrink:640:0.image",
@@ -5578,11 +6117,53 @@
       "episodes": 113
     },
     {
+      "title": "穿越七零之路人甲日常",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686882253229526040",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/b2e763bc5d37713668270fc1936d9b72~tplv-shrink:640:0.image",
+      "episodes_text": "全128集",
+      "episodes": 128
+    },
+    {
+      "title": "我想要的是百分百的忠诚值",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686882261160954904",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/bd3e32f3f77830f197865754ad173623~tplv-shrink:640:0.image",
+      "episodes_text": "全70集",
+      "episodes": 70
+    },
+    {
+      "title": "老祖归来，全族成帝第五季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686883797769391166",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/ee42c187306c44b0e3c8827f22bda995~tplv-shrink:640:0.image",
+      "episodes_text": "全169集",
+      "episodes": 169
+    },
+    {
+      "title": "末日游戏：庇护所是瞭望塔第七季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686900814450789438",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/218229ea5f3d398d59dbf80df454e0d7~tplv-shrink:640:0.image",
+      "episodes_text": "全81集",
+      "episodes": 81
+    },
+    {
       "title": "白金会员赶我下飞机，反被整顿",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7686910088514128921",
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/588568e79980a0dd270d7e3d14459314~tplv-shrink:640:0.image",
       "episodes_text": "全66集",
       "episodes": 66
+    },
+    {
+      "title": "这个王爷给个皇位都不换",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7686914721542327321",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/a6fa0705190b6e7361978ca2ad087511~tplv-shrink:640:0.image",
+      "episodes_text": "全181集",
+      "episodes": 181
+    },
+    {
+      "title": "穿成垫底皇子，反倒成为千古一帝第三季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687066248814808088",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/411a536bc271b8d7b15199aaea26c354~tplv-shrink:640:0.image",
+      "episodes_text": "全215集",
+      "episodes": 215
     },
     {
       "title": "重生囤百亿物资，突击小队通关末世第五季",
@@ -5592,11 +6173,186 @@
       "episodes": 161
     },
     {
+      "title": "西游：圣僧的自我修养第3季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687089432914037784",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/3a21f83ca229799d6f279b9ae61f3ee9~tplv-shrink:640:0.image",
+      "episodes_text": "全114集",
+      "episodes": 114
+    },
+    {
+      "title": "妖界大新闻，妖皇生个人！",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687095621865442329",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/254de487d3d8954f2bbf662ccf442158~tplv-shrink:640:0.image",
+      "episodes_text": "全152集",
+      "episodes": 152
+    },
+    {
+      "title": "风起年少时第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687095635769576473",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/428a797f9c46a978a67478a14aad4d99~tplv-shrink:640:0.image",
+      "episodes_text": "全153集",
+      "episodes": 153
+    },
+    {
+      "title": "杀戮崛起之永夜君王第七季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687101811433425944",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/cd83550ec86d9db40040b2139b89d60f~tplv-shrink:640:0.image",
+      "episodes_text": "全91集",
+      "episodes": 91
+    },
+    {
       "title": "我以童言号令八王第四季",
       "detail_url": "https://hongguoduanju.com/detail?series_id=7687106444180589593",
       "cover_url": "https://p6-novel.byteimg.com/novel-pic/661e97fd733bcb79801b4b5ecf050031~tplv-shrink:640:0.image",
       "episodes_text": "全117集",
       "episodes": 117
+    },
+    {
+      "title": "穿书末世我靠系统囤货逆袭第六季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687128106544417817",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/63152e0ceb2db9bee6838b23ca49d78c~tplv-shrink:640:0.image",
+      "episodes_text": "全154集",
+      "episodes": 154
+    },
+    {
+      "title": "天桥乞讨，我靠拉二胡成顶流是首富第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687132734879190078",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/a607ecf0206223706a6e94121faede55~tplv-shrink:640:0.image",
+      "episodes_text": "全130集",
+      "episodes": 130
+    },
+    {
+      "title": "摆摊大王第三季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687142015217191961",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/9f596427c5b785defa34f4f2117c3bbe~tplv-shrink:640:0.image",
+      "episodes_text": "全194集",
+      "episodes": 194
+    },
+    {
+      "title": "烬九州第十八季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687157481650277401",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/4edfcccbda8379568509c9d6cf538701~tplv-shrink:640:0.image",
+      "episodes_text": "全189集",
+      "episodes": 189
+    },
+    {
+      "title": "凡人百世书第七季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687179113462778904",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/8347968f6d26c38db7adc0a8eaa718dc~tplv-shrink:640:0.image",
+      "episodes_text": "全174集",
+      "episodes": 174
+    },
+    {
+      "title": "嫡女归京，我家娇夫首辅被宠疯第五季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687211587022621758",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/7fb92149f00efbf0a514d63fe023caa4~tplv-shrink:640:0.image",
+      "episodes_text": "全121集",
+      "episodes": 121
+    },
+    {
+      "title": "抢个新娘来当后娘第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687217786178784281",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/65dbf04435c9e41198129fcf46d8bee9~tplv-shrink:640:0.image",
+      "episodes_text": "全212集",
+      "episodes": 212
+    },
+    {
+      "title": "消失的145万",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687220870137252889",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/67441bfde4ddc9267034f59bad162a92~tplv-shrink:640:0.image",
+      "episodes_text": "全87集",
+      "episodes": 87
+    },
+    {
+      "title": "零号小队：北辰揽星河第五季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687228615020252222",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/94c2f411eaf9ea3edb628bef491e30b3~tplv-shrink:640:0.image",
+      "episodes_text": "全110集",
+      "episodes": 110
+    },
+    {
+      "title": "心肝颤：双宝助攻复婚记第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687231692234312766",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/42ee138b79102882bf011868cd6a1ea5~tplv-shrink:640:0.image",
+      "episodes_text": "全123集",
+      "episodes": 123
+    },
+    {
+      "title": "洪武苟长生第一季续集五",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687234789237066776",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/c19afc46814f209393639d5aff31163b~tplv-shrink:640:0.image",
+      "episodes_text": "全137集",
+      "episodes": 137
+    },
+    {
+      "title": "谁说纨绔不能当状元第四季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687237883010223166",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/305dc38862a2905322d6db753e7bfc27~tplv-shrink:640:0.image",
+      "episodes_text": "全163集",
+      "episodes": 163
+    },
+    {
+      "title": "镇国驸马爷3D版第九季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687245615331298366",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/1baf86d55ca0b28723aa88584dedf95a~tplv-shrink:640:0.image",
+      "episodes_text": "全277集",
+      "episodes": 277
+    },
+    {
+      "title": "无敌财神！我觉醒了唯一隐藏职业第四季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687248701831515198",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/3efdf43672bf2b8ed3a096486f33cb80~tplv-shrink:640:0.image",
+      "episodes_text": "全200集",
+      "episodes": 200
+    },
+    {
+      "title": "黄袍加身，朕打的就是女频",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687438873802050584",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/fbe8f7e1a09430ec8bbf60abfe81caca~tplv-shrink:640:0.image",
+      "episodes_text": "全262集",
+      "episodes": 262
+    },
+    {
+      "title": "三年妖尊五年妖帝，女帝惊呆了",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687438881070795800",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/ecbc26dbb9985aeb280a70a4c7d2c1c6~tplv-shrink:640:0.image",
+      "episodes_text": "全153集",
+      "episodes": 153
+    },
+    {
+      "title": "一村人养一个神第四季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687448160993545278",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/71cd923688e8665beed55cb5d9390168~tplv-shrink:640:0.image",
+      "episodes_text": "全160集",
+      "episodes": 160
+    },
+    {
+      "title": "天幕直播：古人每周来我家第三季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687449697434209342",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/f3f4847dc4dd56b365c5f3f1725076ad~tplv-shrink:640:0.image",
+      "episodes_text": "全176集",
+      "episodes": 176
+    },
+    {
+      "title": "谁说没灵根不能修仙的？之无灵证道第35季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687454336212814873",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/c1ecd98f55b6ca7e8e19242a824a6ce1~tplv-shrink:640:0.image",
+      "episodes_text": "全105集",
+      "episodes": 105
+    },
+    {
+      "title": "极寒末日：我的雪蟒老公超护短",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687506916150365208",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/90caee4c4897714d8f42d0efb40aab6e~tplv-shrink:640:0.image",
+      "episodes_text": "全50集",
+      "episodes": 50
+    },
+    {
+      "title": "窥见众人前程，我捡漏未来权臣第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687540925945367576",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/6a6a66bafc5d5391b5d9654e8824a015~tplv-shrink:640:0.image",
+      "episodes_text": "全114集",
+      "episodes": 114
     },
     {
       "title": "我开启的宝箱品质永远加3",
@@ -5611,6 +6367,454 @@
       "cover_url": "https://p3-novel.byteimg.com/novel-pic/983827ec1b3e59d98a4aeba758ab06fa~tplv-shrink:640:0.image",
       "episodes_text": "全222集",
       "episodes": 222
+    },
+    {
+      "title": "普通弓箭手？我能无限叠加攻击力第六季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687551754061237310",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/6d07f89349e793f7f68f95c95c545af4~tplv-shrink:640:0.image",
+      "episodes_text": "全157集",
+      "episodes": 157
+    },
+    {
+      "title": "沈总你家奶团又去广场摆摊咯第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687551760826649662",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/1759cdb18b54761f5116906c1eb072b3~tplv-shrink:640:0.image",
+      "episodes_text": "全150集",
+      "episodes": 150
+    },
+    {
+      "title": "太玄胎珠传第十一季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687553293240765465",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/ef4b7fd48783d8bbd35bcbcb39cfd833~tplv-shrink:640:0.image",
+      "episodes_text": "全150集",
+      "episodes": 150
+    },
+    {
+      "title": "穿书末世我靠系统囤货逆袭第五季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687554848153144382",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/5b42f1b3fe550c167daf80797245427a~tplv-shrink:640:0.image",
+      "episodes_text": "全159集",
+      "episodes": 159
+    },
+    {
+      "title": "什么叫我都元婴期了还要哄着大小姐第五季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687561027638004760",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/99db0aa6e4867e7eca0eea850b273660~tplv-shrink:640:0.image",
+      "episodes_text": "全130集",
+      "episodes": 130
+    },
+    {
+      "title": "爹爹入赘我暴富啦第三季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687565667221916734",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/337c8f06453b798bac26f1dad2814c0a~tplv-shrink:640:0.image",
+      "episodes_text": "全137集",
+      "episodes": 137
+    },
+    {
+      "title": "胎珠传第二十一季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687568769241058329",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/354da1d5bba7cfeb59b5283100a84d16~tplv-shrink:640:0.image",
+      "episodes_text": "全300集",
+      "episodes": 300
+    },
+    {
+      "title": "贵妃将我赎身钱送乞丐，重生后我夺回一切",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687570310979128382",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/846be16d48afe0805b1b77be4ad7566e~tplv-shrink:640:0.image",
+      "episodes_text": "全72集",
+      "episodes": 72
+    },
+    {
+      "title": "全民迁徙求生！我的坐骑是城兽",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687576493400017944",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/a2f952c40ebdd97f8a1ad217e7501c64~tplv-shrink:640:0.image",
+      "episodes_text": "全191集",
+      "episodes": 191
+    },
+    {
+      "title": "衍有萌兔",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687581137664756761",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/3d30e56127f0a15fbe86e412d29347b0~tplv-shrink:640:0.image",
+      "episodes_text": "全59集",
+      "episodes": 59
+    },
+    {
+      "title": "末世靠山王：玩的脏才站得稳第六季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687607421195275288",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/e54faf2e58d2851c4f21fc2ce357314c~tplv-shrink:640:0.image",
+      "episodes_text": "全149集",
+      "episodes": 149
+    },
+    {
+      "title": "一天十年修为，大帝见我也得跪第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687608988044626969",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/3215167c1cc65ecfefe0ab8a02593ef7~tplv-shrink:640:0.image",
+      "episodes_text": "全105集",
+      "episodes": 105
+    },
+    {
+      "title": "奶凶小青梅，太子与她共风月第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687612061097921560",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/7d6711aacffc8fc46f9164ceda4b2364~tplv-shrink:640:0.image",
+      "episodes_text": "全134集",
+      "episodes": 134
+    },
+    {
+      "title": "逆江湖之苍生为局第五季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687639880448347161",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/ba75824b793aa82bdd7d45d5f5618455~tplv-shrink:640:0.image",
+      "episodes_text": "全108集",
+      "episodes": 108
+    },
+    {
+      "title": "假面之下：我以童言号令八王第四季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687805322026552345",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/959ca9ed8c4287d3d8b08a0eb9670064~tplv-shrink:640:0.image",
+      "episodes_text": "全121集",
+      "episodes": 121
+    },
+    {
+      "title": "烬九州第十九季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687806870081244184",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/c6baa24ac8614c7cc7c53346b6598601~tplv-shrink:640:0.image",
+      "episodes_text": "全171集",
+      "episodes": 171
+    },
+    {
+      "title": "每秒万年修为，一念横推东荒第三季天墟圣殿",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687836247720463384",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/5beb09a5857a6eed0e8bf70d45247043~tplv-shrink:640:0.image",
+      "episodes_text": "全195集",
+      "episodes": 195
+    },
+    {
+      "title": "车粉人狠2公路求生榜一说她要走到公路尽头",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687865624910892056",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/91c6a5bd56dac35a1006d86ad5cb8b03~tplv-shrink:640:0.image",
+      "episodes_text": "全186集",
+      "episodes": 186
+    },
+    {
+      "title": "穿成农女，带崽种田爽翻天！第八季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687878004306873368",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/e3478498935556a07495147ae74af4fb~tplv-shrink:640:0.image",
+      "episodes_text": "全105集",
+      "episodes": 105
+    },
+    {
+      "title": "玄幻：神级大店长第一季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687905841738943512",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/cd33ef35a1c222debb97f7f433e70d18~tplv-shrink:640:0.image",
+      "episodes_text": "全522集",
+      "episodes": 522
+    },
+    {
+      "title": "皓首问道之百岁登仙路",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687907380113181721",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/f71050f0994d9f13b219d53bf85cd1ef~tplv-shrink:640:0.image",
+      "episodes_text": "全513集",
+      "episodes": 513
+    },
+    {
+      "title": "疯娘逆袭，穿越宠崽！第十季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687921298101521470",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/47cb83b458db62b9650528eaff4cdb75~tplv-shrink:640:0.image",
+      "episodes_text": "全340集",
+      "episodes": 340
+    },
+    {
+      "title": "家有五女，穿越来的他连夜搞事业第四季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687930564317285400",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/106c04ddd587be6019d88d309fc39bf4~tplv-shrink:640:0.image",
+      "episodes_text": "全328集",
+      "episodes": 328
+    },
+    {
+      "title": "寒门父子，携手踏锦绣仕途第2季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687935200797412376",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/9652fd08e94e70df57edf4f6105e0a3c~tplv-shrink:640:0.image",
+      "episodes_text": "全174集",
+      "episodes": 174
+    },
+    {
+      "title": "从破木屋到最强庇护所",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687942936654253081",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/2f19a75869e8df02607313f6f061cbd7~tplv-shrink:640:0.image",
+      "episodes_text": "全347集",
+      "episodes": 347
+    },
+    {
+      "title": "穿成反派世子，我赢麻了",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687946060769020952",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/66383014e5f99b288e5d98150d92c5b7~tplv-shrink:640:0.image",
+      "episodes_text": "全474集",
+      "episodes": 474
+    },
+    {
+      "title": "从杂役到符仙人第九季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687949143167224857",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/f4a4d260143b1df7051f0fc678b7c3a8~tplv-shrink:640:0.image",
+      "episodes_text": "全666集",
+      "episodes": 666
+    },
+    {
+      "title": "我本是魔之阴阳魔帝",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687961499481934910",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/3193aa9b9162ec12aba065f733878df8~tplv-shrink:640:0.image",
+      "episodes_text": "全1000集",
+      "episodes": 1000
+    },
+    {
+      "title": "秦始皇：朕有华夏全明星阵容第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687963045011655742",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/f617c9a255e12db241ac30f26d66fd41~tplv-shrink:640:0.image",
+      "episodes_text": "全426集",
+      "episodes": 426
+    },
+    {
+      "title": "南塘县令有亿点强",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687963052590763070",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/de6aac54aa3373f05673ee197e112434~tplv-shrink:640:0.image",
+      "episodes_text": "全684集",
+      "episodes": 684
+    },
+    {
+      "title": "寒枝造文明",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687975409723378750",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/7ab81a75d3260be6bbfb0530e590e798~tplv-shrink:640:0.image",
+      "episodes_text": "全372集",
+      "episodes": 372
+    },
+    {
+      "title": "蚀骨罪第三季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7687993983405919294",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/39d52082db0aceb101c3ab9de0542e74~tplv-shrink:640:0.image",
+      "episodes_text": "全233集",
+      "episodes": 233
+    },
+    {
+      "title": "古人每周来我家：每次都有人破防第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688004780681071678",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/8e7576bb1f017e0763a03457bd994bba~tplv-shrink:640:0.image",
+      "episodes_text": "全354集",
+      "episodes": 354
+    },
+    {
+      "title": "天灾末世，她囤满物资后所向披靡第三季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688007882683452441",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/0bb9b51a86dd1c835618cbecf5ef7a12~tplv-shrink:640:0.image",
+      "episodes_text": "全318集",
+      "episodes": 318
+    },
+    {
+      "title": "季爷今天真香了吗第五季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688177962742451262",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/eae76f8f99b8ee9aa651c49a29163a53~tplv-shrink:640:0.image",
+      "episodes_text": "全144集",
+      "episodes": 144
+    },
+    {
+      "title": "青云山团圆记第三季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688179512797826072",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/5cb5735f10389deaab81b0511f47d37e~tplv-shrink:640:0.image",
+      "episodes_text": "全45集",
+      "episodes": 45
+    },
+    {
+      "title": "与黑夜共枕",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688184143544339480",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/f6b6d27f1f68cdd676864d871fbb3fcd~tplv-shrink:640:0.image",
+      "episodes_text": "全330集",
+      "episodes": 330
+    },
+    {
+      "title": "我大华第一逍遥王第三季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688185693956213784",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/fa5fd94e797b9d7720e871d7ef80232d~tplv-shrink:640:0.image",
+      "episodes_text": "全409集",
+      "episodes": 409
+    },
+    {
+      "title": "山海藏墟，无眼窥天第六季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688190325646445593",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/f0e9a5bf5d9400fd9467301d13ab5909~tplv-shrink:640:0.image",
+      "episodes_text": "全138集",
+      "episodes": 138
+    },
+    {
+      "title": "末世降临，我是末日生存方案供应商",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688194965624589336",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/7b39d8977621cf81d15ba73e569f5724~tplv-shrink:640:0.image",
+      "episodes_text": "全700集",
+      "episodes": 700
+    },
+    {
+      "title": "弟弟为吸引公主当街喊谋反，重生后我不管了",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688228985553030168",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/ca5be7015b20ad66fcb87c2fb49029a6~tplv-shrink:640:0.image",
+      "episodes_text": "全80集",
+      "episodes": 80
+    },
+    {
+      "title": "星海鲛歌第三季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688264549371235352",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/5966c3329941dd500077b778916782b9~tplv-shrink:640:0.image",
+      "episodes_text": "全74集",
+      "episodes": 74
+    },
+    {
+      "title": "持械入宋第三季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688266096150858776",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/039ecdc222ced36bc71c8931c2e02c9f~tplv-shrink:640:0.image",
+      "episodes_text": "全341集",
+      "episodes": 341
+    },
+    {
+      "title": "全民御兽：我只养最凶的龙皇第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688281558750333976",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/5b3b043646feab19b51f1f49fddf5e2a~tplv-shrink:640:0.image",
+      "episodes_text": "全213集",
+      "episodes": 213
+    },
+    {
+      "title": "喂沈总你家奶团又去广场摆摊咯",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688289288873593881",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/b4b72bcc235b975ee6a7fc2815d23e6a~tplv-shrink:640:0.image",
+      "episodes_text": "全253集",
+      "episodes": 253
+    },
+    {
+      "title": "布衣成圣第四季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688321765105208345",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/637036b95ecf34e13f738f2658e585c5~tplv-shrink:640:0.image",
+      "episodes_text": "全264集",
+      "episodes": 264
+    },
+    {
+      "title": "我可摘星辰第五季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688329511049366590",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/96d85804386c5db684448ccc4017d5b4~tplv-shrink:640:0.image",
+      "episodes_text": "全134集",
+      "episodes": 134
+    },
+    {
+      "title": "末日选择：只有我知道答\u0000\u0000案",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688335679255743512",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/6b1a2a93355baf79f625efd624fc50b1~tplv-shrink:640:0.image",
+      "episodes_text": "全113集",
+      "episodes": 113
+    },
+    {
+      "title": "萌宝蛋壳：我在星际当崽第五季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688349610632285208",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/cb1ca22a44cf49382bedfee9506acef9~tplv-shrink:640:0.image",
+      "episodes_text": "全145集",
+      "episodes": 145
+    },
+    {
+      "title": "抽卡剑仙：我一抽就满级第三季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688352680124632126",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/0afdacd3bc067a746f334978762e95bd~tplv-shrink:640:0.image",
+      "episodes_text": "全359集",
+      "episodes": 359
+    },
+    {
+      "title": "全球死考：刚下刑场你让我去考试第4季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688361956717120574",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/c1b7f4efd74b13f136904ea00ed8d8d5~tplv-shrink:640:0.image",
+      "episodes_text": "全201集",
+      "episodes": 201
+    },
+    {
+      "title": "瞳鉴",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688363497796668478",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/3a164f08e042a2364460844ddafef3c2~tplv-shrink:640:0.image",
+      "episodes_text": "全146集",
+      "episodes": 146
+    },
+    {
+      "title": "究极末世：苟到天荒",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688365054248373272",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/34847c84e32e574b42a4c3ce40bca02b~tplv-shrink:640:0.image",
+      "episodes_text": "全616集",
+      "episodes": 616
+    },
+    {
+      "title": "谁让这个文盲修仙的第四季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688372772879223870",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/8866a98ff439c7f103294bc57c4b7bcd~tplv-shrink:640:0.image",
+      "episodes_text": "全174集",
+      "episodes": 174
+    },
+    {
+      "title": "我在恐怖游戏里当摸鱼NPC第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688372775915899966",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/8ced569b63b613048bf1ad7e77e4fcbc~tplv-shrink:640:0.image",
+      "episodes_text": "全104集",
+      "episodes": 104
+    },
+    {
+      "title": "废土拾荒",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688372794865749054",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/aab651719b5e7194edd5709e09e894dc~tplv-shrink:640:0.image",
+      "episodes_text": "全117集",
+      "episodes": 117
+    },
+    {
+      "title": "谁把我仙侠游戏退出键扣了3D版第三季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688375875653356568",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/9cd24d2e0e90d8477839c673a6ec7536~tplv-shrink:640:0.image",
+      "episodes_text": "全147集",
+      "episodes": 147
+    },
+    {
+      "title": "我死后成了反派白月光第五季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688593878768684056",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/9852a4e22f6a412f3200e49bdc1df972~tplv-shrink:640:0.image",
+      "episodes_text": "全159集",
+      "episodes": 159
+    },
+    {
+      "title": "纨绔郡主得宠日常：秦金枝大结局",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688601623815277630",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/f153df77f6eabd6788486ff1c93581fe~tplv-shrink:640:0.image",
+      "episodes_text": "全195集",
+      "episodes": 195
+    },
+    {
+      "title": "禁级之上：冥地归途第二季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688638751391632409",
+      "cover_url": "https://p6-novel.byteimg.com/novel-pic/87d98e4a4744ec030c690a7d108e5a0a~tplv-shrink:640:0.image",
+      "episodes_text": "全141集",
+      "episodes": 141
+    },
+    {
+      "title": "都重生了，这富二代我不装了第十九季",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688640273932373016",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/4da6e2325eb814547d6393dcc6a0b80a~tplv-shrink:640:0.image",
+      "episodes_text": "全149集",
+      "episodes": 149
+    },
+    {
+      "title": "家有五女，穿越来的他连夜搞事业啦",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688646466708966462",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/6be6de7b80ddc5cb6df225902f3d5823~tplv-shrink:640:0.image",
+      "episodes_text": "全1000集",
+      "episodes": 1000
+    },
+    {
+      "title": "她的猎物，她的城",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688705202127391768",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/03ce04da688288fb7144031a82a9e574~tplv-shrink:640:0.image",
+      "episodes_text": "全88集",
+      "episodes": 88
+    },
+    {
+      "title": "神话擂台：我以洪荒镇万国",
+      "detail_url": "https://hongguoduanju.com/detail?series_id=7688729956435643454",
+      "cover_url": "https://p3-novel.byteimg.com/novel-pic/62f937aa3c70c55be30c0d9c3a489c5e~tplv-shrink:640:0.image",
+      "episodes_text": "全438集",
+      "episodes": 438
     }
   ]
 }

@@ -7,20 +7,20 @@
    "category": "ai-drama",
    "category_label": "AI剧",
    "url": "/external/ai-drama.json",
-   "total": 800
+   "total": 950
   },
   {
    "category": "comic-drama",
    "category_label": "漫剧",
    "url": "/external/comic-drama.json",
-   "total": 800
+   "total": 972
   },
   {
    "category": "real-drama",
    "category_label": "真人剧",
    "url": "/external/real-drama.json",
-   "total": 800
+   "total": 919
   }
  ],
- "total": 2400
+ "total": 2841
 }
