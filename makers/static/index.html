@@ -122,9 +122,23 @@ async function viewHome() {
   let html = `
     <div class="hero">
       <h1>在线观影</h1>
-      <p>内容静态化托管于边缘 CDN，剧集 Solid 数据由 Wikimedia 开放影片提供（CC 授权）。点击卡片即可播放。</p>
-      <p style="margin-top:10px"><a href="#/external">▶ 浏览外部片单（漫剧 / AI 剧）</a></p>
+      <p>漫剧 / AI 剧片单来自红果短剧公开分类页（元数据索引，点击卡片前往原站）；下方另附自建演示内容。</p>
     </div>`;
+
+  /* 外部片单：漫剧 / AI 剧直接作为首页分区展示 */
+  try {
+    const idx = await (await fetch('external/index.json')).json();
+    for (const c of idx.catalogs || []) {
+      const d = await (await fetch('external/' + encodeURIComponent(c.category) + '.json')).json();
+      const items = (d.items || []).slice(0, 24);
+      html += `<h2 class="sec"><span class="dot"></span>${esc(c.category_label)}
+        <span style="margin-left:auto;font-size:12px;font-weight:400"><a href="#/external/${esc(c.category)}">全部 ${c.total} 条 →</a></span></h2>
+        <div class="grid">`;
+      for (const it of items) html += extCardHtml(it);
+      html += `</div>`;
+    }
+  } catch (e) { /* 外部片单加载失败不阻塞主页 */ }
+
   for (const sec of home.sections || []) {
     if (!sec.items || !sec.items.length) continue;
     html += `<h2 class="sec"><span class="dot"></span>${esc(sec.title)}</h2><div class="grid">`;
@@ -152,7 +166,12 @@ function cardHtml(it) {
 }
 function bindCards() {
   app.querySelectorAll('.card').forEach(el => {
-    el.onclick = () => { location.hash = '#/series/' + el.dataset.id; };
+    if (el.dataset.url) {
+      // 外部片单卡片：新窗口跳转原站详情页
+      el.onclick = () => window.open(el.dataset.url, '_blank', 'noopener');
+    } else {
+      el.onclick = () => { location.hash = '#/series/' + el.dataset.id; };
+    }
   });
 }
 
