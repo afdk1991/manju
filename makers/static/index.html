@@ -32,7 +32,7 @@
   h2.sec span.dot { width: 4px; height: 16px; background: linear-gradient(180deg,#7c8cff,#c86bff); border-radius: 2px; }
 
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform .16s, border-color .16s; }
+  .card { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform .16s, border-color .16s; }
   .card:hover { transform: translateY(-3px); border-color: #3d4574; }
   .cover { width: 100%; aspect-ratio: 16/10; object-fit: cover; background: #0c0f1e; display: block; }
   .card .meta { padding: 10px 12px 12px; }
@@ -79,6 +79,40 @@
     color: #b9c0d9; white-space: pre-wrap; word-break: break-all;
   }
   .foot { margin-top: 26px; font-size: 12px; color: #6a7088; line-height: 1.8; }
+
+  /* 外部片单：来源角标 / 跳转提示页 */
+  .card .src {
+    position: absolute; top: 8px; left: 8px; z-index: 2;
+    font-size: 10px; color: #cfd5ea; background: rgba(12,15,30,.8);
+    border: 1px solid var(--line); border-radius: 4px; padding: 2px 6px;
+  }
+  .card .seen {
+    position: absolute; top: 8px; right: 8px; z-index: 2;
+    font-size: 10px; color: var(--acc); background: rgba(12,15,30,.8);
+    border: 1px solid #3d4574; border-radius: 4px; padding: 2px 6px;
+  }
+  .notice {
+    margin-top: 20px; background: var(--card); border: 1px solid var(--line);
+    border-left: 3px solid #ffcc66; border-radius: 10px; padding: 13px 16px;
+    font-size: 12px; color: #9aa1bd; line-height: 1.85;
+  }
+  .gate {
+    display: flex; gap: 22px; align-items: flex-start; margin-top: 24px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px;
+  }
+  .gate .gposter { width: 150px; border-radius: 10px; border: 1px solid var(--line); flex: none; }
+  .gate h1 { font-size: 21px; margin-bottom: 8px; line-height: 1.4; }
+  .gate .gmeta { font-size: 13px; color: var(--muted); line-height: 2; }
+  .go {
+    display: inline-block; margin-top: 16px; background: #4a55d8; color: #fff;
+    border-radius: 10px; padding: 11px 20px; font-size: 14px;
+  }
+  .go:hover { background: #5a66ee; text-decoration: none; }
+  .ghost {
+    display: inline-block; margin-top: 16px; margin-left: 10px; color: var(--muted);
+    border: 1px solid var(--line); border-radius: 10px; padding: 11px 18px; font-size: 14px;
+  }
+  @media (max-width: 640px) { .gate { flex-direction: column; } .gate .gposter { width: 120px; } }
 </style>
 </head>
 <body>
@@ -134,7 +168,7 @@ async function viewHome() {
       html += `<h2 class="sec"><span class="dot"></span>${esc(c.category_label)}
         <span style="margin-left:auto;font-size:12px;font-weight:400"><a href="#/external/${esc(c.category)}">全部 ${c.total} 条 →</a></span></h2>
         <div class="grid">`;
-      for (const it of items) html += extCardHtml(it);
+      for (const it of items) html += extCardHtml(it, c.category);
       html += `</div>`;
     }
   } catch (e) { /* 外部片单加载失败不阻塞主页 */ }
@@ -165,13 +199,9 @@ function cardHtml(it) {
   </div>`;
 }
 function bindCards() {
-  app.querySelectorAll('.card').forEach(el => {
-    if (el.dataset.url) {
-      // 外部片单卡片：新窗口跳转原站详情页
-      el.onclick = () => window.open(el.dataset.url, '_blank', 'noopener');
-    } else {
-      el.onclick = () => { location.hash = '#/series/' + el.dataset.id; };
-    }
+  bindExtCards(app);
+  app.querySelectorAll('.card[data-id]:not([data-cat])').forEach(el => {
+    el.onclick = () => { location.hash = '#/series/' + el.dataset.id; };
   });
 }
 
@@ -341,7 +371,7 @@ const EXT_STEP = 60;
 
 async function viewExternalIndex() {
   document.getElementById('back').style.display = '';
-  const idx = await (await fetch('external/index.json')).json();
+  const idx = await loadExtIndex();
   const cards = (idx.catalogs || []).map(c => `
     <div class="card" data-extcat="${esc(c.category)}">
       <div class="meta">
@@ -354,10 +384,19 @@ async function viewExternalIndex() {
       <h1>外部片单</h1>
       <p>来自红果短剧公开分类页的<b>漫剧 / AI 剧</b>元数据索引（标题、封面地址、集数、原站链接）。不包含视频与图片二进制；点击卡片前往原站详情页。</p>
     </div>
+    ${attributionNotice(idx.attribution)}
     <div class="grid">${cards}</div>` + diagPanel();
   app.querySelectorAll('[data-extcat]').forEach(el => {
     el.onclick = () => { location.hash = '#/external/' + el.dataset.extcat; };
   });
+}
+
+function attributionNotice(text) {
+  return `<div class="notice">
+      <b>版权与播放说明</b><br>
+      ${esc(text || '作品与封面版权归原站及权利人所有；本站仅含公开元数据与来源链接。')}
+      <br>本站不存储、不转码、不代理视频；点击卡片后将先展示来源信息，再由你决定是否前往原站观看。
+    </div>`;
 }
 
 async function viewExternalList(cat) {
@@ -368,12 +407,14 @@ async function viewExternalList(cat) {
   extCat = cat;
   extShown = 0;
   const label = extCache.category_label || cat;
+  const idx = await loadExtIndex();
   app.innerHTML = `
     <div class="hero">
       <h1>${esc(label)}</h1>
-      <p>共 ${extCache.total} 条 · 仅含公开元数据，点击卡片前往原站观看。</p>
+      <p>共 ${extCache.total} 条 · 仅含公开元数据，点击卡片查看来源后前往原站观看。</p>
       <p style="margin-top:8px"><a href="#/external">← 返回分类</a></p>
     </div>
+    ${attributionNotice(idx.attribution)}
     <div class="grid" id="extgrid"></div>
     <div style="text-align:center;margin-top:18px">
       <button id="extmore" style="display:none">加载更多</button>
@@ -385,10 +426,13 @@ async function viewExternalList(cat) {
   if (extShown < (extCache.items || []).length) btn.style.display = '';
 }
 
-function extCardHtml(it) {
-  return `<div class="card" data-url="${esc(it.detail_url)}">
+function extCardHtml(it, cat) {
+  const seen = seenSet().has(String(it.id)) ? '<span class="seen">已看过</span>' : '';
+  return `<div class="card" data-cat="${esc(cat)}" data-id="${esc(it.id)}">
     <img class="cover" loading="lazy" src="${esc(it.cover_url)}" alt="${esc(it.title)}"
          onerror="this.style.background='#20253c';this.removeAttribute('src')">
+    <span class="src">${esc(it.source_label || '外部来源')}</span>
+    ${seen}
     <div class="meta">
       <div class="t">${esc(it.title)}</div>
       <div class="info"><span>${esc(it.episodes_text || '')}</span></div>
@@ -396,20 +440,107 @@ function extCardHtml(it) {
   </div>`;
 }
 
+/* 外部片单点击：先进站内提示页确认，由用户决定是否跳转原站 */
+function bindExtCards(root) {
+  (root || app).querySelectorAll('.card[data-id][data-cat]').forEach(el => {
+    if (el.dataset.bound) return;
+    el.dataset.bound = '1';
+    el.onclick = () => {
+      location.hash = '#/ext/' + encodeURIComponent(el.dataset.cat) + '/' + encodeURIComponent(el.dataset.id);
+    };
+  });
+}
+
+/* 「已看过」标记：仅本地记录 id，不触碰任何视频内容 */
+const SEEN_KEY = 'manju:ext:seen';
+function seenSet() {
+  try { return new Set(JSON.parse(localStorage.getItem(SEEN_KEY) || '[]')); }
+  catch (e) { return new Set(); }
+}
+function markSeen(id) {
+  try {
+    const s = seenSet();
+    s.add(String(id));
+    localStorage.setItem(SEEN_KEY, JSON.stringify([...s].slice(-500)));
+  } catch (e) { /* 隐私模式下不可用，忽略 */ }
+}
+
 function renderExtMore() {
   const grid = document.getElementById('extgrid');
   if (!grid) return;
   const items = extCache.items || [];
   const chunk = items.slice(extShown, extShown + EXT_STEP);
-  grid.insertAdjacentHTML('beforeend', chunk.map(extCardHtml).join(''));
+  grid.insertAdjacentHTML('beforeend', chunk.map(it => extCardHtml(it, extCat)).join(''));
   extShown += chunk.length;
   const btn = document.getElementById('extmore');
   if (btn) btn.style.display = extShown < items.length ? '' : 'none';
-  grid.querySelectorAll('[data-url]').forEach(el => {
-    if (el.dataset.bound) return;
-    el.dataset.bound = '1';
-    el.onclick = () => window.open(el.dataset.url, '_blank', 'noopener');
-  });
+  bindExtCards(grid);
+}
+
+/* ---------- 外部片单·跳转提示页 ---------- */
+/* 定位：仍是导航跳转（链接自由），不存储/不转码/不代理任何视频，
+   法律性质与直接 setTimeout 跳原站一致，但把来源与免责前置告知用户。 */
+async function viewExtGate(cat, id) {
+  document.getElementById('back').style.display = '';
+  const d = await loadExtCatalog(cat);
+  const it = (d.items || []).find(x => String(x.id) === String(id));
+  const backUrl = '#/external/' + encodeURIComponent(cat);
+
+  if (!it) {
+    app.innerHTML = `<div class="state err">未找到该条目（${esc(id)}）
+      <br><br><a href="${esc(backUrl)}">← 返回列表</a></div>`;
+    return;
+  }
+  markSeen(it.id);
+
+  const idx = await loadExtIndex();
+  const attribution = idx.attribution || '作品与封面版权归原站及权利人所有；本站仅含公开元数据与来源链接。';
+  const src = it.source_label || '红果短剧';
+
+  app.innerHTML = `
+    <div class="hero">
+      <h1>${esc(it.title)}</h1>
+      <p><a href="${esc(backUrl)}">← 返回${esc(d.category_label || '片单列表')}</a></p>
+    </div>
+
+    <div class="gate">
+      <img class="gposter" src="${esc(it.cover_url)}" alt="${esc(it.title)}"
+           onerror="this.style.background='#20253c'">
+      <div class="gtxt">
+        <h1>${esc(it.title)}</h1>
+        <div class="gmeta">
+          <div>来源平台：<b style="color:var(--txt)">${esc(src)}</b></div>
+          <div>分类：${esc(it.category_label || cat)}</div>
+          <div>集数：${esc(it.episodes_text || (it.episodes + ' 集'))}</div>
+        </div>
+        <a class="go" href="${esc(it.detail_url)}"
+           target="_blank" rel="noopener external"
+           referrerpolicy="strict-origin-when-cross-origin">前往${esc(src)}观看 →</a>
+        <a class="ghost" href="${esc(backUrl)}">返回列表</a>
+      </div>
+    </div>
+
+    <div class="notice">
+      本站为片单索引与发现站点，<b>不存储、不转码、不代理任何视频内容</b>；点击上方按钮将在新标签打开原站页面，播放由${esc(src)}提供。
+      <br>${esc(attribution)}
+      <br><br><span style="color:#6a7088">即将前往：</span><span style="color:#b9c0d9">${esc(it.detail_url)}</span>
+    </div>` + diagPanel();
+}
+
+/* 分类 JSON 缓存：避免每次进提示页都重新拉取 500KB */
+const extCatCache = {};
+async function loadExtCatalog(cat) {
+  if (extCatCache[cat]) return extCatCache[cat];
+  const r = await fetch('external/' + encodeURIComponent(cat) + '.json');
+  if (!r.ok) throw new Error('HTTP ' + r.status + ' — external/' + cat + '.json');
+  extCatCache[cat] = await r.json();
+  return extCatCache[cat];
+}
+
+let extIdxCache = null;
+async function loadExtIndex() {
+  if (!extIdxCache) extIdxCache = await (await fetch('external/index.json')).json();
+  return extIdxCache;
 }
 
 /* ---------- 路由 ---------- */
@@ -417,6 +548,10 @@ function route() {
   const h = (location.hash || '#/').replace(/^#/, '');
   if (h.startsWith('/series/')) render(() => viewSeries(decodeURIComponent(h.slice('/series/'.length))));
   else if (h.startsWith('/watch/')) render(() => viewWatch(decodeURIComponent(h.slice('/watch/'.length))));
+  else if (h.startsWith('/ext/')) {
+    const p = decodeURIComponent(h.slice('/ext/'.length)).split('/');
+    render(() => viewExtGate(p[0], p.slice(1).join('/')));
+  }
   else if (h === '/external') render(viewExternalIndex);
   else if (h.startsWith('/external/')) render(() => viewExternalList(decodeURIComponent(h.slice('/external/'.length))));
   else render(viewHome);

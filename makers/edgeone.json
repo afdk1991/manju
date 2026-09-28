@@ -1,6 +1,6 @@
 {
   "name": "manju",
-  "nodeVersion": "22.11.0",
+  "nodeVersion": "24.18.0",
   "installCommand": "npm install",
   "outputDirectory": "static",
   "cloudFunctions": {
