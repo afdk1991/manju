@@ -47,8 +47,14 @@ jobs:
           DEP=$(read_status deploymentId)
           echo "status=$STATUS projectId=$PID deploymentId=$DEP"
           [ "$STATUS" = "success" ] || {
+            # 失败响应不带 deploymentId，此时回退到项目部署列表页
+            if [ "$DEP" = "EMPTY" ]; then
+              URL="https://console.cloud.tencent.com/edgeone/pages/project/makers-vypuaynzkt0c/deployment"
+            else
+              URL="https://console.cloud.tencent.com/edgeone/pages/project/makers-vypuaynzkt0c/deployment/$DEP"
+            fi
             echo "❌ 部署未成功（status=$STATUS）。云端构建日志需到控制台查看："
-            echo "   https://console.cloud.tencent.com/edgeone/pages/project/makers-vypuaynzkt0c/deployment/$DEP"
+            echo "   $URL"
             exit 1; }
           [ "$PID" = "makers-vypuaynzkt0c" ] || {
             echo "❌ 项目守卫失败：必须复用现有项目 makers-vypuaynzkt0c，实际为 $PID"; exit 1; }
