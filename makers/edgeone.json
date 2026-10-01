@@ -14,9 +14,7 @@
     { "source": "/api/v1/home", "destination": "/api/v1/home.json" },
     { "source": "/api/v1/categories", "destination": "/api/v1/categories.json" },
     { "source": "/api/v1/series", "destination": "/api/v1/series.json" },
-    { "source": "/api/v1/series/:id", "destination": "/api/v1/series/:id.json" },
     { "source": "/api/v1/series/:id/episodes", "destination": "/api/v1/series/:id/episodes.json" },
-    { "source": "/api/v1/episodes/:id", "destination": "/api/v1/episodes/:id.json" },
     { "source": "/api/v1/ota/public-key", "destination": "/api/v1/ota/public-key.json" },
     { "source": "/admin", "destination": "/admin/index.html" }
   ],

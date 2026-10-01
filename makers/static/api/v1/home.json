@@ -6,6 +6,30 @@
    "layout": "swipe",
    "items": [
     {
+     "id": "demo_ai_rebirth",
+     "title": "重生：我成了漫画主角",
+     "original_title": "原创 AI 漫剧",
+     "cover": "files/covers/demo_ai_rebirth_cover.jpg",
+     "poster": "files/covers/demo_ai_rebirth_cover.jpg",
+     "banner": "files/covers/demo_ai_rebirth_cover.jpg",
+     "synopsis": "落魄漫画家深夜伏案沉睡，笔下世界竟在台灯光中复苏。他穿越进自己未完的漫画，双手开始化作墨线——一场关于「重生」的黑白漫剧由此展开。本站自有 AI 生成内容，纯原创，全程站内播放。",
+     "tags": [
+      "漫剧",
+      "AI剧",
+      "原创",
+      "玄幻"
+     ],
+     "category_id": "cat_xuanhuan",
+     "region": "CN",
+     "release_year": 2026,
+     "status": "ongoing",
+     "total_episodes": 1,
+     "score": 9.1,
+     "views": 0,
+     "is_vip": false,
+     "age_rating": "all"
+    },
+    {
      "id": "s_9001",
      "title": "大兔子的反击",
      "original_title": "Big Buck Bunny 4K",
@@ -173,6 +197,30 @@
    "title": "新剧速递",
    "layout": "grid",
    "items": [
+    {
+     "id": "demo_ai_rebirth",
+     "title": "重生：我成了漫画主角",
+     "original_title": "原创 AI 漫剧",
+     "cover": "files/covers/demo_ai_rebirth_cover.jpg",
+     "poster": "files/covers/demo_ai_rebirth_cover.jpg",
+     "banner": "files/covers/demo_ai_rebirth_cover.jpg",
+     "synopsis": "落魄漫画家深夜伏案沉睡，笔下世界竟在台灯光中复苏。他穿越进自己未完的漫画，双手开始化作墨线——一场关于「重生」的黑白漫剧由此展开。本站自有 AI 生成内容，纯原创，全程站内播放。",
+     "tags": [
+      "漫剧",
+      "AI剧",
+      "原创",
+      "玄幻"
+     ],
+     "category_id": "cat_xuanhuan",
+     "region": "CN",
+     "release_year": 2026,
+     "status": "ongoing",
+     "total_episodes": 1,
+     "score": 9.1,
+     "views": 0,
+     "is_vip": false,
+     "age_rating": "all"
+    },
     {
      "id": "s_9005",
      "title": "奇点",
@@ -436,6 +484,37 @@
      "status": "completed",
      "total_episodes": 1,
      "score": 8.7,
+     "views": 0,
+     "is_vip": false,
+     "age_rating": "all"
+    }
+   ]
+  },
+  {
+   "id": "cat_xuanhuan",
+   "title": "玄幻",
+   "layout": "grid",
+   "items": [
+    {
+     "id": "demo_ai_rebirth",
+     "title": "重生：我成了漫画主角",
+     "original_title": "原创 AI 漫剧",
+     "cover": "files/covers/demo_ai_rebirth_cover.jpg",
+     "poster": "files/covers/demo_ai_rebirth_cover.jpg",
+     "banner": "files/covers/demo_ai_rebirth_cover.jpg",
+     "synopsis": "落魄漫画家深夜伏案沉睡，笔下世界竟在台灯光中复苏。他穿越进自己未完的漫画，双手开始化作墨线——一场关于「重生」的黑白漫剧由此展开。本站自有 AI 生成内容，纯原创，全程站内播放。",
+     "tags": [
+      "漫剧",
+      "AI剧",
+      "原创",
+      "玄幻"
+     ],
+     "category_id": "cat_xuanhuan",
+     "region": "CN",
+     "release_year": 2026,
+     "status": "ongoing",
+     "total_episodes": 1,
+     "score": 9.1,
      "views": 0,
      "is_vip": false,
      "age_rating": "all"
