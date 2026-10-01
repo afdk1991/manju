@@ -66,12 +66,6 @@ jobs:
         # RuntimeError 导致启动失败 —— 必须在启动前补建。
         run: mkdir -p server/data/artifacts
 
-      - name: Seed demo data (best effort)
-        continue-on-error: true
-        run: |
-          if [ -f scripts/seed_demo_ai_rebirth.py ]; then python scripts/seed_demo_ai_rebirth.py; fi
-          if [ -f scripts/seed_content_library.py ]; then python scripts/seed_content_library.py; fi
-
       - name: Start API
         working-directory: server
         run: |
@@ -81,6 +75,13 @@ jobs:
             sleep 1
           done
           echo "::warning::API 未在 30s 内就绪"; cat /tmp/api.log
+
+      - name: Seed demo data
+        # 必须在 API 启动之后执行：建表由后端启动时完成，先 seed 会因表不存在而静默失败。
+        continue-on-error: true
+        run: |
+          if [ -f scripts/seed_content_library.py ]; then python scripts/seed_content_library.py; fi
+          if [ -f scripts/seed_demo_ai_rebirth.py ]; then python scripts/seed_demo_ai_rebirth.py; fi
 
       - name: Backend smoke
         run: python scripts/smoke_test.py --api http://127.0.0.1:8000
