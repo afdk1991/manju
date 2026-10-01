@@ -60,6 +60,18 @@ jobs:
       - name: Install deps
         run: pip install -r server/requirements.txt
 
+      - name: Prepare runtime dirs
+        # server/data/* 未进版本库（含 artifacts 与 manju.db），
+        # 而 main.py 会在导入期 mount StaticFiles(artifacts_dir)，目录缺失会直接抛
+        # RuntimeError 导致启动失败 —— 必须在启动前补建。
+        run: mkdir -p server/data/artifacts
+
+      - name: Seed demo data (best effort)
+        continue-on-error: true
+        run: |
+          if [ -f scripts/seed_demo_ai_rebirth.py ]; then python scripts/seed_demo_ai_rebirth.py; fi
+          if [ -f scripts/seed_content_library.py ]; then python scripts/seed_content_library.py; fi
+
       - name: Start API
         working-directory: server
         run: |
