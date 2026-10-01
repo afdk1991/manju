@@ -80,8 +80,10 @@ jobs:
         # 必须在 API 启动之后执行：建表由后端启动时完成，先 seed 会因表不存在而静默失败。
         continue-on-error: true
         run: |
-          if [ -f scripts/seed_content_library.py ]; then python scripts/seed_content_library.py; fi
-          if [ -f scripts/seed_demo_ai_rebirth.py ]; then python scripts/seed_demo_ai_rebirth.py; fi
+          # seed_content_library.py 的 --manifest 是必填参数，缺参会直接退出码 2
+          # （continue-on-error 会吞掉，表现为 /series 返回 0 条，很难查）
+          python scripts/seed_content_library.py --manifest content/library/sample_series.json
+          python scripts/seed_demo_ai_rebirth.py
 
       - name: Backend smoke
         run: python scripts/smoke_test.py --api http://127.0.0.1:8000
