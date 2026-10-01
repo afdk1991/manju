@@ -27,10 +27,25 @@ jobs:
           PAGES_SOURCE: skills
           EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}
         run: |
-          edgeone makers deploy . -n manju -t "$EDGEONE_API_TOKEN" --skip-ai-gateway-sync --json \
-            | tee deploy_out.json
-          PID=$(python3 -c "import json,sys;print(json.load(open('deploy_out.json')).get('projectId',''))")
-          echo "projectId=$PID"
+          set +e
+          edgeone makers deploy . -n manju -t "$EDGEONE_API_TOKEN" --skip-ai-gateway-sync --json > deploy_out.json 2>&1
+          cat deploy_out.json
+          set -e
+          read_status() { python3 -c "
+          import json,sys
+          try:
+              d=json.load(open('deploy_out.json'))
+          except Exception:
+              print('$1-unknown'); sys.exit(0)
+          print(d.get('$1','') or 'EMPTY')"; }
+          STATUS=$(read_status status)
+          PID=$(read_status projectId)
+          DEP=$(read_status deploymentId)
+          echo "status=$STATUS projectId=$PID deploymentId=$DEP"
+          [ "$STATUS" = "success" ] || {
+            echo "❌ 部署未成功（status=$STATUS）。云端构建日志需到控制台查看："
+            echo "   https://console.cloud.tencent.com/edgeone/pages/project/makers-vypuaynzkt0c/deployment/$DEP"
+            exit 1; }
           [ "$PID" = "makers-vypuaynzkt0c" ] || {
             echo "❌ 项目守卫失败：必须复用现有项目 makers-vypuaynzkt0c，实际为 $PID"; exit 1; }
-          echo "✅ 项目守卫通过：$PID"
+          echo "✅ 部署成功且项目守卫通过：$PID"
