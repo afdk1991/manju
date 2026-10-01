@@ -1,0 +1,161 @@
+name: Review Gates (方案A 自动化评审门禁)
+
+# 方案A「分布式多人评审体系」中「自动化工具」一环的真实落地。
+# 人工评审记录见 review/ 五个模板；本 workflow 只做机器可判的部分。
+#
+# 门槛约定：
+#   🔴 Hard = 当前仓库状态已满足，失败即阻塞合并
+#   🟡 Soft = 当前仓库已知存在缺陷（见 docs/评审体系落地清单 3.1 基址清单），
+#             先以告警形式输出，二期修复完成后把 continue-on-error 改为 false
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  # ---------------------------------------------------------------- ① Web
+  web-quality:
+    name: web-quality 🔴
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install deps
+        working-directory: web
+        run: npm ci
+
+      - name: Typecheck + build
+        working-directory: web
+        run: npm run build
+
+      - name: Build artifact smoke (smoke_web)
+        working-directory: makers
+        run: node scripts/smoke_web.mjs
+
+  # ------------------------------------------------------------- ② 后端
+  backend-quality:
+    name: backend-quality 🟡
+    runs-on: ubuntu-latest
+    continue-on-error: true # 二期「去 sqlalchemy 依赖 + OTA 抽离单测」完成后转 🔴
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: server/requirements.txt
+
+      - name: Syntax gate (hard within soft job)
+        run: python -m compileall -q server/app
+
+      - name: Install deps
+        run: pip install -r server/requirements.txt
+
+      - name: Start API
+        working-directory: server
+        run: |
+          nohup python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 > /tmp/api.log 2>&1 &
+          for i in $(seq 1 30); do
+            curl -sf http://127.0.0.1:8000/docs >/dev/null && exit 0
+            sleep 1
+          done
+          echo "::warning::API 未在 30s 内就绪"; cat /tmp/api.log
+
+      - name: Backend smoke
+        run: python scripts/smoke_test.py --api http://127.0.0.1:8000
+
+  # ------------------------------------------------------- ③ 安全与红线
+  security-gates:
+    name: security-gates 🔴
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 私钥与证书不得进版本库
+        run: |
+          set -e
+          echo "[hard] 扫描被 git 跟踪的私钥/证书资产"
+          # 允许：keys/ota_public.pem（公钥本就应公开）、debug.keystore（Android 调试）
+          hits=$(git ls-files | grep -Ei '(ota_private\.pem|\.p12$|\.p8$|\.jks$|_private\.pem$)' || true)
+          if [ -n "$hits" ]; then
+            echo "::error::发现被跟踪的私钥资产："; echo "$hits"; exit 1
+          fi
+          hits2=$(git grep -lIE 'BEGIN (RSA |EC |OPENSSH |ENCRYPTED )?PRIVATE KEY' -- . || true)
+          if [ -n "$hits2" ]; then
+            echo "::error::发现 PEM 私钥内容："; echo "$hits2"; exit 1
+          fi
+          echo "  ✓ 无私钥资产被跟踪（keys/ota_public.pem 为公钥，允许）"
+
+      - name: 过期域名与本地地址告警（🟡 已知缺陷，二期修复后转 hard）
+        continue-on-error: true
+        run: |
+          echo "[soft] 扫描源码中的过期预览域 / localhost 基址"
+          # 只扫源码目录，跳过构建产物（build/ .dart_tool/ dist/ node_modules/）
+          grep -rInE 'manju-drama-hub|localhost:8000' \
+            --include='*.ts' --include='*.tsx' --include='*.dart' --include='*.ets' \
+            --include='*.json' --include='*.json5' \
+            --exclude-dir=node_modules --exclude-dir=build --exclude-dir=dist \
+            --exclude-dir=.dart_tool --exclude-dir=.backup \
+            clients web server || echo "  ✓ 无命中"
+          echo "::warning::以上命中为 docs/评审体系落地清单 §3.3 基址清单的 7 处已知 🔴 缺陷，正式域名确定后统一修复，修复后请将本步骤 continue-on-error 改为 false"
+
+  # ------------------------------------------------------- ④ 契约与配置
+  contract-guard:
+    name: contract-guard 🔴
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: edgeone.json 禁止“:param 结尾 + destination 再拼后缀”的 rewrite
+        run: |
+          python3 - <<'PY'
+          import json, re, sys
+          cfg = json.load(open('makers/edgeone.json', encoding='utf-8'))
+          bad = []
+          for rw in cfg.get('rewrites', []) or []:
+              src, dst = rw.get('source', ''), rw.get('destination', '')
+              if re.search(r':[A-Za-z_][A-Za-z0-9_]*$', src) and dst.rstrip('/') != src.rstrip('/'):
+                  bad.append(rw)
+          if bad:
+              print('::error::发现会打死静态 .json 的 rewrite 规则：')
+              for b in bad:
+                  print('   ', b)
+              sys.exit(1)
+          print('  ✓ 无「:param 结尾 + 拼后缀」的 rewrite（历史线上 404 根因）')
+          PY
+
+      - name: 改动契约必须附技术方案评审记录
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git fetch origin "${{ github.base_ref }}" --depth=1 -q || true
+            git diff --name-only "origin/${{ github.base_ref }}"..."${{ github.sha }}" > /tmp/changed.txt || \
+              git diff --name-only "origin/${{ github.base_ref }}"...HEAD > /tmp/changed.txt
+          else
+            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" > /tmp/changed.txt
+          fi
+          python3 - <<'PY'
+          import sys
+          changed = [l.strip() for l in open('/tmp/changed.txt', encoding='utf-8') if l.strip()]
+          contract = [c for c in changed if c.startswith('spec/')]
+          records  = [c for c in changed if c.startswith('review/records/')]
+          if contract and not records:
+              print('::error::本次改动了契约/协议文件但未附评审记录：')
+              for c in contract: print('   ', c)
+              print('   契约是唯一事实源，改动须同时提交 review/records/<版本>/02-技术方案评审记录.md')
+              sys.exit(1)
+          if contract:
+              print('  ✓ 契约改动已附评审记录')
+          else:
+              print('  ✓ 未改动 spec/ 契约')
+          PY

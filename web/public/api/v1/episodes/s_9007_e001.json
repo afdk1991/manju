@@ -1,0 +1,26 @@
+{
+ "id": "s_9007_e001",
+ "series_id": "s_9007",
+ "index": 1,
+ "title": "正片",
+ "thumbnail": "files/covers/90e1de2dfefebb09.jpg",
+ "duration_sec": 734,
+ "is_free": true,
+ "sources": [
+  {
+   "quality": "auto",
+   "url": "https://test-streams.mux.dev/tos_ismc/main.m3u8",
+   "container": "hls",
+   "codec": "h264",
+   "bitrate_kbps": 2400
+  },
+  {
+   "quality": "auto",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm",
+   "container": "webm",
+   "codec": "vp9",
+   "bitrate_kbps": 0
+  }
+ ],
+ "subtitles": []
+}

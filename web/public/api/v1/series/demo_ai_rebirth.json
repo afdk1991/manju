@@ -1,0 +1,52 @@
+{
+ "id": "demo_ai_rebirth",
+ "title": "重生：我成了漫画主角",
+ "original_title": "原创 AI 漫剧",
+ "cover": "files/covers/demo_ai_rebirth_cover.jpg",
+ "poster": "files/covers/demo_ai_rebirth_cover.jpg",
+ "banner": "files/covers/demo_ai_rebirth_cover.jpg",
+ "synopsis": "落魄漫画家深夜伏案沉睡，笔下世界竟在台灯光中复苏。他穿越进自己未完的漫画，双手开始化作墨线——一场关于「重生」的黑白漫剧由此展开。本站自有 AI 生成内容，纯原创，全程站内播放。",
+ "tags": [
+  "漫剧",
+  "AI剧",
+  "原创",
+  "玄幻"
+ ],
+ "category_id": "cat_xuanhuan",
+ "region": "CN",
+ "release_year": 2026,
+ "status": "ongoing",
+ "total_episodes": 1,
+ "score": 9.1,
+ "views": 0,
+ "is_vip": false,
+ "age_rating": "all",
+ "episodes": [
+  {
+   "id": "demo_ai_rebirth_e001",
+   "series_id": "demo_ai_rebirth",
+   "index": 1,
+   "title": "觉醒",
+   "thumbnail": "files/videos/demo_ai_rebirth/ep01/thumb.jpg",
+   "duration_sec": 36,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "720p",
+     "url": "files/videos/demo_ai_rebirth/ep01/index.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 1500
+    },
+    {
+     "quality": "720p",
+     "url": "files/videos/demo_ai_rebirth/ep01/ep01.mp4",
+     "container": "mp4",
+     "codec": "h264",
+     "bitrate_kbps": 1500
+    }
+   ],
+   "subtitles": []
+  }
+ ]
+}
