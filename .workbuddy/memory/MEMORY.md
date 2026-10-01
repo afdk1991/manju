@@ -211,6 +211,22 @@ security-gates 🔴 / backend-quality 🟡。当前状态：**三个硬门禁全
 - 沙箱会**静默吞掉 `git add`**（不改 .git/index，且不报错）：提交推送一律用
   `dangerouslyDisableSandbox: true`，否则以为提交了其实没有。
 
+## EdgeOne Makers 部署（项目 manju，ProjectId=makers-vypuaynzkt0c）
+
+- CI 配方（`.github/workflows/deploy.yml`，working-directory=makers）：
+  CLI 锁 `edgeone@1.6.17-beta.1` + `PAGES_SOURCE=skills`，Secret 用 `EDGEONE_API_TOKEN`，
+  命令 `edgeone makers deploy . -n manju -t "$TOKEN" --skip-ai-gateway-sync --json`，
+  再加项目守卫（projectId 必须等于 makers-vypuaynzkt0c）。
+- **CLI 输出带 ANSI 颜色码**，解析 `--json` 前必须 `re.sub(r"\x1b\[[0-9;?]*[a-zA-Z]","",raw)`
+  再取最后一个以 `{` 开头的行，否则 json 必失败（踩过两次）。
+- 失败响应只含 `{"status":"error"}`，不带 projectId/deploymentId → 控制台链接要回退到
+  `.../project/makers-vypuaynzkt0c/deployment`。
+- **2026-10-01 遗留**：上传成功但云端构建 Failed（本地 CLI 与 CI 均复现）；npm ci 与云函数语法均正常，
+  需到控制台看构建日志定位。怀疑项目非「直接上传」类型或云端构建命令问题。
+- 仓库有 CI security-gates 会**自动轮换 OTA 密钥并自动提交**；轮换后必须同步
+  GH Secret `ED25519_PRIVATE_KEY` 与 EdgeOne `MANJU_OTA_PRIVATE_KEY`，并用
+  `scripts/check_ota_keys.py` 验证四处一致。
+
 ## Windows 本机补充：YAML 校验
 
 受管 Python 无 pyyaml，用 venv：`C:/Users/addk1/.workbuddy/binaries/python/envs/default/Scripts/python.exe`
