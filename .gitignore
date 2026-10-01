@@ -91,6 +91,11 @@ server/data/*.log
 server/data/artifacts/*
 !server/data/artifacts/.gitkeep
 
+# ===== 本地备份与临时目录（含 keystore / 私钥备份，严禁入库）=====
+# .backup/ 保存 P0 阶段 keystore 与密钥的本地备份，仅留在磁盘，不进版本库。
+.backup/
+.tmp_*/
+
 # ===== 诊断临时文件与日志 =====
 _*.txt
 _*.log
@@ -104,5 +109,12 @@ Desktop.ini
 *.swo
 *~
 
-# OTA 签名私钥（绝不可提交）
+# ===== OTA 签名密钥（放在文件末尾，避免被后续规则覆盖）=====
+# 私钥绝不可提交；公钥客户端验签需要，必须入库。
+# 注意：gitignore 后出现的规则会覆盖先出现的例外，故本段必须置于文件最末。
 keys/*.pem
+keys/ota_private.pem
+keys/*.key
+keys/*.pfx
+keys/*.p12
+!keys/ota_public.pem

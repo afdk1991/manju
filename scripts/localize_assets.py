@@ -22,7 +22,9 @@ import urllib.request
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-STATIC = PROJECT_ROOT / "makers" / "static"
+# 注意：makers/static 已是 Vite 构建产物目录（会被 emptyOutDir 清空）。
+# 本地化后的资产必须写进前端工程的 public 源目录，再由构建复制进产物。
+STATIC = PROJECT_ROOT / "web" / "public"
 API_DIR = STATIC / "api" / "v1"
 COVERS = STATIC / "files" / "covers"
 # 注意：目录名不能叫 `vendor` —— EdgeOne Makers 的 StaticAssetsBuilder 会跳过该目录，
@@ -65,12 +67,10 @@ def local_name(url: str) -> str:
 
 
 def main() -> int:
+    # hls.js 已改为 npm 依赖（web/package.json），随 bundle 打包，
+    # 不再需要自托管 static/js/hls.min.js —— 跳过下载，避免产物里出现无用旧文件。
     print("== 1. 本地化 hls.js ==")
-    VENDOR.mkdir(parents=True, exist_ok=True)
-    hls = VENDOR / "hls.min.js"
-    ok = download(HLS_URL, hls)
-    print(f"  {'OK  ' if ok else 'FAIL'} vendor/hls.min.js "
-          f"({hls.stat().st_size if hls.exists() else 0} bytes)")
+    print("  跳过：hls.js 已由 npm 依赖打包（web/package.json）")
 
     print("\n== 2. 本地化封面/海报/缩略图 ==")
     COVERS.mkdir(parents=True, exist_ok=True)
