@@ -18,10 +18,19 @@ jobs:
           node-version: 22
 
       - name: Install EdgeOne CLI
-        run: npm install -g edgeone@1.6.40
+        # 锁定连接器版（含 skills 后端）；公开版 1.6.40+ 会导致 token 无效
+        run: npm install -g edgeone@1.6.17-beta.1
 
       - name: Deploy to EdgeOne Makers (production)
         working-directory: makers
         env:
+          PAGES_SOURCE: skills
           EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}
-        run: edgeone makers deploy . -n manju -t "$EDGEONE_API_TOKEN" --skip-ai-gateway-sync
+        run: |
+          edgeone makers deploy . -n manju -t "$EDGEONE_API_TOKEN" --skip-ai-gateway-sync --json \
+            | tee deploy_out.json
+          PID=$(python3 -c "import json,sys;print(json.load(open('deploy_out.json')).get('projectId',''))")
+          echo "projectId=$PID"
+          [ "$PID" = "makers-vypuaynzkt0c" ] || {
+            echo "❌ 项目守卫失败：必须复用现有项目 makers-vypuaynzkt0c，实际为 $PID"; exit 1; }
+          echo "✅ 项目守卫通过：$PID"

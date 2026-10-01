@@ -10,9 +10,9 @@
 
 | 来源 | 公钥(base64) | 身份 |
 |---|---|---|
-| `keys/ota_private.pem` | `f2obZdLFwhWJtuA/u/VW/EB1jAZ/UiZF/eEbxFJ0a3c=` | **新有效钥** ✅ |
-| `keys/ota_public.pem` | `f2obZdLFwhWJtuA/u/VW/EB1jAZ/UiZF/eEbxFJ0a3c=` | 新有效钥 ✅ |
-| `makers/static/api/v1/ota/public-key.json` | `f2obZdLFwhWJtuA/u/VW/EB1jAZ/UiZF/eEbxFJ0a3c=` | 新有效钥 ✅（部署上线） |
+| `keys/ota_private.pem` | `Bvg00Un3CIWzc8Zim5ZTc9UDYJqulQx2Ds+spgvjRs0=` | **新有效钥** ✅ |
+| `keys/ota_public.pem` | `Bvg00Un3CIWzc8Zim5ZTc9UDYJqulQx2Ds+spgvjRs0=` | 新有效钥 ✅ |
+| `makers/static/api/v1/ota/public-key.json` | `Bvg00Un3CIWzc8Zim5ZTc9UDYJqulQx2Ds+spgvjRs0=` | 新有效钥 ✅（部署上线） |
 | `makers/.env` → `MANJU_OTA_PRIVATE_KEY` | `DuW8zxjUYPNEnNY8RMIe4G670V5ZzX39rl1v9CEVQRU=` | **旧泄露钥** ⚠️ |
 
 **关键结论**
@@ -46,7 +46,7 @@ check_ota_keys.py 输出
 
 1. 打开 EdgeOne 控制台 → 你的 `manju` 项目 → **环境变量 / Environment Variables**。
 2. 找到 `MANJU_OTA_PRIVATE_KEY`，确认其值对应的公钥是
-   `f2obZdLFwhWJtuA/u/VW/EB1jAZ/UiZF/eEbxFJ0a3c=`（即下面的新私钥 PEM）。
+   `Bvg00Un3CIWzc8Zim5ZTc9UDYJqulQx2Ds+spgvjRs0=`（即下面的新私钥 PEM）。
    - 如果云端已经是新私钥 → 直接第 3 步重拉即可。
    - 如果云端仍是旧泄露私钥 → 先用本手册「四、控制台替换步骤」把它改成新私钥，再第 3 步。
 3. 本地重新拉取环境变量，覆盖脏的 `.env`：
@@ -115,7 +115,7 @@ cat makers/static/api/v1/ota/public-key.json
    cat D:/网站全栈项目/项目007/keys/ota_private.pem
    ```
 2. 打开 EdgeOne 控制台 → `manju` 项目 → **环境变量**。
-3. 编辑 `MANJU_OTA_PRIVATE_KEY`，把**整段 PEM**（含 `-----BEGIN PRIVATE KEY-----` 与 `-----END PRIVATE KEY-----` 及中间换行）粘贴为新值。
+3. 编辑 `MANJU_OTA_PRIVATE_KEY`，把**整段 PEM**（首尾两行 PEM 标记 + 中间的 base64 本体，换行保留）粘贴为新值。
    - 注意：CLI 的 `edgeone makers env set` 会静默失败，请务必在控制台界面操作。
 4. 保存。
 
@@ -142,13 +142,22 @@ python scripts/check_ota_keys.py
 
 **新有效私钥 PEM（与 `keys/ota_private.pem` 一致）：**
 
-```
------BEGIN PRIVATE KEY-----
-MC4CAQAwBQYDK2VwBCIEIH8jpFxoMozjoa7tyfyfTWldgeVx88Pi6qe5jAVBEFej
------END PRIVATE KEY-----
+> 🔴 **禁止把私钥写进任何文档、提交或工单。** 本文件此前曾误将真实私钥明文写入并被推送到
+> **公开仓库**，构成泄露事件（2026-10-01 由 CI `security-gates` 检出）。
+> 该密钥已作废旧处理，请按 §六「轮换」重新生成，**不要再从任何文档复制**。
+
+文本文件里**不粘贴 PEM 全文**（曾因此泄露）。取值命令（本地执行，输出仅自己可见）：
+
+```bash
+cat keys/ota_private.pem      # 复制这段输出，含首尾 PEM 标记行
+python scripts/check_ota_keys.py   # 用它核对公钥指纹，避免拿错钥匙
 ```
 
-对应公钥（base64 原始 32 字节）：`f2obZdLFwhWJtuA/u/VW/EB1jAZ/UiZF/eEbxFJ0a3c=`
+> PEM 的首行形如 `-----BEGIN <算法> KEY-----`、末行形如 `-----END <算法> KEY-----`，
+> 两段标记之间的 base64 才是密钥本体 —— 三者缺一不可，控制台粘贴时必须完整。
+
+对应公钥（base64 原始 32 字节）：**轮换后由 `python scripts/check_ota_keys.py` 输出为准**，
+不要信任本文件里写死的任何值。
 
 > ⚠️ 私钥即 root 权限：仅在可信环境粘贴，不要发到群聊 / 工单 / 截图外泄。
 > 本泄露事件正源于旧私钥曾进入过 Git 历史；如需彻底干净，优先走**方案 B 轮换**。

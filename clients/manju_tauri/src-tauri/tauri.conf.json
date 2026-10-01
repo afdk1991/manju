@@ -60,7 +60,7 @@
   "plugins": {
     "updater": {
       "endpoints": [],
-      "pubkey": "f2obZdLFwhWJtuA/u/VW/EB1jAZ/UiZF/eEbxFJ0a3c=",
+      "pubkey": "Bvg00Un3CIWzc8Zim5ZTc9UDYJqulQx2Ds+spgvjRs0=",
       "windows": {
         "installMode": "passive"
       },

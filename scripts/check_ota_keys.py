@@ -20,7 +20,7 @@ import base64, json, os, pathlib, subprocess, sys, tempfile
 ROOT = pathlib.Path(r"D:\网站全栈项目\项目007")
 
 # 已知密钥身份常量（由 keys/ota_private.pem 与历史记录核对得出）
-EXPECTED_NEW = "f2obZdLFwhWJtuA/u/VW/EB1jAZ/UiZF/eEbxFJ0a3c="  # 当前有效钥，导出链路应始终使用它
+EXPECTED_NEW = "Bvg00Un3CIWzc8Zim5ZTc9UDYJqulQx2Ds+spgvjRs0="  # 当前有效钥，导出链路应始终使用它
 LEAKED_OLD = "DuW8zxjUYPNEnNY8RMIe4G670V5ZzX39rl1v9CEVQRU="   # 曾泄露进 GitHub 的旧钥
 
 # ---------- 加密后端加载 ----------
@@ -132,14 +132,29 @@ def classify(v: str) -> str:
 sources = {}
 
 # 1) .env
+# 值有两种形态：①base64 包装的 PEM（单行）②直接内联的 PEM（跨行）。两种都要能读。
 env = (ROOT / "makers" / ".env").read_text(encoding="utf-8", errors="replace")
+env_lines = env.splitlines()
 b64 = ""
-for line in env.splitlines():
+for i, line in enumerate(env_lines):
     if line.startswith("MANJU_OTA_PRIVATE_KEY="):
-        b64 = line.split("=", 1)[1].strip()
+        val = line.split("=", 1)[1].strip()
+        if val.startswith("-----BEGIN"):
+            buf = [val]
+            for nxt in env_lines[i + 1:]:
+                buf.append(nxt.strip())
+                if nxt.strip().startswith("-----END"):
+                    break
+            b64 = "\n".join(buf)
+        else:
+            b64 = val
+        break
 if b64:
     try:
-        pem = base64.b64decode(b64 + "=" * (-len(b64) % 4))
+        if b64.startswith("-----BEGIN"):
+            pem = b64.encode("utf-8")          # 形态②：直接就是 PEM
+        else:
+            pem = base64.b64decode(b64 + "=" * (-len(b64) % 4))  # 形态①：base64 包装
         pub, kind = raw_pub_from_priv_pem(pem)
         sources["1_env_private_b64"] = pub if pub else f"NOT_ED25519:{kind}"
     except Exception as e:

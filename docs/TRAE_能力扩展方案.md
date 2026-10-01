@@ -124,7 +124,7 @@
 
 #### `docs/ota-integration.md` / `docs/signing-setup.md`
 - 安全清单（HTTPS、SHA256 必校、Ed25519 必校、失败删临时文件、拒绝降级）
-- 密钥轮换记录：旧私钥曾进 GitHub，**已轮换**；新公钥 `f2obZdLFwhWJtuA/u/VW/EB1jAZ/UiZF/eEbxFJ0a3c=`
+- 密钥轮换记录：旧私钥曾进 GitHub，**已轮换**；新公钥 `Bvg00Un3CIWzc8Zim5ZTc9UDYJqulQx2Ds+spgvjRs0=`
 - **TRAE 介入点**：`security-best-practices` + 内置 `TRAE-security-review`；`git-commit` 技能配合 pre-commit 检查，防止私钥再次入库（**.gitignore 需再次核对**，见 §6）。
 
 ---
