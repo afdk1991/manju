@@ -152,12 +152,16 @@ Windows 不强制签名，但未签名的安装包会触发 SmartScreen 警告�
 |---|---|---|
 | RN (`src/api/client.ts:18`) | `https://manju-drama-hub-tkwcxlaw.edgeone.cool` | 预览域名，已过期 |
 | Tauri (`src/api/client.ts:23`) | 同上 | 同上 |
-| Flutter (`app_config.dart:34`) | `http://localhost:8000` | 真机连不上 |
-| Flutter ohos (`Index.ets:37`) | `http://localhost:8000` | 真机连不上 |
-| Flutter ohos (`UpdaterPlugin.ets:153`) | `http://localhost:8000` | 真机连不上 |
-| RN harmony (`Index.ets:9`) | `https://manju-drama-hub-...edgeone.cool` | 预览域名，已过期 |
+| Flutter (`lib/core/config/app_config.dart:34`) | `http://localhost:8000` | 真机连不上 |
+| Flutter (`lib/core/updater/updater.dart:102`) | `http://localhost:8000` | 真机连不上（**2026-10-01 补记，原表漏列**） |
+| Flutter ohos (`pages/Index.ets:37`) | `http://localhost:8000` | 真机连不上 |
+| Flutter ohos (`updater/UpdaterPlugin.ets:153`) | `http://localhost:8000` | 真机连不上 |
+| RN harmony (`pages/Index.ets:9`) | `https://manju-drama-hub-...edgeone.cool` | 预览域名，已过期 |
 
-**绑定正式域名后需要我做的**：统一替换上述 6 处，并同步
+> 2026-10-01 全仓库核查：硬编码基址实为 **7 处**（原记 6 处，漏 `updater.dart:102`）；
+> 另有 `clients/manju_rn/src/api/client.ts:6` 为注释中的旧域名，非代码但应一并更新免误导。
+
+**绑定正式域名后需要我做的**：统一替换上述 **7 处**（+ 1 处注释），并同步
 `tauri.conf.json` 的 updater endpoints、`capabilities/default.json` 的 `http:allow-fetch` 白名单。
 
 ---
@@ -262,8 +266,8 @@ Windows 不强制签名，但未签名的安装包会触发 SmartScreen 警告�
 
 | 优先级 | 事项 |
 |---|---|
-| 🔴 P0 | 更新两处 OTA 私钥 Secret：GitHub `ED25519_PRIVATE_KEY`、EdgeOne `MANJU_OTA_PRIVATE_KEY`（内容取自 `keys/ota_private.pem`）。**不同步会导致签出的包被客户端拒绝** |
-| 🔴 P0 | 备份 `manju-release.keystore`（丢失 = 无法更新应用） |
+| 🟢 ~~P0~~ | ~~更新两处 OTA 私钥 Secret~~ **已完成 2026-10-01**：GitHub `ED25519_PRIVATE_KEY`（`gh secret set` 已写入）、EdgeOne `MANJU_OTA_PRIVATE_KEY`（生产环境，`makers-vypuaynzkt0c`）。两处内容均取自 `keys/ota_private.pem` |
+| 🟡 P0 | 备份 `manju-release.keystore`：**本地备份已完成** → `.backup/2026-10-01-p0-assets/manju-release.keystore`（MD5 `2f9ffe1d…`，与源文件一致）。**异地备份仍待你执行**（本地备份不能防硬盘故障，丢失 = 无法更新应用） |
 | 🔴 P1 | 加入 Apple Developer Program，获取 Developer ID 证书 + notarytool 用的 API Key |
 | 🔴 P1 | EdgeOne 控制台绑定已备案自定义域名 + DNS CNAME |
 | 🟡 P2 | 安装 Android SDK / Gradle，或提供一台装好工具链的构建机 |
