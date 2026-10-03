@@ -15,9 +15,28 @@
   - 导出/签名链路是否安全（取决于 keys/ 与线上是否都为新钥）
   - 本地 .env 是否处于脏状态（被 deploy 反向覆盖成旧钥，但受 .gitignore 保护）
 """
-import base64, json, os, pathlib, subprocess, sys, tempfile
+import base64, glob, json, os, pathlib, shutil, subprocess, sys, tempfile
 
-ROOT = pathlib.Path(r"D:\网站全栈项目\项目007")
+# ROOT 动态推导：本脚本位于 <仓库根>/scripts/ 下，两个工作区（C 盘 worktree / D 盘主仓）均可用
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+
+
+def _find_node():
+    """动态定位 node.exe：受管多版本目录 > PATH > 常见系统安装路径。
+    早期版本硬编码 22.22.2-3，该版本在本机已被 22.22.2-5 取代，导致兜底后端整体失效。"""
+    cands = sorted(glob.glob(
+        os.path.expanduser(r"~\.workbuddy\binaries\node\versions\*\node.exe")))
+    for c in cands:                        # 排序后取最后一个 = 版本号最大
+        if os.path.exists(c):
+            return c
+    w = shutil.which("node")
+    if w:
+        return w
+    for c in (r"C:\Program Files\nodejs\node.exe",
+              r"C:\Program Files (x86)\nodejs\node.exe"):
+        if os.path.exists(c):
+            return c
+    return None
 
 # 已知密钥身份常量（由 keys/ota_private.pem 与历史记录核对得出）
 EXPECTED_NEW = "Bvg00Un3CIWzc8Zim5ZTc9UDYJqulQx2Ds+spgvjRs0="  # 当前有效钥，导出链路应始终使用它
@@ -47,10 +66,10 @@ def _load_py_crypto():
 
 if not _load_py_crypto():
     # 不依赖 venv 重跑（在部分子进程捕获环境下 os.execv 输出会丢失），
-    # 直接用 Node 内置 crypto 作为兜底后端——Node 在本环境始终可用。
-    NODE = r"C:\Users\addk1\.workbuddy\binaries\node\versions\22.22.2-3\node.exe"
-    if not os.path.exists(NODE):
-        print("NO_CRYPTO_BACKEND: 既无 cryptography，也无 Node 可执行文件")
+    # 直接用 Node 内置 crypto 作为兜底后端。node 路径动态探测，勿再硬编码版本号。
+    NODE = _find_node()
+    if not NODE:
+        print("NO_CRYPTO_BACKEND: 既无 cryptography，也未找到 node.exe")
         sys.exit(2)
     BACKEND = "node"
 
@@ -70,7 +89,9 @@ process.stdout.write(raw.toString('base64'));
 
 
 def _node_pub(pem_bytes: bytes, is_private: bool) -> str:
-    NODE = r"C:\Users\addk1\.workbuddy\binaries\node\versions\22.22.2-3\node.exe"
+    NODE = _find_node()
+    if not NODE:
+        raise RuntimeError("node.exe not found")
     with tempfile.TemporaryDirectory() as td:
         p = pathlib.Path(td) / "k.pem"
         p.write_bytes(pem_bytes)
@@ -133,7 +154,8 @@ sources = {}
 
 # 1) .env
 # 值有两种形态：①base64 包装的 PEM（单行）②直接内联的 PEM（跨行）。两种都要能读。
-env = (ROOT / "makers" / ".env").read_text(encoding="utf-8", errors="replace")
+_env_path = ROOT / "makers" / ".env"
+env = _env_path.read_text(encoding="utf-8", errors="replace") if _env_path.exists() else ""
 env_lines = env.splitlines()
 b64 = ""
 for i, line in enumerate(env_lines):
@@ -164,21 +186,30 @@ else:
 
 # 2) keys/ota_private.pem
 p = ROOT / "keys" / "ota_private.pem"
-try:
-    pub, kind = raw_pub_from_priv_pem(p.read_bytes())
-    sources["2_keys_private_pem"] = pub if pub else f"NOT_ED25519:{kind}"
-except Exception as e:
-    sources["2_keys_private_pem"] = f"ERROR:{e}"
+if not p.exists():
+    sources["2_keys_private_pem"] = "NOT_FOUND"
+else:
+    try:
+        pub, kind = raw_pub_from_priv_pem(p.read_bytes())
+        sources["2_keys_private_pem"] = pub if pub else f"NOT_ED25519:{kind}"
+    except Exception as e:
+        sources["2_keys_private_pem"] = f"ERROR:{e}"
 
 # 3) keys/ota_public.pem
 p = ROOT / "keys" / "ota_public.pem"
-try:
-    sources["3_keys_public_pem"] = raw_pub_from_pub_pem(p.read_bytes())
-except Exception as e:
-    sources["3_keys_public_pem"] = f"ERROR:{e}"
+if not p.exists():
+    sources["3_keys_public_pem"] = "NOT_FOUND"
+else:
+    try:
+        sources["3_keys_public_pem"] = raw_pub_from_pub_pem(p.read_bytes())
+    except Exception as e:
+        sources["3_keys_public_pem"] = f"ERROR:{e}"
 
 # 4) 线上导出的 public-key.json
-p = ROOT / "makers" / "static" / "api" / "v1" / "ota" / "public-key.json"
+# 真源在 web/public/（构建时复制进 makers/static），优先读真源，避免产物目录被清空导致误判
+p = ROOT / "web" / "public" / "api" / "v1" / "ota" / "public-key.json"
+if not p.exists():
+    p = ROOT / "makers" / "static" / "api" / "v1" / "ota" / "public-key.json"
 try:
     j = json.loads(p.read_text(encoding="utf-8"))
     sources["4_static_public_json"] = j.get("public_key") or j.get("key") or str(j)[:60]
@@ -207,7 +238,13 @@ print(f"导出/签名链路安全 (keys/ 与线上都为新有效钥): {'✅ 是
 print(f"本地 makers/.env 脏状态 (被 deploy 反向覆盖为旧泄露钥): {'⚠️ 是' if env_dirty else '否'}")
 print(f"四来源内部完全一致: {'是' if internal_all else '否（见上方差异）'}")
 
-if export_safe and not env_dirty:
+if keys_v == "NOT_FOUND" and online_v == EXPECTED_NEW:
+    print("\n⚠️ 本地无 OTA 私钥副本：keys/ota_private.pem 不存在，导出/签名链路在本机不可用。")
+    print("   好消息：线上公钥为有效新钥，未被污染，线上验签不受影响。")
+    print("   处置：由你在 EdgeOne 控制台 / GitHub Secret 侧确认私钥是否仍持有；")
+    print("        若无任何副本，需走一次密钥轮换（轮换后同步 keys/、.env、GH Secret、EdgeOne 四处）。")
+    print("        ⛔ 切勿直接生成新私钥覆盖——已发布客户端内置旧公钥，会全量验签失败。")
+elif export_safe and not env_dirty:
     print("\n✅ 当前状态安全：发布签名使用 keys/ 新钥，线上公钥匹配；可正常 deploy。")
     print("   本地 .env 已是正确的新钥，无需处理。")
 elif export_safe and env_dirty:
