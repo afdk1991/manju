@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  FileProvider 路径配置。
+
+  自动更新时，下载到应用缓存目录的 APK 需要通过 content:// URI
+  交给系统 PackageInstaller，这里声明允许共享的目录范围。
+
+  注意：只开放下载目录，不要把整个外部存储都开放出去，
+  否则会造成不必要的安全风险。
+-->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 应用专属缓存目录（getCacheDir）-->
+    <cache-path name="manju_cache" path="." />
+    <!-- 缓存目录下的 OTA 子目录 -->
+    <cache-path name="manju_ota" path="manju_ota/" />
+    <!-- 外部缓存目录（getExternalCacheDir），大文件通常下在这里 -->
+    <external-cache-path name="manju_external_cache" path="." />
+    <!-- 外部私有目录下的 files（getExternalFilesDir）-->
+    <external-files-path name="manju_external_files" path="." />
+</paths>

@@ -1,0 +1,23 @@
+{
+ "items": [
+  {
+   "id": "s_9004_e001",
+   "series_id": "s_9004",
+   "index": 1,
+   "title": "正片",
+   "thumbnail": "files/covers/e491a66caed7ce40.jpg",
+   "duration_sec": 658,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Elephants_Dream_%282006%29_1080p24.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  }
+ ]
+}

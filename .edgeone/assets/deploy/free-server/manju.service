@@ -1,0 +1,21 @@
+[Unit]
+Description=Manju Content Hub & OTA Service (FastAPI, no Docker)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/manju/server
+# 环境变量从 server/.env 读取（pydantic-settings 也会自动读取，双保险）
+EnvironmentFile=/opt/manju/server/.env
+ExecStart=/opt/manju/venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
+Restart=always
+RestartSec=3
+# 基础安全：限制可见性（保持默认即可，如需加固可再收紧）
+NoNewPrivileges=true
+ProtectSystem=full
+ReadWritePaths=/opt/manju/server/data /opt/manju/server/.env
+
+[Install]
+WantedBy=multi-user.target

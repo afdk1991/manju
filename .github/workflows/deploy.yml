@@ -18,8 +18,7 @@ jobs:
           node-version: 22
 
       - name: Install EdgeOne CLI
-        # 锁定连接器版（含 skills 后端）；公开版 1.6.40+ 会导致 token 无效
-        run: npm install -g edgeone@1.6.17-beta.1
+        run: npm install -g edgeone@1.6.41
 
       - name: Deploy to EdgeOne Makers (production)
         working-directory: makers

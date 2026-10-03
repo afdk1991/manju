@@ -1,0 +1,23 @@
+{
+ "items": [
+  {
+   "id": "s_9002_e001",
+   "series_id": "s_9002",
+   "index": 1,
+   "title": "正片",
+   "thumbnail": "files/covers/6f41717d14c63005.jpg",
+   "duration_sec": 146,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Caminandes_-_Gran_Dillama_-_Blender_Foundation%27s_new_Open_Movie.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  }
+ ]
+}

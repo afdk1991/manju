@@ -2,9 +2,9 @@
  "id": "s_9001",
  "title": "大兔子的反击",
  "original_title": "Big Buck Bunny 4K",
- "cover": "files/covers/2156aee291e78aa5.jpg",
- "poster": "files/covers/2156aee291e78aa5.jpg",
- "banner": "files/covers/2156aee291e78aa5.jpg",
+ "cover": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Big_Buck_Bunny_4K.webm/960px--Big_Buck_Bunny_4K.webm.jpg",
+ "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Big_Buck_Bunny_4K.webm/960px--Big_Buck_Bunny_4K.webm.jpg",
+ "banner": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Big_Buck_Bunny_4K.webm/960px--Big_Buck_Bunny_4K.webm.jpg",
  "synopsis": "一只体型巨大的兔子被三只啮齿动物反复捉弄，最终展开一连串夸张的卡通式复仇。Blender 基金会第一部全彩开放动画短片，画面明亮、无对白，适合全年龄段。",
  "tags": [
   "动画",
@@ -26,7 +26,7 @@
    "series_id": "s_9001",
    "index": 1,
    "title": "正片",
-   "thumbnail": "files/covers/2156aee291e78aa5.jpg",
+   "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Big_Buck_Bunny_4K.webm/960px--Big_Buck_Bunny_4K.webm.jpg",
    "duration_sec": 634,
    "is_free": true,
    "sources": [

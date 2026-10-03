@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>漫剧运营后台</title>
+<style>
+  :root { --bg:#0f1220; --card:#1a1f35; --accent:#6c8cff; --text:#e8ebff; --muted:#9aa3c7; --ok:#3ddc84; --err:#ff6b6b; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui,"PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); }
+  header { padding:16px 24px; background:var(--card); display:flex; align-items:center; gap:16px; }
+  header h1 { font-size:18px; margin:0; }
+  nav { display:flex; gap:8px; margin-left:auto; }
+  nav button { background:transparent; color:var(--muted); border:1px solid #2a3155; padding:6px 14px; border-radius:8px; cursor:pointer; }
+  nav button.active { color:#fff; border-color:var(--accent); background:rgba(108,140,255,.15); }
+  main { padding:24px; max-width:1100px; margin:0 auto; }
+  .card { background:var(--card); border:1px solid #232a47; border-radius:12px; padding:16px; margin-bottom:16px; }
+  input, select, textarea { width:100%; padding:8px 10px; margin:6px 0; background:#0e1226; color:var(--text); border:1px solid #2a3155; border-radius:8px; }
+  label { font-size:12px; color:var(--muted); }
+  button.primary { background:var(--accent); color:#fff; border:none; padding:8px 16px; border-radius:8px; cursor:pointer; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th,td { text-align:left; padding:8px; border-bottom:1px solid #232a47; }
+  .tag { background:#222a4a; color:var(--muted); padding:2px 8px; border-radius:6px; font-size:11px; }
+  .muted { color:var(--muted); font-size:12px; }
+  .ok { color:var(--ok); } .err { color:var(--err); }
+  .row { display:flex; gap:12px; flex-wrap:wrap; }
+  .row > div { flex:1; min-width:160px; }
+  #toast { position:fixed; bottom:24px; right:24px; background:#222a4a; padding:12px 18px; border-radius:10px; opacity:0; transition:.3s; }
+  #toast.show { opacity:1; }
+</style>
+</head>
+<body>
+<div style="background:#fff7e6;color:#ad6800;padding:8px 24px;font-size:13px;">EdgeOne Makers 演示部署：内容与 OTA 为静态只读数据。发布/增删改操作请在本机 FastAPI 版执行后重新运行 export_static.py。</div><header>
+  <h1>漫剧运营后台</h1>
+  <nav>
+    <button data-tab="content" class="active">内容管理</button>
+    <button data-tab="ota">发布 OTA</button>
+    <button data-tab="stats">上报统计</button>
+  </nav>
+</header>
+<main>
+  <div id="adminKeyBar" class="card">
+    <label>管理密钥 (X-Admin-Key)</label>
+    <input id="adminKey" placeholder="默认 manju-dev-admin-key" />
+    <span class="muted">发布 OTA 需要此密钥；可在 server/.env 中配置 MANJU_ADMIN_KEY。</span>
+  </div>
+
+  <!-- 内容管理 -->
+  <section id="tab-content">
+    <div class="card">
+      <div class="row">
+        <div><label>分类/搜索</label><input id="qSeries" placeholder="按剧名搜索" /></div>
+        <div style="flex:0 0 120px"><label>&nbsp;</label><button class="primary" onclick="loadSeries()">查询</button></div>
+      </div>
+      <table id="seriesTable">
+        <thead><tr><th>ID</th><th>剧名</th><th>分类</th><th>状态</th><th>集数</th><th>评分</th><th>操作</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>新建 / 编辑剧集</h3>
+      <div class="row">
+        <div><label>剧名</label><input id="f_title" /></div>
+        <div><label>分类ID</label><input id="f_cat" placeholder="cat_hot" /></div>
+        <div><label>状态</label>
+          <select id="f_status"><option>ongoing</option><option>completed</option><option>upcoming</option></select>
+        </div>
+      </div>
+      <div class="row">
+        <div><label>简介</label><textarea id="f_synopsis"></textarea></div>
+        <div><label>标签(逗号)</label><input id="f_tags" placeholder="热血,逆袭" /></div>
+      </div>
+      <div class="row">
+        <div><label>封面URL</label><input id="f_cover" placeholder="https://..." /></div>
+        <div><label>集数</label><input id="f_eps" type="number" value="12" /></div>
+      </div>
+      <button class="primary" onclick="saveSeries()">保存剧集</button>
+      <span id="seriesMsg" class="muted"></span>
+    </div>
+  </section>
+
+  <!-- 发布 OTA -->
+  <section id="tab-ota" style="display:none">
+    <div class="card">
+      <h3>发布新版本</h3>
+      <div class="row">
+        <div><label>平台</label>
+          <select id="o_platform"><option>windows</option><option>macos</option><option>linux</option><option>android</option><option>ios</option><option>harmonyos</option></select>
+        </div>
+        <div><label>架构</label>
+          <select id="o_arch"><option value="">通用</option><option>x86_64</option><option>arm64</option><option>armv7</option><option>x86</option></select>
+        </div>
+        <div><label>通道</label>
+          <select id="o_channel"><option>stable</option><option>beta</option><option>nightly</option></select>
+        </div>
+      </div>
+      <div class="row">
+        <div><label>版本号</label><input id="o_version" placeholder="9.9.9" value="9.9.9" /></div>
+        <div><label>构建号</label><input id="o_build" type="number" value="999" /></div>
+        <div><label>最低支持版本</label><input id="o_min" placeholder="1.0.0" value="1.0.0" /></div>
+        <div><label>灰度百分比</label><input id="o_rollout" type="number" value="100" min="0" max="100" /></div>
+      </div>
+      <div class="row">
+        <div><label>产物类型</label><input id="o_atype" placeholder="exe / msix / apk / ipa ..." /></div>
+        <div><label>产物URL</label><input id="o_aurl" placeholder="https://cdn.../app.exe" /></div>
+        <div><label>产物大小(bytes)</label><input id="o_asize" type="number" value="0" /></div>
+        <div><label>SHA256</label><input id="o_sha256" placeholder="十六进制" /></div>
+      </div>
+      <div class="row">
+        <div><label>安装参数(逗号)</label><input id="o_install" placeholder="/VERYSILENT,/NORESTART" /></div>
+        <div><label>商店跳转URL(iOS/HarmonyOS)</label><input id="o_store" placeholder="https://apps.apple.com/..." /></div>
+      </div>
+      <div><label>更新说明(zh-CN)</label><textarea id="o_notes">- 体验优化与稳定性修复</textarea></div>
+      <button class="primary" onclick="publishOta()">发布</button>
+      <span id="otaMsg" class="muted"></span>
+    </div>
+    <div class="card">
+      <h3>已发布版本</h3>
+      <button onclick="loadReleases()">刷新</button>
+      <table id="releaseTable"><thead><tr><th>平台</th><th>架构</th><th>版本</th><th>构建</th><th>通道</th><th>灰度</th></tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <!-- 统计 -->
+  <section id="tab-stats" style="display:none">
+    <div class="card">
+      <button onclick="loadStats()">加载上报统计</button>
+      <div id="statsOut" class="muted">点击加载</div>
+    </div>
+  </section>
+</main>
+<div id="toast"></div>
+
+<script>
+const API = location.origin + "/api/v1";
+function adminKey(){ return document.getElementById("adminKey").value || "manju-dev-admin-key"; }
+function toast(msg, ok=true){ const t=document.getElementById("toast"); t.textContent=msg; t.className="show"; setTimeout(()=>t.className="",2000); }
+function fmt(o){ try{return JSON.stringify(o,null,2);}catch(e){return String(o);} }
+
+document.querySelectorAll("nav button").forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll("nav button").forEach(x=>x.classList.remove("active"));
+    b.classList.add("active");
+    ["content","ota","stats"].forEach(t=>{
+      document.getElementById("tab-"+t).style.display = (t===b.dataset.tab)?"block":"none";
+    });
+  };
+});
+
+async function loadSeries(){
+  const q=document.getElementById("qSeries").value;
+  let url=API+"/series?size=50"; if(q) url=API+"/search?q="+encodeURIComponent(q)+"&size=50";
+  const r=await fetch(url); const d=await r.json();
+  const rows=(d.items||[]);
+  const tb=document.querySelector("#seriesTable tbody"); tb.innerHTML="";
+  rows.forEach(s=>{
+    const tr=document.createElement("tr");
+    tr.innerHTML=`<td>${s.id}</td><td>${s.title}</td><td>${s.category_id||""}</td><td>${s.status}</td><td>${s.total_episodes}</td><td>${s.score}</td>
+      <td><button onclick="editSeries('${s.id}')">编辑</button> <button onclick="delSeries('${s.id}')">删除</button> <button onclick="addEpisodes('${s.id}')">+集</button></td>`;
+    tb.appendChild(tr);
+  });
+}
+async function editSeries(id){
+  const r=await fetch(API+"/series/"+id); const s=await r.json();
+  document.getElementById("f_title").value=s.title||"";
+  document.getElementById("f_cat").value=s.category_id||"";
+  document.getElementById("f_status").value=s.status||"ongoing";
+  document.getElementById("f_synopsis").value=s.synopsis||"";
+  document.getElementById("f_tags").value=(s.tags||[]).join(",");
+  document.getElementById("f_cover").value=s.cover||"";
+  document.getElementById("f_eps").value=s.total_episodes||12;
+  window.__editId=id;
+  toast("已载入编辑："+s.title);
+}
+async function saveSeries(){
+  const title=document.getElementById("f_title").value;
+  if(!title){ toast("请填写剧名",false); return; }
+  const body={
+    title, category_id:document.getElementById("f_cat").value||null,
+    status:document.getElementById("f_status").value,
+    synopsis:document.getElementById("f_synopsis").value,
+    tags:(document.getElementById("f_tags").value||"").split(",").map(x=>x.trim()).filter(Boolean),
+    cover:document.getElementById("f_cover").value||"https://example.com/cover/default.jpg",
+    total_episodes:parseInt(document.getElementById("f_eps").value||"12")
+  };
+  const id=window.__editId;
+  let r;
+  if(id){
+    // 简单实现：删除后重建（演示用）。生产应提供 PUT 接口。
+    await fetch(API+"/admin/series/"+id,{method:"DELETE",headers:{"X-Admin-Key":adminKey()}}).catch(()=>{});
+  }
+  r=await fetch(API+"/admin/series",{method:"POST",headers:{"Content-Type":"application/json","X-Admin-Key":adminKey()},body:JSON.stringify(body)});
+  const m=document.getElementById("seriesMsg");
+  if(r.ok){ m.textContent="保存成功"; window.__editId=null; loadSeries(); } else { m.textContent="失败:"+await r.text(); }
+}
+async function delSeries(id){
+  if(!confirm("确认删除 "+id+"？")) return;
+  const r=await fetch(API+"/admin/series/"+id,{method:"DELETE",headers:{"X-Admin-Key":adminKey()}});
+  toast(r.ok?"已删除":"删除失败",r.ok);
+  loadSeries();
+}
+async function addEpisodes(id){
+  const n=prompt("为 "+id+" 增加多少集？", "1");
+  if(!n) return;
+  const r=await fetch(API+"/admin/series/"+id+"/episodes",{method:"POST",headers:{"Content-Type":"application/json","X-Admin-Key":adminKey()},body:JSON.stringify({count:parseInt(n)})});
+  toast(r.ok?"已添加":"失败",r.ok);
+}
+
+async function publishOta(){
+  const artifact={};
+  const atype=document.getElementById("o_atype").value;
+  const aurl=document.getElementById("o_aurl").value;
+  if(atype||aurl){ Object.assign(artifact,{type:atype||"exe",url:aurl,size:parseInt(document.getElementById("o_asize").value||"0"),sha256:document.getElementById("o_sha256").value||undefined}); }
+  const install=document.getElementById("o_install").value;
+  if(install) artifact.install_args=install.split(",").map(x=>x.trim()).filter(Boolean);
+  const body={
+    platform:document.getElementById("o_platform").value,
+    arch:document.getElementById("o_arch").value||null,
+    channel:document.getElementById("o_channel").value,
+    version:document.getElementById("o_version").value,
+    build:parseInt(document.getElementById("o_build").value||"0"),
+    min_supported_version:document.getElementById("o_min").value,
+    rollout_percent:parseInt(document.getElementById("o_rollout").value||"100"),
+    notes_i18n:{ "zh-CN": document.getElementById("o_notes").value },
+    store_url:document.getElementById("o_store").value||null
+  };
+  if(Object.keys(artifact).length) body.artifact=artifact;
+  const r=await fetch(API+"/admin/releases",{method:"POST",headers:{"Content-Type":"application/json","X-Admin-Key":adminKey()},body:JSON.stringify(body)});
+  const m=document.getElementById("otaMsg");
+  if(r.status===201){ m.textContent="发布成功"; loadReleases(); } else { m.textContent="失败:"+await r.text(); }
+}
+
+async function loadReleases(){
+  const r=await fetch(API+"/admin/releases",{headers:{"X-Admin-Key":adminKey()}});
+  const d=await r.json(); const rows=d.items||[];
+  const tb=document.querySelector("#releaseTable tbody"); tb.innerHTML="";
+  rows.forEach(x=>{ const tr=document.createElement("tr");
+    tr.innerHTML=`<td>${x.platform}</td><td>${x.arch||"通用"}</td><td>${x.version}</td><td>${x.build}</td><td>${x.channel}</td><td>${x.rollout_percent}%</td>`;
+    tb.appendChild(tr);
+  });
+}
+
+async function loadStats(){
+  const r=await fetch(API+"/admin/reports/stats",{headers:{"X-Admin-Key":adminKey()}});
+  const out=document.getElementById("statsOut");
+  if(r.ok){ const d=await r.json(); out.innerHTML="<pre>"+fmt(d)+"</pre>"; }
+  else out.textContent="加载失败："+await r.text();
+}
+
+// 初始化
+loadSeries();
+</script>
+</body>
+</html>

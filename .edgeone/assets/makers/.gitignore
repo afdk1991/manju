@@ -1,0 +1,5 @@
+# Makers 部署工程忽略规则
+# 注意：data/** 与 static/** 必须入库！
+#   - edgeone.json 的 cloudFunctions.nodejs.includeFiles 在构建时打包 data/**
+#   - 静态托管直接读取仓库中的 static/（内容 API JSON、admin、安装包）
+node_modules/

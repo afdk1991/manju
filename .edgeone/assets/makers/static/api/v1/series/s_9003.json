@@ -1,0 +1,44 @@
+{
+ "id": "s_9003",
+ "title": "咖啡狂奔",
+ "original_title": "Coffee Run - Blender Open Movie-full movie",
+ "cover": "files/covers/9e5199b1fa0aa26b.jpg",
+ "poster": "files/covers/9e5199b1fa0aa26b.jpg",
+ "banner": "files/covers/9e5199b1fa0aa26b.jpg",
+ "synopsis": "一个男人为了买一杯咖啡，在城市里展开一场荒诞又充满想象力的狂奔。视觉风格鲜明，短小精悍。",
+ "tags": [
+  "动画",
+  "都市",
+  "短片"
+ ],
+ "category_id": "cat_city",
+ "region": "NL",
+ "release_year": 2016,
+ "status": "completed",
+ "total_episodes": 1,
+ "score": 7.8,
+ "views": 0,
+ "is_vip": false,
+ "age_rating": "all",
+ "episodes": [
+  {
+   "id": "s_9003_e001",
+   "series_id": "s_9003",
+   "index": 1,
+   "title": "正片",
+   "thumbnail": "files/covers/9e5199b1fa0aa26b.jpg",
+   "duration_sec": 184,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Coffee_Run_-_Blender_Open_Movie-full_movie.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  }
+ ]
+}

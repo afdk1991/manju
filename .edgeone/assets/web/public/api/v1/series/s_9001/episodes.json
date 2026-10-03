@@ -1,0 +1,30 @@
+{
+ "items": [
+  {
+   "id": "s_9001_e001",
+   "series_id": "s_9001",
+   "index": 1,
+   "title": "正片",
+   "thumbnail": "files/covers/2156aee291e78aa5.jpg",
+   "duration_sec": 634,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+     "container": "hls",
+     "codec": "h264",
+     "bitrate_kbps": 2400
+    },
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Big_Buck_Bunny_4K.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  }
+ ]
+}

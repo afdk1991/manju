@@ -1,0 +1,19 @@
+{
+ "id": "s_9006_e001",
+ "series_id": "s_9006",
+ "index": 1,
+ "title": "正片",
+ "thumbnail": "files/covers/e4fdaf227d849801.jpg",
+ "duration_sec": 464,
+ "is_free": true,
+ "sources": [
+  {
+   "quality": "auto",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Spring_-_Blender_Open_Movie.webm",
+   "container": "webm",
+   "codec": "vp9",
+   "bitrate_kbps": 0
+  }
+ ],
+ "subtitles": []
+}

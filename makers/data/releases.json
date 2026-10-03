@@ -14,10 +14,10 @@
    },
    "artifact": {
     "type": "exe",
-    "url": "https://manju-hagvu7ry.edgeone.cool/files/Manju-Setup-9.9.9.exe",
+    "url": "https://manju-h58srdik.edgeone.cool/files/Manju-Setup-9.9.9.exe",
     "size": 37,
     "sha256": "8a6571692b93461b63156f839e9d846118c711fbb79592d41360b622104757de",
-    "signature": "ed25519:ToQmf5OxFFBFyitidaQuoa2Lav+eE4t0u9eEHYnYc9314WMoPD7zT31AMl6+5VmGWTqnef8oboi/8fL5Jnb5AQ==",
+    "signature": "ed25519:Uo7L9sezM9sbm3SWV+gyLfXVktYpVHbCelATIu5jGdzuawznkXor6/EwAOYHmjjeJJEy0ZZ5i2sj0EfFESbQBg==",
     "install_args": [
      "/VERYSILENT",
      "/NORESTART"
@@ -58,7 +58,7 @@
     "url": "http://x/app.AppImage",
     "size": 0,
     "sha256": "deadbeef",
-    "signature": "ed25519:KwDQvqBE9XtTnZlwCEBpUjrArpBUTbqHsf3UCrOHNa+AheY3AtFCF9c3AuMgPc8nyvTEano4wsvgfjSPSnCoBQ==",
+    "signature": "ed25519:vexCic37bfxNI2uqJ2QjE5cv/4ynqnp7CjVZYNRBBxLbH+AQpBTv6KIplOO7OozbcYIdMw5wucC9/1OR6f9+BQ==",
     "install_args": []
    },
    "store_url": null,

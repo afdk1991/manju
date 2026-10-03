@@ -1,21 +1,6 @@
 {
  "items": [
   {
-   "id": "cat_city",
-   "name": "都市",
-   "icon": "🌆"
-  },
-  {
-   "id": "cat_fun",
-   "name": "搞笑",
-   "icon": "😂"
-  },
-  {
-   "id": "cat_history",
-   "name": "历史",
-   "icon": "📜"
-  },
-  {
    "id": "cat_hot",
    "name": "热血",
    "icon": "🔥"
@@ -31,14 +16,29 @@
    "icon": "🕵️"
   },
   {
-   "id": "cat_scifi",
-   "name": "科幻",
-   "icon": "🚀"
+   "id": "cat_fun",
+   "name": "搞笑",
+   "icon": "😂"
   },
   {
    "id": "cat_xuanhuan",
    "name": "玄幻",
    "icon": "✨"
+  },
+  {
+   "id": "cat_city",
+   "name": "都市",
+   "icon": "🌆"
+  },
+  {
+   "id": "cat_scifi",
+   "name": "科幻",
+   "icon": "🚀"
+  },
+  {
+   "id": "cat_history",
+   "name": "历史",
+   "icon": "📜"
   }
  ]
 }

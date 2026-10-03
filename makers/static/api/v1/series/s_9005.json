@@ -2,9 +2,9 @@
  "id": "s_9005",
  "title": "奇点",
  "original_title": "SINGULARITY - Blender Open Movie-full movie",
- "cover": "files/covers/d9cca644edc19c32.jpg",
- "poster": "files/covers/d9cca644edc19c32.jpg",
- "banner": "files/covers/d9cca644edc19c32.jpg",
+ "cover": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/SINGULARITY_-_Blender_Open_Movie-full_movie.webm/960px--SINGULARITY_-_Blender_Open_Movie-full_movie.webm.jpg",
+ "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/SINGULARITY_-_Blender_Open_Movie-full_movie.webm/960px--SINGULARITY_-_Blender_Open_Movie-full_movie.webm.jpg",
+ "banner": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/SINGULARITY_-_Blender_Open_Movie-full_movie.webm/960px--SINGULARITY_-_Blender_Open_Movie-full_movie.webm.jpg",
  "synopsis": "以机器人与人工智能为主题的开放动画短片，机械感与叙事并重。",
  "tags": [
   "科幻",
@@ -26,7 +26,7 @@
    "series_id": "s_9005",
    "index": 1,
    "title": "正片",
-   "thumbnail": "files/covers/d9cca644edc19c32.jpg",
+   "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/SINGULARITY_-_Blender_Open_Movie-full_movie.webm/960px--SINGULARITY_-_Blender_Open_Movie-full_movie.webm.jpg",
    "duration_sec": 391,
    "is_free": true,
    "sources": [

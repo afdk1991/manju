@@ -2,9 +2,9 @@
  "id": "s_9004",
  "title": "大象之梦",
  "original_title": "Elephants Dream (2006) 1080p24",
- "cover": "files/covers/e491a66caed7ce40.jpg",
- "poster": "files/covers/e491a66caed7ce40.jpg",
- "banner": "files/covers/e491a66caed7ce40.jpg",
+ "cover": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Elephants_Dream_%282006%29_1080p24.webm/960px--Elephants_Dream_%282006%29_1080p24.webm.jpg",
+ "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Elephants_Dream_%282006%29_1080p24.webm/960px--Elephants_Dream_%282006%29_1080p24.webm.jpg",
+ "banner": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Elephants_Dream_%282006%29_1080p24.webm/960px--Elephants_Dream_%282006%29_1080p24.webm.jpg",
  "synopsis": "Blender 基金会的第一部开放电影（2006）。两个角色在一座不断自我重构的超现实机械世界中对话，探讨真实与虚构的边界。",
  "tags": [
   "科幻",
@@ -26,7 +26,7 @@
    "series_id": "s_9004",
    "index": 1,
    "title": "正片",
-   "thumbnail": "files/covers/e491a66caed7ce40.jpg",
+   "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Elephants_Dream_%282006%29_1080p24.webm/960px--Elephants_Dream_%282006%29_1080p24.webm.jpg",
    "duration_sec": 658,
    "is_free": true,
    "sources": [

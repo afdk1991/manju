@@ -1,0 +1,10 @@
+{
+  "name": "manju-makers",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "漫剧 Manju - EdgeOne Makers 无服务器部署版（内容静态化 + Cloud Functions）",
+  "dependencies": {
+    "@edgeone/pages-blob": "*"
+  }
+}

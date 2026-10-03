@@ -1,0 +1,353 @@
+openapi: 3.1.0
+info:
+  title: 漫剧内容中台 API (Manju Content Hub)
+  version: 1.0.0
+  description: >
+    漫剧（漫画改编短剧 / 竖屏短剧）内容分发与 OTA 更新服务。
+    所有客户端（Flutter / Tauri / React Native / ArkTS）共用本契约。
+servers:
+  - url: https://api.example.com
+  - url: http://localhost:8000
+tags:
+  - name: content
+  - name: ota
+  - name: user
+  - name: admin
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      format: JWT
+    adminKey:
+      type: apiKey
+      in: header
+      name: X-Admin-Key
+  schemas:
+    Quality:
+      type: string
+      enum: [auto, 240p, 360p, 480p, 720p, 1080p, 2k, 4k]
+    VideoSource:
+      type: object
+      required: [quality, url, container]
+      properties:
+        quality: { $ref: '#/components/schemas/Quality' }
+        url: { type: string, format: uri }
+        container: { type: string, enum: [hls, dash, mp4, webm] }
+        codec: { type: string, example: h264 }
+        bitrate_kbps: { type: integer }
+        size_bytes: { type: integer }
+    SubtitleTrack:
+      type: object
+      properties:
+        lang: { type: string, example: zh-CN }
+        label: { type: string, example: 简体中文 }
+        url: { type: string, format: uri }
+        format: { type: string, enum: [vtt, srt, ass] }
+        is_default: { type: boolean }
+    SeriesBase:
+      type: object
+      required: [id, title]
+      properties:
+        id: { type: string, example: s_10001 }
+        title: { type: string, example: 开局一座山 }
+        original_title: { type: string, nullable: true }
+        cover: { type: string, format: uri }
+        poster: { type: string, format: uri, nullable: true }
+        banner: { type: string, format: uri, nullable: true }
+        synopsis: { type: string }
+        tags: { type: array, items: { type: string } }
+        category_id: { type: string }
+        region: { type: string, example: CN }
+        release_year: { type: integer }
+        status: { type: string, enum: [ongoing, completed, upcoming] }
+        total_episodes: { type: integer }
+        score: { type: number, format: double, minimum: 0, maximum: 10 }
+        views: { type: integer }
+        is_vip: { type: boolean }
+        age_rating: { type: string, enum: [all, 13, 16, 18] }
+    Series:
+      allOf:
+        - { $ref: '#/components/schemas/SeriesBase' }
+        - type: object
+          properties:
+            episodes:
+              type: array
+              items: { $ref: '#/components/schemas/Episode' }
+    Episode:
+      type: object
+      required: [id, series_id, index]
+      properties:
+        id: { type: string, example: e_1000101 }
+        series_id: { type: string }
+        index: { type: integer, minimum: 1 }
+        title: { type: string }
+        thumbnail: { type: string, format: uri, nullable: true }
+        duration_sec: { type: integer }
+        is_free: { type: boolean }
+        sources:
+          type: array
+          items: { $ref: '#/components/schemas/VideoSource' }
+        subtitles:
+          type: array
+          items: { $ref: '#/components/schemas/SubtitleTrack' }
+    HomeSection:
+      type: object
+      properties:
+        id: { type: string }
+        title: { type: string }
+        layout: { type: string, enum: [swipe, grid, list, rank] }
+        items:
+          type: array
+          items: { $ref: '#/components/schemas/SeriesBase' }
+    Page:
+      type: object
+      properties:
+        page: { type: integer }
+        size: { type: integer }
+        total: { type: integer }
+        has_more: { type: boolean }
+    OtaRelease:
+      type: object
+      properties:
+        version: { type: string, example: 1.3.0 }
+        build: { type: integer }
+        channel: { type: string, enum: [stable, beta, nightly] }
+        released_at: { type: string, format: date-time }
+        min_supported_version: { type: string }
+        notes_i18n: { type: object, additionalProperties: { type: string } }
+        artifact:
+          type: object
+          properties:
+            type:
+              type: string
+              enum: [apk, aab, ipa, hap, app, msix, exe, dmg, pkg, appimage, deb, rpm, tar_gz, zip]
+            url: { type: string, format: uri }
+            size: { type: integer }
+            sha256: { type: string }
+            signature: { type: string }
+            install_args: { type: array, items: { type: string } }
+        delta:
+          type: object
+          nullable: true
+          properties:
+            available: { type: boolean }
+            from_versions: { type: array, items: { type: string } }
+            url: { type: string, format: uri }
+            size: { type: integer }
+            sha256: { type: string }
+    OtaCheckResponse:
+      type: object
+      properties:
+        has_update: { type: boolean }
+        policy: { type: string, enum: [suggest, forced, silent] }
+        release: { $ref: '#/components/schemas/OtaRelease' }
+        store_fallback:
+          type: object
+          nullable: true
+          properties:
+            enabled: { type: boolean }
+            url: { type: string, format: uri }
+            reason: { type: string }
+
+paths:
+  /api/v1/home:
+    get:
+      tags: [content]
+      summary: 首页推荐分区
+      parameters:
+        - { name: locale, in: query, schema: { type: string } }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sections:
+                    type: array
+                    items: { $ref: '#/components/schemas/HomeSection' }
+  /api/v1/categories:
+    get:
+      tags: [content]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: { type: string }
+                        name: { type: string }
+                        icon: { type: string, nullable: true }
+  /api/v1/series:
+    get:
+      tags: [content]
+      parameters:
+        - { name: category_id, in: query, schema: { type: string } }
+        - { name: tag, in: query, schema: { type: string } }
+        - { name: status, in: query, schema: { type: string } }
+        - { name: sort, in: query, schema: { type: string, enum: [hot, new, score, views] }, example: hot }
+        - { name: page, in: query, schema: { type: integer, default: 1 } }
+        - { name: size, in: query, schema: { type: integer, default: 20 } }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items: { $ref: '#/components/schemas/SeriesBase' }
+                  page: { $ref: '#/components/schemas/Page' }
+  /api/v1/series/{id}:
+    get:
+      tags: [content]
+      parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Series' }
+        '404': { description: Not Found }
+  /api/v1/series/{id}/episodes:
+    get:
+      tags: [content]
+      parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items: { $ref: '#/components/schemas/Episode' }
+  /api/v1/episodes/{id}:
+    get:
+      tags: [content]
+      parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Episode' }
+  /api/v1/search:
+    get:
+      tags: [content]
+      parameters:
+        - { name: q, in: query, required: true, schema: { type: string } }
+        - { name: page, in: query, schema: { type: integer, default: 1 } }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items: { $ref: '#/components/schemas/SeriesBase' }
+                  page: { $ref: '#/components/schemas/Page' }
+  /api/v1/ota/check:
+    get:
+      tags: [ota]
+      description: 见 spec/ota-protocol.v1.md
+      parameters:
+        - { name: platform, in: query, required: true, schema: { type: string } }
+        - { name: arch, in: query, required: true, schema: { type: string } }
+        - { name: channel, in: query, required: true, schema: { type: string } }
+        - { name: version, in: query, required: true, schema: { type: string } }
+        - { name: build, in: query, required: true, schema: { type: integer } }
+        - { name: device_id, in: query, required: true, schema: { type: string } }
+        - { name: locale, in: query, schema: { type: string } }
+        - { name: abi, in: query, schema: { type: string } }
+      responses:
+        '200':
+          description: 有更新
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/OtaCheckResponse' }
+        '204': { description: 无更新 }
+  /api/v1/ota/report:
+    post:
+      tags: [ota]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                device_id: { type: string }
+                platform: { type: string }
+                version: { type: string }
+                build: { type: integer }
+                event:
+                  type: string
+                  enum: [downloaded, installed, failed, skipped, unsupported]
+                reason: { type: string }
+                elapsed_ms: { type: integer }
+      responses:
+        '202': { description: Accepted }
+  /api/v1/user/favorites:
+    get:
+      tags: [user]
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200': { description: OK }
+    post:
+      tags: [user]
+      security: [{ bearerAuth: [] }]
+      responses:
+        '201': { description: Created }
+  /api/v1/user/history:
+    get:
+      tags: [user]
+      security: [{ bearerAuth: [] }]
+      responses:
+        '200': { description: OK }
+    post:
+      tags: [user]
+      security: [{ bearerAuth: [] }]
+      responses:
+        '201': { description: Created }
+  /api/v1/admin/releases:
+    post:
+      tags: [admin]
+      summary: 发布一个新版本（OTA）
+      security: [{ adminKey: [] }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                platform: { type: string }
+                arch: { type: string }
+                channel: { type: string }
+                version: { type: string }
+                build: { type: integer }
+                min_supported_version: { type: string }
+                notes_i18n: { type: object, additionalProperties: { type: string } }
+                artifact: { type: object }
+                store_url: { type: string }
+                rollout_percent: { type: integer, minimum: 0, maximum: 100 }
+      responses:
+        '201': { description: Created }

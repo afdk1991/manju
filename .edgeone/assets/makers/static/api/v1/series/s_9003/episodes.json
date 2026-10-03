@@ -1,0 +1,23 @@
+{
+ "items": [
+  {
+   "id": "s_9003_e001",
+   "series_id": "s_9003",
+   "index": 1,
+   "title": "正片",
+   "thumbnail": "files/covers/9e5199b1fa0aa26b.jpg",
+   "duration_sec": 184,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Coffee_Run_-_Blender_Open_Movie-full_movie.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  }
+ ]
+}

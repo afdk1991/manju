@@ -1,0 +1,8 @@
+# 漫剧 Manju 公网 HTTPS 反代（可选，需要域名）
+# 安装：apt install caddy，把域名 A 记录解析到服务器 IP，替换下面域名为你的域名
+manju.example.com {
+    reverse_proxy 127.0.0.1:8000
+}
+# 启用后客户端 API 地址改为 https://manju.example.com
+# 注意：启用 HTTPS 后需重跑 fix_ota_url.py 更新 OTA 产物 URL 并重新签名
+#   /opt/manju/venv/bin/python /opt/manju/fix_ota_url.py https://manju.example.com
