@@ -50,15 +50,7 @@ makers/
     ├── api/v1/ota/report/index.js  #   事件上报 → Blob
     ├── api/v1/search/index.js      #   内存索引搜索
     ├── api/v1/user/favorites|history/index.js  # 用户数据 → Blob
-    ├── api/v1/admin/index.js       #   只读兜底：写操作返回 501
     └── api/v1/admin/releases|reports/stats     # 发布（签名）+ 统计
-
-> ⚠️ **文件命名红线（2026-10-03 实测定论）**
-> `cloud-functions/` 内的文件名**不得包含方括号 `[]`**（如 Next.js 风格的
-> `[[default]].js`、`[id].js`）。这类文件会让 EdgeOne 云端构建直接失败：
-> `DescribePagesDeployments` 返回 `Code: 18`、构建约 14.7s 即 `Failed`，
-> 且 CI 与本地 Windows 均稳定复现。2026-09-25 起连续 12 次 CI 部署失败即由此导致。
-> 需要 catch-all 语义时请改为显式命名 + `rewrites` 条目。
 ```
 
 ## 3. 本地生成与验证
