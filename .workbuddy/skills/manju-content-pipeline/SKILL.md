@@ -54,6 +54,8 @@ cd makers && edgeone makers deploy && cd ..
 | 4 | hls.js 走 npm 依赖 | 不再自托管 `static/js/hls.min.js`；`localize_assets.py` 下载 hls.js 那步已禁用 |
 | 5 | `npm install` 若报 `Cannot find module @rollup/rollup-win32-x64-msvc` | npm optional-deps bug：`rm -rf web/node_modules web/package-lock.json && npm install`，**必须前台跑**（后台会被沙箱拦 esbuild） |
 | 6 | 部署必须带项目名 | `edgeone makers deploy` 前核对 `makers/.edgeone/project.json` = `makers-vypuaynzkt0c`；⛔ 永不部署到 `manju-drama-hub`（makers-nopixcdbuho7） |
+| 7 | **`cloud-functions/` 内文件名禁止含方括号 `[]`** | Next.js 风格 `[[default]].js` / `[id].js` 会让云端构建直接失败（`Code: 18`，约 14.7s 即 Failed），2026-09-25 起 12 次 CI 部署全挂就是这个原因。已改名为 `api/v1/admin/index.js` |
+| 8 | **本地 `deploy .` 会把 `makers/.env` 打包上传** | `.env` 含 OTA **私钥**；CLI 不读 .gitignore。本地部署前先把它临时移出 `makers/`，改由云端环境变量提供（CI checkout 天然无 .env，是安全的）。其它非站点文件同理，尽量从干净目录部署 |
 
 ## 判据
 
