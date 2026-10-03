@@ -118,3 +118,6 @@ keys/*.key
 keys/*.pfx
 keys/*.p12
 !keys/ota_public.pem
+
+# ===== EdgeOne CLI 本地缓存与快照（含私钥备份，严禁入库）=====
+.edgeone/
