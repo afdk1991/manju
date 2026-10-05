@@ -20,15 +20,15 @@ async function getJson<T>(path: string, signal?: AbortSignal): Promise<T> {
 const enc = encodeURIComponent;
 
 export const api = {
-  home: (s?: AbortSignal) => getJson<Home>('api/v1/home', s),
-  categories: (s?: AbortSignal) => getJson<{ items: Category[] }>('api/v1/categories', s),
-  seriesList: (s?: AbortSignal) => getJson<{ items: Series['id'] extends string ? Series[] : never }>('api/v1/series', s),
-  series: (id: string, s?: AbortSignal) => getJson<Series>(`api/v1/series/${enc(id)}`, s),
+  home: (s?: AbortSignal) => getJson<Home>('api/v1/home.json', s),
+  categories: (s?: AbortSignal) => getJson<{ items: Category[] }>('api/v1/categories.json', s),
+  seriesList: (s?: AbortSignal) => getJson<{ items: Series['id'] extends string ? Series[] : never }>('api/v1/series.json', s),
+  series: (id: string, s?: AbortSignal) => getJson<Series>(`api/v1/series/${enc(id)}.json`, s),
   episodes: (seriesId: string, s?: AbortSignal) =>
-    getJson<{ items: Episode[] }>(`api/v1/series/${enc(seriesId)}/episodes`, s),
-  episode: (epId: string, s?: AbortSignal) => getJson<Episode>(`api/v1/episodes/${enc(epId)}`, s),
-  extIndex: (s?: AbortSignal) => getJson<ExternalIndex>('external/index', s),
-  extList: (cat: string, s?: AbortSignal) => getJson<ExternalList>(`external/${enc(cat)}`, s),
+    getJson<{ items: Episode[] }>(`api/v1/series/${enc(seriesId)}/episodes.json`, s),
+  episode: (epId: string, s?: AbortSignal) => getJson<Episode>(`api/v1/episodes/${enc(epId)}.json`, s),
+  extIndex: (s?: AbortSignal) => getJson<ExternalIndex>('external/index.json', s),
+  extList: (cat: string, s?: AbortSignal) => getJson<ExternalList>(`external/${enc(cat)}.json`, s),
 };
 
 /* ---------- 本地状态：已看过 / 续播进度 ---------- */
