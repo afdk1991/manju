@@ -9,8 +9,9 @@ export async function onRequestGet(context) {
     const targetUrl = new URL(target);
     const resp = await fetch(target, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-        'Referer': targetUrl.origin + '/'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Referer': 'https://www.yayazy.net/',
+        'Origin': 'https://www.yayazy.net'
       },
       redirect: 'follow'
     });
