@@ -12,7 +12,8 @@ async function getJson<T>(path: string, signal?: AbortSignal): Promise<T> {
   // 必须显式 same-origin：EdgeOne 预览域名在路由前有 SSO 鉴权，
   // 靠 eo_token Cookie 放行。若用 credentials:'omit' 丢弃 Cookie，
   // XHR 会被拦成 401（本地无 SSO 测不出，只有线上浏览器实测才暴露）。
-  const res = await fetch(path, { signal, credentials: 'same-origin' });
+  const sep = path.includes('?') ? '&' : '?';
+  const res = await fetch(`${path}${sep}_t=${Date.now()}`, { signal, credentials: 'same-origin' });
   if (!res.ok) throw new Error(`${path} -> HTTP ${res.status}`);
   return (await res.json()) as T;
 }
