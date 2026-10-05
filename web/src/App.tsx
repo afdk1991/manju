@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Home from './pages/Home';
 import SeriesPage from './pages/Series';
 import Watch from './pages/Watch';
-import { ExternalIndex, ExternalList, ExtGate } from './pages/External';
+
 
 function useHash(): string {
   const [hash, setHash] = useState(() => window.location.hash || '#/');
@@ -27,10 +27,6 @@ export default function App() {
   if (seg.length === 0) body = <Home go={go} />;
   else if (seg[0] === 'series' && seg[1]) body = <SeriesPage id={decodeURIComponent(seg[1])} go={go} />;
   else if (seg[0] === 'watch' && seg[1]) body = <Watch epId={decodeURIComponent(seg[1])} go={go} />;
-  else if (seg[0] === 'external' && seg[1]) body = <ExternalList cat={decodeURIComponent(seg[1])} go={go} />;
-  else if (seg[0] === 'external') body = <ExternalIndex go={go} />;
-  else if (seg[0] === 'ext' && seg[1] && seg[2])
-    body = <ExtGate cat={decodeURIComponent(seg[1])} id={decodeURIComponent(seg[2])} go={go} />;
   else body = <Home go={go} />;
 
   return (
@@ -41,7 +37,6 @@ export default function App() {
         </div>
         <nav>
           <a href="#/">首页</a>
-          <a href="#/external">外部片单</a>
         </nav>
       </header>
       <div className="wrap">{body}</div>
