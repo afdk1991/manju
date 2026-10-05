@@ -1,0 +1,16 @@
+{
+  "id": "yy_63021_e001",
+  "series_id": "yy_63021",
+  "index": 1,
+  "title": "1-20集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20240204-1/da16b2ce6142ddda078b5d214b71b607.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202402/04/AQv3AQGkbz2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

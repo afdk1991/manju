@@ -1,0 +1,16 @@
+{
+  "id": "yy_55373_e003",
+  "series_id": "yy_55373",
+  "index": 3,
+  "title": "21-30集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231118-1/96c389dc81c547863069b68883782761.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202311/18/H4m5M9Fjm42/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

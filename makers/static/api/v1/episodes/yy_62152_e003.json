@@ -1,0 +1,16 @@
+{
+  "id": "yy_62152_e003",
+  "series_id": "yy_62152",
+  "index": 3,
+  "title": "41-61集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20240126-1/a46266b0e55466ace3082570723aedde.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202401/25/PRWrnzetkf2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "yy_65160_e003",
+  "series_id": "yy_65160",
+  "index": 3,
+  "title": "44-62集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20240303-1/c62da3739b17bb566d4c3a1c3c1c4284.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202403/02/WzCcCgPnVN2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

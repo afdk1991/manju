@@ -1,0 +1,16 @@
+{
+  "id": "yy_126924_e088",
+  "series_id": "yy_126924",
+  "index": 88,
+  "title": "第87集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20260801-1/eaf08785648b854c270932c9279313c5.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v5.rstuuv.com/yyv5/202606/22/xCEf1bUSYp27/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

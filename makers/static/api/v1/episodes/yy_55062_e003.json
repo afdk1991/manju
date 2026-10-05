@@ -1,0 +1,16 @@
+{
+  "id": "yy_55062_e003",
+  "series_id": "yy_55062",
+  "index": 3,
+  "title": "31-45集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231114-1/938fbdd0047bb69ad0d08fd523a6146b.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v6.rstuuv.com/yyv6/202311/14/cBJCiN4urm1/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "yy_58439_e004",
+  "series_id": "yy_58439",
+  "index": 4,
+  "title": "46-60集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231220-1/602714d22b8910c27a7150da9f3d6164.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202312/19/LpbEAEyvC12/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

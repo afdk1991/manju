@@ -1,0 +1,16 @@
+{
+  "id": "yy_55330_e001",
+  "series_id": "yy_55330",
+  "index": 1,
+  "title": "1-10集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231118-1/e1416b749c2bd8926733262fedf40c8f.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202311/18/bJBaD6uySK2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

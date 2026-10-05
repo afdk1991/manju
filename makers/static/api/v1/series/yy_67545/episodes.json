@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "id": "yy_67545_e001",
+      "series_id": "yy_67545",
+      "index": 1,
+      "title": "1-10集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240330-1/da43b6f2d17b953de689554dbe53c228.png",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v11.rstuuv.com/yyv11/202403/29/zBCqs64E7Y2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_67545_e002",
+      "series_id": "yy_67545",
+      "index": 2,
+      "title": "11-28集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240330-1/da43b6f2d17b953de689554dbe53c228.png",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v11.rstuuv.com/yyv11/202403/29/9TPxvH0t8C2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_67545_e003",
+      "series_id": "yy_67545",
+      "index": 3,
+      "title": "29-47集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240330-1/da43b6f2d17b953de689554dbe53c228.png",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v11.rstuuv.com/yyv11/202403/29/2AU6PLn5zg2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_67545_e004",
+      "series_id": "yy_67545",
+      "index": 4,
+      "title": "48-65集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240330-1/da43b6f2d17b953de689554dbe53c228.png",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v11.rstuuv.com/yyv11/202403/29/6uQcd2dD472/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_67545_e005",
+      "series_id": "yy_67545",
+      "index": 5,
+      "title": "66-82集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240330-1/da43b6f2d17b953de689554dbe53c228.png",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v11.rstuuv.com/yyv11/202403/29/SBfSK7GsNP2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    }
+  ]
+}

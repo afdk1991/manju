@@ -1,0 +1,16 @@
+{
+  "id": "yy_52107_e011",
+  "series_id": "yy_52107",
+  "index": 11,
+  "title": "101-110集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231011-1/49c908d21ed5cb1641869b382837fa6f.png",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v5.rstuuv.com/yyv5/202310/11/WG6eQvziHq1/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

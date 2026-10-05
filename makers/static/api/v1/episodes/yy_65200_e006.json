@@ -1,0 +1,16 @@
+{
+  "id": "yy_65200_e006",
+  "series_id": "yy_65200",
+  "index": 6,
+  "title": "88-91集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20240303-1/36fe1d1a98e87be4c323b02f161887d1.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202403/03/H5dfPr1vGL2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

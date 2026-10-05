@@ -1,0 +1,16 @@
+{
+  "id": "yy_67975_e006",
+  "series_id": "yy_67975",
+  "index": 6,
+  "title": "101-120集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20240402-1/14dc9317f4aa025263f6e46548c9e04d.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v11.rstuuv.com/yyv11/202404/02/MwbW68aHhB2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

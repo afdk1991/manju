@@ -1,0 +1,16 @@
+{
+  "id": "yy_63094_e007",
+  "series_id": "yy_63094",
+  "index": 7,
+  "title": "91-100集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20240205-1/afd9c5cf8b91874dc5f057bb4c2b6365.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202402/05/UMuyztARYX2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

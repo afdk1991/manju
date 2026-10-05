@@ -1,0 +1,16 @@
+{
+  "id": "yy_54877_e004",
+  "series_id": "yy_54877",
+  "index": 4,
+  "title": "61-80集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231112-1/3a352788a2dc70ba3011a4417f7d1c7b.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v6.rstuuv.com/yyv6/202311/11/SELfyHwKPL1/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

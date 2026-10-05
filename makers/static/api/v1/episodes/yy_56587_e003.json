@@ -1,0 +1,16 @@
+{
+  "id": "yy_56587_e003",
+  "series_id": "yy_56587",
+  "index": 3,
+  "title": "41-60集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231201-1/9b7ede3d8243b2efc17c5fc4d3bf4fd2.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202311/30/5rdWEn2K1c2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

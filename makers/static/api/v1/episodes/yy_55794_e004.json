@@ -1,0 +1,16 @@
+{
+  "id": "yy_55794_e004",
+  "series_id": "yy_55794",
+  "index": 4,
+  "title": "43-60集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231123-1/b5867b9e0100989a3eb2fdb0b6864800.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202311/23/rYjq3nsfAH2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

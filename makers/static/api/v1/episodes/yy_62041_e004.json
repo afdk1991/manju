@@ -1,0 +1,16 @@
+{
+  "id": "yy_62041_e004",
+  "series_id": "yy_62041",
+  "index": 4,
+  "title": "52-69集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20240125-1/72e7eab36d3ee608b840e38dd25b131f.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202401/24/d9mv15RtEi2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

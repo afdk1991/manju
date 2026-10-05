@@ -1,0 +1,16 @@
+{
+  "id": "yy_62303_e005",
+  "series_id": "yy_62303",
+  "index": 5,
+  "title": "81-100集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20240127-1/c9c2e30c00e96d2a9d7677e1d83ccb12.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202401/27/iqRp05snTN2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

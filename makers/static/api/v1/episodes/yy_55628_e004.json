@@ -1,0 +1,16 @@
+{
+  "id": "yy_55628_e004",
+  "series_id": "yy_55628",
+  "index": 4,
+  "title": "61-80集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231121-1/d4775201302aff7dc742b87d70b11976.png",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202311/21/AxAyV9jQxE2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

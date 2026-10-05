@@ -1,0 +1,16 @@
+{
+  "id": "yy_66514_e003",
+  "series_id": "yy_66514",
+  "index": 3,
+  "title": "45-65集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20240318-1/b8ead0b01307e3602ed3eed895a49d33.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v11.rstuuv.com/yyv11/202403/18/CVNdn2BCy62/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

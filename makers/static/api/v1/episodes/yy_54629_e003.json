@@ -1,0 +1,16 @@
+{
+  "id": "yy_54629_e003",
+  "series_id": "yy_54629",
+  "index": 3,
+  "title": "32-50集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231108-1/bc1667f7bb065b1f071b42c048596958.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v6.rstuuv.com/yyv6/202311/08/apPx4Lxe381/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "items": [
+    {
+      "id": "yy_61950_e001",
+      "series_id": "yy_61950",
+      "index": 1,
+      "title": "1-17集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240124-1/36f61a869ed89347016946bcc319ea78.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v3.rstuuv.com/yyv3/202401/23/H0zmyiBjJt2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_61950_e002",
+      "series_id": "yy_61950",
+      "index": 2,
+      "title": "18-35集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240124-1/36f61a869ed89347016946bcc319ea78.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v3.rstuuv.com/yyv3/202401/23/rxpJ7HZKhZ2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_61950_e003",
+      "series_id": "yy_61950",
+      "index": 3,
+      "title": "36-57集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240124-1/36f61a869ed89347016946bcc319ea78.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v3.rstuuv.com/yyv3/202401/23/2YnxyBgTSb2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_61950_e004",
+      "series_id": "yy_61950",
+      "index": 4,
+      "title": "58-77集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240124-1/36f61a869ed89347016946bcc319ea78.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v3.rstuuv.com/yyv3/202401/23/LB4eFk9ZxX2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_61950_e005",
+      "series_id": "yy_61950",
+      "index": 5,
+      "title": "78-93集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240124-1/36f61a869ed89347016946bcc319ea78.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v3.rstuuv.com/yyv3/202401/23/Ck3sGTYLbe2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_61950_e006",
+      "series_id": "yy_61950",
+      "index": 6,
+      "title": "94-98集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240124-1/36f61a869ed89347016946bcc319ea78.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v3.rstuuv.com/yyv3/202401/23/nUfeQGZ93m2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    }
+  ]
+}

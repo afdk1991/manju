@@ -1,0 +1,16 @@
+{
+  "id": "yy_52200_e007",
+  "series_id": "yy_52200",
+  "index": 7,
+  "title": "61-70集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231012-1/398f3dbac81aeacc607f1fd3b3802239.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v5.rstuuv.com/yyv5/202310/12/B4kaSG1bxG1/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

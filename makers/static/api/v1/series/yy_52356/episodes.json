@@ -1,0 +1,148 @@
+{
+  "items": [
+    {
+      "id": "yy_52356_e001",
+      "series_id": "yy_52356",
+      "index": 1,
+      "title": "1-10集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231013-1/63a91071560885d0f30f646a4fd8a8b2.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v5.rstuuv.com/yyv5/202310/13/Yd3S59SkPi1/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_52356_e002",
+      "series_id": "yy_52356",
+      "index": 2,
+      "title": "11-20集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231013-1/63a91071560885d0f30f646a4fd8a8b2.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202310/18/pLgrGkKvUf1/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_52356_e003",
+      "series_id": "yy_52356",
+      "index": 3,
+      "title": "21-30集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231013-1/63a91071560885d0f30f646a4fd8a8b2.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202310/18/gJT3SNpjX11/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_52356_e004",
+      "series_id": "yy_52356",
+      "index": 4,
+      "title": "31-40集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231013-1/63a91071560885d0f30f646a4fd8a8b2.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202310/18/qSzZ7C74tc1/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_52356_e005",
+      "series_id": "yy_52356",
+      "index": 5,
+      "title": "41-50集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231013-1/63a91071560885d0f30f646a4fd8a8b2.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202310/18/V0fikNpZd21/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_52356_e006",
+      "series_id": "yy_52356",
+      "index": 6,
+      "title": "51-60集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231013-1/63a91071560885d0f30f646a4fd8a8b2.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202310/18/Mjv81LrV5E1/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_52356_e007",
+      "series_id": "yy_52356",
+      "index": 7,
+      "title": "61-70集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231013-1/63a91071560885d0f30f646a4fd8a8b2.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202310/18/0bJixEw05a1/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_52356_e008",
+      "series_id": "yy_52356",
+      "index": 8,
+      "title": "71-80集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231013-1/63a91071560885d0f30f646a4fd8a8b2.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202310/18/wWGNVYTcgj1/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_52356_e009",
+      "series_id": "yy_52356",
+      "index": 9,
+      "title": "81-90集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231013-1/63a91071560885d0f30f646a4fd8a8b2.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202310/18/sXaSRcQsgk1/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "yy_52256_e008",
+  "series_id": "yy_52256",
+  "index": 8,
+  "title": "81-90集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231012-1/26264ba329dbf4bb040cc66faeadd715.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v6.rstuuv.com/yyv6/202310/18/ibuPjZvRV21/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

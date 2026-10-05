@@ -1,0 +1,16 @@
+{
+  "id": "yy_61792_e003",
+  "series_id": "yy_61792",
+  "index": 3,
+  "title": "41-60集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20240122-1/3fbf2f9233e8c26814d520b182b79f08.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202401/22/SFrJ7QetHy2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

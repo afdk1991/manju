@@ -1,0 +1,16 @@
+{
+  "id": "yy_55377_e001",
+  "series_id": "yy_55377",
+  "index": 1,
+  "title": "1-10集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231119-1/694df9e28ba6a233a3769c9f8ebee328.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202311/18/T0Yr61CHN02/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

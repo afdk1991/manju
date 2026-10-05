@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "id": "yy_65160_e001",
+      "series_id": "yy_65160",
+      "index": 1,
+      "title": "1-21集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240303-1/c62da3739b17bb566d4c3a1c3c1c4284.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v3.rstuuv.com/yyv3/202403/02/iCCyPsYQ5G2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_65160_e002",
+      "series_id": "yy_65160",
+      "index": 2,
+      "title": "22-43集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240303-1/c62da3739b17bb566d4c3a1c3c1c4284.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v3.rstuuv.com/yyv3/202403/02/TfSKUWpVES2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_65160_e003",
+      "series_id": "yy_65160",
+      "index": 3,
+      "title": "44-62集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240303-1/c62da3739b17bb566d4c3a1c3c1c4284.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v3.rstuuv.com/yyv3/202403/02/WzCcCgPnVN2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_65160_e004",
+      "series_id": "yy_65160",
+      "index": 4,
+      "title": "63-81集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240303-1/c62da3739b17bb566d4c3a1c3c1c4284.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v3.rstuuv.com/yyv3/202403/02/n5UUSDf4g92/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_65160_e005",
+      "series_id": "yy_65160",
+      "index": 5,
+      "title": "82-101集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240303-1/c62da3739b17bb566d4c3a1c3c1c4284.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v3.rstuuv.com/yyv3/202403/02/GUzvGS1dDF2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    }
+  ]
+}

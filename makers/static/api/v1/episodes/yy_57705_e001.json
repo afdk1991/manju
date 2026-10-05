@@ -1,0 +1,16 @@
+{
+  "id": "yy_57705_e001",
+  "series_id": "yy_57705",
+  "index": 1,
+  "title": "1-20集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231213-1/796ff2142190e4e075e7bddce9337a6f.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202312/12/5SAJXENi7U2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

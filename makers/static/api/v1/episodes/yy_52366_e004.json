@@ -1,0 +1,16 @@
+{
+  "id": "yy_52366_e004",
+  "series_id": "yy_52366",
+  "index": 4,
+  "title": "31-40集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231013-1/325e06820b28798de8bdbd550f15ce02.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v6.rstuuv.com/yyv6/202310/19/uAEv1Vw2Qe1/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

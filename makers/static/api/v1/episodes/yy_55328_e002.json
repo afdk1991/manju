@@ -1,0 +1,16 @@
+{
+  "id": "yy_55328_e002",
+  "series_id": "yy_55328",
+  "index": 2,
+  "title": "11-20集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231118-1/e283fd508c70678e4d900aa15814ab1c.webp",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202311/18/yp1b3LnntJ2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

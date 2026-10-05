@@ -1,0 +1,16 @@
+{
+  "id": "yy_52103_e005",
+  "series_id": "yy_52103",
+  "index": 5,
+  "title": "41-50集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231011-1/e92d1e77cb42cdb5d4c8f63b1f8e0888.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v5.rstuuv.com/yyv5/202310/11/RWuCxUu8G01/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

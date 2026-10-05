@@ -1,0 +1,16 @@
+{
+  "id": "yy_55283_e001",
+  "series_id": "yy_55283",
+  "index": 1,
+  "title": "1-20集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231118-1/8b9434a03b38f16c2c7ad64e005f1ca0.webp",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202311/17/ZrCjUtTQzS2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

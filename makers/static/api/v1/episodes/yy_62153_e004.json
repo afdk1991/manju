@@ -1,0 +1,16 @@
+{
+  "id": "yy_62153_e004",
+  "series_id": "yy_62153",
+  "index": 4,
+  "title": "71-96集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20240126-1/feeecab5207c91a1c24cb9d927e0894a.png",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202401/25/RJAb1LX5aY2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

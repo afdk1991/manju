@@ -1,0 +1,16 @@
+{
+  "id": "yy_53250_e002",
+  "series_id": "yy_53250",
+  "index": 2,
+  "title": "21-40集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231025-1/d46cbdf1ea33d84eb545e15b7eb47622.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v6.rstuuv.com/yyv6/202310/25/BHryM6KmXi1/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

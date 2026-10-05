@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "id": "yy_52889_e001",
+      "series_id": "yy_52889",
+      "index": 1,
+      "title": "1~200集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231021-1/3790d26d7d64e1317c587006a5ae9099.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202310/20/FEq1nh08611/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    }
+  ]
+}

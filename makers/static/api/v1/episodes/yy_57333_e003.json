@@ -1,0 +1,16 @@
+{
+  "id": "yy_57333_e003",
+  "series_id": "yy_57333",
+  "index": 3,
+  "title": "61-90集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231209-1/6c42109f15417fb7b2bb6837ce1524e0.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202312/08/KnGKVmicAz2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

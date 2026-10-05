@@ -1,0 +1,16 @@
+{
+  "id": "yy_59697_e006",
+  "series_id": "yy_59697",
+  "index": 6,
+  "title": "86-100集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231231-1/cc3cec3681b25853fdb620cfadebc40b.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202312/30/tYGavd2Geh2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

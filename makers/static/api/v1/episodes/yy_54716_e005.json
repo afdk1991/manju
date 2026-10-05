@@ -1,0 +1,16 @@
+{
+  "id": "yy_54716_e005",
+  "series_id": "yy_54716",
+  "index": 5,
+  "title": "81-100集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231109-1/802b92c3061c4fc12c30a7ab15395059.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v6.rstuuv.com/yyv6/202311/09/Tac232eim81/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

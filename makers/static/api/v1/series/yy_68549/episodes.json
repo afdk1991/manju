@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "id": "yy_68549_e001",
+      "series_id": "yy_68549",
+      "index": 1,
+      "title": "全集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240413-1/c7dc10ec56a5fcba6eda4d855952df22.webp",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v12.rstuuv.com/yyv12/202404/13/1T8zUeuS2g3/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    }
+  ]
+}

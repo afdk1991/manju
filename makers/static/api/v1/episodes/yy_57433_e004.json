@@ -1,0 +1,16 @@
+{
+  "id": "yy_57433_e004",
+  "series_id": "yy_57433",
+  "index": 4,
+  "title": "48-65集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231210-1/fbdf41aff866400c82979f1ea721e82f.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202312/09/8rnV9VK0Bz2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

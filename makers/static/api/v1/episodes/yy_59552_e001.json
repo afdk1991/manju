@@ -1,0 +1,16 @@
+{
+  "id": "yy_59552_e001",
+  "series_id": "yy_59552",
+  "index": 1,
+  "title": "1-20集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231230-1/6054fd9786813682ef647c16c07a0c08.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v3.rstuuv.com/yyv3/202312/29/jvV1xnRFUp2/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}

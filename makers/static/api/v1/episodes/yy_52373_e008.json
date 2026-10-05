@@ -1,0 +1,16 @@
+{
+  "id": "yy_52373_e008",
+  "series_id": "yy_52373",
+  "index": 8,
+  "title": "71-80集",
+  "thumbnail": "https://pic.yayazy.info/upload/vod/20231013-1/8df4640bdf17b8a6dda5bfc88eefd66d.jpg",
+  "is_free": true,
+  "sources": [
+    {
+      "quality": "auto",
+      "url": "https://v6.rstuuv.com/yyv6/202310/18/90nb4mkHxB1/video/index.m3u8",
+      "container": "hls",
+      "codec": "h264"
+    }
+  ]
+}
