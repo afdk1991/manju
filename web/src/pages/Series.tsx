@@ -47,13 +47,13 @@ export default function SeriesPage({ id, go }: { id: string; go: (h: string) => 
           <div className="tags">{(s.tags || []).map((t) => <span key={t}>{t}</span>)}</div>
           <p className="synopsis">{s.synopsis}</p>
           <div className="eplist">
-            {eps.map((e) => (
+            {eps.map((e, i) => (
               <button
                 key={e.id}
                 className={`epbtn${seen.has(e.id) ? ' seen' : ''}`}
                 onClick={() => go(`#/watch/${e.id}`)}
               >
-                第 {e.index} 集
+                {e.title || `第 ${i + 1} 集`}
               </button>
             ))}
           </div>
