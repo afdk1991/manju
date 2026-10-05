@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "id": "yy_54715_e001",
+      "series_id": "yy_54715",
+      "index": 1,
+      "title": "1-10集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231109-1/e34259c1978b549d566b49125cf54939.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202311/09/97peqmc4X51/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_54715_e002",
+      "series_id": "yy_54715",
+      "index": 2,
+      "title": "11-30集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231109-1/e34259c1978b549d566b49125cf54939.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202311/09/WkKcTew3V41/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_54715_e003",
+      "series_id": "yy_54715",
+      "index": 3,
+      "title": "31-50集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231109-1/e34259c1978b549d566b49125cf54939.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202311/09/GMm77UuD9X1/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_54715_e004",
+      "series_id": "yy_54715",
+      "index": 4,
+      "title": "51-66集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231109-1/e34259c1978b549d566b49125cf54939.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202311/09/yM1H15muah1/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_54715_e005",
+      "series_id": "yy_54715",
+      "index": 5,
+      "title": "67-85集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231109-1/e34259c1978b549d566b49125cf54939.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202311/09/u46w0DLT9f1/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    }
+  ]
+}

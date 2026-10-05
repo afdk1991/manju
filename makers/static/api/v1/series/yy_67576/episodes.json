@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "id": "yy_67576_e001",
+      "series_id": "yy_67576",
+      "index": 1,
+      "title": "1-20集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240330-1/1d6b9cf685e33ff2821e4df39021b7b3.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v11.rstuuv.com/yyv11/202403/30/G26cMbApHA2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_67576_e002",
+      "series_id": "yy_67576",
+      "index": 2,
+      "title": "21-40集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240330-1/1d6b9cf685e33ff2821e4df39021b7b3.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v11.rstuuv.com/yyv11/202403/30/QhBHvATrkN2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_67576_e003",
+      "series_id": "yy_67576",
+      "index": 3,
+      "title": "41-60集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240330-1/1d6b9cf685e33ff2821e4df39021b7b3.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v11.rstuuv.com/yyv11/202403/30/hPakYj28CJ2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_67576_e004",
+      "series_id": "yy_67576",
+      "index": 4,
+      "title": "61-80集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240330-1/1d6b9cf685e33ff2821e4df39021b7b3.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v11.rstuuv.com/yyv11/202403/30/mW0ZRw0XY92/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    }
+  ]
+}

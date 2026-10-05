@@ -1,0 +1,100 @@
+{
+  "items": [
+    {
+      "id": "yy_67547_e001",
+      "series_id": "yy_67547",
+      "index": 1,
+      "title": "1-20集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240330-1/7d97df3f617ababe5a5c71a5bc34dcbf.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v11.rstuuv.com/yyv11/202403/29/Yx0Ue2JUZi2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_67547_e002",
+      "series_id": "yy_67547",
+      "index": 2,
+      "title": "21-40集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240330-1/7d97df3f617ababe5a5c71a5bc34dcbf.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v11.rstuuv.com/yyv11/202403/29/v8e25HpryK2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_67547_e003",
+      "series_id": "yy_67547",
+      "index": 3,
+      "title": "41-60集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240330-1/7d97df3f617ababe5a5c71a5bc34dcbf.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v11.rstuuv.com/yyv11/202403/29/U9TqcwWZ2Y2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_67547_e004",
+      "series_id": "yy_67547",
+      "index": 4,
+      "title": "61-80集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240330-1/7d97df3f617ababe5a5c71a5bc34dcbf.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v11.rstuuv.com/yyv11/202403/29/Sr1E6bqCV62/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_67547_e005",
+      "series_id": "yy_67547",
+      "index": 5,
+      "title": "81-100集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240330-1/7d97df3f617ababe5a5c71a5bc34dcbf.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v11.rstuuv.com/yyv11/202403/29/3qUyGYptQS2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_67547_e006",
+      "series_id": "yy_67547",
+      "index": 6,
+      "title": "101-120集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240330-1/7d97df3f617ababe5a5c71a5bc34dcbf.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v11.rstuuv.com/yyv11/202403/29/7d5F8CZfpu2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    }
+  ]
+}

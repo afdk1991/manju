@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "id": "yy_128869_e001",
+      "series_id": "yy_128869",
+      "index": 1,
+      "title": "全集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20260801-1/20b5091f6ebc60ed33779c2a96242b2b.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v14.rstuuv.com/yyv14/202608/01/qALyayDtyP27/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    }
+  ]
+}

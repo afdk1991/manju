@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "id": "yy_120953_e001",
+      "series_id": "yy_120953",
+      "index": 1,
+      "title": "全集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20260219-1/a98ccfdf6f194b6c140542872de0b9e1.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v13.rstuuv.com/yyv13/202602/13/ushwdwEUYu22/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    }
+  ]
+}

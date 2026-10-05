@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "id": "yy_54629_e001",
+      "series_id": "yy_54629",
+      "index": 1,
+      "title": "1-15集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231108-1/bc1667f7bb065b1f071b42c048596958.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202311/08/PyrCXr8rTF1/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_54629_e002",
+      "series_id": "yy_54629",
+      "index": 2,
+      "title": "16-30集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231108-1/bc1667f7bb065b1f071b42c048596958.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202311/08/uyzDBHWvTG1/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_54629_e003",
+      "series_id": "yy_54629",
+      "index": 3,
+      "title": "32-50集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231108-1/bc1667f7bb065b1f071b42c048596958.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202311/08/apPx4Lxe381/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_54629_e004",
+      "series_id": "yy_54629",
+      "index": 4,
+      "title": "51-70集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231108-1/bc1667f7bb065b1f071b42c048596958.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202311/08/mfuLhuvwGq1/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_54629_e005",
+      "series_id": "yy_54629",
+      "index": 5,
+      "title": "71-94集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20231108-1/bc1667f7bb065b1f071b42c048596958.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v6.rstuuv.com/yyv6/202311/08/Gu9PRrFjb41/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    }
+  ]
+}

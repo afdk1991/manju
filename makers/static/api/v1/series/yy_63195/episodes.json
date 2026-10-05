@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "id": "yy_63195_e001",
+      "series_id": "yy_63195",
+      "index": 1,
+      "title": "1-20集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240207-1/92348088e97bc4afe0a0fd1a22d3464d.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v3.rstuuv.com/yyv3/202402/05/F9quJtvajL2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_63195_e002",
+      "series_id": "yy_63195",
+      "index": 2,
+      "title": "21-40集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240207-1/92348088e97bc4afe0a0fd1a22d3464d.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v3.rstuuv.com/yyv3/202402/05/R7jD6AmkgM2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_63195_e003",
+      "series_id": "yy_63195",
+      "index": 3,
+      "title": "41-60集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240207-1/92348088e97bc4afe0a0fd1a22d3464d.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v3.rstuuv.com/yyv3/202402/05/3BQs7kpZ8q2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_63195_e004",
+      "series_id": "yy_63195",
+      "index": 4,
+      "title": "61-80集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240207-1/92348088e97bc4afe0a0fd1a22d3464d.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v3.rstuuv.com/yyv3/202402/05/47fa3C2tqF2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    },
+    {
+      "id": "yy_63195_e005",
+      "series_id": "yy_63195",
+      "index": 5,
+      "title": "81-91集",
+      "thumbnail": "https://pic.yayazy.info/upload/vod/20240207-1/92348088e97bc4afe0a0fd1a22d3464d.jpg",
+      "is_free": true,
+      "sources": [
+        {
+          "quality": "auto",
+          "url": "https://v3.rstuuv.com/yyv3/202402/05/ZmVPt3wcPP2/video/index.m3u8",
+          "container": "hls",
+          "codec": "h264"
+        }
+      ]
+    }
+  ]
+}
