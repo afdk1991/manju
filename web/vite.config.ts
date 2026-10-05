@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
+  base: '/manju/',
   plugins: [react()],
   // 静态资产统一放 web/public，构建时整体复制进产物，
   // 避免 outDir 清空导致 files/ api/ external/ 丢失的事故。

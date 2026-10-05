@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import Hls from 'hls.js';
+// hls.js loaded via CDN script tag in index.html
+declare const Hls: any;
 import type { Episode } from '../types';
 import { loadProgress, markSeen, saveProgress } from '../api';
 
@@ -26,7 +27,7 @@ interface Props {
 export default function Player({ ep, onNext }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const shellRef = useRef<HTMLDivElement>(null);
-  const hlsRef = useRef<Hls | null>(null);
+  const hlsRef = useRef<any>(null);
   const hideTimer = useRef<number | null>(null);
   const marked = useRef(false);
   const lastSave = useRef(0);
@@ -82,7 +83,7 @@ export default function Player({ ep, onNext }: Props) {
       h.attachMedia(v);
       h.on(Hls.Events.MANIFEST_PARSED, () => {
         setLevels(
-          h.levels.map((l, i) => ({
+          h.levels.map((l: any, i: number) => ({
             i,
             label: l.height ? `${l.height}p` : l.bitrate ? `${Math.round(l.bitrate / 1000)}kbps` : `L${i + 1}`,
           })),
@@ -95,7 +96,7 @@ export default function Player({ ep, onNext }: Props) {
         if (target > 1 && target < (v.duration || Infinity) - 2) v.currentTime = target;
         void v.play().catch(() => { /* 自动播放被拦截，等用户点大播放键 */ });
       });
-      h.on(Hls.Events.ERROR, (_e, data) => {
+      h.on(Hls.Events.ERROR, (_e: any, data: any) => {
         if (!data || !data.fatal) return;
         if (data.type === Hls.ErrorTypes.NETWORK_ERROR) { h.startLoad(); return; }
         if (data.type === Hls.ErrorTypes.MEDIA_ERROR) { h.recoverMediaError(); return; }
