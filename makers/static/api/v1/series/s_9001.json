@@ -5,8 +5,8 @@
  "cover": "files/covers/2156aee291e78aa5.jpg",
  "poster": "files/covers/2156aee291e78aa5.jpg",
  "banner": "files/covers/2156aee291e78aa5.jpg",
- "synopsis": "一只体型巨大的兔子被三只啮齿动物反复捉弄，最终展开一连串夸张的卡通式复仇。",
- "tags": ["动画","喜剧"],
+ "synopsis": "一只体型巨大的兔子被三只啮齿动物反复捉弄，最终展开一连串夸张的卡通式复仇。Blender 基金会第一部全彩开放动画短片，画面明亮、无对白，适合全年龄段。",
+ "tags": ["动画","喜剧","无对白"],
  "category_id": "cat_animation",
  "region": "NL",
  "release_year": 2008,
@@ -15,5 +15,11 @@
  "score": 8.6,
  "views": 0,
  "is_vip": false,
- "age_rating": "all"
+ "age_rating": "all",
+ "episodes": [
+  {"id":"s_9001_e01","series_id":"s_9001","index":1,"title":"第1段","thumbnail":"files/covers/2156aee291e78aa5.jpg","duration_sec":158,"start_sec":0,"is_free":true,"sources":[{"quality":"auto","url":"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8","container":"hls","codec":"h264","bitrate_kbps":2400},{"quality":"auto","url":"https://upload.wikimedia.org/wikipedia/commons/c/c0/Big_Buck_Bunny_4K.webm","container":"webm","codec":"vp9","bitrate_kbps":0}],"subtitles":[]},
+  {"id":"s_9001_e02","series_id":"s_9001","index":2,"title":"第2段","thumbnail":"files/covers/2156aee291e78aa5.jpg","duration_sec":159,"start_sec":158,"is_free":true,"sources":[{"quality":"auto","url":"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8","container":"hls","codec":"h264","bitrate_kbps":2400},{"quality":"auto","url":"https://upload.wikimedia.org/wikipedia/commons/c/c0/Big_Buck_Bunny_4K.webm","container":"webm","codec":"vp9","bitrate_kbps":0}],"subtitles":[]},
+  {"id":"s_9001_e03","series_id":"s_9001","index":3,"title":"第3段","thumbnail":"files/covers/2156aee291e78aa5.jpg","duration_sec":159,"start_sec":317,"is_free":true,"sources":[{"quality":"auto","url":"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8","container":"hls","codec":"h264","bitrate_kbps":2400},{"quality":"auto","url":"https://upload.wikimedia.org/wikipedia/commons/c/c0/Big_Buck_Bunny_4K.webm","container":"webm","codec":"vp9","bitrate_kbps":0}],"subtitles":[]},
+  {"id":"s_9001_e04","series_id":"s_9001","index":4,"title":"第4段","thumbnail":"files/covers/2156aee291e78aa5.jpg","duration_sec":158,"start_sec":476,"is_free":true,"sources":[{"quality":"auto","url":"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8","container":"hls","codec":"h264","bitrate_kbps":2400},{"quality":"auto","url":"https://upload.wikimedia.org/wikipedia/commons/c/c0/Big_Buck_Bunny_4K.webm","container":"webm","codec":"vp9","bitrate_kbps":0}],"subtitles":[]}
+ ]
 }
