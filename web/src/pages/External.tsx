@@ -34,7 +34,7 @@ export function ExternalIndex({ go }: { go: (h: string) => void }) {
                role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && go(`#/external/${c.category}`)}>
             <div className="meta" style={{ padding: 16 }}>
               <div className="t">{c.category_label}</div>
-              <div className="info"><span>{c.total ?? 0} 条</span><span>跳转观看</span></div>
+              <div className="info"><span>{c.total ?? 0} 条</span><span>站内播放</span></div>
             </div>
           </div>
         ))}
@@ -67,7 +67,7 @@ export function ExternalList({ cat, go }: { cat: string; go: (h: string) => void
     <>
       <div className="hero">
         <h1>{data.category_label || cat}</h1>
-        <p>共 {data.total ?? items.length} 条 · 仅含公开元数据，点击卡片前往原站观看</p>
+        <p>共 {data.total ?? items.length} 条 · 点击卡片站内播放</p>
         <p style={{ marginTop: 6 }}><a href="#/external">← 返回分类</a></p>
       </div>
       <div style={{ margin: '14px 0' }}>
@@ -90,12 +90,9 @@ export function ExternalList({ cat, go }: { cat: string; go: (h: string) => void
 }
 
 /**
- * #/ext/:cat/:id —— 跳转中间提示页。
- *
- * 保留 referrerpolicy=strict-origin-when-cross-origin 且刻意不用 noreferrer：
- * 本站性质是导流，保留 Referer 才便于证明导流属性；跨源默认只发 origin，不泄露具体路径。
+ * #/ext/:cat/:id —— 站内播放页（iframe 嵌入原站播放器）。
  */
-export function ExtGate({ cat, id, go }: { cat: string; id: string; go: (h: string) => void }) {
+export function ExtGate({ cat, id }: { cat: string; id: string; go: (h: string) => void }) {
   const [data, setData] = useState<ExternalList | null>(null);
   const [err, setErr] = useState<string | null>(null);
 
@@ -111,33 +108,37 @@ export function ExtGate({ cat, id, go }: { cat: string; id: string; go: (h: stri
   const it = (data.items || []).find((x) => String(x.id) === String(id));
   if (!it) return <div className="center">未找到该条目　<a href={`#/external/${cat}`}>返回列表</a></div>;
 
+  // 从 detail_url 提取 series_id，构造播放器 URL
+  const m = it.detail_url && it.detail_url.match(/series_id=(\d+)/);
+  const playerUrl = m ? `https://hongguoduanju.com/player/${m[1]}` : it.detail_url;
+
   return (
-    <div className="gate">
-      <img className="g-cover" src={it.cover_url} alt={it.title} />
-      <h1>{it.title}</h1>
-      <div className="kv">
-        <span>来源</span><b>{it.source_label || '第三方平台'}</b>
-        <span>分类</span><b>{it.category_label || cat}</b>
-        <span>集数</span><b>{it.episodes_text || '—'}</b>
+    <div style={{ maxWidth: 1200, margin: '0 auto', padding: '12px 16px' }}>
+      <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 10 }}>
+        <img src={it.cover_url} alt={it.title} style={{ width: 80, borderRadius: 8 }} />
+        <div style={{ flex: 1 }}>
+          <h2 style={{ margin: '0 0 4px' }}>{it.title}</h2>
+          <div style={{ fontSize: 13, opacity: 0.7 }}>
+            {it.source_label || '第三方平台'} · {it.category_label || cat} · {it.episodes_text || '—'}
+          </div>
+        </div>
+        <a href={it.detail_url} target="_blank" rel="noopener" style={{ fontSize: 13 }}>原站打开 ↗</a>
+      </div>
+
+      <div style={{
+        position: 'relative', width: '100%', aspectRatio: '16/9',
+        background: '#000', borderRadius: 12, overflow: 'hidden'
+      }}>
+        <iframe
+          src={playerUrl}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0 }}
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+          allowFullScreen
+        />
       </div>
 
       <Attribution text={data.attribution} provider={it.source_label} />
-
-      <a
-        className="go"
-        href={it.detail_url}
-        target="_blank"
-        rel="noopener external"
-        referrerPolicy="strict-origin-when-cross-origin"
-        style={{ textAlign: 'center' }}
-      >
-        前往原站观看 →
-      </a>
-      <div className="url">{it.detail_url}</div>
-      <p style={{ marginTop: 14 }}><a href={`#/external/${cat}`}>← 返回列表</a></p>
-      <p style={{ marginTop: 6 }}>
-        <button className="btn" onClick={() => go('#/')}>回首页</button>
-      </p>
+      <p style={{ marginTop: 12 }}><a href={`#/external/${cat}`}>← 返回列表</a></p>
     </div>
   );
 }
