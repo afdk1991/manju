@@ -35,31 +35,37 @@ export default function SeriesPage({ id, go }: { id: string; go: (h: string) => 
 
   return (
     <>
-      <div className="detail">
-        <img className="poster" src={s.cover || s.poster} alt={s.title}
-             onError={(e) => { (e.currentTarget as HTMLImageElement).style.visibility = 'hidden'; }} />
-        <div>
-          <h1>{s.title}</h1>
-          <div style={{ color: 'var(--muted)', fontSize: 12 }}>
-            {[s.release_year, s.region, s.status, s.total_episodes ? `${s.total_episodes} 集` : '']
-              .filter(Boolean).join(' · ')}
-          </div>
-          <div className="tags">{(s.tags || []).map((t) => <span key={t}>{t}</span>)}</div>
-          <p className="synopsis">{s.synopsis}</p>
-          <div className="eplist">
-            {eps.map((e, i) => (
-              <button
-                key={e.id}
-                className={`epbtn${seen.has(e.id) ? ' seen' : ''}`}
-                onClick={() => go(`#/watch/${e.id}`)}
-              >
-                {e.title || `第 ${i + 1} 集`}
-              </button>
-            ))}
+      <div className="detail-hero">
+        <div className="bg" style={{ backgroundImage: `url(${s.cover})` }} />
+        <div className="inner">
+          <img className="poster" src={s.cover} alt={s.title}
+               onError={(e) => { (e.currentTarget as HTMLImageElement).style.visibility = 'hidden'; }} />
+          <div className="info">
+            <h1>{s.title}</h1>
+            <div className="meta-row">
+              {[s.release_year, s.region, s.status, s.total_episodes ? `${s.total_episodes} 集` : '']
+                .filter(Boolean).join(' · ')}
+            </div>
+            <div className="tags">{(s.tags || []).map((t) => <span key={t}>{t}</span>)}</div>
+            <p className="synopsis">{s.synopsis}</p>
           </div>
         </div>
       </div>
-      <p style={{ marginTop: 16 }}><a href="#/">← 返回首页</a></p>
+
+      <div className="eplist-title">选集</div>
+      <div className="eplist">
+        {eps.map((e, i) => (
+          <button
+            key={e.id}
+            className={`epbtn${seen.has(e.id) ? ' seen' : ''}`}
+            onClick={() => go(`#/watch/${e.id}`)}
+          >
+            {e.title || `第 ${i + 1} 集`}
+          </button>
+        ))}
+      </div>
+
+      <span className="back-link" onClick={() => go('#/')}>← 返回首页</span>
     </>
   );
 }
