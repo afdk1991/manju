@@ -8,7 +8,7 @@
   "sources": [
     {
       "quality": "auto",
-      "url": "https://v10.rstuuv.com/yyv10/202403/11/79mVhnNj6r2/video/index.m3u8",
+      "url": "/api/proxy?url=https://v10.rstuuv.com/yyv10/202403/11/79mVhnNj6r2/video/index.m3u8",
       "container": "hls",
       "codec": "h264"
     }
