@@ -2,50 +2,25 @@
  "id": "s_9007",
  "title": "钢铁之泪",
  "original_title": "Tears of Steel in 4k - Official Blender Foundation release",
- "cover": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm/960px--Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm.jpg",
- "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm/960px--Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm.jpg",
- "banner": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm/960px--Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm.jpg",
+ "cover": "files/covers/90e1de2dfefebb09.jpg",
+ "poster": "files/covers/90e1de2dfefebb09.jpg",
+ "banner": "files/covers/90e1de2dfefebb09.jpg",
  "synopsis": "Blender 基金会 VFX 开放电影：在近未来的阿姆斯特丹，一支小队试图挽回被失控科技摧毁的世界。实拍与 CG 结合，特效水准极高。",
- "tags": [
-  "科幻",
-  "特效",
-  "动作"
- ],
+ "tags": ["科幻","特效","动作"],
  "category_id": "cat_scifi",
  "region": "NL",
  "release_year": 2012,
  "status": "completed",
- "total_episodes": 1,
+ "total_episodes": 5,
  "score": 8.7,
  "views": 0,
  "is_vip": false,
  "age_rating": "all",
  "episodes": [
-  {
-   "id": "s_9007_e001",
-   "series_id": "s_9007",
-   "index": 1,
-   "title": "正片",
-   "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm/960px--Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm.jpg",
-   "duration_sec": 734,
-   "is_free": true,
-   "sources": [
-    {
-     "quality": "auto",
-     "url": "https://test-streams.mux.dev/tos_ismc/main.m3u8",
-     "container": "hls",
-     "codec": "h264",
-     "bitrate_kbps": 2400
-    },
-    {
-     "quality": "auto",
-     "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm",
-     "container": "webm",
-     "codec": "vp9",
-     "bitrate_kbps": 0
-    }
-   ],
-   "subtitles": []
-  }
+  {"id":"s_9007_e01","series_id":"s_9007","index":1,"title":"第1段","thumbnail":"files/covers/90e1de2dfefebb09.jpg","duration_sec":147,"start_sec":0,"is_free":true,"sources":[{"quality":"auto","url":"https://test-streams.mux.dev/tos_ismc/main.m3u8","container":"hls","codec":"h264","bitrate_kbps":2400},{"quality":"auto","url":"https://upload.wikimedia.org/wikipedia/commons/1/10/Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm","container":"webm","codec":"vp9","bitrate_kbps":0}],"subtitles":[]},
+  {"id":"s_9007_e02","series_id":"s_9007","index":2,"title":"第2段","thumbnail":"files/covers/90e1de2dfefebb09.jpg","duration_sec":147,"start_sec":147,"is_free":true,"sources":[{"quality":"auto","url":"https://test-streams.mux.dev/tos_ismc/main.m3u8","container":"hls","codec":"h264","bitrate_kbps":2400},{"quality":"auto","url":"https://upload.wikimedia.org/wikipedia/commons/1/10/Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm","container":"webm","codec":"vp9","bitrate_kps":0}],"subtitles":[]},
+  {"id":"s_9007_e03","series_id":"s_9007","index":3,"title":"第3段","thumbnail":"files/covers/90e1de2dfefebb09.jpg","duration_sec":146,"start_sec":294,"is_free":true,"sources":[{"quality":"auto","url":"https://test-streams.mux.dev/tos_ismc/main.m3u8","container":"hls","codec":"h264","bitrate_kbps":2400},{"quality":"auto","url":"https://upload.wikimedia.org/wikipedia/commons/1/10/Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm","container":"webm","codec":"vp9","bitrate_kbps":0}],"subtitles":[]},
+  {"id":"s_9007_e04","series_id":"s_9007","index":4,"title":"第4段","thumbnail":"files/covers/90e1de2dfefebb09.jpg","duration_sec":147,"start_sec":440,"is_free":true,"sources":[{"quality":"auto","url":"https://test-streams.mux.dev/tos_ismc/main.m3u8","container":"hls","codec":"h264","bitrate_kps":2400},{"quality":"auto","url":"https://upload.wikimedia.org/wikipedia/commons/1/10/Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm","container":"webm","codec":"vp9","bitrate_kbps":0}],"subtitles":[]},
+  {"id":"s_9007_e05","series_id":"s_9007","index":5,"title":"第5段","thumbnail":"files/covers/90e1de2dfefebb09.jpg","duration_sec":147,"start_sec":587,"is_free":true,"sources":[{"quality":"auto","url":"https://test-streams.mux.dev/tos_ismc/main.m3u8","container":"hls","codec":"h264","bitrate_kbps":2400},{"quality":"auto","url":"https://upload.wikimedia.org/wikipedia/commons/1/10/Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm","container":"webm","codec":"vp9","bitrate_kbps":0}],"subtitles":[]}
  ]
 }
