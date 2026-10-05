@@ -15,8 +15,16 @@ export default function SeriesPage({ id, go }: { id: string; go: (h: string) => 
     api.series(id, ac.signal)
       .then((d) => {
         setS(d);
-        if (d.episodes?.length) setEps(d.episodes);
-        else return api.episodes(id, ac.signal).then((r) => setEps(r.items || []));
+        const loadEps = d.episodes?.length
+          ? Promise.resolve(d.episodes)
+          : api.episodes(id, ac.signal).then((r) => r.items || []);
+        return loadEps.then((items) => {
+          setEps(items);
+          // 自动播放第一集
+          if (items.length > 0) {
+            go(`#/watch/${items[0].id}`);
+          }
+        });
       })
       .catch((e: Error) => setErr(e.message));
     return () => ac.abort();
