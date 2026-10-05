@@ -23,6 +23,8 @@ export interface Episode {
   title?: string;
   thumbnail?: string;
   duration_sec?: number;
+  /** 长片拆集时：本集从视频第几秒开始播放（同一份源文件按时间偏移切集） */
+  start_sec?: number;
   is_free?: boolean;
   sources: Source[];
   subtitles?: Subtitle[];

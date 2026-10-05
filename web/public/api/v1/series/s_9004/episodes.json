@@ -1,12 +1,73 @@
 {
  "items": [
   {
-   "id": "s_9004_e001",
+   "id": "s_9004_e01",
    "series_id": "s_9004",
    "index": 1,
-   "title": "正片",
+   "title": "第1段",
    "thumbnail": "files/covers/e491a66caed7ce40.jpg",
-   "duration_sec": 658,
+   "duration_sec": 164,
+   "start_sec": 0,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Elephants_Dream_%282006%29_1080p24.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  },
+  {
+   "id": "s_9004_e02",
+   "series_id": "s_9004",
+   "index": 2,
+   "title": "第2段",
+   "thumbnail": "files/covers/e491a66caed7ce40.jpg",
+   "duration_sec": 165,
+   "start_sec": 164,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Elephants_Dream_%282006%29_1080p24.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  },
+  {
+   "id": "s_9004_e03",
+   "series_id": "s_9004",
+   "index": 3,
+   "title": "第3段",
+   "thumbnail": "files/covers/e491a66caed7ce40.jpg",
+   "duration_sec": 165,
+   "start_sec": 329,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Elephants_Dream_%282006%29_1080p24.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  },
+  {
+   "id": "s_9004_e04",
+   "series_id": "s_9004",
+   "index": 4,
+   "title": "第4段",
+   "thumbnail": "files/covers/e491a66caed7ce40.jpg",
+   "duration_sec": 164,
+   "start_sec": 494,
    "is_free": true,
    "sources": [
     {

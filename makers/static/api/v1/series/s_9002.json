@@ -2,9 +2,9 @@
  "id": "s_9002",
  "title": "羊驼大冒险",
  "original_title": "Caminandes - Gran Dillama - Blender Foundation's new Open Movie",
- "cover": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Caminandes_-_Gran_Dillama_-_Blender_Foundation%27s_new_Open_Movie.webm/960px--Caminandes_-_Gran_Dillama_-_Blender_Foundation%27s_new_Open_Movie.webm.jpg",
- "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Caminandes_-_Gran_Dillama_-_Blender_Foundation%27s_new_Open_Movie.webm/960px--Caminandes_-_Gran_Dillama_-_Blender_Foundation%27s_new_Open_Movie.webm.jpg",
- "banner": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Caminandes_-_Gran_Dillama_-_Blender_Foundation%27s_new_Open_Movie.webm/960px--Caminandes_-_Gran_Dillama_-_Blender_Foundation%27s_new_Open_Movie.webm.jpg",
+ "cover": "files/covers/6f41717d14c63005.jpg",
+ "poster": "files/covers/6f41717d14c63005.jpg",
+ "banner": "files/covers/6f41717d14c63005.jpg",
  "synopsis": "一只执着的羊驼想尽办法越过一道围栏，却总在关键时刻出岔子。节奏轻快的搞笑短片，Caminandes 系列的经典一集。",
  "tags": [
   "动画",
@@ -26,7 +26,7 @@
    "series_id": "s_9002",
    "index": 1,
    "title": "正片",
-   "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Caminandes_-_Gran_Dillama_-_Blender_Foundation%27s_new_Open_Movie.webm/960px--Caminandes_-_Gran_Dillama_-_Blender_Foundation%27s_new_Open_Movie.webm.jpg",
+   "thumbnail": "files/covers/6f41717d14c63005.jpg",
    "duration_sec": 146,
    "is_free": true,
    "sources": [

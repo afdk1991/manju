@@ -1,12 +1,53 @@
 {
  "items": [
   {
-   "id": "s_9006_e001",
+   "id": "s_9006_e01",
    "series_id": "s_9006",
    "index": 1,
-   "title": "正片",
-   "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Spring_-_Blender_Open_Movie.webm/960px--Spring_-_Blender_Open_Movie.webm.jpg",
-   "duration_sec": 464,
+   "title": "第1段",
+   "thumbnail": "files/covers/e4fdaf227d849801.jpg",
+   "duration_sec": 155,
+   "start_sec": 0,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Spring_-_Blender_Open_Movie.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  },
+  {
+   "id": "s_9006_e02",
+   "series_id": "s_9006",
+   "index": 2,
+   "title": "第2段",
+   "thumbnail": "files/covers/e4fdaf227d849801.jpg",
+   "duration_sec": 154,
+   "start_sec": 155,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Spring_-_Blender_Open_Movie.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  },
+  {
+   "id": "s_9006_e03",
+   "series_id": "s_9006",
+   "index": 3,
+   "title": "第3段",
+   "thumbnail": "files/covers/e4fdaf227d849801.jpg",
+   "duration_sec": 155,
+   "start_sec": 309,
    "is_free": true,
    "sources": [
     {

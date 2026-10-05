@@ -1,0 +1,20 @@
+{
+ "id": "s_9006_e03",
+ "series_id": "s_9006",
+ "index": 3,
+ "title": "第3段",
+ "thumbnail": "files/covers/e4fdaf227d849801.jpg",
+ "duration_sec": 155,
+ "start_sec": 309,
+ "is_free": true,
+ "sources": [
+  {
+   "quality": "auto",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Spring_-_Blender_Open_Movie.webm",
+   "container": "webm",
+   "codec": "vp9",
+   "bitrate_kbps": 0
+  }
+ ],
+ "subtitles": []
+}

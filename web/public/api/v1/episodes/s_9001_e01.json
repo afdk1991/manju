@@ -1,10 +1,11 @@
 {
- "id": "s_9001_e001",
+ "id": "s_9001_e01",
  "series_id": "s_9001",
  "index": 1,
- "title": "正片",
+ "title": "第1段",
  "thumbnail": "files/covers/2156aee291e78aa5.jpg",
- "duration_sec": 634,
+ "duration_sec": 158,
+ "start_sec": 0,
  "is_free": true,
  "sources": [
   {

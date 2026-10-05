@@ -88,8 +88,11 @@ export default function Player({ ep, onNext }: Props) {
           })),
         );
         setSrcline(`HLS · ${hlsSrc.quality || 'auto'}（hls.js）`);
+        // 拆集时优先从 start_sec 开始；否则续播进度
+        const start = ep.start_sec || 0;
         const saved = loadProgress(ep.id);
-        if (saved > 1 && saved < (v.duration || Infinity) - 2) v.currentTime = saved;
+        const target = start > 0 ? start : (saved > 1 ? saved : 0);
+        if (target > 1 && target < (v.duration || Infinity) - 2) v.currentTime = target;
         void v.play().catch(() => { /* 自动播放被拦截，等用户点大播放键 */ });
       });
       h.on(Hls.Events.ERROR, (_e, data) => {
@@ -126,7 +129,17 @@ export default function Player({ ep, onNext }: Props) {
     if (!v) return;
     const onPlay = () => { setPlaying(true); setLoading(false); };
     const onPause = () => setPlaying(false);
-    const onMeta = () => setDur(v.duration || 0);
+    const onMeta = () => {
+      setDur(v.duration || 0);
+      // 直链/HLS 原生场景：元数据加载完后，优先跳到拆集起始点；否则续播进度
+      const start = ep.start_sec || 0;
+      if (start > 1 && start < (v.duration || Infinity) - 2) {
+        v.currentTime = start;
+        return;
+      }
+      const saved = loadProgress(ep.id);
+      if (saved > 1 && saved < (v.duration || Infinity) - 2) v.currentTime = saved;
+    };
     const onTime = () => {
       setCur(v.currentTime);
       const now = Date.now();

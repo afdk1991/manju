@@ -2,9 +2,9 @@
  "id": "s_9003",
  "title": "咖啡狂奔",
  "original_title": "Coffee Run - Blender Open Movie-full movie",
- "cover": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Coffee_Run_-_Blender_Open_Movie-full_movie.webm/960px--Coffee_Run_-_Blender_Open_Movie-full_movie.webm.jpg",
- "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Coffee_Run_-_Blender_Open_Movie-full_movie.webm/960px--Coffee_Run_-_Blender_Open_Movie-full_movie.webm.jpg",
- "banner": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Coffee_Run_-_Blender_Open_Movie-full_movie.webm/960px--Coffee_Run_-_Blender_Open_Movie-full_movie.webm.jpg",
+ "cover": "files/covers/9e5199b1fa0aa26b.jpg",
+ "poster": "files/covers/9e5199b1fa0aa26b.jpg",
+ "banner": "files/covers/9e5199b1fa0aa26b.jpg",
  "synopsis": "一个男人为了买一杯咖啡，在城市里展开一场荒诞又充满想象力的狂奔。视觉风格鲜明，短小精悍。",
  "tags": [
   "动画",
@@ -26,7 +26,7 @@
    "series_id": "s_9003",
    "index": 1,
    "title": "正片",
-   "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Coffee_Run_-_Blender_Open_Movie-full_movie.webm/960px--Coffee_Run_-_Blender_Open_Movie-full_movie.webm.jpg",
+   "thumbnail": "files/covers/9e5199b1fa0aa26b.jpg",
    "duration_sec": 184,
    "is_free": true,
    "sources": [

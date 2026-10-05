@@ -15,19 +15,60 @@
  "region": "NL",
  "release_year": 2019,
  "status": "completed",
- "total_episodes": 1,
+ "total_episodes": 3,
  "score": 7.6,
  "views": 0,
  "is_vip": false,
  "age_rating": "all",
  "episodes": [
   {
-   "id": "s_9005_e001",
+   "id": "s_9005_e01",
    "series_id": "s_9005",
    "index": 1,
-   "title": "正片",
+   "title": "第1段",
    "thumbnail": "files/covers/d9cca644edc19c32.jpg",
-   "duration_sec": 391,
+   "duration_sec": 130,
+   "start_sec": 0,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/SINGULARITY_-_Blender_Open_Movie-full_movie.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  },
+  {
+   "id": "s_9005_e02",
+   "series_id": "s_9005",
+   "index": 2,
+   "title": "第2段",
+   "thumbnail": "files/covers/d9cca644edc19c32.jpg",
+   "duration_sec": 131,
+   "start_sec": 130,
+   "is_free": true,
+   "sources": [
+    {
+     "quality": "auto",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/SINGULARITY_-_Blender_Open_Movie-full_movie.webm",
+     "container": "webm",
+     "codec": "vp9",
+     "bitrate_kbps": 0
+    }
+   ],
+   "subtitles": []
+  },
+  {
+   "id": "s_9005_e03",
+   "series_id": "s_9005",
+   "index": 3,
+   "title": "第3段",
+   "thumbnail": "files/covers/d9cca644edc19c32.jpg",
+   "duration_sec": 130,
+   "start_sec": 261,
    "is_free": true,
    "sources": [
     {

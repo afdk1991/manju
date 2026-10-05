@@ -1,10 +1,11 @@
 {
- "id": "s_9007_e001",
+ "id": "s_9007_e05",
  "series_id": "s_9007",
- "index": 1,
- "title": "正片",
- "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm/960px--Tears_of_Steel_in_4k_-_Official_Blender_Foundation_release.webm.jpg",
- "duration_sec": 734,
+ "index": 5,
+ "title": "第5段",
+ "thumbnail": "files/covers/90e1de2dfefebb09.jpg",
+ "duration_sec": 147,
+ "start_sec": 587,
  "is_free": true,
  "sources": [
   {
