@@ -1,38 +1,57 @@
-import type {
-  Category, Episode, ExternalIndex, ExternalList, Home, Series,
-} from './types';
+import type { Category, Episode, Home, Series } from './types';
 
-/**
- * 数据层：所有请求都走带 .json 后缀的静态路径。
- *
- * 红线：不要在 edgeone.json 里新增 "source 以 :param 结尾、destination 再拼后缀"
- * 的 rewrite —— 那会把 /api/v1/series/x.json 重写成 x.json.json 导致全站 404。
- */
+let homeCache: Home | null = null;
+let allSeriesCache: Series[] = [];
+
 async function getJson<T>(path: string, signal?: AbortSignal): Promise<T> {
-  // 必须显式 same-origin：EdgeOne 预览域名在路由前有 SSO 鉴权，
-  // 靠 eo_token Cookie 放行。若用 credentials:'omit' 丢弃 Cookie，
-  // XHR 会被拦成 401（本地无 SSO 测不出，只有线上浏览器实测才暴露）。
   const sep = path.includes('?') ? '&' : '?';
   const res = await fetch(`${path}${sep}_t=${Date.now()}`, { signal, credentials: 'same-origin' });
   if (!res.ok) throw new Error(`${path} -> HTTP ${res.status}`);
   return (await res.json()) as T;
 }
 
-const enc = encodeURIComponent;
+async function loadHome(): Promise<Home> {
+  if (homeCache) return homeCache;
+  homeCache = await getJson<Home>('api/v1/home.json');
+  allSeriesCache = homeCache.sections.reduce((acc, s) => [...acc, ...s.items], [] as Series[]);
+  return homeCache;
+}
 
 export const api = {
-  home: (s?: AbortSignal) => getJson<Home>('api/v1/home.json', s),
-  categories: (s?: AbortSignal) => getJson<{ items: Category[] }>('api/v1/categories.json', s),
-  seriesList: (s?: AbortSignal) => getJson<{ items: Series['id'] extends string ? Series[] : never }>('api/v1/series.json', s),
-  series: (id: string, s?: AbortSignal) => getJson<Series>(`api/v1/series/${enc(id)}.json`, s),
-  episodes: (seriesId: string, s?: AbortSignal) =>
-    getJson<{ items: Episode[] }>(`api/v1/series/${enc(seriesId)}/episodes.json`, s),
-  episode: (epId: string, s?: AbortSignal) => getJson<Episode>(`api/v1/episodes/${enc(epId)}.json`, s),
-  extIndex: (s?: AbortSignal) => getJson<ExternalIndex>('external/index.json', s),
-  extList: (cat: string, s?: AbortSignal) => getJson<ExternalList>(`external/${enc(cat)}.json`, s),
+  home: (s?: AbortSignal) => loadHome(),
+  categories: async () => ({ items: [] as Category[] }),
+  seriesList: async () => ({ total: allSeriesCache.length, items: allSeriesCache }),
+  series: async (id: string, _s?: AbortSignal) => {
+    await loadHome();
+    const found = allSeriesCache.find(x => x.id === id);
+    if (!found) throw new Error(`Series ${id} not found`);
+    return found;
+  },
+  episodes: async (seriesId: string, _s?: AbortSignal) => {
+    await loadHome();
+    const found = allSeriesCache.find(x => x.id === seriesId);
+    if (!found) return { items: [] };
+    const eps = ((found as any).episodes || []) as Episode[];
+    return { items: eps.map((e: any) => ({ id: e.id, title: e.title })) };
+  },
+  episode: async (epId: string, _s?: AbortSignal) => {
+    await loadHome();
+    for (const s of allSeriesCache) {
+      const eps = ((s as any).episodes || []) as any[];
+      const found = eps.find(e => e.id === epId);
+      if (found) {
+        return {
+          id: epId,
+          title: found.title,
+          duration: 0,
+          sources: [{ url: found.url, container: 'hls', quality: 'auto' }],
+          subtitles: [],
+        } as Episode;
+      }
+    }
+    throw new Error(`Episode ${epId} not found`);
+  },
 };
-
-/* ---------- 本地状态：已看过 / 续播进度 ---------- */
 
 const SEEN_KEY = 'manju:seen';
 const progKey = (epId: string) => `manju:progress:${epId}`;
@@ -40,9 +59,7 @@ const progKey = (epId: string) => `manju:progress:${epId}`;
 export function seenSet(): Set<string> {
   try {
     return new Set(JSON.parse(localStorage.getItem(SEEN_KEY) || '[]') as string[]);
-  } catch {
-    return new Set();
-  }
+  } catch { return new Set(); }
 }
 
 export function markSeen(id: string): void {
@@ -53,15 +70,9 @@ export function markSeen(id: string): void {
 }
 
 export function saveProgress(epId: string, t: number): void {
-  try {
-    localStorage.setItem(progKey(epId), String(Math.floor(t)));
-  } catch { /* 隐私模式下忽略 */ }
+  try { localStorage.setItem(progKey(epId), String(Math.floor(t))); } catch {}
 }
 
 export function loadProgress(epId: string): number {
-  try {
-    return Number(localStorage.getItem(progKey(epId)) || 0);
-  } catch {
-    return 0;
-  }
+  try { return Number(localStorage.getItem(progKey(epId)) || 0); } catch { return 0; }
 }
