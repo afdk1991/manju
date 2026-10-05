@@ -36,7 +36,7 @@ export default function Home({ go }: { go: (h: string) => void }) {
                    role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && go(`#/external/${c.category}`)}>
                 <div className="meta" style={{ padding: 16 }}>
                   <div className="t">{c.category_label}</div>
-                  <div className="info"><span>{c.total ?? 0} 条</span><span>跳转观看</span></div>
+                  <div className="info"><span>{c.total ?? 0} 条</span><span>站内播放</span></div>
                 </div>
               </div>
             ))}
@@ -56,7 +56,7 @@ export default function Home({ go }: { go: (h: string) => void }) {
       ))}
 
       <div className="foot">
-        漫剧 Manju · 站内自有内容可直接播放；外部片单仅提供发现与跳转，版权归原平台所有。
+        漫剧 Manju · 站内自有内容可直接播放；外部片单在站内嵌入播放器观看，版权归原平台所有。
       </div>
     </>
   );
