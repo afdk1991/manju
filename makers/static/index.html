@@ -8,76 +8,94 @@
 <script src="https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
+:root[data-theme="dark"]{
   --bg:#0d0e14;--bg2:#14151f;--card:#1a1c28;--card2:#222433;
   --line:#2a2d3f;--text:#eef0f8;--muted:#888da6;
   --accent:#7c6cf0;--accent2:#a29bfe;--accent-glow:rgba(124,108,240,.3);
-  --radius:14px;
+}
+:root[data-theme="light"]{
+  --bg:#f5f6fa;--bg2:#ffffff;--card:#ffffff;--card2:#f0f1f5;
+  --line:#e2e4ec;--text:#1a1c28;--muted:#888da6;
+  --accent:#6c5ce7;--accent2:#7c6cf0;--accent-glow:rgba(108,92,231,.15);
 }
 html{scroll-behavior:smooth}
 body{
   background:var(--bg);color:var(--text);
   font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
-  font-size:14px;line-height:1.6;min-height:100vh;
+  font-size:14px;line-height:1.6;min-height:100vh;transition:background .3s,color .3s;
 }
 .topbar{
   position:sticky;top:0;z-index:100;
   display:flex;align-items:center;gap:16px;padding:12px 24px;
-  background:rgba(13,14,20,.88);backdrop-filter:blur(20px);
+  background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(20px);
   border-bottom:1px solid var(--line);
 }
 .logo{font-size:20px;font-weight:800;cursor:pointer;
-  background:linear-gradient(135deg,#fff 30%,var(--accent2));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  white-space:nowrap;
+  background:linear-gradient(135deg,var(--text) 30%,var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;white-space:nowrap;
 }
 .logo small{font-size:11px;font-weight:400;color:var(--muted);
   -webkit-text-fill-color:var(--muted);margin-left:6px}
 .topbar .spacer{flex:1}
 .topbar .stats{font-size:12px;color:var(--muted)}
+.theme-btn{
+  width:38px;height:38px;border-radius:50%;border:1px solid var(--line);
+  background:var(--card);color:var(--text);cursor:pointer;font-size:16px;
+  display:flex;align-items:center;justify-content:center;transition:all .2s;
+}
+.theme-btn:hover{border-color:var(--accent)}
 .wrap{max-width:1320px;margin:0 auto;padding:0 20px 80px}
-.hero{padding:40px 0 20px;text-align:center}
-.hero h1{font-size:32px;font-weight:800;margin-bottom:8px;
-  background:linear-gradient(135deg,#fff,var(--accent2));
+.hero{padding:36px 0 16px;text-align:center}
+.hero h1{font-size:30px;font-weight:800;margin-bottom:6px;
+  background:linear-gradient(135deg,var(--text),var(--accent2));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{color:var(--muted);font-size:14px}
-.search-wrap{max-width:600px;margin:24px auto;position:relative}
+.hero p{color:var(--muted);font-size:13px}
+.search-wrap{max-width:600px;margin:20px auto;position:relative}
 .search-wrap input{
-  width:100%;padding:13px 20px 13px 48px;
+  width:100%;padding:12px 20px 12px 46px;
   background:var(--card);border:1.5px solid var(--line);border-radius:999px;
   color:var(--text);font-size:14px;outline:none;transition:border .2s;
 }
 .search-wrap input:focus{border-color:var(--accent)}
-.search-wrap::before{content:"🔍";position:absolute;left:18px;top:50%;
-  transform:translateY(-50%);font-size:16px;opacity:.6}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:20px 0}
-.tab{padding:7px 18px;border-radius:999px;font-size:13px;
+.search-wrap::before{content:"🔍";position:absolute;left:16px;top:50%;
+  transform:translateY(-50%);font-size:15px;opacity:.6}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:16px 0}
+.tab{padding:6px 16px;border-radius:999px;font-size:12px;
   background:var(--card);border:1px solid var(--line);color:var(--muted);
   cursor:pointer;transition:all .2s;white-space:nowrap}
 .tab:hover{border-color:var(--accent);color:var(--text)}
 .tab.on{background:var(--accent);border-color:var(--accent);color:#fff;
-  box-shadow:0 4px 20px var(--accent-glow)}
-.sh{display:flex;align-items:center;gap:12px;margin:28px 0 16px}
-.sh h2{font-size:18px;font-weight:700;display:flex;align-items:center;gap:8px}
-.sh .badge{font-size:12px;color:var(--accent2);background:rgba(124,108,240,.15);
+  box-shadow:0 4px 16px var(--accent-glow)}
+.filters{
+  display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:8px 0 20px;
+  padding:10px;background:var(--card);border-radius:12px;border:1px solid var(--line);
+}
+.filters label{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.filters select{
+  background:var(--bg2);border:1px solid var(--line);border-radius:8px;
+  color:var(--text);padding:4px 10px;font-size:12px;outline:none;cursor:pointer;
+}
+.sh{display:flex;align-items:center;gap:12px;margin:24px 0 14px}
+.sh h2{font-size:17px;font-weight:700}
+.sh .badge{font-size:11px;color:var(--accent2);background:var(--accent-glow);
   padding:3px 12px;border-radius:999px;font-weight:400}
 .sh .bar{flex:1;height:1px;background:var(--line)}
-.grid{display:grid;gap:16px;
+.grid{display:grid;gap:14px;
   grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
 @media(min-width:640px){.grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:18px}}
-@media(min-width:1024px){.grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:20px}}
+@media(min-width:1024px){.grid{grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:20px}}
 .card{
-  background:var(--card);border-radius:var(--radius);overflow:hidden;
+  background:var(--card);border-radius:14px;overflow:hidden;
   cursor:pointer;transition:transform .25s,box-shadow .25s;position:relative;
 }
-.card:hover{transform:translateY(-5px);box-shadow:0 12px 40px var(--accent-glow)}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 36px var(--accent-glow)}
 .card .cw{position:relative;aspect-ratio:2/3;overflow:hidden;background:var(--card2)}
 .card img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
 .card:hover img{transform:scale(1.06)}
 .card .cg{position:absolute;inset:0;
-  background:linear-gradient(transparent 55%,rgba(0,0,0,.85))}
+  background:linear-gradient(transparent 55%,rgba(0,0,0,.8))}
 .card .ep{position:absolute;bottom:8px;left:8px;
-  background:rgba(0,0,0,.75);color:var(--accent2);
+  background:rgba(0,0,0,.75);color:#a29bfe;
   font-size:11px;padding:3px 8px;border-radius:6px;font-weight:500}
 .card .sc{position:absolute;top:8px;right:8px;
   background:rgba(0,0,0,.6);color:#ffd700;font-size:11px;
@@ -87,38 +105,34 @@ body{
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .card .ci{margin-top:4px;font-size:11px;color:var(--muted);
   display:flex;justify-content:space-between}
-.card .ctag{display:inline-block;margin-top:6px;font-size:10px;
-  color:var(--accent2);background:rgba(124,108,240,.12);
-  padding:2px 8px;border-radius:4px}
-.empty{padding:80px 0;text-align:center;color:var(--muted);font-size:14px}
+.empty{padding:60px 0;text-align:center;color:var(--muted)}
 .detail{padding-top:20px}
 .detail-head{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}
 .detail-head img{width:200px;aspect-ratio:2/3;object-fit:cover;
-  border-radius:var(--radius);box-shadow:0 8px 30px rgba(0,0,0,.4)}
+  border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.3)}
 .detail-info{flex:1;min-width:280px}
-.detail-info h1{font-size:26px;font-weight:800;margin-bottom:10px}
+.detail-info h1{font-size:24px;font-weight:800;margin-bottom:10px}
 .detail-info .meta{color:var(--muted);font-size:13px;margin-bottom:14px}
 .detail-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
 .detail-tags span{font-size:11px;color:var(--accent2);
-  background:rgba(124,108,240,.12);padding:4px 12px;border-radius:999px}
+  background:var(--accent-glow);padding:4px 12px;border-radius:999px}
 .detail-info .desc{color:var(--muted);font-size:13px;line-height:1.7;max-width:600px}
 .player-box{
   position:relative;width:100%;aspect-ratio:16/9;
-  background:#000;border-radius:var(--radius);overflow:hidden;margin-top:24px;
+  background:#000;border-radius:14px;overflow:hidden;margin-top:24px;
 }
 .player-box video{width:100%;height:100%;object-fit:contain}
 .bigplay{
   position:absolute;inset:0;margin:auto;width:80px;height:80px;
   border-radius:50%;border:none;cursor:pointer;z-index:5;
-  background:rgba(124,108,240,.85);color:#fff;font-size:32px;
-  display:flex;align-items:center;justify-content:center;
-  transition:transform .2s;
+  background:rgba(124,108,240,.85);color:#fff;font-size:30px;
+  display:flex;align-items:center;justify-content:center;transition:transform .2s;
 }
 .bigplay:hover{transform:scale(1.1)}
 .pload{position:absolute;inset:0;display:none;align-items:center;justify-content:center;z-index:6}
 .pload.on{display:flex}
 .spinner{width:44px;height:44px;border-radius:50%;
-  border:3px solid rgba(255,255,255,.15);border-top-color:var(--accent2);
+  border:3px solid rgba(255,255,255,.15);border-top-color:#a29bfe;
   animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .perr{position:absolute;inset:0;display:none;flex-direction:column;
@@ -126,15 +140,14 @@ body{
   background:rgba(0,0,0,.85);z-index:7;text-align:center;padding:20px}
 .perr.on{display:flex}
 .perr button{padding:10px 28px;border:none;border-radius:10px;
-  background:var(--accent);color:#fff;font-size:14px;cursor:pointer}
+  background:#7c6cf0;color:#fff;font-size:14px;cursor:pointer}
 .ep-title{font-size:16px;font-weight:700;margin:24px 0 12px}
 .ep-list{display:flex;flex-wrap:wrap;gap:8px}
 .epb{min-width:72px;padding:9px 14px;background:var(--card);
   border:1px solid var(--line);border-radius:10px;
   color:var(--text);font-size:12px;cursor:pointer;transition:all .15s;text-align:center}
 .epb:hover{border-color:var(--accent);transform:translateY(-1px)}
-.epb.on{background:var(--accent);border-color:var(--accent);color:#fff;
-  box-shadow:0 4px 16px var(--accent-glow)}
+.epb.on{background:var(--accent);border-color:var(--accent);color:#fff}
 .back{display:inline-flex;align-items:center;gap:6px;
   margin-top:28px;color:var(--muted);cursor:pointer;font-size:13px;
   background:none;border:none}
@@ -150,6 +163,7 @@ body{
   <div class="logo" onclick="goHome()">🎬 漫剧 Manju<small>免费在线观影</small></div>
   <div class="spacer"></div>
   <div class="stats" id="statBadge"></div>
+  <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" title="切换主题">🌙</button>
 </div>
 <div class="wrap" id="app">
   <div class="loading"><div class="spinner"></div>加载中...</div>
@@ -158,6 +172,23 @@ body{
 let DATA=[],CATS=new Set();
 const app=document.getElementById('app');
 const statBadge=document.getElementById('statBadge');
+let curSearch='',curCat='all',curSort='default',curYear='all';
+
+// 主题
+function toggleTheme(){
+  const html=document.documentElement;
+  const cur=html.getAttribute('data-theme')||'dark';
+  const next=cur==='dark'?'light':'dark';
+  html.setAttribute('data-theme',next);
+  document.getElementById('themeBtn').textContent=next==='dark'?'🌙':'☀️';
+  localStorage.setItem('manju-theme',next);
+}
+// 恢复主题
+(function(){
+  const t=localStorage.getItem('manju-theme')||'dark';
+  document.documentElement.setAttribute('data-theme',t);
+  document.getElementById('themeBtn').textContent=t==='dark'?'🌙':'☀️';
+})();
 
 async function init(){
   try{
@@ -174,26 +205,49 @@ async function init(){
 
 function esc(s){const d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML}
 
-function home(search,cat){
-  search=search||'';cat=cat||'all';
+function getFiltered(){
   let items=DATA;
-  if(cat!=='all')items=items.filter(it=>(it.tags||[]).includes(cat));
-  if(search)items=items.filter(it=>it.title.toLowerCase().includes(search.toLowerCase()));
+  if(curCat!=='all')items=items.filter(it=>(it.tags||[]).includes(curCat));
+  if(curSearch)items=items.filter(it=>it.title.toLowerCase().includes(curSearch.toLowerCase()));
+  if(curYear!=='all')items=items.filter(it=>String(it.release_year)===curYear);
+  if(curSort==='eps')items=[...items].sort((a,b)=>(b.total_episodes||0)-(a.total_episodes||0));
+  else if(curSort==='rating')items=[...items].sort((a,b)=>(b.score||0)-(a.score||0));
+  return items;
+}
+
+function home(){
+  const items=getFiltered();
   const cats=['all',...CATS];
+  const years=[...new Set(DATA.map(it=>it.release_year).filter(Boolean))].sort().reverse();
   app.innerHTML=`
     <div class="hero">
       <h1>漫剧 Manju</h1>
       <p>免费在线观看 · ${DATA.length} 部漫剧短剧 · 持续更新</p>
     </div>
     <div class="search-wrap">
-      <input type="text" placeholder="搜索剧名..." value="${esc(search)}"
-        oninput="home(this.value,'${cat}')">
+      <input type="text" placeholder="搜索剧名..." value="${esc(curSearch)}"
+        oninput="curSearch=this.value;home()">
     </div>
     <div class="tabs">
-      ${cats.map(c=>`<button class="tab ${cat===c?'on':''}" onclick="home('${esc(search)}','${c}')">${c==='all'?'全部':esc(c)}</button>`).join('')}
+      ${cats.map(c=>`<button class="tab ${curCat===c?'on':''}" onclick="curCat='${c}';home()">${c==='all'?'全部':esc(c)}</button>`).join('')}
+    </div>
+    <div class="filters">
+      <label>排序
+        <select onchange="curSort=this.value;home()">
+          <option value="default" ${curSort==='default'?'selected':''}>默认</option>
+          <option value="eps" ${curSort==='eps'?'selected':''}>集数最多</option>
+          <option value="rating" ${curSort==='rating'?'selected':''}>评分最高</option>
+        </select>
+      </label>
+      <label>年份
+        <select onchange="curYear=this.value;home()">
+          <option value="all" ${curYear==='all'?'selected':''}>全部</option>
+          ${years.map(y=>`<option value="${y}" ${curYear==String(y)?'selected':''}>${y}</option>`).join('')}
+        </select>
+      </label>
     </div>
     <div class="sh">
-      <h2>${search||cat!=='all'?'搜索结果':'全部片单'}</h2>
+      <h2>${curSearch||curCat!=='all'||curYear!=='all'?'筛选结果':'全部片单'}</h2>
       <span class="badge">${items.length} 部</span>
       <div class="bar"></div>
     </div>
